@@ -1,0 +1,6 @@
+section,content
+phase_summary,"The study-family rollout is complete. All 102 primary dataset rows now have study_family, component_of_dataset_id, count_as_independent_cohort, and overlap_notes populated. Current countability is 81 TRUE, 5 FALSE, and 16 Unclear across 85 distinct study/source families. The Datasets detail panel exposes these fields, global search can find study/trial family names, and the Curation Methods page documents the rollout with links to review artifacts."
+remaining_risk,"TRUE means countable based on current evidence, not proof of no hidden donor overlap. The 16 Unclear rows still need donor/sample reconciliation before cohort counts can be treated as de-duplicated. Some family labels group conceptually related studies without proving shared donors, especially therapeutic trials, PROTECT/RISK-related rows, and functional-genomics rows."
+priority_1,"Resolve the 16 Unclear countability rows, starting with PROTECT, RISK, UNITI, SP140, NatCommun2023 multimodal rows, and GEMINI/IFX."
+priority_2,"Add a cohort-counting QA report showing total rows, unique study families, TRUE/FALSE/Unclear counts, component rows, invalid parent IDs, and missing overlap notes."
+priority_3,"Improve user-facing family search affordance with a compact note or examples near the Dataset Explorer search box, without adding a large 85-family dropdown."

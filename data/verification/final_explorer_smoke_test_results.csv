@@ -1,0 +1,2 @@
+status,summary,failures
+PASS,"All smoke-test checklist steps passed against the rendered docs site.","None"

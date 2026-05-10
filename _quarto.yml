@@ -84,6 +84,8 @@ project:
     - data/verification/study_family_rollout_summary_draft.csv
     - data/verification/resource_manifest_closure_qa.csv
     - data/verification/final_explorer_smoke_test_plan.csv
+    - data/verification/final_explorer_smoke_test_results.csv
+    - data/verification/post_rollout_next_priorities.csv
 
 author: "Dahham Alsoud"
 

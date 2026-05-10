@@ -207,7 +207,14 @@
     "href": "curation-methods.html#current-registry-state",
     "title": "Curation Methods",
     "section": "Current Registry State",
-    "text": "Current Registry State\nThe current dataset registry contains 63 primary dataset entries plus 10 integrated resources tracked separately. The newer systematic-discovery rows are intentionally marked as source_checked rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.\nBefore using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with Unclear fields should be treated as leads for manual curation rather than confirmed facts."
+    "text": "Current Registry State\nThe current dataset registry contains 102 primary dataset entries plus 10 integrated resources tracked separately. The newer systematic-discovery rows are intentionally marked as source_checked rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.\nBefore using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with Unclear fields should be treated as leads for manual curation rather than confirmed facts."
+  },
+  {
+    "objectID": "curation-methods.html#retired-primary-dataset-ids",
+    "href": "curation-methods.html#retired-primary-dataset-ids",
+    "title": "Curation Methods",
+    "section": "Retired Primary Dataset IDs",
+    "text": "Retired Primary Dataset IDs\nSome DSxxx identifiers are intentionally retired when a broad portal, consortium, or integrated resource is moved out of the primary accession-level dataset table. Retired identifiers are not reused. This keeps older references interpretable while preventing resource-level rows from being counted as single primary datasets.\nRetired identifiers are tracked in data/retired_dataset_ids.csv."
   },
   {
     "objectID": "curation-methods.html#priority-verification-queue",

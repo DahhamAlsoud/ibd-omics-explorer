@@ -9,6 +9,10 @@ project:
     - data/integrated_resources.csv
     - data/resource_coverage.csv
     - data/orchestrator_queue.csv
+    - data/retired_dataset_ids.csv
+    - data/cohort_overlap_audit.csv
+    - data/verification/cross_omics_utility_review.csv
+    - data/verification/status_taxonomy_review.csv
 
 author: "Dahham Alsoud"
 

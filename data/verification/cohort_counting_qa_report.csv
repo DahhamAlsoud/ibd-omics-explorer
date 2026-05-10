@@ -11,6 +11,6 @@ CF009,component_links,warning,pass,0,,Rows with component_of_dataset_id should u
 CF010,component_links,error,pass,0,,component_of_dataset_id must not point to the same row,0 self-referential component refs,None
 CF011,schema,error,pass,0,,dataset_id values must be unique,0 duplicate dataset_id values,None
 CF012,summary,info,pass,11,scIBD_Gut_Cell_Atlas_source_cohort; Macrophage_neutrophil_IBD_NatCommun2023; RISK_pediatric_IBD_mucosal_RNAseq; scIBD_source_cohort; ACT1_infliximab_UC; IBD200_location_specific_CD_multiomics; Kellermayer_pediatric_IBD_colon_methylation; PROTECT_pediatric_UC_metabolomics; PROTECT_pediatric_UC_rectal_RNAseq; SP140_Crohn_functional_genomics; UNITI_ustekinumab_Crohn,Summarize repeated study families,11 repeated families,Review repeated families when resolving overlaps
-CF013,summary,info,pass,6,DS027; DS032; DS039; DS048; DS059; DS062,List non-independent rows,6 FALSE rows,None
-CF014,summary,info,pass,11,DS005; DS035; DS040; DS041; DS042; DS047; DS061; DS088; DS095; DS099; DS107,List unresolved rows,11 Unclear rows,Use unclear_countability_resolution_plan.csv
-CF015,summary,info,pass,0,,Current registry totals,102 rows; 85 families; 85 TRUE; 6 FALSE; 11 Unclear,None
+CF013,summary,info,pass,7,DS027; DS032; DS035; DS039; DS048; DS059; DS062,List non-independent rows,7 FALSE rows,None
+CF014,summary,info,pass,10,DS005; DS040; DS041; DS042; DS047; DS061; DS088; DS095; DS099; DS107,List unresolved rows,10 Unclear rows,Use unclear_countability_resolution_plan.csv
+CF015,summary,info,pass,0,,Current registry totals,102 rows; 85 families; 85 TRUE; 7 FALSE; 10 Unclear,None

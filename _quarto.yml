@@ -95,6 +95,11 @@ project:
     - data/verification/cohort_counting_qa_validation.csv
     - data/verification/natcomm2023_multimodality_crosswalk.csv
     - data/verification/uniti_countability_policy_review.csv
+    - data/verification/protect_methylation_crosswalk.csv
+    - data/verification/sp140_donor_crosswalk.csv
+    - data/verification/ds035_gwas_countability_policy_review.csv
+    - data/verification/ds061_ds088_infliximab_crosswalk.csv
+    - data/verification/risk_countability_policy_review.csv
 
 author: "Dahham Alsoud"
 

@@ -128,7 +128,7 @@ function renderDatasetExplorer(data) {
 
   root.innerHTML = `
     <div class="filter-panel">
-      <label>Search <input id="registry-search" type="search" placeholder="pediatric, colon, GWAS, proteomics"></label>
+      <label>Search <input id="registry-search" type="search" placeholder="PROTECT, RISK, IBDMDB, pediatric, colon"></label>
       <label>Omics <select id="registry-omics"><option>All</option></select></label>
       <label>Access <select id="registry-access"><option>All</option></select></label>
       <label>Sample <select id="registry-sample"><option>All</option></select></label>

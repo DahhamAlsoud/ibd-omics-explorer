@@ -54,6 +54,8 @@ project:
     - data/verification/ds049_sample_size_cleanup_plan.csv
     - data/verification/ds060_golimumab_family_source_check.csv
     - data/verification/ds088_gemini_family_source_check.csv
+    - data/verification/ds060_ds083_golimumab_overlap_check.csv
+    - data/verification/ds088_ds061_ifx_overlap_check.csv
 
 author: "Dahham Alsoud"
 

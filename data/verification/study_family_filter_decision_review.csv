@@ -1,0 +1,11 @@
+metric,value
+total_rows,102
+blank_study_family,0
+unique_study_family,85
+repeated_study_families,11
+dedicated_study_family_dropdown,Do not add
+dedicated_study_family_text_filter,Do not add
+global_search,Keep
+detail_fields,Keep
+exact_ui_change_needed,None
+future_trigger,"Add a curated repeated-family dropdown only if user testing shows family search confusion; do not list all 85 families."

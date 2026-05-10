@@ -74,6 +74,8 @@ project:
     - data/verification/sp140_family_overlap_check.csv
     - data/verification/study_family_completeness_qa.csv
     - data/verification/study_family_ui_search_qa.csv
+    - data/verification/publication_provenance_cleanup_review.csv
+    - data/verification/study_family_filter_decision_review.csv
 
 author: "Dahham Alsoud"
 

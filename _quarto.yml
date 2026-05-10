@@ -29,6 +29,12 @@ project:
     - data/verification/infliximab_uc_overlap_source_check.csv
     - data/verification/anti_tnf_independence_source_check.csv
     - data/cohort_family_column_risk_review.csv
+    - data/cohort_family_corrected_implementation_proposal.csv
+    - data/cohort_family_implementation_sequence.csv
+    - data/verification/anti_tnf_row_patch_recommendation.csv
+    - data/cohort_family_implementation_readiness_audit.csv
+    - data/clinical_trial_family_naming_review.csv
+    - data/verification/anti_tnf_notes_implementation_checklist.csv
 
 author: "Dahham Alsoud"
 

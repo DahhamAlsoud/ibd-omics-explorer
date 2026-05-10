@@ -1,0 +1,8 @@
+"dataset_id","accession","recommended_study_family","rationale"
+"DS047","GSE112366","UNITI_ustekinumab_Crohn","Trial/program name is the strongest family anchor; drug+disease alone would blur UNITI/IM-UNITI with other ustekinumab Crohn resources."
+"DS049","GSE206285","UNIFI_ustekinumab_UC","UNIFI is the specific UC ustekinumab trial family; use the trial name rather than broad IL12_23_UC."
+"DS062","GSE12251","ACT1_infliximab_UC","ACT1 is explicit in GEO and separates this from other infliximab UC cohorts despite same publication family with DS063."
+"DS063","GSE14580","Leuven_infliximab_UC_Gut2009","No trial name is explicit; source cohort/institution plus drug+disease/publication anchor is clearer than forcing ACT1 or using broad infliximab_UC."
+"DS083","GSE212849","PROgECT_golimumab_UC","PROgECT is the trial-family anchor; drug+disease alone would hide clinical-trial provenance and could collide with future golimumab UC rows."
+"DS085","GSE152316","BERGAMOT_etrolizumab_Crohn","BERGAMOT cohort 1 is the trial-family anchor; broad anti_integrin_Crohn would overgroup unrelated etrolizumab/vedolizumab programs."
+"DS088","GSE73661","GEMINI_vedolizumab_UC_with_IFX_comparator","GEMINI identifies the vedolizumab trial source, but the IFX comparator means the family label should warn that it is mixed rather than purely vedolizumab."

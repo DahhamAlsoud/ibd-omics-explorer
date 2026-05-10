@@ -26,28 +26,56 @@ emit <- function(check_id, check_group, severity, status, affected_ids, expected
 
 required_fields <- c("study_family", "component_of_dataset_id", "count_as_independent_cohort", "overlap_notes")
 missing_fields <- setdiff(required_fields, names(datasets))
+has_required_fields <- length(missing_fields) == 0
 
-blank_family <- datasets %>% filter(is.na(study_family) | str_trim(study_family) == "")
+if (!"dataset_id" %in% names(datasets)) {
+  stop("Required field dataset_id is missing from the registry CSV.")
+}
+
+blank_family <- if (has_required_fields) {
+  datasets %>% filter(is.na(study_family) | str_trim(study_family) == "")
+} else datasets[0, ]
 valid_countability <- c("TRUE", "FALSE", "Unclear")
-invalid_countability <- datasets %>%
-  filter(is.na(count_as_independent_cohort) | !count_as_independent_cohort %in% valid_countability)
-blank_countability <- datasets %>% filter(is.na(count_as_independent_cohort) | str_trim(count_as_independent_cohort) == "")
-false_missing_notes <- datasets %>%
-  filter(count_as_independent_cohort == "FALSE", is.na(overlap_notes) | str_trim(overlap_notes) == "")
-unclear_missing_notes <- datasets %>%
-  filter(count_as_independent_cohort == "Unclear", is.na(overlap_notes) | str_trim(overlap_notes) == "")
-invalid_components <- datasets %>%
-  filter(!is.na(component_of_dataset_id), str_trim(component_of_dataset_id) != "", !component_of_dataset_id %in% ids)
-free_text_components <- datasets %>%
-  filter(!is.na(component_of_dataset_id), str_trim(component_of_dataset_id) != "", str_detect(component_of_dataset_id, "\\s|/|Unclear|unclear"))
-component_true <- datasets %>%
-  filter(!is.na(component_of_dataset_id), str_trim(component_of_dataset_id) != "", count_as_independent_cohort == "TRUE")
-duplicate_families <- datasets %>%
-  count(study_family, name = "n") %>%
-  filter(!is.na(study_family), n > 1) %>%
-  arrange(desc(n), study_family)
-false_rows <- datasets %>% filter(count_as_independent_cohort == "FALSE")
-unclear_rows <- datasets %>% filter(count_as_independent_cohort == "Unclear")
+invalid_countability <- if (has_required_fields) {
+  datasets %>% filter(is.na(count_as_independent_cohort) | !count_as_independent_cohort %in% valid_countability)
+} else datasets[0, ]
+blank_countability <- if (has_required_fields) {
+  datasets %>% filter(is.na(count_as_independent_cohort) | str_trim(count_as_independent_cohort) == "")
+} else datasets[0, ]
+false_missing_notes <- if (has_required_fields) {
+  datasets %>% filter(count_as_independent_cohort == "FALSE", is.na(overlap_notes) | str_trim(overlap_notes) == "")
+} else datasets[0, ]
+unclear_missing_notes <- if (has_required_fields) {
+  datasets %>% filter(count_as_independent_cohort == "Unclear", is.na(overlap_notes) | str_trim(overlap_notes) == "")
+} else datasets[0, ]
+invalid_components <- if (has_required_fields) {
+  datasets %>% filter(!is.na(component_of_dataset_id), str_trim(component_of_dataset_id) != "", !component_of_dataset_id %in% ids)
+} else datasets[0, ]
+free_text_components <- if (has_required_fields) {
+  datasets %>% filter(!is.na(component_of_dataset_id), str_trim(component_of_dataset_id) != "", str_detect(component_of_dataset_id, "\\s|/|Unclear|unclear"))
+} else datasets[0, ]
+self_components <- if (has_required_fields) {
+  datasets %>% filter(!is.na(component_of_dataset_id), str_trim(component_of_dataset_id) != "", component_of_dataset_id == dataset_id)
+} else datasets[0, ]
+component_true <- if (has_required_fields) {
+  datasets %>% filter(!is.na(component_of_dataset_id), str_trim(component_of_dataset_id) != "", count_as_independent_cohort == "TRUE")
+} else datasets[0, ]
+duplicate_ids <- datasets %>%
+  count(dataset_id, name = "n") %>%
+  filter(!is.na(dataset_id), n > 1) %>%
+  arrange(dataset_id)
+duplicate_families <- if (has_required_fields) {
+  datasets %>%
+    count(study_family, name = "n") %>%
+    filter(!is.na(study_family), n > 1) %>%
+    arrange(desc(n), study_family)
+} else datasets[0, ]
+false_rows <- if (has_required_fields) {
+  datasets %>% filter(count_as_independent_cohort == "FALSE")
+} else datasets[0, ]
+unclear_rows <- if (has_required_fields) {
+  datasets %>% filter(count_as_independent_cohort == "Unclear")
+} else datasets[0, ]
 
 report <- bind_rows(
   emit("CF001", "schema", "error", if (length(missing_fields) == 0) "pass" else "fail",
@@ -86,26 +114,34 @@ report <- bind_rows(
        component_true$dataset_id, "Rows with component_of_dataset_id should usually not be countable TRUE",
        paste0(nrow(component_true), " component rows countable TRUE"),
        if (nrow(component_true) == 0) "None" else "Review component countability"),
-  emit("CF010", "summary", "info", "pass",
+  emit("CF010", "component_links", "error", if (nrow(self_components) == 0) "pass" else "fail",
+       self_components$dataset_id, "component_of_dataset_id must not point to the same row",
+       paste0(nrow(self_components), " self-referential component refs"),
+       if (nrow(self_components) == 0) "None" else "Clear or correct self-referential component links"),
+  emit("CF011", "schema", "error", if (nrow(duplicate_ids) == 0) "pass" else "fail",
+       duplicate_ids$dataset_id, "dataset_id values must be unique",
+       paste0(nrow(duplicate_ids), " duplicate dataset_id values"),
+       if (nrow(duplicate_ids) == 0) "None" else "Resolve duplicate dataset_id values"),
+  emit("CF012", "summary", "info", "pass",
        duplicate_families$study_family, "Summarize repeated study families",
        paste0(nrow(duplicate_families), " repeated families"),
        "Review repeated families when resolving overlaps"),
-  emit("CF011", "summary", "info", "pass",
+  emit("CF013", "summary", "info", "pass",
        false_rows$dataset_id, "List non-independent rows",
        paste0(nrow(false_rows), " FALSE rows"),
        "None"),
-  emit("CF012", "summary", "info", "pass",
+  emit("CF014", "summary", "info", "pass",
        unclear_rows$dataset_id, "List unresolved rows",
        paste0(nrow(unclear_rows), " Unclear rows"),
        "Use unclear_countability_resolution_plan.csv"),
-  emit("CF013", "summary", "info", "pass",
+  emit("CF015", "summary", "info", "pass",
        character(), "Current registry totals",
        paste0(
          nrow(datasets), " rows; ",
-         n_distinct(datasets$study_family), " families; ",
-         sum(datasets$count_as_independent_cohort == "TRUE", na.rm = TRUE), " TRUE; ",
-         sum(datasets$count_as_independent_cohort == "FALSE", na.rm = TRUE), " FALSE; ",
-         sum(datasets$count_as_independent_cohort == "Unclear", na.rm = TRUE), " Unclear"
+         if (has_required_fields) n_distinct(datasets$study_family) else NA_integer_, " families; ",
+         if (has_required_fields) sum(datasets$count_as_independent_cohort == "TRUE", na.rm = TRUE) else NA_integer_, " TRUE; ",
+         if (has_required_fields) sum(datasets$count_as_independent_cohort == "FALSE", na.rm = TRUE) else NA_integer_, " FALSE; ",
+         if (has_required_fields) sum(datasets$count_as_independent_cohort == "Unclear", na.rm = TRUE) else NA_integer_, " Unclear"
        ),
        "None")
 )

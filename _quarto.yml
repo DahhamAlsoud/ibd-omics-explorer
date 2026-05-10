@@ -91,6 +91,10 @@ project:
     - data/verification/protect_metabolomics_crosswalk.csv
     - data/verification/cohort_counting_qa_implementation_plan.csv
     - data/verification/cohort_counting_qa_report.csv
+    - data/verification/risk_transcriptomics_crosswalk.csv
+    - data/verification/cohort_counting_qa_validation.csv
+    - data/verification/natcomm2023_multimodality_crosswalk.csv
+    - data/verification/uniti_countability_policy_review.csv
 
 author: "Dahham Alsoud"
 

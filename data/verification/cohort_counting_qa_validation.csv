@@ -1,0 +1,2 @@
+status,summary,fixes_applied
+PASS_WITH_HARDENING,"Validation initially matched registry totals before NatCommun2023 resolution: 102 rows, 85 families, 82 TRUE, 6 FALSE, 14 Unclear. After resolving DS004/DS017/DS018, the regenerated report passes with 102 rows, 85 families, 85 TRUE, 6 FALSE, 11 Unclear.","Script hardened for missing required cohort-family fields, duplicate dataset_id values, and self-referential component links; report check numbering updated."

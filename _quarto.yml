@@ -103,6 +103,8 @@ project:
     - data/verification/remaining_unclear_consistency_audit.csv
     - data/verification/evidence_url_enrichment_qa.csv
     - data/verification/post_countability_site_qa.csv
+    - data/verification/next_phase_recommendation.csv
+    - data/verification/post_countability_next_tasks.csv
 
 author: "Dahham Alsoud"
 

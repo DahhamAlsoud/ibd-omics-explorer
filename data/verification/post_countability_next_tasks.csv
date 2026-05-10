@@ -1,0 +1,4 @@
+task_id,task,owner,status,expected_output
+OQ112,Clinical-trial omics gap search,Clinical trial QA agent,assigned,data/verification/clinical_trial_omics_gap_search.csv
+OQ113,Single-cell spatial and consortium portal gap search,Single-cell portal QA agent,assigned,data/verification/single_cell_spatial_gap_search.csv
+OQ114,Non-transcriptomic omics repository gap search,Non-transcriptomic omics QA agent,assigned,data/verification/non_transcriptomic_omics_gap_search.csv

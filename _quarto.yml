@@ -12,7 +12,11 @@ project:
     - data/retired_dataset_ids.csv
     - data/cohort_overlap_audit.csv
     - data/verification/cross_omics_utility_review.csv
+    - data/verification/discovery_batch_001.csv
     - data/verification/status_taxonomy_review.csv
+    - data/verification/verification_batch_001.csv
+    - data/verification/verification_batch_002.csv
+    - data/verification/verification_changes_log.csv
     - data/verification/priority_cross_omics_source_review.csv
     - data/protect_overlap_review.csv
     - data/verification/manual_review_status_evidence.csv
@@ -78,6 +82,8 @@ project:
     - data/verification/study_family_filter_decision_review.csv
     - data/verification/unclear_countability_review_pack.csv
     - data/verification/study_family_rollout_summary_draft.csv
+    - data/verification/resource_manifest_closure_qa.csv
+    - data/verification/final_explorer_smoke_test_plan.csv
 
 author: "Dahham Alsoud"
 

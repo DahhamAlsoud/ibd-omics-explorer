@@ -1,0 +1,7 @@
+metric,count
+source_verification_csvs,49
+quarto_verification_resources,49
+docs_verification_csvs,49
+missing_from_quarto_yml,0
+missing_from_docs,0
+counts_match,TRUE

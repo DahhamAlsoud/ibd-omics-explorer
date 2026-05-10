@@ -167,7 +167,7 @@ function renderDatasetExplorer(data) {
       return termMatch && omicsMatch && accessMatch && sampleMatch && verificationMatch;
     });
     count.textContent = `Showing ${filtered.length} of ${data.length} entries`;
-    renderTable(table, filtered, columns, labels, 37);
+    renderTable(table, filtered, columns, labels, filtered.length);
     renderTable(
       detailTable,
       filtered,
@@ -209,7 +209,7 @@ function renderDatasetExplorer(data) {
         verification_notes: "Verification Notes",
         evidence_url: "Evidence"
       },
-      37
+      filtered.length
     );
   }
 

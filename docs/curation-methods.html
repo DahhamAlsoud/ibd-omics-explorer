@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="current-registry-state" class="level2">
 <h2 class="anchored" data-anchor-id="current-registry-state">Current Registry State</h2>
-<p>The current registry contains <strong>37 entries</strong>. Most entries remain <code>pending_review</code>, while the first verification batch has source, metadata, or publication checks recorded. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.</p>
+<p>The current registry contains <strong>69 entries</strong>. The newer systematic-discovery rows are intentionally marked as <code>source_checked</code> rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.</p>
 <p>Before using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with <code>Unclear</code> fields should be treated as leads for manual curation rather than confirmed facts.</p>
 <hr>
 </section>
@@ -586,7 +586,7 @@ ul.task-list li input[type="checkbox"] {
 <li>A row becomes <code>needs_revision</code> if source evidence contradicts the current registry row.</li>
 <li>A row should only become <code>analysis_ready_candidate</code> after human review of source, metadata, publication, access status, and the intended analysis context.</li>
 </ol>
-<p>The first verification batch covers selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, and controlled-access genetics resources. Rows not in that batch remain <code>pending_review</code>.</p>
+<p>Verification batches cover selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, metabolomics, methylation, transcriptomics, and controlled-access genetics resources. Systematic-discovery additions are retained as <code>source_checked</code> until they receive deeper row-level verification.</p>
 <hr>
 </section>
 <section id="metadata-caveats" class="level2">
@@ -633,7 +633,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
-<script src="site-tables.js"></script>
+<script src="site-tables.js?v=20260510-2"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

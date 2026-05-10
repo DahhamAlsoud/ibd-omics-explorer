@@ -19,7 +19,7 @@ The registry aims to be **inclusive and expandable**. The current dataset is a s
 
 ## Current Registry State
 
-The current registry contains **37 entries**. Most entries remain `pending_review`, while the first verification batch has source, metadata, or publication checks recorded. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.
+The current registry contains **69 entries**. The newer systematic-discovery rows are intentionally marked as `source_checked` rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.
 
 Before using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with `Unclear` fields should be treated as leads for manual curation rather than confirmed facts.
 
@@ -162,7 +162,7 @@ The verification workflow is deliberately conservative:
 5. A row becomes `needs_revision` if source evidence contradicts the current registry row.
 6. A row should only become `analysis_ready_candidate` after human review of source, metadata, publication, access status, and the intended analysis context.
 
-The first verification batch covers selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, and controlled-access genetics resources. Rows not in that batch remain `pending_review`.
+Verification batches cover selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, metabolomics, methylation, transcriptomics, and controlled-access genetics resources. Systematic-discovery additions are retained as `source_checked` until they receive deeper row-level verification.
 
 ---
 

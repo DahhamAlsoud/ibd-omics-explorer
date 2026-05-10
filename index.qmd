@@ -25,15 +25,15 @@ format:
 
 <div class="metrics-grid">
 <div class="metric-card">
-<div class="metric-value">37</div>
+<div class="metric-value">69</div>
 <div class="metric-label">Registry Entries</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">14</div>
+<div class="metric-value">15</div>
 <div class="metric-label">Layer Tags</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">17</div>
+<div class="metric-value">21</div>
 <div class="metric-label">Repositories</div>
 </div>
 <div class="metric-card">

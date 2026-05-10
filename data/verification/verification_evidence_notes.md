@@ -46,3 +46,22 @@ Additional conservative decisions:
 - DS022 is `manual_review_needed` because the current CELLxGENE row is a portal-level grouping and should be split into specific collection-backed rows before being treated as a verified dataset.
 - DS032 was retained but reframed as an IBD-relevant epithelial/mechanistic methylation resource rather than a direct human IBD patient cohort.
 - DS033, DS034, DS036, and DS037 are `metadata_checked` resource-level genetics rows; sample-level fields remain `Unclear` or `Not a primary dataset` where public sources do not support a cohort interpretation.
+
+## Discovery Batch 001
+
+Rows added:
+
+- DS038-DS049: missing transcriptomics, single-cell, methylation, and treatment-trial expression resources, including PROTECT and RISK transcriptomics.
+- DS050-DS059: missing proteomics, metabolomics, metagenomics, and multi-omics resources.
+- DS060-DS069: additional GEO bulk transcriptomics resources identified from systematic IBD transcriptomics searches.
+
+Outputs:
+
+- `discovery_batch_001.csv`: source-checked candidate additions from systematic public-source discovery.
+
+Conservative decisions for discovery rows:
+
+- New discovery rows start as `source_checked`, not `publication_checked`, unless already covered by a prior verification batch.
+- Publication titles, PMIDs, DOIs, sample counts, and cohort labels are filled when strong public-source evidence was found, but they remain flagged for deeper row-level verification.
+- PROTECT now appears as multiple modality-specific rows: transcriptomics (`GSE109142`, `GSE150961`), methylation (`GSE185061`), plasma metabolomics (`ST002470`), and stool metabolomics (`ST002471`).
+- RISK now appears as pediatric rectal transcriptomics (`GSE117993`) and ileal Crohn transcriptomics (`GSE93624`), in addition to the already present pediatric Crohn ileal transcriptome/microbiome row (`GSE57945`).

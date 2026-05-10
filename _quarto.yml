@@ -60,6 +60,8 @@ project:
     - data/verification/uniti_overlap_decision_table.csv
     - data/verification/protect_family_overlap_check.csv
     - data/verification/pursuit_golimumab_overlap_check.csv
+    - data/verification/risk_family_overlap_check.csv
+    - data/verification/non_act1_anti_tnf_overlap_check.csv
 
 author: "Dahham Alsoud"
 

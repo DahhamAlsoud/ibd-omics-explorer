@@ -64,6 +64,8 @@ project:
     - data/verification/non_act1_anti_tnf_overlap_check.csv
     - data/verification/ibdmdb_ihmp_family_overlap_check.csv
     - data/verification/single_cell_family_overlap_check.csv
+    - data/verification/natcomm2023_multimodality_overlap_check.csv
+    - data/verification/prism_broad_family_overlap_check.csv
 
 author: "Dahham Alsoud"
 

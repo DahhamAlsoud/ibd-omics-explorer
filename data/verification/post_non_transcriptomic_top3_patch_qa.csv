@@ -1,0 +1,11 @@
+check_id,scope,status,severity,finding,recommended_fix
+PNQ001,registry_rows,pass,info,"Registry has 116 rows after DS120-DS122 implementation, with max dataset_id DS122.","None."
+PNQ002,schema,pass,info,"data/ibd_omics_datasets.csv retains the 55-column schema and matches the patch-plan header order.","None."
+PNQ003,row_exactness,pass,info,"DS120, DS121, and DS122 match data/verification/non_transcriptomic_top3_full_row_patch_plan.csv field-for-field.","None."
+PNQ004,duplicates,pass,info,"No duplicate dataset_id or exact accession strings detected after implementation.","None."
+PNQ005,countability_totals,pass,info,"Current countability totals are TRUE=93, FALSE=9, Unclear=14, matching expected post-batch totals.","None."
+PNQ006,DS120_assay_label,pass,info,"DS120 uses conservative Microbiome / metagenomic profiling and metagenomic PCR-based profiling language; it does not label the row as shotgun metagenomics.","None."
+PNQ007,DS121_resolution_plan,fail,error,"DS121 is present in unclear_countability_resolution_plan.csv but the rationale/evidence/action fields are blank.","Populate DS121 reason_for_unclear, exact_public_evidence_needed, likely_resolvability, and recommended_next_action for RISK methylation overlap review."
+PNQ008,DS121_review_pack,fail,error,"DS121 is missing from unclear_countability_review_pack.csv, despite count_as_independent_cohort=Unclear in the registry.","Add DS121 to the RISK likely_overlap group or create a RISK methylation crosswalk group covering DS005/DS040/DS041/DS121."
+PNQ009,DS121_resolution_plan_postfix,pass,info,"DS121 rationale, evidence-needed, likely-resolvability, and next-action fields were populated after PNQ007.","None."
+PNQ010,DS121_review_pack_postfix,pass,info,"DS121 was added to the RISK likely-overlap review group with DS005, DS040, and DS041 after PNQ008.","None."

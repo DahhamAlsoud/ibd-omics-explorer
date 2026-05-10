@@ -15,6 +15,11 @@ project:
     - data/verification/status_taxonomy_review.csv
     - data/verification/priority_cross_omics_source_review.csv
     - data/protect_overlap_review.csv
+    - data/verification/manual_review_status_evidence.csv
+    - data/risk_overlap_review.csv
+    - data/verification/next_cross_omics_source_review.csv
+    - data/ibd200_overlap_review.csv
+    - data/verification/normalization_implementation_plan.csv
 
 author: "Dahham Alsoud"
 

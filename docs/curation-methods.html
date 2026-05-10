@@ -21,7 +21,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -95,41 +95,41 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./datasets.html">
+    <a class="nav-link" href="./datasets.html"> 
 <span class="menu-text">Datasets</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./integrated-resources.html">
+    <a class="nav-link" href="./integrated-resources.html"> 
 <span class="menu-text">Integrated Resources</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./omics-layers.html">
+    <a class="nav-link" href="./omics-layers.html"> 
 <span class="menu-text">Omics Layers</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./repositories.html">
+    <a class="nav-link" href="./repositories.html"> 
 <span class="menu-text">Repositories</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./use-cases.html">
+    <a class="nav-link" href="./use-cases.html"> 
 <span class="menu-text">Use Cases</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./verification-queue.html">
+    <a class="nav-link" href="./verification-queue.html"> 
 <span class="menu-text">Verification</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./curation-methods.html" aria-current="page">
+    <a class="nav-link active" href="./curation-methods.html" aria-current="page"> 
 <span class="menu-text">Curation</span></a>
-  </li>
+  </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
-  </li>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -144,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
-
+   
   <ul>
   <li><a href="#purpose-and-scope" id="toc-purpose-and-scope" class="nav-link active" data-scroll-target="#purpose-and-scope">Purpose and Scope</a></li>
   <li><a href="#current-registry-state" id="toc-current-registry-state" class="nav-link" data-scroll-target="#current-registry-state">Current Registry State</a></li>
@@ -180,11 +180,11 @@ ul.task-list li input[type="checkbox"] {
              <p>Dahham Alsoud </p>
           </div>
   </div>
-
-
-
+    
+  
+    
   </div>
-
+  
 
 
 </header>
@@ -637,7 +637,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 </main> <!-- /main -->
-<script src="site-tables.js?v=20260510-4"></script>
+<script src="site-tables.js?v=20260510-5"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -649,7 +649,7 @@ ul.task-list li input[type="checkbox"] {
     anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {
+        if (clz.startsWith('code-annotation-')) {                     
           return true;
         }
       }
@@ -669,11 +669,11 @@ ul.task-list li input[type="checkbox"] {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button,
-          { trigger: "manual",
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();
+        tooltip.show();    
       }
       setTimeout(function() {
         if (tooltip) {
@@ -757,7 +757,7 @@ ul.task-list li input[type="checkbox"] {
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config);
+      window.tippy(el, config); 
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -832,7 +832,7 @@ ul.task-list li input[type="checkbox"] {
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined;
+        let hash = undefined; 
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -860,7 +860,7 @@ ul.task-list li input[type="checkbox"] {
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              }
+              } 
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -884,7 +884,7 @@ ul.task-list li input[type="checkbox"] {
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            }
+            } 
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -924,7 +924,7 @@ ul.task-list li input[type="checkbox"] {
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it
+              // cook up a div (if necessary) and position it 
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -1050,7 +1050,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="nav-footer">
     <div class="nav-footer-left">
 <p>IBD Omics Explorer - A curated academic dataset registry</p>
-</div>
+</div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>

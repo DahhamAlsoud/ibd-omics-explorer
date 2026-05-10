@@ -13,6 +13,16 @@ This page separates integrated resources from primary datasets. These resources 
 
 ---
 
+## Source Dataset Coverage
+
+<div class="page-intro">
+This audit tracks source accessions named by integrated resources and whether each one is already represented as a primary row in the Dataset Explorer. Direct IBD cohorts are marked as add candidates; atlas, fetal, reference, controlled-access, or unclear components are retained here for review instead of being forced into the primary dataset table.
+</div>
+
+<div id="resource-coverage"></div>
+
+---
+
 ## How to Interpret This Page
 
 Integrated resources may combine many source datasets, reprocess data with their own pipelines, or expose only derived summaries. They should not replace the original accession-level records when you need raw data, exact sample metadata, or reproducible cohort definitions.

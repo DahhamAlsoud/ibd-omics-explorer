@@ -413,6 +413,109 @@ function renderIntegratedResources(resources) {
   update();
 }
 
+function renderResourceCoverage(coverage) {
+  const root = document.querySelector("#resource-coverage");
+  if (!root) return;
+
+  const labels = {
+    resource_name: "Resource",
+    component_accession: "Component Accession",
+    component_title: "Component Dataset",
+    component_role: "Role",
+    present_in_primary_dataset_table: "In Dataset Explorer",
+    dataset_id: "Dataset ID",
+    should_add_as_primary_dataset: "Primary Add Candidate",
+    reason: "Reason",
+    manual_review_needed: "Manual Review",
+    evidence_url: "Evidence"
+  };
+
+  root.innerHTML = `
+    <div class="filter-panel coverage-filters">
+      <label>Search <input id="coverage-search" type="search" placeholder="GSE116222, pediatric, atlas, Crohn"></label>
+      <label>Resource <select id="coverage-resource"><option>All</option></select></label>
+      <label>Present <select id="coverage-present"><option>All</option></select></label>
+      <label>Add Candidate <select id="coverage-add"><option>All</option></select></label>
+      <label>Manual Review <select id="coverage-review"><option>All</option></select></label>
+    </div>
+    <div class="metrics-grid compact-metrics" id="coverage-metrics"></div>
+    <p id="coverage-count" class="table-note"></p>
+    <div id="coverage-table"></div>
+  `;
+
+  const search = root.querySelector("#coverage-search");
+  const resource = root.querySelector("#coverage-resource");
+  const present = root.querySelector("#coverage-present");
+  const add = root.querySelector("#coverage-add");
+  const review = root.querySelector("#coverage-review");
+  const metrics = root.querySelector("#coverage-metrics");
+  const count = root.querySelector("#coverage-count");
+  const table = root.querySelector("#coverage-table");
+
+  uniqueValues(coverage, "resource_name").forEach((value) => resource.append(new Option(value, value)));
+  uniqueValues(coverage, "present_in_primary_dataset_table").forEach((value) => present.append(new Option(value, value)));
+  uniqueValues(coverage, "should_add_as_primary_dataset").forEach((value) => add.append(new Option(value, value)));
+  uniqueValues(coverage, "manual_review_needed").forEach((value) => review.append(new Option(value, value)));
+
+  function update() {
+    const term = search.value.trim().toLowerCase();
+    const filtered = coverage.filter((row) => {
+      const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+      const resourceMatch = resource.value === "All" || row.resource_name === resource.value;
+      const presentMatch = present.value === "All" || row.present_in_primary_dataset_table === present.value;
+      const addMatch = add.value === "All" || row.should_add_as_primary_dataset === add.value;
+      const reviewMatch = review.value === "All" || row.manual_review_needed === review.value;
+      return termMatch && resourceMatch && presentMatch && addMatch && reviewMatch;
+    });
+
+    const uniqueComponents = new Set(coverage.map((row) => row.component_accession)).size;
+    const missing = new Set(
+      coverage
+        .filter((row) => row.present_in_primary_dataset_table !== "TRUE")
+        .map((row) => row.component_accession)
+    ).size;
+    const addCandidates = new Set(
+      coverage
+        .filter((row) => row.should_add_as_primary_dataset === "Yes")
+        .map((row) => row.component_accession)
+    ).size;
+    const manualReview = new Set(
+      coverage
+        .filter((row) => row.manual_review_needed === "TRUE")
+        .map((row) => row.component_accession)
+    ).size;
+
+    metrics.innerHTML = `
+      <div class="metric-card"><div class="metric-value">${uniqueComponents}</div><div class="metric-label">Unique Components</div></div>
+      <div class="metric-card"><div class="metric-value">${missing}</div><div class="metric-label">Missing Links</div></div>
+      <div class="metric-card"><div class="metric-value">${addCandidates}</div><div class="metric-label">Primary Add Candidates</div></div>
+      <div class="metric-card"><div class="metric-value">${manualReview}</div><div class="metric-label">Manual Review</div></div>
+    `;
+
+    count.textContent = `Showing ${filtered.length} of ${coverage.length} resource-component links`;
+    renderTable(
+      table,
+      filtered,
+      [
+        "resource_name",
+        "component_accession",
+        "component_title",
+        "component_role",
+        "present_in_primary_dataset_table",
+        "dataset_id",
+        "should_add_as_primary_dataset",
+        "manual_review_needed",
+        "evidence_url"
+      ],
+      labels,
+      filtered.length
+    );
+  }
+
+  [search, resource, present, add, review].forEach((control) => control.addEventListener("input", update));
+  update();
+}
+
 async function initRegistryTables() {
   const response = await fetch("data/ibd_omics_datasets.csv");
   const data = parseCsv(await response.text());
@@ -425,6 +528,13 @@ async function initRegistryTables() {
     const resourcesResponse = await fetch("data/integrated_resources.csv");
     const resources = parseCsv(await resourcesResponse.text());
     renderIntegratedResources(resources);
+  }
+
+  const coverageRoot = document.querySelector("#resource-coverage");
+  if (coverageRoot) {
+    const coverageResponse = await fetch("data/resource_coverage.csv");
+    const coverage = parseCsv(await coverageResponse.text());
+    renderResourceCoverage(coverage);
   }
 }
 

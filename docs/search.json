@@ -98,6 +98,13 @@
     "text": "Resource Table"
   },
   {
+    "objectID": "integrated-resources.html#source-dataset-coverage",
+    "href": "integrated-resources.html#source-dataset-coverage",
+    "title": "Integrated Resources",
+    "section": "Source Dataset Coverage",
+    "text": "Source Dataset Coverage\n\nThis audit tracks source accessions named by integrated resources and whether each one is already represented as a primary row in the Dataset Explorer. Direct IBD cohorts are marked as add candidates; atlas, fetal, reference, controlled-access, or unclear components are retained here for review instead of being forced into the primary dataset table."
+  },
+  {
     "objectID": "integrated-resources.html#how-to-interpret-this-page",
     "href": "integrated-resources.html#how-to-interpret-this-page",
     "title": "Integrated Resources",

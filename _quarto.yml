@@ -113,6 +113,8 @@ project:
     - data/verification/clinical_trial_omics_gap_search_retry.csv
     - data/verification/clinical_trial_omics_already_covered.csv
     - data/verification/single_cell_spatial_row_patch_plan.csv
+    - data/verification/top_clinical_trial_candidate_verification.csv
+    - data/verification/single_cell_spatial_patch_schema_check.csv
 
 author: "Dahham Alsoud"
 

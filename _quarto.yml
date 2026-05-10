@@ -68,6 +68,8 @@ project:
     - data/verification/prism_broad_family_overlap_check.csv
     - data/verification/large_bulk_family_overlap_check.csv
     - data/verification/mass_spec_family_overlap_check.csv
+    - data/verification/epigenomics_family_overlap_check.csv
+    - data/verification/remaining_transcriptomics_family_overlap_check.csv
 
 author: "Dahham Alsoud"
 

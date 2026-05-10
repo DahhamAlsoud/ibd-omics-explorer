@@ -52,6 +52,8 @@ project:
     - data/verification/certifi_family_source_check.csv
     - data/unifi_eucalyptus_implementation_qa.csv
     - data/verification/ds049_sample_size_cleanup_plan.csv
+    - data/verification/ds060_golimumab_family_source_check.csv
+    - data/verification/ds088_gemini_family_source_check.csv
 
 author: "Dahham Alsoud"
 

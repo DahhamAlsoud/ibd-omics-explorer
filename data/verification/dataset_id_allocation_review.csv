@@ -1,0 +1,12 @@
+plan_row,current_id,recommended_id,accession,notes
+clinical_trial,DS109,DS109,GSE207465,"Keep as proposed; implement clinical trial patch first because it is full-width against the primary registry schema."
+clinical_trial,DS110,DS110,GSE98820,"Keep as proposed."
+clinical_trial,DS111,DS111,GSE111761,"Keep as proposed."
+clinical_trial,DS112,DS112,GSE261334,"Keep as proposed."
+clinical_trial,DS113,DS113,GSE228165,"Keep as proposed."
+single_cell_spatial,DS109,DS114,"GSE250487; phs003502.v1.p1","Remap family anchor from DS109 to DS114."
+single_cell_spatial,DS110,DS115,"GSE250488; phs003502.v1.p1","Remap component_of_dataset_id from DS109 to DS114."
+single_cell_spatial,DS111,DS116,"GSE250490; phs003502.v1.p1","Remap component_of_dataset_id from DS109 to DS114."
+single_cell_spatial,DS112,DS117,"EGAS50000000140; EGAD50000000198","Remap only."
+single_cell_spatial,DS113,DS118,GSE312415,"Remap; source-check GSE312415 before implementation."
+single_cell_spatial,DS114,DS119,GSE312420,"Remap; keep paired with DS118 if implemented."

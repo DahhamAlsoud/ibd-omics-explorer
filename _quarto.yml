@@ -115,6 +115,11 @@ project:
     - data/verification/single_cell_spatial_row_patch_plan.csv
     - data/verification/top_clinical_trial_candidate_verification.csv
     - data/verification/single_cell_spatial_patch_schema_check.csv
+    - data/verification/gse312415_source_check.csv
+    - data/verification/clinical_trial_row_patch_plan.csv
+    - data/verification/dataset_id_allocation_review.csv
+    - data/verification/clinical_trial_row_patch_schema_qa.csv
+    - data/verification/post_clinical_trial_patch_qa.csv
 
 author: "Dahham Alsoud"
 

@@ -1,10 +1,10 @@
 metric,value,row_ids
-total_rows,102,
+total_rows,107,
 blank_study_family,0,
 blank_count_as_independent_cohort,0,
-count_TRUE,85,
+count_TRUE,89,
 count_FALSE,7,"DS032; DS035; DS039; DS048; DS059; DS062; DS027"
-count_Unclear,10,"DS005; DS040; DS041; DS042; DS047; DS061; DS088; DS095; DS099; DS107"
+count_Unclear,11,"DS005; DS040; DS041; DS042; DS047; DS061; DS088; DS095; DS099; DS107; DS109"
 invalid_count_as_independent_cohort_values,0,
 missing_overlap_notes_where_count_FALSE_or_Unclear,0,
 suspicious_component_of_dataset_id_refs,0,

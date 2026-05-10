@@ -1,0 +1,6 @@
+dataset_id,schema_value_qa,recommendation
+DS109,"Values valid. count_as_independent_cohort=Unclear is appropriate due UNITI family overlap.","Safe to add if curator accepts UNITI blood row with unresolved cross-tissue countability."
+DS110,"Values valid, but citation is unresolved: publication/PMID/DOI all Unclear, publication_checked=FALSE.","Add as source_checked only; do not promote beyond source-checked until citation is resolved."
+DS111,"Values valid. Small non-trial mechanistic anti-TNF cohort, but evidence/status fields are internally consistent.","Safe to add, with caveat that this is not a named clinical trial."
+DS112,"Values valid. raw_data_available=No, processed=Yes, and treatment/longitudinal flags are coherent.","Safe to add."
+DS113,"Values valid but weaker: raw/processed access, subject count, and longitudinal status remain Unclear.","Add as source_checked/manual-review-needed; retain Unclear fields."

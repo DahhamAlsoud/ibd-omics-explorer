@@ -1,0 +1,22 @@
+field,value
+add_recommendation,"Add as DS113 or next available ID after allocation review; valid CosMx sibling/component of the same IBD spatial benchmark family as GSE312420, not independently countable until sibling-platform policy is settled."
+geo_title,"Performance differences in spatial transcriptomics platforms identify Treg biology in human inflammatory bowel disease [CosMx]"
+geo_status,"Public on March 13, 2026"
+organism,"Homo sapiens"
+experiment_type,Other
+platform,"GPL33484; NanoString CosMx SMI (human)"
+sample_count,"60 GEO sample records, GSM9345400 through GSM9345459"
+sample_tissue_scope,"Intestinal biopsies / tissue sections from IBD and controls; sample titles include ileum, rectum, colon, CD, UC, inflamed/noninflamed, and HC"
+availability,"GEO family SOFT, MINiML, and series matrix links exist; series supplementary package GSE312415_files.tar.gz is available as a 6.0 GB TAR"
+per_sample_supplementary_files,"NONE in checked sample records; data are packaged at series level"
+bioproject,PRJNA1373285
+sra,"No SRA relation in GEO SOFT; NCBI SRA query for PRJNA1373285 returned 0 records"
+publication_linkage,"GEO says Citation missing; linkage to the Nature Communications benchmark is strong but not yet encoded in GEO"
+recommended_accession,"GSE312415; PRJNA1373285"
+recommended_repository,"GEO; BioProject"
+recommended_omics_layer,"Spatial transcriptomics"
+recommended_platform,"NanoString CosMx SMI (human); GPL33484"
+recommended_study_family,IBD_spatial_platform_benchmark_GSE312415_GSE312420
+recommended_countability,Unclear
+recommended_overlap_notes,"CosMx component of the IBD spatial transcriptomics platform benchmark. Same benchmark family as GSE312420/Xenium; public GEO evidence supports a CosMx-specific 60-sample record, but subject/section overlap with the Xenium sibling is not fully resolved from public metadata. Do not count independently until sibling-platform counting policy is decided."
+evidence_urls,"https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE312415; https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL33484; https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1373285; https://www.nature.com/articles/s41467-026-72482-w"

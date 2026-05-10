@@ -160,6 +160,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#curation-status-labels" id="toc-curation-status-labels" class="nav-link" data-scroll-target="#curation-status-labels">Curation Status Labels</a></li>
   <li><a href="#metadata-field-definitions" id="toc-metadata-field-definitions" class="nav-link" data-scroll-target="#metadata-field-definitions">Metadata Field Definitions</a></li>
   <li><a href="#verification-workflow" id="toc-verification-workflow" class="nav-link" data-scroll-target="#verification-workflow">Verification Workflow</a></li>
+  <li><a href="#cohort-families-and-overlap" id="toc-cohort-families-and-overlap" class="nav-link" data-scroll-target="#cohort-families-and-overlap">Cohort Families and Overlap</a></li>
   <li><a href="#metadata-caveats" id="toc-metadata-caveats" class="nav-link" data-scroll-target="#metadata-caveats">Metadata Caveats</a></li>
   <li><a href="#how-to-contribute-or-correct" id="toc-how-to-contribute-or-correct" class="nav-link" data-scroll-target="#how-to-contribute-or-correct">How to Contribute or Correct</a></li>
   <li><a href="#data-sources-for-curation" id="toc-data-sources-for-curation" class="nav-link" data-scroll-target="#data-sources-for-curation">Data Sources for Curation</a></li>
@@ -602,6 +603,22 @@ ul.task-list li input[type="checkbox"] {
 <li>A row should only become <code>analysis_ready_candidate</code> after human review of source, metadata, publication, access status, and the intended analysis context.</li>
 </ol>
 <p>Verification batches cover selected high-value/high-risk entries across multi-omics, single-cell, proteomics, metabolomics, methylation, transcriptomics, and controlled-access genetics resources. Atlases, portals, curated databases, and consortium resources are tracked on the Integrated Resources page because they are not single accession-level datasets. Systematic-discovery additions are retained as <code>source_checked</code> until they receive deeper row-level verification.</p>
+<hr>
+</section>
+<section id="cohort-families-and-overlap" class="level2">
+<h2 class="anchored" data-anchor-id="cohort-families-and-overlap">Cohort Families and Overlap</h2>
+<p>Some registry rows describe different accessions, assays, timepoints, or derived resources from the same underlying study population. These rows are useful as separate dataset records, but their subject or sample counts should not automatically be summed.</p>
+<p>When available, cohort-family review fields identify related rows, paired modality derivatives, and rows that should be treated as components of a shared study family rather than independent cohorts. Rows marked as uncertain should be interpreted conservatively until source-level sample IDs or study documentation are reviewed.</p>
+<p>For de-duplicated cohort counts, use the cohort-family audit files rather than summing the main dataset table directly.</p>
+<p>Therapeutic-family reviews are included when available, but rows requiring source-level sample-ID review should be treated as provisional for cohort counting.</p>
+<p>Detailed review artifacts:</p>
+<ul>
+<li><a href="data/cohort_overlap_audit.csv">Cohort overlap audit</a></li>
+<li><a href="data/protect_overlap_review.csv">PROTECT overlap review</a></li>
+<li><a href="data/risk_overlap_review.csv">RISK pediatric CD overlap review</a></li>
+<li><a href="data/ibd200_overlap_review.csv">IBD200 overlap review</a></li>
+<li><a href="data/therapeutic_overlap_review.csv">Therapeutic overlap review, provisional</a></li>
+</ul>
 <hr>
 </section>
 <section id="metadata-caveats" class="level2">

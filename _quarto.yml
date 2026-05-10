@@ -25,6 +25,10 @@ project:
     - data/cohort_family_schema_proposal.csv
     - data/cohort_family_first_pass_plan.csv
     - data/review_artifact_ui_placement.csv
+    - data/verification/infliximab_comparator_source_check.csv
+    - data/verification/infliximab_uc_overlap_source_check.csv
+    - data/verification/anti_tnf_independence_source_check.csv
+    - data/cohort_family_column_risk_review.csv
 
 author: "Dahham Alsoud"
 

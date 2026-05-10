@@ -266,6 +266,13 @@
     "text": "Verification Workflow\nThe verification workflow is deliberately conservative:\n\nNew rows start as pending_review.\nA row moves to source_checked only after the source URL opens and matches the intended accession or resource.\nA row moves to metadata_checked only after key study metadata are checked against a source record.\nA row moves to publication_checked only after citation fields are checked against a publication, DOI, PubMed, or repository-linked citation.\nA row becomes needs_revision if source evidence contradicts the current registry row.\nA row should only become analysis_ready_candidate after human review of source, metadata, publication, access status, and the intended analysis context.\n\nVerification batches cover selected high-value/high-risk entries across multi-omics, single-cell, proteomics, metabolomics, methylation, transcriptomics, and controlled-access genetics resources. Atlases, portals, curated databases, and consortium resources are tracked on the Integrated Resources page because they are not single accession-level datasets. Systematic-discovery additions are retained as source_checked until they receive deeper row-level verification."
   },
   {
+    "objectID": "curation-methods.html#cohort-families-and-overlap",
+    "href": "curation-methods.html#cohort-families-and-overlap",
+    "title": "Curation Methods",
+    "section": "Cohort Families and Overlap",
+    "text": "Cohort Families and Overlap\nSome registry rows describe different accessions, assays, timepoints, or derived resources from the same underlying study population. These rows are useful as separate dataset records, but their subject or sample counts should not automatically be summed.\nWhen available, cohort-family review fields identify related rows, paired modality derivatives, and rows that should be treated as components of a shared study family rather than independent cohorts. Rows marked as uncertain should be interpreted conservatively until source-level sample IDs or study documentation are reviewed.\nFor de-duplicated cohort counts, use the cohort-family audit files rather than summing the main dataset table directly.\nTherapeutic-family reviews are included when available, but rows requiring source-level sample-ID review should be treated as provisional for cohort counting.\nDetailed review artifacts:\n\nCohort overlap audit\nPROTECT overlap review\nRISK pediatric CD overlap review\nIBD200 overlap review\nTherapeutic overlap review, provisional"
+  },
+  {
     "objectID": "curation-methods.html#metadata-caveats",
     "href": "curation-methods.html#metadata-caveats",
     "title": "Curation Methods",

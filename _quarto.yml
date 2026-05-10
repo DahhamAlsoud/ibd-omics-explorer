@@ -58,6 +58,8 @@ project:
     - data/verification/ds088_ds061_ifx_overlap_check.csv
     - data/verification/ds085_ds105_etrolizumab_overlap_check.csv
     - data/verification/uniti_overlap_decision_table.csv
+    - data/verification/protect_family_overlap_check.csv
+    - data/verification/pursuit_golimumab_overlap_check.csv
 
 author: "Dahham Alsoud"
 

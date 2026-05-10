@@ -1,0 +1,18 @@
+item,value
+recommended_script,R/qa_cohort_counting.R
+recommended_generated_csv,data/verification/cohort_counting_qa_report.csv
+report_columns,"check_id; check_group; severity; status; n_rows; affected_dataset_ids; expected; observed; recommended_action"
+check_CF001,"Required fields exist: study_family, component_of_dataset_id, count_as_independent_cohort, overlap_notes."
+check_CF002,"No blank study_family after rollout."
+check_CF003,"count_as_independent_cohort values are valid: TRUE, FALSE, Unclear."
+check_CF004,"No blank countability values."
+check_CF005,"FALSE rows have overlap_notes."
+check_CF006,"Unclear rows have overlap_notes."
+check_CF007,"component_of_dataset_id references valid dataset IDs."
+check_CF008,"component_of_dataset_id is blank or a dataset ID; not Unclear, free text, or URL."
+check_CF009,"Component rows should not be countable TRUE unless explicitly reviewed."
+check_CF010,"Duplicate families summarized with countability mix."
+check_CF011,"FALSE count summary lists all non-independent rows."
+check_CF012,"Unclear count summary lists all unresolved rows."
+check_CF013,"Current rollout totals: total datasets, unique families, TRUE, FALSE, Unclear."
+implementation_recommendation,"Use both script and generated CSV. The script is source of truth; the CSV is committed after curation batches. Structural errors should fail; ambiguity should be review."

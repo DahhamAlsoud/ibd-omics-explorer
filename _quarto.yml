@@ -86,6 +86,8 @@ project:
     - data/verification/final_explorer_smoke_test_plan.csv
     - data/verification/final_explorer_smoke_test_results.csv
     - data/verification/post_rollout_next_priorities.csv
+    - data/verification/unclear_countability_resolution_plan.csv
+    - data/verification/cohort_counting_qa_report_design.csv
 
 author: "Dahham Alsoud"
 

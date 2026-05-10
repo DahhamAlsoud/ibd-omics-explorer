@@ -20,6 +20,11 @@ project:
     - data/verification/next_cross_omics_source_review.csv
     - data/ibd200_overlap_review.csv
     - data/verification/normalization_implementation_plan.csv
+    - data/verification/ibd200_row_patch_plan.csv
+    - data/therapeutic_overlap_review.csv
+    - data/cohort_family_schema_proposal.csv
+    - data/cohort_family_first_pass_plan.csv
+    - data/review_artifact_ui_placement.csv
 
 author: "Dahham Alsoud"
 

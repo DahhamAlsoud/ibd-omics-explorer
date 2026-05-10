@@ -1,0 +1,8 @@
+"surface","recommendation","rationale"
+"Dataset table filters","Add a single optional study_family filter, plus countable_as_independent_cohort only if populated. Keep family fields out of default columns.","Users need to avoid overcounting while browsing, but the main table is already dense."
+"Dataset detail panel","Show study_family, family_role, component_of, countable_as_independent_cohort, and overlap_note.","Best place for the actual warning: visible when a user inspects a row, without cluttering every row."
+"Curation page","Add a short Cohort-family and overcounting rules section with links to review artifacts.","This is where users should learn that rows are accessions/modalities, not always independent cohorts."
+"Orchestrator page","Keep it task/status oriented. Add links to completed overlap-review artifacts only.","Good for provenance of review work, not for end-user filtering."
+"Download-only resources","Keep detailed artifacts here: cohort_overlap_audit.csv, protect_overlap_review.csv, risk_overlap_review.csv, ibd200_overlap_review.csv, and future family audits.","Full audit evidence is useful to curators and power users, but too detailed for the main UI."
+"Integrated resources/resource coverage","Do not surface cohort-family logic here, except as download links if needed.","That page is about external resource coverage, not cohort independence."
+"Primary user-facing rule","Sample counts should not be summed across rows sharing the same study_family unless countable_as_independent_cohort is explicitly Yes.","This prevents false cohort-size inflation while preserving accession-level discoverability."

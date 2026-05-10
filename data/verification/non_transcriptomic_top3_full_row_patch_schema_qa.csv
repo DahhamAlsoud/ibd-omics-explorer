@@ -1,0 +1,9 @@
+check_id,scope,status,severity,finding,recommended_fix
+NTQ001,header,pass,info,"Patch plan has 55 columns matching data/ibd_omics_datasets.csv names and order.","None."
+NTQ002,ids,pass,info,"Proposed IDs DS120-DS122 are available after current max DS119; no duplicate IDs or exact accession strings in the current registry.","None."
+NTQ003,value_conventions,pass,info,"TRUE/FALSE/Unclear and Yes/No/Partial/Unclear fields use local conventions.","None."
+NTQ004,DS120,pass,warning,"PRJEB18471 sample-size wording is conservative and notes the 118-subject/555-sample source count versus larger archive run/accession counts.","Keep the caveat; do not treat archive run totals as biological samples without run-to-sample reconciliation."
+NTQ005,DS120,pass,warning,"PRJEB18471 assay labels avoid an unsupported shotgun-metagenomics claim and use microbiome/metagenomic-profiling language.","Keep conservative assay wording unless methods/source metadata are verified more deeply."
+NTQ006,DS121,pass,warning,"GSE112611 countability is Unclear because it belongs to the broad RISK family and public metadata do not resolve overlap with DS005/DS040/DS041.","If implemented, add DS121 to unclear_countability_resolution_plan.csv and unclear_countability_review_pack.csv."
+NTQ007,DS122,pass,warning,"ST003312 and ST003313 are represented as one combined serum/fecal metabolomics family row counted once, avoiding duplicate cohort counting.","Keep one row with both accessions; do not split into independent serum and feces cohort rows."
+NTQ008,curation_status,fix_recommended,minor,"Patch rows use curation_status='Patch plan; source checked', which is not a current main-registry convention.","Before implementation, change to a local convention such as 'Systematic discovery; source checked' or another approved source-checked status."

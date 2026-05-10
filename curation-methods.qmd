@@ -19,7 +19,7 @@ The registry aims to be **inclusive and expandable**. The current dataset is a s
 
 ## Current Registry State
 
-The current dataset registry contains **107 primary dataset entries** plus **10 integrated resources** tracked separately. The newer systematic-discovery rows are intentionally marked as `source_checked` rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.
+The current dataset registry contains **113 primary dataset entries** plus **10 integrated resources** tracked separately. The newer systematic-discovery rows are intentionally marked as `source_checked` rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.
 
 Before using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with `Unclear` fields should be treated as leads for manual curation rather than confirmed facts.
 
@@ -190,9 +190,9 @@ Therapeutic-family reviews are included when available, but rows requiring sourc
 
 The primary dataset CSV now includes appended cohort-family fields (`study_family`, `component_of_dataset_id`, `count_as_independent_cohort`, and `overlap_notes`). These fields are intentionally conservative and currently appear in the Dataset Explorer detail view only.
 
-All 107 primary dataset rows now have a `study_family` label, representing 89 distinct study or source families. `count_as_independent_cohort = FALSE` means the row should not be counted as a separate cohort because it is a known component, subset, or overlapping accession for another row. `Unclear` means the row is related to another study family, but public metadata are not sufficient to reconcile donors or samples confidently. Users should treat `Unclear` rows conservatively and avoid summing them without source-level review.
+All 113 primary dataset rows now have a `study_family` label, representing 92 distinct study or source families. `count_as_independent_cohort = FALSE` means the row should not be counted as a separate cohort because it is a known component, subset, or overlapping accession for another row. `Unclear` means the row is related to another study family, but public metadata are not sufficient to reconcile donors or samples confidently. Users should treat `Unclear` rows conservatively and avoid summing them without source-level review.
 
-Users can search by study, cohort, or trial names such as `PROTECT`, `RISK`, `IBD200`, `ACT1`, `UNITI`, `UNIFI`, `GEMINI`, `BERGAMOT`, `scIBD`, or `SP140`. These labels are intended for discoverability and cohort accounting; they do not replace direct verification of the source repository before analysis. Current countability values are 89 `TRUE`, 7 `FALSE`, and 11 `Unclear`.
+Users can search by study, cohort, or trial names such as `PROTECT`, `RISK`, `IBD200`, `ACT1`, `UNITI`, `UNIFI`, `GEMINI`, `BERGAMOT`, `scIBD`, or `SP140`. These labels are intended for discoverability and cohort accounting; they do not replace direct verification of the source repository before analysis. Current countability values are 91 `TRUE`, 9 `FALSE`, and 13 `Unclear`.
 
 Detailed review artifacts:
 

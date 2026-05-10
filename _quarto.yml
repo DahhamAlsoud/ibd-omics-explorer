@@ -17,6 +17,7 @@ project:
     - data/verification/verification_batch_001.csv
     - data/verification/verification_batch_002.csv
     - data/verification/verification_changes_log.csv
+    - data/verification/verification_evidence_notes.md
     - data/verification/priority_cross_omics_source_review.csv
     - data/protect_overlap_review.csv
     - data/verification/manual_review_status_evidence.csv
@@ -120,6 +121,13 @@ project:
     - data/verification/dataset_id_allocation_review.csv
     - data/verification/clinical_trial_row_patch_schema_qa.csv
     - data/verification/post_clinical_trial_patch_qa.csv
+    - data/verification/single_cell_spatial_full_row_patch_plan.csv
+    - data/verification/single_cell_spatial_full_row_patch_schema_qa.csv
+    - data/verification/post_single_cell_spatial_patch_qa.csv
+    - data/verification/non_transcriptomic_top3_candidate_verification.csv
+    - data/verification/non_transcriptomic_top3_full_row_patch_plan.csv
+    - data/verification/anti_integrin_single_cell_sample_count_check.csv
+    - data/verification/non_transcriptomic_top3_full_row_patch_schema_qa.csv
 
 author: "Dahham Alsoud"
 

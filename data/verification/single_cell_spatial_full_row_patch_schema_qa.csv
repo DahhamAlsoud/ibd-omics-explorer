@@ -1,0 +1,7 @@
+dataset_id,schema_value_qa,recommendation
+DS114,"Pass. Full 55-column row; no ID/accession conflict; good family anchor for anti-integrin UC single-cell study.","Safe to add as the countable family anchor for DS115/DS116."
+DS115,"Pass. Full 55-column row; valid component link to DS114; count_as_independent_cohort=FALSE is appropriate.","Safe to add as DS114 component."
+DS116,"Pass. Full 55-column row; valid component link to DS114; count_as_independent_cohort=FALSE is appropriate.","Safe to add as DS114 component."
+DS117,"Pass with hold/review flag. Controlled EGA-only row is structurally valid, but publication fields are Unclear and public sample-count phrasing differs across 38 patients, 80 stimulation samples, and 20 EGA dataset samples.","Add only as source_checked with conservative publication and sample-size caveats."
+DS118,"Pass with Unclear countability. CosMx sibling row is supported by source check.","Safe to add with component_of_dataset_id blank and count_as_independent_cohort=Unclear."
+DS119,"Pass with Unclear countability. Xenium sibling row is supported by source check.","Safe to add with component_of_dataset_id blank and count_as_independent_cohort=Unclear."

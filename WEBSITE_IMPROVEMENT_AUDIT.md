@@ -19,7 +19,7 @@ The site needed to move from a generated prototype to a reliable dataset-discove
 |---|---|---|---|
 | 1 | Home page UI | Metric placeholders rendered literally | Replaced OJS-in-Markdown counts with audited static counts |
 | 2 | Omics Layers page | Layer-count placeholders rendered literally | Replaced all layer counts with current CSV-derived counts |
-| 3 | Scientific tone | Site implied more certainty than the seed data supports | Added current registry-state and verification-priority sections |
+| 3 | Scientific tone | Site implied more certainty than the unverified data supports | Added current registry-state and verification-priority sections |
 | 4 | Datasets page functionality | Search/filter controls were not visible | Added a plain-JavaScript dataset explorer |
 | 5 | Omics/use-case tables | OJS tables did not render visible tables | Added generated registry tables for Omics Layers and Use Cases |
 | 6 | Browser functional check | New tables rendered locally | Verified Datasets, Omics Layers, and Use Cases tables in browser |
@@ -30,4 +30,4 @@ The site needed to move from a generated prototype to a reliable dataset-discove
 
 ## Remaining Scientific Work
 
-Most entries are still seed entries. The next real scientific improvement is a dataset-by-dataset verification pass against primary repository records and linked publications. Do not promote entries to `Verified` until disease groups, sample counts, platforms, access status, and publication metadata have been checked directly.
+Most entries still need row-by-row verification. The next real scientific improvement is a dataset-by-dataset verification pass against primary repository records and linked publications. Do not promote entries to `Verified` until disease groups, sample counts, platforms, access status, and publication metadata have been checked directly.

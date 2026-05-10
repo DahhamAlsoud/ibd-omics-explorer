@@ -13,13 +13,13 @@ This page documents the curation rules used to build and maintain the IBD Omics 
 
 The IBD Omics Explorer is designed to **map and organize publicly available IBD omics datasets** across all major omics layers, with the goal of supporting dataset discovery. It is not a systematic review, meta-analysis, or quality-assessment resource. Inclusion in this registry does not imply that a dataset is high quality, fully reusable, or suitable for any particular analysis.
 
-The registry aims to be **inclusive and expandable**. The initial seed dataset is a starting point, not a comprehensive catalog. Many datasets that qualify for inclusion may not yet be listed.
+The registry aims to be **inclusive and expandable**. The current dataset is a starting point, not a comprehensive catalog. Many datasets that qualify for inclusion may not yet be listed.
 
 ---
 
 ## Current Registry State
 
-The current seed registry contains **37 entries**. Of these, **31 entries are marked `Seed entry; Needs verification`** and **6 entries are marked `Seed entry`**. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.
+The current registry contains **37 entries**. Most entries remain `pending_review`, while the first verification batch has source, metadata, or publication checks recorded. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.
 
 Before using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with `Unclear` fields should be treated as leads for manual curation rather than confirmed facts.
 
@@ -92,12 +92,12 @@ Each entry carries a `curation_status` label indicating the degree of metadata v
 
 | Label | Meaning |
 |---|---|
-| Seed entry | Initial dataset added to launch the explorer; metadata derived from public sources but not manually verified against the repository record |
 | Needs verification | Metadata or access status should be manually checked before relying on the annotation |
+| Partially verified | One or more source, metadata, access, or citation checks have been completed, but the row is not analysis-ready |
 | Verified | Metadata and access links have been manually checked against the source repository record |
 | Deprecated/limited | Dataset exists but has limited reuse value, incomplete public access, or substantial data quality issues |
 
-**Most entries in the initial release carry `Seed entry` or `Needs verification` status.** Users are encouraged to verify directly against source repositories before initiating analysis.
+**Most entries currently require additional verification.** Users are encouraged to verify directly against source repositories before initiating analysis.
 
 ---
 
@@ -155,14 +155,14 @@ Each entry carries a `curation_status` label indicating the degree of metadata v
 
 The verification workflow is deliberately conservative:
 
-1. New rows start as `seed_entry`.
-2. A row moves to `source_link_checked` only after the source URL opens and matches the intended accession or resource.
+1. New rows start as `pending_review`.
+2. A row moves to `source_checked` only after the source URL opens and matches the intended accession or resource.
 3. A row moves to `metadata_checked` only after key study metadata are checked against a source record.
 4. A row moves to `publication_checked` only after citation fields are checked against a publication, DOI, PubMed, or repository-linked citation.
 5. A row becomes `needs_revision` if source evidence contradicts the current registry row.
 6. A row should only become `analysis_ready_candidate` after human review of source, metadata, publication, access status, and the intended analysis context.
 
-The first verification batch covers selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, and controlled-access genetics resources. Rows not in that batch remain `seed_entry`.
+The first verification batch covers selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, and controlled-access genetics resources. Rows not in that batch remain `pending_review`.
 
 ---
 
@@ -205,7 +205,7 @@ Please open an issue or pull request on the [source repository](https://github.c
 
 ## Data Sources for Curation
 
-Metadata in this seed registry should be checked against:
+Metadata in this registry should be checked against:
 
 - Public repository records, including [GEO](https://www.ncbi.nlm.nih.gov/geo/), [SRA](https://www.ncbi.nlm.nih.gov/sra), [PRIDE](https://www.ebi.ac.uk/pride/), [MassIVE](https://massive.ucsd.edu/), [Metabolomics Workbench](https://www.metabolomicsworkbench.org/), [dbGaP](https://www.ncbi.nlm.nih.gov/gap/), [GWAS Catalog](https://www.ebi.ac.uk/gwas/), [CELLxGENE](https://cellxgene.cziscience.com/), and [Human Cell Atlas](https://www.humancellatlas.org/)
 - Consortium and project portals, including [IBDMDB](https://ibdmdb.org/), [IIBDGC](https://www.ibdgenetics.org/), [Open Targets](https://platform.opentargets.org/), [FinnGen](https://www.finngen.fi/), and [UK Biobank](https://www.ukbiobank.ac.uk/)

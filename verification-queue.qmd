@@ -21,8 +21,8 @@ This page tracks which dataset entries still need manual verification against so
 
 | Status | Meaning |
 |---|---|
-| `seed_entry` | Initial registry entry; not fully verified |
-| `source_link_checked` | Source record opens and matches the accession or resource |
+| `pending_review` | Initial listing; not fully verified |
+| `source_checked` | Source record opens and matches the accession or resource |
 | `metadata_checked` | Disease group, sample type, platform, and access metadata checked against source |
 | `publication_checked` | Primary publication title, year, DOI, and PMID checked where available |
 | `analysis_ready_candidate` | Candidate for downstream analysis after source, metadata, publication, and access checks; still not a guarantee of fitness for every use case |

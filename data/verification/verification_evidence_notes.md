@@ -2,7 +2,7 @@
 
 Date: 2026-05-10
 
-This folder records the first verification batch for the IBD Omics Explorer. The purpose is to keep source evidence and metadata decisions reviewable rather than silently changing the main registry.
+This folder records verification batches for the IBD Omics Explorer. The purpose is to keep source evidence and metadata decisions reviewable rather than silently changing the main registry.
 
 ## Batch 001
 
@@ -22,6 +22,27 @@ Outputs:
 ## Conservative Decisions
 
 - No row was promoted to `analysis_ready_candidate`.
-- DS023 remains `source_link_checked` because the archive source record and related publication linkage are not fully harmonized.
+- DS023 remains `source_checked` because the archive source record and related publication linkage are not fully harmonized.
 - DS002 keeps `sample_metadata_checked = FALSE` because age/population composition was not directly confirmed in the checked sources.
 - DS035 keeps publication fields as `Unclear` because no DS035-specific DOI or PMID was found in the checked public records.
+
+## Batch 002
+
+Rows reviewed:
+
+- DS003-DS019: GEO transcriptomics, single-cell, and spatial transcriptomics entries
+- DS021-DS022: HCA and CELLxGENE atlas entries
+- DS024-DS032: proteomics, metabolomics, and methylation/epigenomics entries
+- DS033-DS034 and DS036-DS037: genetics and integrative genetics resources
+
+Outputs:
+
+- `verification_batch_002.csv`: row-level verification snapshot for newly reviewed entries
+- `verification_changes_log.csv`: appended summary log for the batch
+
+Additional conservative decisions:
+
+- DS012 remains `source_checked` because a directly linked publication was not confirmed from the source record.
+- DS022 is `manual_review_needed` because the current CELLxGENE row is a portal-level grouping and should be split into specific collection-backed rows before being treated as a verified dataset.
+- DS032 was retained but reframed as an IBD-relevant epithelial/mechanistic methylation resource rather than a direct human IBD patient cohort.
+- DS033, DS034, DS036, and DS037 are `metadata_checked` resource-level genetics rows; sample-level fields remain `Unclear` or `Not a primary dataset` where public sources do not support a cohort interpretation.

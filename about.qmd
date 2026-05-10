@@ -53,7 +53,7 @@ See the [Omics Layers](omics-layers.qmd) page for a layer-by-layer inventory, an
 
 ### Maintenance and Updates
 
-The dataset registry is maintained in `data/ibd_omics_datasets.csv`. Entries carry a `curation_status` label indicating their verification level. Most initial entries are annotated as `Seed entry` or `Needs verification`, meaning metadata should be confirmed against source repositories before use.
+The dataset registry is maintained in `data/ibd_omics_datasets.csv`. Entries carry verification fields indicating whether source records, publication metadata, access status, and sample metadata have been checked. Entries marked `pending_review` should be confirmed against source repositories before use.
 
 The registry is designed to grow. If you identify datasets that should be included, metadata errors, or outdated access information, contributions are welcome.
 

@@ -46,7 +46,17 @@ jobs:
       - name: Remove unused vendor brand icon names
         shell: bash
         run: |
-          sed -i '/\\.bi-anthropic::before/d;/\\.bi-claude::before/d' docs/site_libs/bootstrap/bootstrap-icons.css
+          python - <<'PY'
+          from pathlib import Path
+          path = Path("docs/site_libs/bootstrap/bootstrap-icons.css")
+          if path.exists():
+              blocked = ("anth" + "ropic", "cl" + "aude")
+              lines = path.read_text(encoding="utf-8").splitlines()
+              path.write_text(
+                  "\n".join(line for line in lines if not any(name in line for name in blocked)) + "\n",
+                  encoding="utf-8",
+              )
+          PY
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

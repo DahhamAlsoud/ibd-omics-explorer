@@ -26,7 +26,7 @@ format:
 <div class="metrics-grid">
 <div class="metric-card">
 <div class="metric-value">37</div>
-<div class="metric-label">Seed Datasets</div>
+<div class="metric-label">Registry Entries</div>
 </div>
 <div class="metric-card">
 <div class="metric-value">14</div>
@@ -42,7 +42,7 @@ format:
 </div>
 </div>
 
-<p class="metrics-note">Counts are derived from the current seed CSV. Layer tags are not mutually exclusive because multi-omics datasets can contribute to more than one layer.</p>
+<p class="metrics-note">Counts are derived from the current registry CSV. Layer tags are not mutually exclusive because multi-omics datasets can contribute to more than one layer.</p>
 
 ---
 

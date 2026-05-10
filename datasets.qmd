@@ -8,7 +8,7 @@ format:
 ---
 
 <div class="page-intro">
-This table lists all datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All metadata are conservative annotations derived from public records; fields marked <em>Unclear</em> require manual verification. The verification filter distinguishes seed entries from rows where source records or publication metadata have been checked.
+This table lists all datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All metadata are conservative annotations derived from public records; fields marked <em>Unclear</em> require manual verification. The verification filter distinguishes pending-review entries from rows where source records or publication metadata have been checked.
 </div>
 
 ## Filters and Search

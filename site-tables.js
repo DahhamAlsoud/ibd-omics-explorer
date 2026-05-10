@@ -100,6 +100,7 @@ function renderDatasetExplorer(data) {
 
   const labels = {
     dataset_name: "Dataset",
+    study_name: "Study Name",
     accession: "Accession",
     omics_layer: "Omics Layer",
     disease: "Disease",
@@ -107,7 +108,6 @@ function renderDatasetExplorer(data) {
     sample_type: "Sample Type",
     tissue_site: "Tissue Site",
     data_access_status: "Access",
-    curation_status: "Curation",
     verification_status: "Verification",
     manual_review: "Manual Review",
     dataset_url: "Source"
@@ -115,14 +115,13 @@ function renderDatasetExplorer(data) {
   const columns = [
     "dataset_id",
     "dataset_name",
+    "study_name",
     "accession",
     "omics_layer",
     "disease",
     "population",
     "sample_type",
     "data_access_status",
-    "curation_status",
-    "verification_status",
     "dataset_url"
   ];
   labels.dataset_id = "ID";
@@ -175,6 +174,7 @@ function renderDatasetExplorer(data) {
       [
         "dataset_id",
         "dataset_name",
+        "study_name",
         "publication_title",
         "publication_year",
         "doi",
@@ -185,12 +185,15 @@ function renderDatasetExplorer(data) {
         "raw_data_available",
         "processed_data_available",
         "controlled_access",
+        "curation_status",
+        "verification_status",
         "verification_notes",
         "evidence_url"
       ],
       {
         dataset_id: "ID",
         dataset_name: "Dataset",
+        study_name: "Study Name",
         publication_title: "Publication",
         publication_year: "Year",
         doi: "DOI",
@@ -201,6 +204,8 @@ function renderDatasetExplorer(data) {
         raw_data_available: "Raw",
         processed_data_available: "Processed",
         controlled_access: "Controlled",
+        curation_status: "Curation",
+        verification_status: "Verification",
         verification_notes: "Verification Notes",
         evidence_url: "Evidence"
       },
@@ -215,6 +220,7 @@ function renderDatasetExplorer(data) {
 function renderSimpleTables(data) {
   const labels = {
     dataset_name: "Dataset",
+    study_name: "Study Name",
     accession: "Accession",
     omics_layer: "Omics Layer",
     disease: "Disease",
@@ -299,6 +305,7 @@ function renderVerificationQueue(data) {
     [
       "dataset_id",
       "dataset_name",
+      "study_name",
       "accession",
       "repository",
       "verification_risk",
@@ -311,6 +318,7 @@ function renderVerificationQueue(data) {
     {
       dataset_id: "ID",
       dataset_name: "Dataset",
+      study_name: "Study Name",
       accession: "Accession",
       repository: "Repository",
       verification_risk: "Queue Reason",

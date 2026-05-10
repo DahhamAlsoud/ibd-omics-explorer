@@ -544,6 +544,22 @@ ul.task-list li input[type="checkbox"] {
 <td>Free-text curation notes</td>
 </tr>
 <tr class="odd">
+<td><code>study_family</code></td>
+<td>Conservative cohort, trial, or source-family label used to identify rows that may come from the same study population, clinical trial, or reused source cohort</td>
+</tr>
+<tr class="even">
+<td><code>component_of_dataset_id</code></td>
+<td>Parent dataset identifier when a row is explicitly retained as a component of another primary dataset row; blank when no parent row is assigned</td>
+</tr>
+<tr class="odd">
+<td><code>count_as_independent_cohort</code></td>
+<td>Conservative overcounting flag indicating whether the row can currently be counted as an independent cohort (<code>TRUE</code>, <code>FALSE</code>, or blank/uncertain)</td>
+</tr>
+<tr class="even">
+<td><code>overlap_notes</code></td>
+<td>Short explanation of known or suspected cohort overlap and how the row should be counted</td>
+</tr>
+<tr class="odd">
 <td><code>verification_status</code></td>
 <td>Current evidence-check status for the row</td>
 </tr>
@@ -611,6 +627,7 @@ ul.task-list li input[type="checkbox"] {
 <p>When available, cohort-family review fields identify related rows, paired modality derivatives, and rows that should be treated as components of a shared study family rather than independent cohorts. Rows marked as uncertain should be interpreted conservatively until source-level sample IDs or study documentation are reviewed.</p>
 <p>For de-duplicated cohort counts, use the cohort-family audit files rather than summing the main dataset table directly.</p>
 <p>Therapeutic-family reviews are included when available, but rows requiring source-level sample-ID review should be treated as provisional for cohort counting.</p>
+<p>The primary dataset CSV now includes appended cohort-family fields (<code>study_family</code>, <code>component_of_dataset_id</code>, <code>count_as_independent_cohort</code>, and <code>overlap_notes</code>). These fields are intentionally conservative and currently appear in the Dataset Explorer detail view only. An absent <code>study_family</code> label does not prove that a row is independent; it means the family relationship has not yet been resolved into the primary table.</p>
 <p>Detailed review artifacts:</p>
 <ul>
 <li><a href="data/cohort_overlap_audit.csv">Cohort overlap audit</a></li>

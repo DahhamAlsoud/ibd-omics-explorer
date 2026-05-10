@@ -1,0 +1,4 @@
+"patch_scope","recommendation","reason"
+"ACT1 / DS062-DS106","Apply as its own patch","Confirmed component relationship; DS062 count_as_independent_cohort=FALSE is a substantive counting decision."
+"UNITI / DS047-DS107","Apply separately","Shared UNITI family is supported, but count_as_independent_cohort should remain Unclear due to same subjects with different tissue/timepoint samples."
+"combined patch","Do not combine","Mixing a confirmed FALSE countability decision with a still-Unclear UNITI decision makes review harder and increases risk of accidental over-normalization."

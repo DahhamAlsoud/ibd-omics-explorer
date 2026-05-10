@@ -1,0 +1,7 @@
+"item","specification"
+"primary_csv_columns","Add study_family, component_of_dataset_id, count_as_independent_cohort, overlap_notes at the end of data/ibd_omics_datasets.csv."
+"ui_display","Expose the four fields in the Dataset Explorer detailed fields table only, not the compact default table."
+"labels","study_family=Study Family; component_of_dataset_id=Component Of; count_as_independent_cohort=Independent Cohort; overlap_notes=Overlap Notes."
+"first_patch_rows","DS058; DS064; DS070; DS071; DS072; DS073; DS074; DS075; DS076; DS077; DS078; DS083; DS085."
+"excluded_unresolved_rows","PROTECT, RISK, IBD200, DS050, DS091, and infliximab-overlap rows remain in review artifacts until overlap uncertainty is resolved or explicitly represented."
+"verification","Confirm CSV parses, 102 rows remain, four new columns exist, target rows are populated, no literal Blank value is present, site-tables.js labels exist, quarto render succeeds, and privacy string scan is clean."

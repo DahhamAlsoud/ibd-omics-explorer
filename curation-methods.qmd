@@ -145,6 +145,10 @@ Each entry carries a `curation_status` label indicating the degree of metadata v
 | `dataset_url` | URL to the dataset record (if known) |
 | `publication_url` | URL to the primary publication (if known) |
 | `notes` | Free-text curation notes |
+| `study_family` | Conservative cohort, trial, or source-family label used to identify rows that may come from the same study population, clinical trial, or reused source cohort |
+| `component_of_dataset_id` | Parent dataset identifier when a row is explicitly retained as a component of another primary dataset row; blank when no parent row is assigned |
+| `count_as_independent_cohort` | Conservative overcounting flag indicating whether the row can currently be counted as an independent cohort (`TRUE`, `FALSE`, or blank/uncertain) |
+| `overlap_notes` | Short explanation of known or suspected cohort overlap and how the row should be counted |
 | `verification_status` | Current evidence-check status for the row |
 | `source_record_checked` | Whether the source record has been manually checked |
 | `publication_checked` | Whether the publication citation has been manually checked |
@@ -183,6 +187,8 @@ When available, cohort-family review fields identify related rows, paired modali
 For de-duplicated cohort counts, use the cohort-family audit files rather than summing the main dataset table directly.
 
 Therapeutic-family reviews are included when available, but rows requiring source-level sample-ID review should be treated as provisional for cohort counting.
+
+The primary dataset CSV now includes appended cohort-family fields (`study_family`, `component_of_dataset_id`, `count_as_independent_cohort`, and `overlap_notes`). These fields are intentionally conservative and currently appear in the Dataset Explorer detail view only. An absent `study_family` label does not prove that a row is independent; it means the family relationship has not yet been resolved into the primary table.
 
 Detailed review artifacts:
 

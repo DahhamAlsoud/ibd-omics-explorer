@@ -1,0 +1,5 @@
+"dataset_id","field","recommended_value"
+"DS049","sample_size_subjects","568 subjects total: 550 UC patients plus 18 healthy subjects"
+"DS049","sample_size_samples","568 baseline sigmoid-colon biopsy arrays"
+"DS049","notes","GEO states UNIFI was a randomized placebo-controlled phase 3 ustekinumab UC trial. Baseline sigmoid-colon biopsies were profiled from 550 moderate-to-severe UC patients and 18 healthy subjects; UC patients received placebo (n=186) or ustekinumab (n=364; 130 mg n=180, 6 mg/kg n=184). Series matrix titles confirm 568 colon biopsy week 0 samples."
+"DS049","verification_notes","Source-verified GEO GSE206285 for UNIFI trial design, platform, treatment arms, baseline biopsy sampling, and sample counts. Series matrix confirms 568 week 0 colon biopsy samples."

@@ -1,0 +1,7 @@
+"check","result"
+"DS062_DS106_component_logic","Correct. DS106 is ACT1_infliximab_UC and independent TRUE; DS062 is ACT1_infliximab_UC, component_of_dataset_id=DS106, independent FALSE."
+"DS062_non_independent_representation","Correct: count_as_independent_cohort=FALSE."
+"DS063_independence","Correct. DS063 is Leuven_infliximab_UC_Gut2009, has no component parent, and is independent TRUE."
+"DS047_DS107_UNITI_logic","Correct. Both are UNITI_ustekinumab_Crohn, have no component parent, and count_as_independent_cohort=Unclear."
+"UNITI_notes_append","Present in notes and verification_notes for DS047 and DS107."
+"patch_plan_comparison","No substantive mismatches. notes_append and verification_notes_append are patch instructions rather than real primary-table columns; intended appended text is present."

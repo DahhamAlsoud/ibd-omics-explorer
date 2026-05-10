@@ -1,0 +1,7 @@
+"decision","recommendation","reason"
+"study_family_filter","Wait","study_family is populated for only 13 of 102 rows, so a filter would mostly expose curation coverage rather than true cohort-family structure."
+"detail_panel","Keep","Detail-only display is appropriate because it gives context without cluttering primary browsing."
+"main_table_column","No","The main table is already dense and absent labels could be misread as evidence of no overlap."
+"count_as_independent_cohort_filter","No","The field is too sparsely populated and could imply cohort counting is solved."
+"future_filter_criterion_coverage","At least 30-40 populated rows or all known high-risk families represented","Coverage should include PROTECT, RISK, IBD200, major anti-TNF/infliximab rows, vedolizumab rows, etrolizumab rows, ustekinumab rows, and integrated-atlas source cohorts."
+"future_filter_criterion_docs","Docs must state absent family labels do not prove independence","Prevents false-negative interpretation."

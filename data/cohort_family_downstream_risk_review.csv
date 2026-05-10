@@ -1,0 +1,7 @@
+"area","risk","problem","mitigation"
+"verification_queue","Low","Queue code uses fixed columns and verification_status logic; new columns should not change queue counts or risk classification.","No code change needed; verify queue renders and still reports expected entries."
+"simple_tables","Low","Simple tables use explicit/default columns, so new fields will not appear unless requested.","Keep new fields out of simple/default tables for first patch."
+"dataset_explorer","Low","Main table is fixed-column and unaffected. Detail table includes family fields. Search uses Object.values(row), so hidden family text can affect search hits.","Acceptable because family terms becoming searchable is useful."
+"rendered_docs_resources","Medium","Source and docs resources can drift if Quarto render is not run after schema changes.","Run Quarto render and verify docs/data header plus docs/site-tables.js labels."
+"csv_download_users","Medium","Adding columns is backward-compatible for name-based readers but can break consumers assuming exactly 51 columns or fixed column positions.","Append columns only at the end, document the schema change, and recommend name-based column selection."
+"review_artifacts","Low","Semantic drift can occur if primary CSV values differ from review artifacts.","Keep first patch limited to spec rows and retain unresolved rows in review artifacts."

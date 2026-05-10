@@ -110,6 +110,10 @@ function renderDatasetExplorer(data) {
     data_access_status: "Access",
     verification_status: "Verification",
     manual_review: "Manual Review",
+    study_family: "Study Family",
+    component_of_dataset_id: "Component Of",
+    count_as_independent_cohort: "Independent Cohort",
+    overlap_notes: "Overlap Notes",
     dataset_url: "Source"
   };
   const columns = [
@@ -181,6 +185,10 @@ function renderDatasetExplorer(data) {
         "pmid",
         "platform",
         "study_design",
+        "study_family",
+        "component_of_dataset_id",
+        "count_as_independent_cohort",
+        "overlap_notes",
         "sample_size_subjects",
         "raw_data_available",
         "processed_data_available",
@@ -200,6 +208,10 @@ function renderDatasetExplorer(data) {
         pmid: "PMID",
         platform: "Platform",
         study_design: "Design",
+        study_family: "Study Family",
+        component_of_dataset_id: "Component Of",
+        count_as_independent_cohort: "Independent Cohort",
+        overlap_notes: "Overlap Notes",
         sample_size_subjects: "N Subjects",
         raw_data_available: "Raw",
         processed_data_available: "Processed",

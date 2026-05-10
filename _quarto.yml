@@ -35,6 +35,23 @@ project:
     - data/cohort_family_implementation_readiness_audit.csv
     - data/clinical_trial_family_naming_review.csv
     - data/verification/anti_tnf_notes_implementation_checklist.csv
+    - data/cohort_family_schema_patch_spec.csv
+    - data/clinical_trial_family_expansion_candidates.csv
+    - data/cohort_family_schema_patch_qa.csv
+    - data/study_family_filter_timing_review.csv
+    - data/cohort_family_downstream_risk_review.csv
+    - data/clinical_trial_family_verification_priorities.csv
+    - data/cohort_family_schema_release_note.csv
+    - data/verification/act1_infliximab_family_source_check.csv
+    - data/verification/act1_family_row_patch_plan.csv
+    - data/verification/uniti_family_source_check.csv
+    - data/verification/uniti_family_row_patch_plan.csv
+    - data/act1_uniti_patch_separation_review.csv
+    - data/act1_uniti_implementation_qa.csv
+    - data/verification/unifi_eucalyptus_family_source_check.csv
+    - data/verification/certifi_family_source_check.csv
+    - data/unifi_eucalyptus_implementation_qa.csv
+    - data/verification/ds049_sample_size_cleanup_plan.csv
 
 author: "Dahham Alsoud"
 

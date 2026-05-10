@@ -70,6 +70,8 @@ project:
     - data/verification/mass_spec_family_overlap_check.csv
     - data/verification/epigenomics_family_overlap_check.csv
     - data/verification/remaining_transcriptomics_family_overlap_check.csv
+    - data/verification/manual_transcriptomics_provenance_check.csv
+    - data/verification/sp140_family_overlap_check.csv
 
 author: "Dahham Alsoud"
 

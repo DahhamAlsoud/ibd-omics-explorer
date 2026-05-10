@@ -76,6 +76,8 @@ project:
     - data/verification/study_family_ui_search_qa.csv
     - data/verification/publication_provenance_cleanup_review.csv
     - data/verification/study_family_filter_decision_review.csv
+    - data/verification/unclear_countability_review_pack.csv
+    - data/verification/study_family_rollout_summary_draft.csv
 
 author: "Dahham Alsoud"
 

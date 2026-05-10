@@ -188,7 +188,11 @@ For de-duplicated cohort counts, use the cohort-family audit files rather than s
 
 Therapeutic-family reviews are included when available, but rows requiring source-level sample-ID review should be treated as provisional for cohort counting.
 
-The primary dataset CSV now includes appended cohort-family fields (`study_family`, `component_of_dataset_id`, `count_as_independent_cohort`, and `overlap_notes`). These fields are intentionally conservative and currently appear in the Dataset Explorer detail view only. An absent `study_family` label does not prove that a row is independent; it means the family relationship has not yet been resolved into the primary table.
+The primary dataset CSV now includes appended cohort-family fields (`study_family`, `component_of_dataset_id`, `count_as_independent_cohort`, and `overlap_notes`). These fields are intentionally conservative and currently appear in the Dataset Explorer detail view only.
+
+All 102 primary dataset rows now have a `study_family` label, representing 85 distinct study or source families. `count_as_independent_cohort = FALSE` means the row should not be counted as a separate cohort because it is a known component, subset, or overlapping accession for another row. `Unclear` means the row is related to another study family, but public metadata are not sufficient to reconcile donors or samples confidently. Users should treat `Unclear` rows conservatively and avoid summing them without source-level review.
+
+Users can search by study, cohort, or trial names such as `PROTECT`, `RISK`, `IBD200`, `ACT1`, `UNITI`, `UNIFI`, `GEMINI`, `BERGAMOT`, `scIBD`, or `SP140`. These labels are intended for discoverability and cohort accounting; they do not replace direct verification of the source repository before analysis. Current countability values are 81 `TRUE`, 5 `FALSE`, and 16 `Unclear`.
 
 Detailed review artifacts:
 
@@ -197,6 +201,7 @@ Detailed review artifacts:
 - [RISK pediatric CD overlap review](data/risk_overlap_review.csv)
 - [IBD200 overlap review](data/ibd200_overlap_review.csv)
 - [Therapeutic overlap review, provisional](data/therapeutic_overlap_review.csv)
+- [Unclear countability review pack](data/verification/unclear_countability_review_pack.csv)
 
 ---
 

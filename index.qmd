@@ -27,7 +27,7 @@ format:
 
 <div class="metrics-grid">
 <div class="metric-card">
-<div class="metric-value">96</div>
+<div class="metric-value">102</div>
 <div class="metric-label">Primary Datasets</div>
 </div>
 <div class="metric-card">

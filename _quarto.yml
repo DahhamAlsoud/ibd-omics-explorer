@@ -56,6 +56,8 @@ project:
     - data/verification/ds088_gemini_family_source_check.csv
     - data/verification/ds060_ds083_golimumab_overlap_check.csv
     - data/verification/ds088_ds061_ifx_overlap_check.csv
+    - data/verification/ds085_ds105_etrolizumab_overlap_check.csv
+    - data/verification/uniti_overlap_decision_table.csv
 
 author: "Dahham Alsoud"
 

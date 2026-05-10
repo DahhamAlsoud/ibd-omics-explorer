@@ -1,0 +1,7 @@
+check,result,details
+dataset_detail_fields_visible,Yes,"docs/site-tables.js includes study_family, component_of_dataset_id, count_as_independent_cohort, and overlap_notes in the detailed fields table."
+compact_table_uncluttered,Yes,"Main table remains limited to ID, dataset/study/accession, omics, disease, population, sample type, access, and source URL."
+global_search_includes_hidden_fields,Yes,"Search scans Object.values(row), so it searches detail fields including study_family and overlap_notes."
+rendered_docs_data_populated,Yes,"docs/data/ibd_omics_datasets.csv contains populated cohort-family fields."
+search_placeholder_updated,Yes,"Registry search placeholder now advertises PROTECT, RISK, IBDMDB, scIBD, PURSUIT, pediatric, colon."
+optional_future_filter,Not applied,"RISK overmatches ordinary risk text; add a dedicated Study Family filter later only if user testing shows confusion."

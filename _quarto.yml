@@ -72,6 +72,8 @@ project:
     - data/verification/remaining_transcriptomics_family_overlap_check.csv
     - data/verification/manual_transcriptomics_provenance_check.csv
     - data/verification/sp140_family_overlap_check.csv
+    - data/verification/study_family_completeness_qa.csv
+    - data/verification/study_family_ui_search_qa.csv
 
 author: "Dahham Alsoud"
 

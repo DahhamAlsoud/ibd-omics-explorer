@@ -7,35 +7,6 @@ subtitle: "Browse datasets by potential research application"
 This page organizes datasets by potential research use case based on available metadata tags. <strong>This page does not recommend, rank, or endorse any dataset.</strong> Entries listed under each use case are tagged as potentially relevant based on publicly available metadata. Suitability for any specific analysis must be assessed by the researcher based on study design, sample size, platform, access status, and metadata completeness.
 </div>
 
-```{ojs}
-//| echo: false
-data = FileAttachment("data/ibd_omics_datasets.csv").csv({typed: true})
-
-function filterByUseCase(keyword) {
-  return data.filter(d =>
-    (d.potential_use_cases || "").toLowerCase().includes(keyword.toLowerCase()) ||
-    (d.omics_layer || "").toLowerCase().includes(keyword.toLowerCase())
-  );
-}
-
-function filterByMultiple(keywords) {
-  return data.filter(d =>
-    keywords.some(kw =>
-      (d.potential_use_cases || "").toLowerCase().includes(kw.toLowerCase()) ||
-      (d.omics_layer || "").toLowerCase().includes(kw.toLowerCase()) ||
-      (d.disease || "").toLowerCase().includes(kw.toLowerCase()) ||
-      (d.sample_type || "").toLowerCase().includes(kw.toLowerCase()) ||
-      (d.population || "").toLowerCase().includes(kw.toLowerCase())
-    )
-  );
-}
-
-tableColumns = ["dataset_name", "accession", "omics_layer", "disease", "sample_type", "data_access_status"]
-tableHeader  = ({
-  dataset_name: "Dataset", accession: "Accession", omics_layer: "Omics Layer",
-  disease: "Disease", sample_type: "Sample Type", data_access_status: "Access"
-})
-```
 
 ---
 
@@ -45,16 +16,8 @@ tableHeader  = ({
 <div class="uc-note">These datasets are tagged as potentially relevant to this use case based on available metadata. Pediatric cohorts are specifically labeled where known; adult designation reflects the majority of unlabeled cohorts but should be verified.</div>
 </div>
 
-```{ojs}
-//| echo: false
-pedData = filterByMultiple(["pediatric", "children"])
+<div data-registry-table data-any="pediatric|children" data-rows="12"></div>
 
-Inputs.table(pedData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 15
-})
-```
 
 ---
 
@@ -64,24 +27,8 @@ Inputs.table(pedData, {
 <div class="uc-note">Datasets with intestinal mucosal biopsies from IBD and non-IBD controls, potentially useful for disease-vs-control transcriptomic analyses. Tissue site (ileum vs. colon vs. rectum) and platform should be verified before pooling studies.</div>
 </div>
 
-```{ojs}
-//| echo: false
-mucosalData = data.filter(d =>
-  (d.tissue_site || "").toLowerCase().includes("colon") ||
-  (d.tissue_site || "").toLowerCase().includes("ileum") ||
-  (d.tissue_site || "").toLowerCase().includes("intestinal mucosa") ||
-  (d.tissue_site || "").toLowerCase().includes("sigmoid")
-).filter(d =>
-  (d.disease || "").toLowerCase().includes("control") ||
-  (d.potential_use_cases || "").toLowerCase().includes("disease-vs-control")
-)
+<div data-registry-table data-any="mucosal|colon|ileum|intestinal mucosa|disease-vs-control" data-rows="12"></div>
 
-Inputs.table(mucosalData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 20
-})
-```
 
 ---
 
@@ -91,21 +38,8 @@ Inputs.table(mucosalData, {
 <div class="uc-note">Datasets using whole blood or peripheral blood as the source tissue. Blood-based transcriptomics is sensitive to cell composition variability and should be interpreted with attention to disease activity, treatment status, and cell-type deconvolution.</div>
 </div>
 
-```{ojs}
-//| echo: false
-bloodTransData = data.filter(d =>
-  ((d.tissue_site || "").toLowerCase().includes("blood") ||
-   (d.sample_type || "").toLowerCase().includes("blood")) &&
-  ((d.omics_layer || "").toLowerCase().includes("transcriptomics") ||
-   (d.omics_layer || "").toLowerCase().includes("methylation"))
-)
+<div data-registry-table data-any="blood|PBMC|methylation" data-rows="12"></div>
 
-Inputs.table(bloodTransData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 15
-})
-```
 
 ---
 
@@ -115,19 +49,8 @@ Inputs.table(bloodTransData, {
 <div class="uc-note">Datasets including both Crohn's disease and ulcerative colitis samples, potentially relevant for direct CD-vs-UC comparisons. Tissue site matching between CD and UC samples is important for valid comparisons.</div>
 </div>
 
-```{ojs}
-//| echo: false
-cdUcData = data.filter(d =>
-  (d.disease || "").toLowerCase().includes("cd") &&
-  (d.disease || "").toLowerCase().includes("uc")
-)
+<div data-registry-table data-any="CD|UC" data-rows="12"></div>
 
-Inputs.table(cdUcData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 20
-})
-```
 
 ---
 
@@ -137,20 +60,8 @@ Inputs.table(cdUcData, {
 <div class="uc-note">Datasets with disease activity information or longitudinal follow-up, potentially relevant for studying dynamic changes, remission, or treatment response over time. Longitudinal datasets are particularly valuable but also more complex to analyze.</div>
 </div>
 
-```{ojs}
-//| echo: false
-longData = data.filter(d =>
-  (d.longitudinal || "").toLowerCase() === "yes" ||
-  (d.potential_use_cases || "").toLowerCase().includes("longitudinal") ||
-  (d.potential_use_cases || "").toLowerCase().includes("disease activity")
-)
+<div data-registry-table data-any="longitudinal|disease activity|remission" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,longitudinal" data-rows="12"></div>
 
-Inputs.table(longData, {
-  columns: [...tableColumns, "longitudinal"],
-  header: {...tableHeader, longitudinal: "Longitudinal"},
-  rows: 15
-})
-```
 
 ---
 
@@ -160,16 +71,8 @@ Inputs.table(longData, {
 <div class="uc-note">Single-cell and reference datasets potentially useful for building or applying cell-type deconvolution models to bulk transcriptomic data. Cell annotation quality and tissue site matching to the bulk dataset should be considered carefully.</div>
 </div>
 
-```{ojs}
-//| echo: false
-deconvData = filterByMultiple(["deconvolution", "cell atlas", "cell-type reference", "single-cell"])
+<div data-registry-table data-any="deconvolution|cell atlas|cell-type reference|single-cell" data-rows="12"></div>
 
-Inputs.table(deconvData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 15
-})
-```
 
 ---
 
@@ -179,16 +82,8 @@ Inputs.table(deconvData, {
 <div class="uc-note">Datasets using spatial transcriptomics to characterize the spatial organization of cell types and gene expression within IBD tissue sections. Platform-specific resolution and gene panel coverage should be considered.</div>
 </div>
 
-```{ojs}
-//| echo: false
-spatialUCData = filterByMultiple(["spatial", "cosmx", "visium", "spatial transcriptomics"])
+<div data-registry-table data-any="spatial|cosmx|visium|xenium|spatial transcriptomics" data-rows="10"></div>
 
-Inputs.table(spatialUCData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 10
-})
-```
 
 ---
 
@@ -198,20 +93,8 @@ Inputs.table(spatialUCData, {
 <div class="uc-note">Datasets with treatment metadata or specifically designed to study treatment response. These are potentially relevant for analyzing biological correlates of response or non-response to IBD therapies. Treatment status at biopsy and response definitions vary across studies.</div>
 </div>
 
-```{ojs}
-//| echo: false
-treatData = data.filter(d =>
-  (d.treatment_metadata || "").toLowerCase() === "yes" ||
-  (d.potential_use_cases || "").toLowerCase().includes("treatment") ||
-  (d.study_design || "").toLowerCase().includes("treatment")
-)
+<div data-registry-table data-any="treatment|response|anti-TNF" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,treatment_metadata" data-rows="12"></div>
 
-Inputs.table(treatData, {
-  columns: [...tableColumns, "treatment_metadata"],
-  header: {...tableHeader, treatment_metadata: "Treatment Data"},
-  rows: 15
-})
-```
 
 ---
 
@@ -221,16 +104,8 @@ Inputs.table(treatData, {
 <div class="uc-note">Datasets including microbiome or multi-omics data relevant to host–microbiome research in IBD. Integration of host and microbial data requires careful sample-level matching and statistical methods accounting for compositionality and sparsity.</div>
 </div>
 
-```{ojs}
-//| echo: false
-hmbData = filterByMultiple(["host-microbiome", "microbiome", "metagenomics", "metatranscriptomics", "multi-omics"])
+<div data-registry-table data-any="microbiome|metagenomics|metatranscriptomics|host-microbiome|multi-omics" data-rows="12"></div>
 
-Inputs.table(hmbData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 10
-})
-```
 
 ---
 
@@ -240,22 +115,8 @@ Inputs.table(hmbData, {
 <div class="uc-note">Datasets using stool-derived proteomics or metaproteomics, capturing both host-derived and microbial proteins non-invasively. Fecal proteomics is sensitive to sample handling and storage conditions.</div>
 </div>
 
-```{ojs}
-//| echo: false
-fecalProtData = data.filter(d =>
-  ((d.sample_type || "").toLowerCase().includes("stool") ||
-   (d.sample_type || "").toLowerCase().includes("feces") ||
-   (d.tissue_site || "").toLowerCase().includes("stool")) &&
-  ((d.omics_layer || "").toLowerCase().includes("proteomics") ||
-   (d.omics_layer || "").toLowerCase().includes("metabolomics"))
-)
+<div data-registry-table data-any="fecal|stool|proteomics|metaproteomics" data-rows="12"></div>
 
-Inputs.table(fecalProtData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 10
-})
-```
 
 ---
 
@@ -265,16 +126,8 @@ Inputs.table(fecalProtData, {
 <div class="uc-note">Datasets measuring small molecules or lipids in IBD-relevant samples. Platform and sample matrix (stool, blood, urine, tissue) substantially affect what is measured and how results should be interpreted.</div>
 </div>
 
-```{ojs}
-//| echo: false
-metabUCData = filterByMultiple(["metabolomics", "lipidomics", "metabolite"])
+<div data-registry-table data-any="metabolomics|lipidomics|metabolite" data-rows="12"></div>
 
-Inputs.table(metabUCData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 10
-})
-```
 
 ---
 
@@ -284,16 +137,8 @@ Inputs.table(metabUCData, {
 <div class="uc-note">Datasets measuring DNA methylation or chromatin state in IBD-relevant tissues. Cell composition confounding in blood samples and probe coverage limitations in older arrays (450K) are important considerations.</div>
 </div>
 
-```{ojs}
-//| echo: false
-methylUCData = filterByMultiple(["methylation", "epigenomics", "ewas", "epigenetic"])
+<div data-registry-table data-any="methylation|epigenomics|ewas|epigenetic" data-rows="12"></div>
 
-Inputs.table(methylUCData, {
-  columns: tableColumns,
-  header: tableHeader,
-  rows: 10
-})
-```
 
 ---
 
@@ -303,16 +148,8 @@ Inputs.table(methylUCData, {
 <div class="uc-note">Genetic resources including GWAS summary statistics and individual-level genotype data. Useful for genetic risk factor mapping, colocalization, Mendelian randomization, and target prioritization. Individual-level data are largely controlled-access.</div>
 </div>
 
-```{ojs}
-//| echo: false
-geneticsData = filterByMultiple(["genetics", "gwas", "target prioritization", "mendelian randomization", "colocalization"])
+<div data-registry-table data-any="genetics|gwas|target prioritization|mendelian randomization|colocalization" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,controlled_access" data-rows="12"></div>
 
-Inputs.table(geneticsData, {
-  columns: [...tableColumns, "controlled_access"],
-  header: {...tableHeader, controlled_access: "Controlled Access"},
-  rows: 10
-})
-```
 
 ---
 

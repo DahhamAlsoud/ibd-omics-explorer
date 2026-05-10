@@ -22,38 +22,26 @@ format:
 </div>
 </div>
 
-```{ojs}
-//| echo: false
-data = FileAttachment("data/ibd_omics_datasets.csv").csv({typed: true})
-
-counts = {
-  const total = data.length;
-  const layers = new Set(data.flatMap(d => (d.omics_layer || "").split(";").map(s => s.trim()).filter(Boolean)));
-  const repos  = new Set(data.flatMap(d => (d.repository || "").split(";").map(s => s.trim()).filter(Boolean)));
-  return { total, layers: layers.size, repos: repos.size };
-}
-```
-
 <div class="metrics-grid">
 <div class="metric-card">
-<div class="metric-value">{counts.total}</div>
+<div class="metric-value">37</div>
 <div class="metric-label">Seed Datasets</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">{counts.layers}</div>
-<div class="metric-label">Omics Layers</div>
+<div class="metric-value">14</div>
+<div class="metric-label">Layer Tags</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">{counts.repos}</div>
+<div class="metric-value">17</div>
 <div class="metric-label">Repositories</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">9</div>
-<div class="metric-label">Data Categories</div>
+<div class="metric-value">8</div>
+<div class="metric-label">Primary Sections</div>
 </div>
 </div>
 
-<p class="metrics-note">Counts reflect the initial seed inventory. This registry is designed to expand continuously as datasets are identified and curated.</p>
+<p class="metrics-note">Counts are derived from the current seed CSV. Layer tags are not mutually exclusive because multi-omics datasets can contribute to more than one layer.</p>
 
 ---
 

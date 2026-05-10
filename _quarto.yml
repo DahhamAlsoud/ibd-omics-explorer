@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - site-tables.js
+    - data/ibd_omics_datasets.csv
 
 author: "Dahham Alsoud"
 
@@ -40,6 +43,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    include-after-body: includes/site-tables.html
     toc: true
     toc-depth: 3
     smooth-scroll: true

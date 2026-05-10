@@ -431,3 +431,95 @@ code {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Refinements added after interactive audit */
+body {
+  background: #fbfbfa;
+}
+
+.hero-wrap,
+.metric-card,
+.feature-card,
+.page-intro,
+.omics-card,
+.use-case-section,
+.disclaimer {
+  border-radius: 8px;
+}
+
+.hero-wrap {
+  background: #ffffff;
+}
+
+.filter-panel {
+  display: grid;
+  grid-template-columns: minmax(14rem, 2fr) repeat(3, minmax(10rem, 1fr));
+  gap: 0.65rem;
+  align-items: end;
+  background: #ffffff;
+  border: 1px solid #e4dfdc;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin: 0.7rem 0;
+}
+
+.filter-panel label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #504f4b;
+}
+
+.filter-panel input,
+.filter-panel select {
+  min-width: 0;
+  border: 1px solid #cfc7c4;
+  border-radius: 6px;
+  padding: 0.42rem 0.5rem;
+  font: inherit;
+  background: #ffffff;
+}
+
+.registry-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 0.55rem 0 1rem 0;
+}
+
+.registry-table th {
+  background: #f1ece9;
+  color: #2e2d29;
+  border-bottom: 2px solid #d6cdc8;
+  padding: 0.48rem 0.55rem;
+  text-align: left;
+}
+
+.registry-table td {
+  border-bottom: 1px solid #ece8e5;
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+}
+
+.registry-table tr:nth-child(even) td {
+  background: #fcfafa;
+}
+
+.table-note {
+  font-size: 0.8rem;
+  color: #5d5c57;
+  margin: 0.35rem 0 0.7rem 0;
+}
+
+@media (max-width: 900px) {
+  .filter-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-panel {
+    grid-template-columns: 1fr;
+  }
+}

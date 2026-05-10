@@ -24,41 +24,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -107,8 +72,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -219,27 +182,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="page-intro">
 <p>This page organizes the dataset inventory by omics layer. Each section describes the layer, typical specimen types, common analytical caveats, and the datasets currently indexed for that layer. Counts are derived dynamically from the dataset registry.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="12" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 11;"><span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"data/ibd_omics_datasets.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({<span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span>})</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">countLayer</span>(keyword) {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(keyword<span class="op">.</span><span class="fu">toLowerCase</span>()))<span class="op">.</span><span class="at">length</span><span class="op">;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
 <hr>
 <section id="bulk-transcriptomics" class="level2">
 <h2 class="anchored" data-anchor-id="bulk-transcriptomics">Bulk Transcriptomics</h2>
@@ -247,37 +189,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="omics-meta">
 Specimens: intestinal biopsies, blood, peripheral blood mononuclear cells &nbsp;|&nbsp; Platforms: microarray (Affymetrix, Illumina), RNA-seq
 </div>
-<p><strong>Count in registry: <code>{countLayer("Bulk transcriptomics")}</code></strong></p>
+<p><strong>Count in registry: 16 datasets</strong></p>
 <p>Bulk transcriptomic datasets measure the average gene expression across all cells in a tissue or biological sample. In IBD research, these datasets typically derive from colonic or ileal mucosal biopsies, peripheral blood, or whole blood. They have been widely used to identify gene expression differences between disease states (active vs.&nbsp;remission, CD vs.&nbsp;UC, disease vs.&nbsp;control) and to discover transcriptomic biomarkers.</p>
 <p><strong>Typical uses.</strong> Mucosal or blood gene expression profiling; disease-vs-control comparison; CD-vs-UC-vs-control comparisons; biomarker discovery; pathway analysis; deconvolution input.</p>
 <p><strong>Common caveats.</strong> Bulk measurements average across heterogeneous cell populations, masking cell-type-specific signals. Cross-study comparisons require attention to tissue site (ileum vs.&nbsp;colon vs.&nbsp;blood), disease activity, treatment status at biopsy, platform (microarray vs.&nbsp;RNA-seq), batch effects, and normalization. Age groups (pediatric vs.&nbsp;adult) differ in biology and should not be pooled without justification. Many older microarray datasets lack detailed clinical metadata.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="37" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 36;"><span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>bulkData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(<span class="st">"bulk transcriptomics"</span>))</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(bulkData<span class="op">,</span> {</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"population"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"tissue_site"</span><span class="op">,</span> <span class="st">"platform"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>    <span class="dt">population</span><span class="op">:</span> <span class="st">"Population"</span><span class="op">,</span> <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="dt">tissue_site</span><span class="op">:</span> <span class="st">"Tissue Site"</span><span class="op">,</span> <span class="dt">platform</span><span class="op">:</span> <span class="st">"Platform"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">25</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="declaration">
+<div data-registry-table="" data-layer="Bulk transcriptomics" data-columns="dataset_name,accession,disease,population,sample_type,tissue_site,platform,data_access_status" data-rows="20">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -287,37 +205,13 @@ Specimens: intestinal biopsies, blood, peripheral blood mononuclear cells &nbsp;
 <div class="omics-meta">
 Specimens: intestinal biopsies (dissociated), lamina propria isolates &nbsp;|&nbsp; Platforms: 10x Genomics Chromium, other droplet-based scRNA-seq
 </div>
-<p><strong>Count in registry: <code>{countLayer("Single-cell transcriptomics")}</code></strong></p>
+<p><strong>Count in registry: 5 datasets</strong></p>
 <p>Single-cell RNA sequencing resolves gene expression at the level of individual cells, enabling cell-type and cell-state characterization. In IBD, scRNA-seq has been applied to characterize immune, epithelial, stromal, and endothelial cell populations in the intestinal mucosa, enabling discovery of disease-associated cell states and pathways.</p>
 <p><strong>Typical uses.</strong> Cell-type and cell-state atlases; identification of disease-associated cell states; deconvolution reference panels; single-cell disease-vs-control comparisons; treatment response at cellular resolution.</p>
 <p><strong>Common caveats.</strong> scRNA-seq datasets are large and computationally demanding. Cell annotation requires reference databases and expert review. Batch effects arise from sample processing, dissociation protocols, and sequencing runs. Cross-study integration requires harmonization of cell annotations and normalization strategies. Dropout (zero-inflation) and ambient RNA are dataset-specific issues. Sample sizes per group are often smaller than bulk studies.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="68" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 67;"><span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>scData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(<span class="st">"single-cell transcriptomics"</span>))</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(scData<span class="op">,</span> {</span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"population"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"tissue_site"</span><span class="op">,</span> <span class="st">"platform"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="dt">population</span><span class="op">:</span> <span class="st">"Population"</span><span class="op">,</span> <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="dt">tissue_site</span><span class="op">:</span> <span class="st">"Tissue Site"</span><span class="op">,</span> <span class="dt">platform</span><span class="op">:</span> <span class="st">"Platform"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">15</span></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-1" data-nodetype="declaration">
+<div data-registry-table="" data-layer="Single-cell transcriptomics" data-columns="dataset_name,accession,disease,population,sample_type,tissue_site,platform,data_access_status" data-rows="12">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-3-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -327,37 +221,13 @@ Specimens: intestinal biopsies (dissociated), lamina propria isolates &nbsp;|&nb
 <div class="omics-meta">
 Specimens: formalin-fixed paraffin-embedded (FFPE) or fresh-frozen tissue sections &nbsp;|&nbsp; Platforms: 10x Visium, CosMx SMI, Xenium, Slide-seq
 </div>
-<p><strong>Count in registry: <code>{countLayer("Spatial transcriptomics")}</code></strong></p>
+<p><strong>Count in registry: 1 dataset</strong></p>
 <p>Spatial transcriptomics maps gene expression while preserving the spatial location of cells within tissue sections. This enables characterization of cellular neighborhoods, tissue architectural changes in inflammation, and spatially restricted gene expression patterns not detectable in dissociated single-cell or bulk assays.</p>
 <p><strong>Typical uses.</strong> Spatial mapping of inflammatory cell states; tissue architecture analysis; niche and co-localization analysis; spatial characterization of ulcerated vs.&nbsp;inflamed vs.&nbsp;uninflamed regions.</p>
 <p><strong>Common caveats.</strong> Resolution and sensitivity vary substantially across platforms. Spot-based platforms (Visium) capture multiple cells per spot; single-cell resolution platforms (CosMx, Xenium) measure a limited gene panel. Data volumes are large. Normalization and cell-type deconvolution are non-trivial. Cross-study comparisons are difficult due to platform heterogeneity and panel differences.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="99" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 98;"><span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>spatialData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(<span class="st">"spatial transcriptomics"</span>))</span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(spatialData<span class="op">,</span> {</span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"tissue_site"</span><span class="op">,</span> <span class="st">"platform"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span> <span class="dt">tissue_site</span><span class="op">:</span> <span class="st">"Tissue Site"</span><span class="op">,</span></span>
-<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>    <span class="dt">platform</span><span class="op">:</span> <span class="st">"Platform"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-1" data-nodetype="declaration">
+<div data-registry-table="" data-layer="Spatial transcriptomics" data-columns="dataset_name,accession,disease,sample_type,tissue_site,platform,data_access_status" data-rows="10">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-4-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -367,40 +237,13 @@ Specimens: formalin-fixed paraffin-embedded (FFPE) or fresh-frozen tissue sectio
 <div class="omics-meta">
 Specimens: stool, mucosal biopsies &nbsp;|&nbsp; Platforms: shotgun metagenomics, 16S rRNA, metatranscriptomics, viromics
 </div>
-<p><strong>Count in registry: <code>{countLayer("Metagenomics") + countLayer("Metatranscriptomics") + countLayer("Virome")}</code></strong></p>
+<p><strong>Count in registry: 1 dataset</strong></p>
 <p>Gut microbiome datasets characterize the microbial community composition and functional activity in stool or mucosal specimens. These datasets include shotgun metagenomics (microbial DNA sequencing), metatranscriptomics (microbial RNA expression), and virome profiling. The gut microbiome is substantially altered in IBD, and multi-omics studies combine microbial and host data.</p>
 <p><strong>Typical uses.</strong> Microbial community profiling; host–microbiome integration; functional pathway analysis; longitudinal microbiome dynamics; stool biomarker discovery.</p>
 <p><strong>Common caveats.</strong> Substantial inter-individual variability. Stool microbiome is affected by diet, antibiotics, and sample handling. Reference databases for annotation are incomplete. Species- and strain-level resolution requires deep sequencing. Cross-study comparisons are complicated by extraction protocols, sequencing depth, and bioinformatic pipelines.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="130" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 129;"><span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>mbData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> {</span>
-<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layer <span class="op">=</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> layer<span class="op">.</span><span class="fu">includes</span>(<span class="st">"metagenomics"</span>) <span class="op">||</span> layer<span class="op">.</span><span class="fu">includes</span>(<span class="st">"metatranscriptomics"</span>) <span class="op">||</span> layer<span class="op">.</span><span class="fu">includes</span>(<span class="st">"virome"</span>)<span class="op">;</span></span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(mbData<span class="op">,</span> {</span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"tissue_site"</span><span class="op">,</span> <span class="st">"omics_layer"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span> <span class="dt">tissue_site</span><span class="op">:</span> <span class="st">"Tissue Site"</span><span class="op">,</span></span>
-<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>    <span class="dt">omics_layer</span><span class="op">:</span> <span class="st">"Omics Layer"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-5-1" data-nodetype="declaration">
+<div data-registry-table="" data-any="Metagenomics|Metatranscriptomics|Virome" data-columns="dataset_name,accession,disease,sample_type,tissue_site,omics_layer,data_access_status" data-rows="10">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-5-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -410,40 +253,13 @@ Specimens: stool, mucosal biopsies &nbsp;|&nbsp; Platforms: shotgun metagenomics
 <div class="omics-meta">
 Specimens: colon biopsies, stool &nbsp;|&nbsp; Platforms: LC-MS/MS, DIA-MS, shotgun proteomics
 </div>
-<p><strong>Count in registry: <code>{countLayer("Proteomics") + countLayer("Metaproteomics")}</code></strong></p>
+<p><strong>Count in registry: 5 datasets</strong></p>
 <p>Proteomic datasets measure protein abundance in biological samples. In IBD, proteomics has been applied to intestinal mucosal tissue and stool (fecal proteomics). Fecal proteomics and metaproteomics capture both host-derived and microbial proteins and offer non-invasive sampling. Mucosal proteomics complements transcriptomic data by capturing post-translational changes.</p>
 <p><strong>Typical uses.</strong> Mucosal protein biomarker discovery; non-invasive fecal protein biomarkers; host–microbiome protein profiling; proteomics–transcriptomics integration.</p>
 <p><strong>Common caveats.</strong> Fecal proteomics is susceptible to dietary variation, microbial variability, and sample processing differences. Mucosal proteomics is limited by tissue availability. Database coverage for microbial proteins (metaproteomics) remains incomplete. Quantitative methods (DDA vs.&nbsp;DIA) differ in sensitivity and reproducibility.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="164" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 163;"><span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a>protData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> {</span>
-<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layer <span class="op">=</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
-<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> layer<span class="op">.</span><span class="fu">includes</span>(<span class="st">"proteomics"</span>) <span class="op">||</span> layer<span class="op">.</span><span class="fu">includes</span>(<span class="st">"metaproteomics"</span>)<span class="op">;</span></span>
-<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(protData<span class="op">,</span> {</span>
-<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"tissue_site"</span><span class="op">,</span> <span class="st">"platform"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span> <span class="dt">tissue_site</span><span class="op">:</span> <span class="st">"Tissue Site"</span><span class="op">,</span></span>
-<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a>    <span class="dt">platform</span><span class="op">:</span> <span class="st">"Platform"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-6-1" data-nodetype="declaration">
+<div data-registry-table="" data-any="Proteomics|Metaproteomics" data-columns="dataset_name,accession,disease,sample_type,tissue_site,platform,data_access_status" data-rows="10">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-6-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -453,40 +269,13 @@ Specimens: colon biopsies, stool &nbsp;|&nbsp; Platforms: LC-MS/MS, DIA-MS, shot
 <div class="omics-meta">
 Specimens: stool, serum, plasma, urine, tissue &nbsp;|&nbsp; Platforms: LC-MS, GC-MS, NMR
 </div>
-<p><strong>Count in registry: <code>{countLayer("Metabolomics") + countLayer("Lipidomics")}</code></strong></p>
+<p><strong>Count in registry: 3 datasets</strong></p>
 <p>Metabolomic datasets measure small-molecule metabolites in biological samples. In IBD, metabolomics has been applied to stool, serum, and tissue, capturing changes in host and microbial metabolic activity. Lipidomics focuses specifically on lipid species. These datasets are often combined with microbiome or proteomics data in multi-omics studies.</p>
 <p><strong>Typical uses.</strong> Metabolic biomarker discovery; disease severity correlates; treatment response metabolomics; microbiome–metabolome integration.</p>
 <p><strong>Common caveats.</strong> Metabolomics is sensitive to sample handling, storage, and analytical variation. Platform differences (LC-MS, GC-MS, NMR) affect coverage and quantitation. Annotation of spectral features to specific metabolites remains incomplete. Fecal metabolomics reflects both host and microbial metabolism.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="198" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 197;"><span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>metabData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> {</span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> layer <span class="op">=</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">;</span></span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> layer<span class="op">.</span><span class="fu">includes</span>(<span class="st">"metabolomics"</span>) <span class="op">||</span> layer<span class="op">.</span><span class="fu">includes</span>(<span class="st">"lipidomics"</span>)<span class="op">;</span></span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(metabData<span class="op">,</span> {</span>
-<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"omics_layer"</span><span class="op">,</span> <span class="st">"platform"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span> <span class="dt">omics_layer</span><span class="op">:</span> <span class="st">"Omics Layer"</span><span class="op">,</span></span>
-<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>    <span class="dt">platform</span><span class="op">:</span> <span class="st">"Platform"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-7-1" data-nodetype="declaration">
+<div data-registry-table="" data-any="Metabolomics|Lipidomics" data-columns="dataset_name,accession,disease,sample_type,omics_layer,platform,data_access_status" data-rows="10">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-7-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -496,37 +285,13 @@ Specimens: stool, serum, plasma, urine, tissue &nbsp;|&nbsp; Platforms: LC-MS, G
 <div class="omics-meta">
 Specimens: peripheral blood, colon mucosa, intestinal epithelial cells &nbsp;|&nbsp; Platforms: Illumina 450K/EPIC methylation arrays, ATAC-seq, ChIP-seq
 </div>
-<p><strong>Count in registry: <code>{countLayer("Methylation")}</code></strong></p>
+<p><strong>Count in registry: 5 datasets</strong></p>
 <p>Methylation and epigenomic datasets characterize DNA methylation or chromatin accessibility patterns in IBD-relevant tissues. Blood methylation datasets have been used for EWAS (epigenome-wide association studies). Mucosal methylation datasets link epigenetic changes to the inflammatory environment of the intestine.</p>
 <p><strong>Typical uses.</strong> Epigenetic biomarker discovery; EWAS; mucosal epigenetic changes in IBD; blood methylation CD vs.&nbsp;UC comparisons; epigenetic–transcriptomic integration.</p>
 <p><strong>Common caveats.</strong> Blood methylation is substantially confounded by cell-type composition; cell-type deconvolution (e.g., Houseman method) is necessary. Methylation arrays have fixed probe sets and cannot capture all genomic regions. Mucosal methylation is influenced by inflammatory cell infiltration. Older 450K datasets have lower genomic coverage than EPIC arrays.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="232" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 231;"><span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a>methData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(<span class="st">"methylation"</span>))</span>
-<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(methData<span class="op">,</span> {</span>
-<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"population"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"tissue_site"</span><span class="op">,</span> <span class="st">"platform"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a>    <span class="dt">population</span><span class="op">:</span> <span class="st">"Population"</span><span class="op">,</span> <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span></span>
-<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a>    <span class="dt">tissue_site</span><span class="op">:</span> <span class="st">"Tissue Site"</span><span class="op">,</span> <span class="dt">platform</span><span class="op">:</span> <span class="st">"Platform"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-8-1" data-nodetype="declaration">
+<div data-registry-table="" data-layer="Methylation" data-columns="dataset_name,accession,disease,population,sample_type,tissue_site,platform,data_access_status" data-rows="10">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-8-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -536,37 +301,13 @@ Specimens: peripheral blood, colon mucosa, intestinal epithelial cells &nbsp;|&n
 <div class="omics-meta">
 Specimens: DNA from blood or saliva &nbsp;|&nbsp; Platforms: SNP arrays (Illumina, Affymetrix), imputed genotypes, whole-genome sequencing
 </div>
-<p><strong>Count in registry: <code>{countLayer("Genetics")}</code></strong></p>
+<p><strong>Count in registry: 5 datasets</strong></p>
 <p>Genetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn’s disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.</p>
 <p><strong>Typical uses.</strong> Genetic risk factor identification; target prioritization; Mendelian randomization; colocalization with QTL data; polygenic risk scores; trans-ancestral analyses.</p>
 <p><strong>Common caveats.</strong> Individual-level genotype data are typically controlled-access. Summary statistics are often publicly available but differ in imputation panels, ancestry composition, and case/control definitions. IBD phenotype ascertainment varies across studies (clinical diagnosis vs.&nbsp;ICD codes). Multi-ancestry analyses require specialized methods.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb9" data-startfrom="263" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 262;"><span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a>gwasData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(<span class="st">"genetics"</span>))</span>
-<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-265"><a href="#cb9-265" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(gwasData<span class="op">,</span> {</span>
-<span id="cb9-266"><a href="#cb9-266" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"population"</span><span class="op">,</span> <span class="st">"omics_layer"</span><span class="op">,</span> <span class="st">"study_design"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb9-267"><a href="#cb9-267" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb9-268"><a href="#cb9-268" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb9-269"><a href="#cb9-269" aria-hidden="true" tabindex="-1"></a>    <span class="dt">population</span><span class="op">:</span> <span class="st">"Population"</span><span class="op">,</span> <span class="dt">omics_layer</span><span class="op">:</span> <span class="st">"Omics Layer"</span><span class="op">,</span></span>
-<span id="cb9-270"><a href="#cb9-270" aria-hidden="true" tabindex="-1"></a>    <span class="dt">study_design</span><span class="op">:</span> <span class="st">"Study Design"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb9-271"><a href="#cb9-271" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb9-272"><a href="#cb9-272" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb9-273"><a href="#cb9-273" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-9-1" data-nodetype="declaration">
+<div data-registry-table="" data-any="Genetics|GWAS|Integrative genomics" data-columns="dataset_name,accession,disease,population,omics_layer,study_design,data_access_status" data-rows="10">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-9-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <hr>
 </section>
@@ -576,36 +317,13 @@ Specimens: DNA from blood or saliva &nbsp;|&nbsp; Platforms: SNP arrays (Illumin
 <div class="omics-meta">
 Specimens: multiple per subject &nbsp;|&nbsp; Platforms: multiple integrated platforms
 </div>
-<p><strong>Count in registry: <code>{countLayer("Multi-omics")}</code></strong></p>
+<p><strong>Count in registry: 1 dataset</strong></p>
 <p>Multi-omics datasets integrate two or more omics layers collected from the same subjects or same biobank. These resources support integrative analyses linking, for example, host transcriptomics with microbiome, proteomics, and metabolomics data.</p>
 <p><strong>Typical uses.</strong> Host–microbiome integration; cross-omics correlation; multi-omics biomarker discovery; longitudinal multi-omics dynamics.</p>
 <p><strong>Common caveats.</strong> Not all samples in a multi-omics study have complete data across all layers. Data integration requires careful harmonization of metadata, sample identifiers, and normalization. Batch effects may differ across omics layers. Access conditions may vary by omics component.</p>
 </div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="294" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 293;"><span id="cb10-294"><a href="#cb10-294" aria-hidden="true" tabindex="-1"></a>moData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">omics_layer</span> <span class="op">||</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()<span class="op">.</span><span class="fu">includes</span>(<span class="st">"multi-omics"</span>))</span>
-<span id="cb10-295"><a href="#cb10-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-296"><a href="#cb10-296" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(moData<span class="op">,</span> {</span>
-<span id="cb10-297"><a href="#cb10-297" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"dataset_name"</span><span class="op">,</span> <span class="st">"accession"</span><span class="op">,</span> <span class="st">"disease"</span><span class="op">,</span> <span class="st">"sample_type"</span><span class="op">,</span> <span class="st">"omics_layer"</span><span class="op">,</span> <span class="st">"data_access_status"</span>]<span class="op">,</span></span>
-<span id="cb10-298"><a href="#cb10-298" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb10-299"><a href="#cb10-299" aria-hidden="true" tabindex="-1"></a>    <span class="dt">dataset_name</span><span class="op">:</span> <span class="st">"Dataset"</span><span class="op">,</span> <span class="dt">accession</span><span class="op">:</span> <span class="st">"Accession"</span><span class="op">,</span> <span class="dt">disease</span><span class="op">:</span> <span class="st">"Disease"</span><span class="op">,</span></span>
-<span id="cb10-300"><a href="#cb10-300" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sample_type</span><span class="op">:</span> <span class="st">"Sample Type"</span><span class="op">,</span> <span class="dt">omics_layer</span><span class="op">:</span> <span class="st">"Omics Layer"</span><span class="op">,</span> <span class="dt">data_access_status</span><span class="op">:</span> <span class="st">"Access"</span></span>
-<span id="cb10-301"><a href="#cb10-301" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb10-302"><a href="#cb10-302" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span></span>
-<span id="cb10-303"><a href="#cb10-303" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-10-1" data-nodetype="declaration">
+<div data-registry-table="" data-layer="Multi-omics" data-columns="dataset_name,accession,disease,sample_type,omics_layer,data_access_status" data-rows="10">
 
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-10-2" data-nodetype="expression">
-
-</div>
-</div>
-</div>
 </div>
 <div class="disclaimer">
 <p>All counts and tables on this page are derived from <code>data/ibd_omics_datasets.csv</code> and update automatically as the registry expands. Many entries carry <em>Needs verification</em> status — metadata should be confirmed against source repositories before use in analysis.</p>
@@ -615,17 +333,7 @@ Specimens: multiple per subject &nbsp;|&nbsp; Platforms: multiple integrated pla
 </section>
 
 </main> <!-- /main -->
-<script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImRhdGEgPSBGaWxlQXR0YWNobWVudChcImRhdGEvaWJkX29taWNzX2RhdGFzZXRzLmNzdlwiKS5jc3Yoe3R5cGVkOiB0cnVlfSlcclxuXHJcbmZ1bmN0aW9uIGNvdW50TGF5ZXIoa2V5d29yZCkge1xyXG4gIHJldHVybiBkYXRhLmZpbHRlcihkID0+IChkLm9taWNzX2xheWVyIHx8IFwiXCIpLnRvTG93ZXJDYXNlKCkuaW5jbHVkZXMoa2V5d29yZC50b0xvd2VyQ2FzZSgpKSkubGVuZ3RoO1xyXG59XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImJ1bGtEYXRhID0gZGF0YS5maWx0ZXIoZCA9PiAoZC5vbWljc19sYXllciB8fCBcIlwiKS50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKFwiYnVsayB0cmFuc2NyaXB0b21pY3NcIikpXHJcblxyXG5JbnB1dHMudGFibGUoYnVsa0RhdGEsIHtcclxuICBjb2x1bW5zOiBbXCJkYXRhc2V0X25hbWVcIiwgXCJhY2Nlc3Npb25cIiwgXCJkaXNlYXNlXCIsIFwicG9wdWxhdGlvblwiLCBcInNhbXBsZV90eXBlXCIsIFwidGlzc3VlX3NpdGVcIiwgXCJwbGF0Zm9ybVwiLCBcImRhdGFfYWNjZXNzX3N0YXR1c1wiXSxcclxuICBoZWFkZXI6IHtcclxuICAgIGRhdGFzZXRfbmFtZTogXCJEYXRhc2V0XCIsIGFjY2Vzc2lvbjogXCJBY2Nlc3Npb25cIiwgZGlzZWFzZTogXCJEaXNlYXNlXCIsXHJcbiAgICBwb3B1bGF0aW9uOiBcIlBvcHVsYXRpb25cIiwgc2FtcGxlX3R5cGU6IFwiU2FtcGxlIFR5cGVcIixcclxuICAgIHRpc3N1ZV9zaXRlOiBcIlRpc3N1ZSBTaXRlXCIsIHBsYXRmb3JtOiBcIlBsYXRmb3JtXCIsIGRhdGFfYWNjZXNzX3N0YXR1czogXCJBY2Nlc3NcIlxyXG4gIH0sXHJcbiAgcm93czogMjVcclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoic2NEYXRhID0gZGF0YS5maWx0ZXIoZCA9PiAoZC5vbWljc19sYXllciB8fCBcIlwiKS50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKFwic2luZ2xlLWNlbGwgdHJhbnNjcmlwdG9taWNzXCIpKVxyXG5cclxuSW5wdXRzLnRhYmxlKHNjRGF0YSwge1xyXG4gIGNvbHVtbnM6IFtcImRhdGFzZXRfbmFtZVwiLCBcImFjY2Vzc2lvblwiLCBcImRpc2Vhc2VcIiwgXCJwb3B1bGF0aW9uXCIsIFwic2FtcGxlX3R5cGVcIiwgXCJ0aXNzdWVfc2l0ZVwiLCBcInBsYXRmb3JtXCIsIFwiZGF0YV9hY2Nlc3Nfc3RhdHVzXCJdLFxyXG4gIGhlYWRlcjoge1xyXG4gICAgZGF0YXNldF9uYW1lOiBcIkRhdGFzZXRcIiwgYWNjZXNzaW9uOiBcIkFjY2Vzc2lvblwiLCBkaXNlYXNlOiBcIkRpc2Vhc2VcIixcclxuICAgIHBvcHVsYXRpb246IFwiUG9wdWxhdGlvblwiLCBzYW1wbGVfdHlwZTogXCJTYW1wbGUgVHlwZVwiLFxyXG4gICAgdGlzc3VlX3NpdGU6IFwiVGlzc3VlIFNpdGVcIiwgcGxhdGZvcm06IFwiUGxhdGZvcm1cIiwgZGF0YV9hY2Nlc3Nfc3RhdHVzOiBcIkFjY2Vzc1wiXHJcbiAgfSxcclxuICByb3dzOiAxNVxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJzcGF0aWFsRGF0YSA9IGRhdGEuZmlsdGVyKGQgPT4gKGQub21pY3NfbGF5ZXIgfHwgXCJcIikudG9Mb3dlckNhc2UoKS5pbmNsdWRlcyhcInNwYXRpYWwgdHJhbnNjcmlwdG9taWNzXCIpKVxyXG5cclxuSW5wdXRzLnRhYmxlKHNwYXRpYWxEYXRhLCB7XHJcbiAgY29sdW1uczogW1wiZGF0YXNldF9uYW1lXCIsIFwiYWNjZXNzaW9uXCIsIFwiZGlzZWFzZVwiLCBcInNhbXBsZV90eXBlXCIsIFwidGlzc3VlX3NpdGVcIiwgXCJwbGF0Zm9ybVwiLCBcImRhdGFfYWNjZXNzX3N0YXR1c1wiXSxcclxuICBoZWFkZXI6IHtcclxuICAgIGRhdGFzZXRfbmFtZTogXCJEYXRhc2V0XCIsIGFjY2Vzc2lvbjogXCJBY2Nlc3Npb25cIiwgZGlzZWFzZTogXCJEaXNlYXNlXCIsXHJcbiAgICBzYW1wbGVfdHlwZTogXCJTYW1wbGUgVHlwZVwiLCB0aXNzdWVfc2l0ZTogXCJUaXNzdWUgU2l0ZVwiLFxyXG4gICAgcGxhdGZvcm06IFwiUGxhdGZvcm1cIiwgZGF0YV9hY2Nlc3Nfc3RhdHVzOiBcIkFjY2Vzc1wiXHJcbiAgfSxcclxuICByb3dzOiAxMFxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtYkRhdGEgPSBkYXRhLmZpbHRlcihkID0+IHtcclxuICBjb25zdCBsYXllciA9IChkLm9taWNzX2xheWVyIHx8IFwiXCIpLnRvTG93ZXJDYXNlKCk7XHJcbiAgcmV0dXJuIGxheWVyLmluY2x1ZGVzKFwibWV0YWdlbm9taWNzXCIpIHx8IGxheWVyLmluY2x1ZGVzKFwibWV0YXRyYW5zY3JpcHRvbWljc1wiKSB8fCBsYXllci5pbmNsdWRlcyhcInZpcm9tZVwiKTtcclxufSlcclxuXHJcbklucHV0cy50YWJsZShtYkRhdGEsIHtcclxuICBjb2x1bW5zOiBbXCJkYXRhc2V0X25hbWVcIiwgXCJhY2Nlc3Npb25cIiwgXCJkaXNlYXNlXCIsIFwic2FtcGxlX3R5cGVcIiwgXCJ0aXNzdWVfc2l0ZVwiLCBcIm9taWNzX2xheWVyXCIsIFwiZGF0YV9hY2Nlc3Nfc3RhdHVzXCJdLFxyXG4gIGhlYWRlcjoge1xyXG4gICAgZGF0YXNldF9uYW1lOiBcIkRhdGFzZXRcIiwgYWNjZXNzaW9uOiBcIkFjY2Vzc2lvblwiLCBkaXNlYXNlOiBcIkRpc2Vhc2VcIixcclxuICAgIHNhbXBsZV90eXBlOiBcIlNhbXBsZSBUeXBlXCIsIHRpc3N1ZV9zaXRlOiBcIlRpc3N1ZSBTaXRlXCIsXHJcbiAgICBvbWljc19sYXllcjogXCJPbWljcyBMYXllclwiLCBkYXRhX2FjY2Vzc19zdGF0dXM6IFwiQWNjZXNzXCJcclxuICB9LFxyXG4gIHJvd3M6IDEwXHJcbn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InByb3REYXRhID0gZGF0YS5maWx0ZXIoZCA9PiB7XHJcbiAgY29uc3QgbGF5ZXIgPSAoZC5vbWljc19sYXllciB8fCBcIlwiKS50b0xvd2VyQ2FzZSgpO1xyXG4gIHJldHVybiBsYXllci5pbmNsdWRlcyhcInByb3Rlb21pY3NcIikgfHwgbGF5ZXIuaW5jbHVkZXMoXCJtZXRhcHJvdGVvbWljc1wiKTtcclxufSlcclxuXHJcbklucHV0cy50YWJsZShwcm90RGF0YSwge1xyXG4gIGNvbHVtbnM6IFtcImRhdGFzZXRfbmFtZVwiLCBcImFjY2Vzc2lvblwiLCBcImRpc2Vhc2VcIiwgXCJzYW1wbGVfdHlwZVwiLCBcInRpc3N1ZV9zaXRlXCIsIFwicGxhdGZvcm1cIiwgXCJkYXRhX2FjY2Vzc19zdGF0dXNcIl0sXHJcbiAgaGVhZGVyOiB7XHJcbiAgICBkYXRhc2V0X25hbWU6IFwiRGF0YXNldFwiLCBhY2Nlc3Npb246IFwiQWNjZXNzaW9uXCIsIGRpc2Vhc2U6IFwiRGlzZWFzZVwiLFxyXG4gICAgc2FtcGxlX3R5cGU6IFwiU2FtcGxlIFR5cGVcIiwgdGlzc3VlX3NpdGU6IFwiVGlzc3VlIFNpdGVcIixcclxuICAgIHBsYXRmb3JtOiBcIlBsYXRmb3JtXCIsIGRhdGFfYWNjZXNzX3N0YXR1czogXCJBY2Nlc3NcIlxyXG4gIH0sXHJcbiAgcm93czogMTBcclxufSlcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoibWV0YWJEYXRhID0gZGF0YS5maWx0ZXIoZCA9PiB7XHJcbiAgY29uc3QgbGF5ZXIgPSAoZC5vbWljc19sYXllciB8fCBcIlwiKS50b0xvd2VyQ2FzZSgpO1xyXG4gIHJldHVybiBsYXllci5pbmNsdWRlcyhcIm1ldGFib2xvbWljc1wiKSB8fCBsYXllci5pbmNsdWRlcyhcImxpcGlkb21pY3NcIik7XHJcbn0pXHJcblxyXG5JbnB1dHMudGFibGUobWV0YWJEYXRhLCB7XHJcbiAgY29sdW1uczogW1wiZGF0YXNldF9uYW1lXCIsIFwiYWNjZXNzaW9uXCIsIFwiZGlzZWFzZVwiLCBcInNhbXBsZV90eXBlXCIsIFwib21pY3NfbGF5ZXJcIiwgXCJwbGF0Zm9ybVwiLCBcImRhdGFfYWNjZXNzX3N0YXR1c1wiXSxcclxuICBoZWFkZXI6IHtcclxuICAgIGRhdGFzZXRfbmFtZTogXCJEYXRhc2V0XCIsIGFjY2Vzc2lvbjogXCJBY2Nlc3Npb25cIiwgZGlzZWFzZTogXCJEaXNlYXNlXCIsXHJcbiAgICBzYW1wbGVfdHlwZTogXCJTYW1wbGUgVHlwZVwiLCBvbWljc19sYXllcjogXCJPbWljcyBMYXllclwiLFxyXG4gICAgcGxhdGZvcm06IFwiUGxhdGZvcm1cIiwgZGF0YV9hY2Nlc3Nfc3RhdHVzOiBcIkFjY2Vzc1wiXHJcbiAgfSxcclxuICByb3dzOiAxMFxyXG59KVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtZXRoRGF0YSA9IGRhdGEuZmlsdGVyKGQgPT4gKGQub21pY3NfbGF5ZXIgfHwgXCJcIikudG9Mb3dlckNhc2UoKS5pbmNsdWRlcyhcIm1ldGh5bGF0aW9uXCIpKVxyXG5cclxuSW5wdXRzLnRhYmxlKG1ldGhEYXRhLCB7XHJcbiAgY29sdW1uczogW1wiZGF0YXNldF9uYW1lXCIsIFwiYWNjZXNzaW9uXCIsIFwiZGlzZWFzZVwiLCBcInBvcHVsYXRpb25cIiwgXCJzYW1wbGVfdHlwZVwiLCBcInRpc3N1ZV9zaXRlXCIsIFwicGxhdGZvcm1cIiwgXCJkYXRhX2FjY2Vzc19zdGF0dXNcIl0sXHJcbiAgaGVhZGVyOiB7XHJcbiAgICBkYXRhc2V0X25hbWU6IFwiRGF0YXNldFwiLCBhY2Nlc3Npb246IFwiQWNjZXNzaW9uXCIsIGRpc2Vhc2U6IFwiRGlzZWFzZVwiLFxyXG4gICAgcG9wdWxhdGlvbjogXCJQb3B1bGF0aW9uXCIsIHNhbXBsZV90eXBlOiBcIlNhbXBsZSBUeXBlXCIsXHJcbiAgICB0aXNzdWVfc2l0ZTogXCJUaXNzdWUgU2l0ZVwiLCBwbGF0Zm9ybTogXCJQbGF0Zm9ybVwiLCBkYXRhX2FjY2Vzc19zdGF0dXM6IFwiQWNjZXNzXCJcclxuICB9LFxyXG4gIHJvd3M6IDEwXHJcbn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imd3YXNEYXRhID0gZGF0YS5maWx0ZXIoZCA9PiAoZC5vbWljc19sYXllciB8fCBcIlwiKS50b0xvd2VyQ2FzZSgpLmluY2x1ZGVzKFwiZ2VuZXRpY3NcIikpXHJcblxyXG5JbnB1dHMudGFibGUoZ3dhc0RhdGEsIHtcclxuICBjb2x1bW5zOiBbXCJkYXRhc2V0X25hbWVcIiwgXCJhY2Nlc3Npb25cIiwgXCJkaXNlYXNlXCIsIFwicG9wdWxhdGlvblwiLCBcIm9taWNzX2xheWVyXCIsIFwic3R1ZHlfZGVzaWduXCIsIFwiZGF0YV9hY2Nlc3Nfc3RhdHVzXCJdLFxyXG4gIGhlYWRlcjoge1xyXG4gICAgZGF0YXNldF9uYW1lOiBcIkRhdGFzZXRcIiwgYWNjZXNzaW9uOiBcIkFjY2Vzc2lvblwiLCBkaXNlYXNlOiBcIkRpc2Vhc2VcIixcclxuICAgIHBvcHVsYXRpb246IFwiUG9wdWxhdGlvblwiLCBvbWljc19sYXllcjogXCJPbWljcyBMYXllclwiLFxyXG4gICAgc3R1ZHlfZGVzaWduOiBcIlN0dWR5IERlc2lnblwiLCBkYXRhX2FjY2Vzc19zdGF0dXM6IFwiQWNjZXNzXCJcclxuICB9LFxyXG4gIHJvd3M6IDEwXHJcbn0pXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtb0RhdGEgPSBkYXRhLmZpbHRlcihkID0+IChkLm9taWNzX2xheWVyIHx8IFwiXCIpLnRvTG93ZXJDYXNlKCkuaW5jbHVkZXMoXCJtdWx0aS1vbWljc1wiKSlcclxuXHJcbklucHV0cy50YWJsZShtb0RhdGEsIHtcclxuICBjb2x1bW5zOiBbXCJkYXRhc2V0X25hbWVcIiwgXCJhY2Nlc3Npb25cIiwgXCJkaXNlYXNlXCIsIFwic2FtcGxlX3R5cGVcIiwgXCJvbWljc19sYXllclwiLCBcImRhdGFfYWNjZXNzX3N0YXR1c1wiXSxcclxuICBoZWFkZXI6IHtcclxuICAgIGRhdGFzZXRfbmFtZTogXCJEYXRhc2V0XCIsIGFjY2Vzc2lvbjogXCJBY2Nlc3Npb25cIiwgZGlzZWFzZTogXCJEaXNlYXNlXCIsXHJcbiAgICBzYW1wbGVfdHlwZTogXCJTYW1wbGUgVHlwZVwiLCBvbWljc19sYXllcjogXCJPbWljcyBMYXllclwiLCBkYXRhX2FjY2Vzc19zdGF0dXM6IFwiQWNjZXNzXCJcclxuICB9LFxyXG4gIHJvd3M6IDEwXHJcbn0pXHJcbiJ9XX0=
-</script>
-<script type="module">
-if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../..";
-window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "";
-window._ojs.selfContained = false;
-window._ojs.runtime.interpretFromScriptTags();
-</script>
+<script src="site-tables.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

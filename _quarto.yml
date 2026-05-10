@@ -105,6 +105,14 @@ project:
     - data/verification/post_countability_site_qa.csv
     - data/verification/next_phase_recommendation.csv
     - data/verification/post_countability_next_tasks.csv
+    - data/verification/single_cell_spatial_gap_search.csv
+    - data/verification/non_transcriptomic_omics_gap_search.csv
+    - data/verification/top_single_cell_spatial_candidate_verification.csv
+    - data/verification/non_transcriptomic_candidate_prioritization.csv
+    - data/verification/covered_portal_mirror_enrichment_review.csv
+    - data/verification/clinical_trial_omics_gap_search_retry.csv
+    - data/verification/clinical_trial_omics_already_covered.csv
+    - data/verification/single_cell_spatial_row_patch_plan.csv
 
 author: "Dahham Alsoud"
 

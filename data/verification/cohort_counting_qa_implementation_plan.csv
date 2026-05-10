@@ -1,0 +1,9 @@
+item,value
+script_path,R/qa_cohort_counting.R
+input_path,data/ibd_omics_datasets.csv
+output_path,data/verification/cohort_counting_qa_report.csv
+command,"& ""C:\Program Files\R\R-4.5.3\bin\x64\Rscript.exe"" R\qa_cohort_counting.R"
+resources_update,"Add data/verification/cohort_counting_qa_report.csv to _quarto.yml resources."
+verification_1,"Generated CSV exists in data/verification."
+verification_2,"Rendered copy exists in docs/data/verification after quarto render."
+verification_3,"Report totals match current registry counts."

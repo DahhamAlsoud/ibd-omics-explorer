@@ -88,6 +88,9 @@ project:
     - data/verification/post_rollout_next_priorities.csv
     - data/verification/unclear_countability_resolution_plan.csv
     - data/verification/cohort_counting_qa_report_design.csv
+    - data/verification/protect_metabolomics_crosswalk.csv
+    - data/verification/cohort_counting_qa_implementation_plan.csv
+    - data/verification/cohort_counting_qa_report.csv
 
 author: "Dahham Alsoud"
 

@@ -66,6 +66,8 @@ project:
     - data/verification/single_cell_family_overlap_check.csv
     - data/verification/natcomm2023_multimodality_overlap_check.csv
     - data/verification/prism_broad_family_overlap_check.csv
+    - data/verification/large_bulk_family_overlap_check.csv
+    - data/verification/mass_spec_family_overlap_check.csv
 
 author: "Dahham Alsoud"
 

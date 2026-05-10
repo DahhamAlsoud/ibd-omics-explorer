@@ -127,6 +127,7 @@ project:
     - data/verification/single_cell_spatial_full_row_patch_schema_qa.csv
     - data/verification/post_single_cell_spatial_patch_qa.csv
     - data/verification/post_non_transcriptomic_top3_patch_qa.csv
+    - data/verification/post_non_transcriptomic_ui_smoke_check.csv
     - data/verification/non_transcriptomic_top3_candidate_verification.csv
     - data/verification/non_transcriptomic_top3_full_row_patch_plan.csv
     - data/verification/anti_integrin_single_cell_sample_count_check.csv

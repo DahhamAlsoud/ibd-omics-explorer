@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dahham Alsoud">
 
-<title>Use Cases – IBD Omics Explorer</title>
+<title>Verification Queue – IBD Omics Explorer</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -111,11 +111,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Repositories</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./use-cases.html" aria-current="page"> 
+    <a class="nav-link" href="./use-cases.html"> 
 <span class="menu-text">Use Cases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./verification-queue.html"> 
+    <a class="nav-link active" href="./verification-queue.html" aria-current="page"> 
 <span class="menu-text">Verification</span></a>
   </li>  
   <li class="nav-item">
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -142,34 +142,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#adult-vs.-pediatric-comparisons" id="toc-adult-vs.-pediatric-comparisons" class="nav-link active" data-scroll-target="#adult-vs.-pediatric-comparisons">Adult vs.&nbsp;Pediatric Comparisons</a></li>
-  <li><a href="#mucosal-disease-vs-control-transcriptomics" id="toc-mucosal-disease-vs-control-transcriptomics" class="nav-link" data-scroll-target="#mucosal-disease-vs-control-transcriptomics">Mucosal Disease-vs-Control Transcriptomics</a></li>
-  <li><a href="#blood-based-transcriptomics" id="toc-blood-based-transcriptomics" class="nav-link" data-scroll-target="#blood-based-transcriptomics">Blood-Based Transcriptomics</a></li>
-  <li><a href="#cd-vs.-uc-comparison" id="toc-cd-vs.-uc-comparison" class="nav-link" data-scroll-target="#cd-vs.-uc-comparison">CD vs.&nbsp;UC Comparison</a></li>
-  <li><a href="#disease-activity-and-longitudinal-analysis" id="toc-disease-activity-and-longitudinal-analysis" class="nav-link" data-scroll-target="#disease-activity-and-longitudinal-analysis">Disease Activity and Longitudinal Analysis</a></li>
-  <li><a href="#cell-type-reference-and-deconvolution" id="toc-cell-type-reference-and-deconvolution" class="nav-link" data-scroll-target="#cell-type-reference-and-deconvolution">Cell-Type Reference and Deconvolution</a></li>
-  <li><a href="#spatial-tissue-organization" id="toc-spatial-tissue-organization" class="nav-link" data-scroll-target="#spatial-tissue-organization">Spatial Tissue Organization</a></li>
-  <li><a href="#treatment-response-analysis" id="toc-treatment-response-analysis" class="nav-link" data-scroll-target="#treatment-response-analysis">Treatment Response Analysis</a></li>
-  <li><a href="#hostmicrobiome-integration" id="toc-hostmicrobiome-integration" class="nav-link" data-scroll-target="#hostmicrobiome-integration">Host–Microbiome Integration</a></li>
-  <li><a href="#fecal-proteomics-and-metaproteomics" id="toc-fecal-proteomics-and-metaproteomics" class="nav-link" data-scroll-target="#fecal-proteomics-and-metaproteomics">Fecal Proteomics and Metaproteomics</a></li>
-  <li><a href="#metabolomics-and-lipidomics" id="toc-metabolomics-and-lipidomics" class="nav-link" data-scroll-target="#metabolomics-and-lipidomics">Metabolomics and Lipidomics</a></li>
-  <li><a href="#methylation-and-epigenomics" id="toc-methylation-and-epigenomics" class="nav-link" data-scroll-target="#methylation-and-epigenomics">Methylation and Epigenomics</a></li>
-  <li><a href="#genetics-and-target-prioritization" id="toc-genetics-and-target-prioritization" class="nav-link" data-scroll-target="#genetics-and-target-prioritization">Genetics and Target Prioritization</a></li>
+  <li><a href="#queue-summary" id="toc-queue-summary" class="nav-link active" data-scroll-target="#queue-summary">Queue Summary</a></li>
+  <li><a href="#verification-status-definitions" id="toc-verification-status-definitions" class="nav-link" data-scroll-target="#verification-status-definitions">Verification Status Definitions</a></li>
+  <li><a href="#manual-review-rule" id="toc-manual-review-rule" class="nav-link" data-scroll-target="#manual-review-rule">Manual Review Rule</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Use Cases</h1>
-<p class="subtitle lead">Browse datasets by potential research application</p>
+<h1 class="title">Verification Queue</h1>
+<p class="subtitle lead">Evidence-backed review status for registry entries</p>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -188,167 +178,69 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="page-intro">
-<p>This page organizes datasets by potential research use case based on available metadata tags. <strong>This page does not recommend, rank, or endorse any dataset.</strong> Entries listed under each use case are tagged as potentially relevant based on publicly available metadata. Suitability for any specific analysis must be assessed by the researcher based on study design, sample size, platform, access status, and metadata completeness.</p>
+<p>This page tracks which dataset entries still need manual verification against source repository records and primary publications. The queue is conservative: entries remain here unless they have been reviewed and promoted to a higher verification status. Presence in the queue does not mean an entry is wrong; it means the metadata should not yet be treated as final.</p>
 </div>
-<hr>
-<section id="adult-vs.-pediatric-comparisons" class="level2">
-<h2 class="anchored" data-anchor-id="adult-vs.-pediatric-comparisons">Adult vs.&nbsp;Pediatric Comparisons</h2>
-<div class="use-case-section">
-<div class="uc-note">
-These datasets are tagged as potentially relevant to this use case based on available metadata. Pediatric cohorts are specifically labeled where known; adult designation reflects the majority of unlabeled cohorts but should be verified.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_pediatric_analysis" data-rows="12">
+<section id="queue-summary" class="level2">
+<h2 class="anchored" data-anchor-id="queue-summary">Queue Summary</h2>
+<div id="verification-queue">
 
 </div>
 <hr>
 </section>
-<section id="mucosal-disease-vs-control-transcriptomics" class="level2">
-<h2 class="anchored" data-anchor-id="mucosal-disease-vs-control-transcriptomics">Mucosal Disease-vs-Control Transcriptomics</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets with intestinal mucosal biopsies from IBD and non-IBD controls, potentially useful for disease-vs-control transcriptomic analyses. Tissue site (ileum vs.&nbsp;colon vs.&nbsp;rectum) and platform should be verified before pooling studies.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_disease_vs_control" data-rows="12">
-
-</div>
+<section id="verification-status-definitions" class="level2">
+<h2 class="anchored" data-anchor-id="verification-status-definitions">Verification Status Definitions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>seed_entry</code></td>
+<td>Initial registry entry; not fully verified</td>
+</tr>
+<tr class="even">
+<td><code>source_link_checked</code></td>
+<td>Source record opens and matches the accession or resource</td>
+</tr>
+<tr class="odd">
+<td><code>metadata_checked</code></td>
+<td>Disease group, sample type, platform, and access metadata checked against source</td>
+</tr>
+<tr class="even">
+<td><code>publication_checked</code></td>
+<td>Primary publication title, year, DOI, and PMID checked where available</td>
+</tr>
+<tr class="odd">
+<td><code>analysis_ready_candidate</code></td>
+<td>Candidate for downstream analysis after source, metadata, publication, and access checks; still not a guarantee of fitness for every use case</td>
+</tr>
+<tr class="even">
+<td><code>needs_revision</code></td>
+<td>Source evidence conflicts with current registry metadata or key fields are obsolete</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="blood-based-transcriptomics" class="level2">
-<h2 class="anchored" data-anchor-id="blood-based-transcriptomics">Blood-Based Transcriptomics</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets using whole blood or peripheral blood as the source tissue. Blood-based transcriptomics is sensitive to cell composition variability and should be interpreted with attention to disease activity, treatment status, and cell-type deconvolution.
-</div>
-</div>
-<div data-registry-table="" data-any="blood|PBMC|methylation" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="cd-vs.-uc-comparison" class="level2">
-<h2 class="anchored" data-anchor-id="cd-vs.-uc-comparison">CD vs.&nbsp;UC Comparison</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets including both Crohn’s disease and ulcerative colitis samples, potentially relevant for direct CD-vs-UC comparisons. Tissue site matching between CD and UC samples is important for valid comparisons.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_cd_vs_uc" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="disease-activity-and-longitudinal-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="disease-activity-and-longitudinal-analysis">Disease Activity and Longitudinal Analysis</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets with disease activity information or longitudinal follow-up, potentially relevant for studying dynamic changes, remission, or treatment response over time. Longitudinal datasets are particularly valuable but also more complex to analyze.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_longitudinal_analysis" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,longitudinal" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="cell-type-reference-and-deconvolution" class="level2">
-<h2 class="anchored" data-anchor-id="cell-type-reference-and-deconvolution">Cell-Type Reference and Deconvolution</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Single-cell and reference datasets potentially useful for building or applying cell-type deconvolution models to bulk transcriptomic data. Cell annotation quality and tissue site matching to the bulk dataset should be considered carefully.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_deconvolution_reference" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="spatial-tissue-organization" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-tissue-organization">Spatial Tissue Organization</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets using spatial transcriptomics to characterize the spatial organization of cell types and gene expression within IBD tissue sections. Platform-specific resolution and gene panel coverage should be considered.
-</div>
-</div>
-<div data-registry-table="" data-any="spatial|cosmx|visium|xenium|spatial transcriptomics" data-rows="10">
-
-</div>
-<hr>
-</section>
-<section id="treatment-response-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="treatment-response-analysis">Treatment Response Analysis</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets with treatment metadata or specifically designed to study treatment response. These are potentially relevant for analyzing biological correlates of response or non-response to IBD therapies. Treatment status at biopsy and response definitions vary across studies.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_treatment_response" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,treatment_metadata" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="hostmicrobiome-integration" class="level2">
-<h2 class="anchored" data-anchor-id="hostmicrobiome-integration">Host–Microbiome Integration</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets including microbiome or multi-omics data relevant to host–microbiome research in IBD. Integration of host and microbial data requires careful sample-level matching and statistical methods accounting for compositionality and sparsity.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_host_microbiome" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="fecal-proteomics-and-metaproteomics" class="level2">
-<h2 class="anchored" data-anchor-id="fecal-proteomics-and-metaproteomics">Fecal Proteomics and Metaproteomics</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets using stool-derived proteomics or metaproteomics, capturing both host-derived and microbial proteins non-invasively. Fecal proteomics is sensitive to sample handling and storage conditions.
-</div>
-</div>
-<div data-registry-table="" data-any="fecal|stool|proteomics|metaproteomics" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="metabolomics-and-lipidomics" class="level2">
-<h2 class="anchored" data-anchor-id="metabolomics-and-lipidomics">Metabolomics and Lipidomics</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets measuring small molecules or lipids in IBD-relevant samples. Platform and sample matrix (stool, blood, urine, tissue) substantially affect what is measured and how results should be interpreted.
-</div>
-</div>
-<div data-registry-table="" data-any="metabolomics|lipidomics|metabolite" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="methylation-and-epigenomics" class="level2">
-<h2 class="anchored" data-anchor-id="methylation-and-epigenomics">Methylation and Epigenomics</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Datasets measuring DNA methylation or chromatin state in IBD-relevant tissues. Cell composition confounding in blood samples and probe coverage limitations in older arrays (450K) are important considerations.
-</div>
-</div>
-<div data-registry-table="" data-any="methylation|epigenomics|ewas|epigenetic" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="genetics-and-target-prioritization" class="level2">
-<h2 class="anchored" data-anchor-id="genetics-and-target-prioritization">Genetics and Target Prioritization</h2>
-<div class="use-case-section">
-<div class="uc-note">
-Genetic resources including GWAS summary statistics and individual-level genotype data. Useful for genetic risk factor mapping, colocalization, Mendelian randomization, and target prioritization. Individual-level data are largely controlled-access.
-</div>
-</div>
-<div data-registry-table="" data-flag="usable_for_genetics_target_prioritization" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,controlled_access" data-rows="12">
-
-</div>
-<hr>
-<div class="disclaimer">
-<p><strong>Note.</strong> Use-case groupings are based on metadata tags in the registry CSV and are designed to assist in dataset discovery only. They do not constitute a recommendation that any listed dataset is suitable for the stated use case. Researchers should independently verify data quality, study design, sample characteristics, and access conditions before initiating any analysis.</p>
-</div>
+<section id="manual-review-rule" class="level2">
+<h2 class="anchored" data-anchor-id="manual-review-rule">Manual Review Rule</h2>
+<p>Rows should remain in the queue when any of the following are true:</p>
+<ul>
+<li>source URL is missing or does not point directly to the intended record</li>
+<li>publication title, year, DOI, or PMID is unclear</li>
+<li>disease groups, sample type, platform, or access status are unclear</li>
+<li>the resource is a broad portal or multi-accession aggregate</li>
+<li>individual-level data require controlled access</li>
+<li>source evidence contradicts the current row</li>
+</ul>
+<p>Do not promote a row to <code>analysis_ready_candidate</code> without a human review of the evidence and the intended analysis context.</p>
 
 
 </section>

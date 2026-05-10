@@ -115,6 +115,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Use Cases</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./verification-queue.html"> 
+<span class="menu-text">Verification</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="./curation-methods.html" aria-current="page"> 
 <span class="menu-text">Curation</span></a>
   </li>  
@@ -146,6 +150,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#public-data-access-labels" id="toc-public-data-access-labels" class="nav-link" data-scroll-target="#public-data-access-labels">Public Data Access Labels</a></li>
   <li><a href="#curation-status-labels" id="toc-curation-status-labels" class="nav-link" data-scroll-target="#curation-status-labels">Curation Status Labels</a></li>
   <li><a href="#metadata-field-definitions" id="toc-metadata-field-definitions" class="nav-link" data-scroll-target="#metadata-field-definitions">Metadata Field Definitions</a></li>
+  <li><a href="#verification-workflow" id="toc-verification-workflow" class="nav-link" data-scroll-target="#verification-workflow">Verification Workflow</a></li>
   <li><a href="#metadata-caveats" id="toc-metadata-caveats" class="nav-link" data-scroll-target="#metadata-caveats">Metadata Caveats</a></li>
   <li><a href="#how-to-contribute-or-correct" id="toc-how-to-contribute-or-correct" class="nav-link" data-scroll-target="#how-to-contribute-or-correct">How to Contribute or Correct</a></li>
   <li><a href="#data-sources-for-curation" id="toc-data-sources-for-curation" class="nav-link" data-scroll-target="#data-sources-for-curation">Data Sources for Curation</a></li>
@@ -427,99 +432,161 @@ ul.task-list li input[type="checkbox"] {
 <td>DOI of the primary publication (if known)</td>
 </tr>
 <tr class="odd">
+<td><code>pmid</code></td>
+<td>PubMed identifier for the primary publication (if verified)</td>
+</tr>
+<tr class="even">
 <td><code>disease</code></td>
 <td>Disease groups included in the dataset</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>population</code></td>
 <td>Age group or population descriptor (Adult, Pediatric, Mixed, Unclear)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>sample_type</code></td>
 <td>Type of biological specimen (biopsy, blood, stool, etc.)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>tissue_site</code></td>
 <td>Anatomical site of the specimen</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>omics_layer</code></td>
 <td>Omics data type(s) included</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>platform</code></td>
 <td>Assay platform(s) used</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>study_design</code></td>
 <td>Study design descriptor</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>sample_size_subjects</code></td>
 <td>Approximate number of subjects (may refer to participants, samples, or sequencing libraries depending on study)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>sample_size_samples</code></td>
 <td>Approximate number of samples (may differ from subjects in paired or longitudinal designs)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>raw_data_available</code></td>
 <td>Whether raw data files are publicly accessible (Yes / No / Partial / Unclear)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>processed_data_available</code></td>
 <td>Whether processed data files are publicly accessible</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>controlled_access</code></td>
 <td>Whether any component requires controlled access</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>clinical_metadata</code></td>
 <td>Whether clinical metadata (diagnosis, disease activity, demographics) are available</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>endoscopy_available</code></td>
 <td>Whether endoscopy data are available alongside omics data</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>treatment_metadata</code></td>
 <td>Whether treatment exposure information is available</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>longitudinal</code></td>
 <td>Whether the dataset includes longitudinal follow-up</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>potential_use_cases</code></td>
 <td>Metadata tags describing possible research applications</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>limitations</code></td>
 <td>Known limitations of the dataset relevant to reuse</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>data_access_status</code></td>
 <td>Standardized access label (see above)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>curation_status</code></td>
 <td>Curation status label (see above)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>dataset_url</code></td>
 <td>URL to the dataset record (if known)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>publication_url</code></td>
 <td>URL to the primary publication (if known)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>notes</code></td>
 <td>Free-text curation notes</td>
 </tr>
+<tr class="odd">
+<td><code>verification_status</code></td>
+<td>Current evidence-check status for the row</td>
+</tr>
+<tr class="even">
+<td><code>source_record_checked</code></td>
+<td>Whether the source record has been manually checked</td>
+</tr>
+<tr class="odd">
+<td><code>publication_checked</code></td>
+<td>Whether the publication citation has been manually checked</td>
+</tr>
+<tr class="even">
+<td><code>data_access_checked</code></td>
+<td>Whether raw/processed/controlled access status has been manually checked</td>
+</tr>
+<tr class="odd">
+<td><code>sample_metadata_checked</code></td>
+<td>Whether disease groups, sample type, platform, and sample counts have been manually checked</td>
+</tr>
+<tr class="even">
+<td><code>verification_date</code></td>
+<td>Date of most recent verification check</td>
+</tr>
+<tr class="odd">
+<td><code>verified_by</code></td>
+<td>Person or workflow that performed the verification check</td>
+</tr>
+<tr class="even">
+<td><code>verification_notes</code></td>
+<td>Evidence-backed notes on what was checked and what remains uncertain</td>
+</tr>
+<tr class="odd">
+<td><code>evidence_url</code></td>
+<td>Source URLs used to support the current verification status</td>
+</tr>
+<tr class="even">
+<td><code>citation_verified</code></td>
+<td>Whether DOI/PMID/publication metadata have been checked</td>
+</tr>
+<tr class="odd">
+<td><code>usable_for_*</code></td>
+<td>Conservative use-case flags used by the Use Cases page; values are <code>TRUE</code>, <code>FALSE</code>, or <code>Unclear</code></td>
+</tr>
 </tbody>
 </table>
+<hr>
+</section>
+<section id="verification-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="verification-workflow">Verification Workflow</h2>
+<p>The verification workflow is deliberately conservative:</p>
+<ol type="1">
+<li>New rows start as <code>seed_entry</code>.</li>
+<li>A row moves to <code>source_link_checked</code> only after the source URL opens and matches the intended accession or resource.</li>
+<li>A row moves to <code>metadata_checked</code> only after key study metadata are checked against a source record.</li>
+<li>A row moves to <code>publication_checked</code> only after citation fields are checked against a publication, DOI, PubMed, or repository-linked citation.</li>
+<li>A row becomes <code>needs_revision</code> if source evidence contradicts the current registry row.</li>
+<li>A row should only become <code>analysis_ready_candidate</code> after human review of source, metadata, publication, access status, and the intended analysis context.</li>
+</ol>
+<p>The first verification batch covers selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, and controlled-access genetics resources. Rows not in that batch remain <code>seed_entry</code>.</p>
 <hr>
 </section>
 <section id="metadata-caveats" class="level2">

@@ -1,0 +1,44 @@
+---
+title: "Verification Queue"
+subtitle: "Evidence-backed review status for registry entries"
+format:
+  html:
+    page-layout: full
+    toc: true
+---
+
+<div class="page-intro">
+This page tracks which dataset entries still need manual verification against source repository records and primary publications. The queue is conservative: entries remain here unless they have been reviewed and promoted to a higher verification status. Presence in the queue does not mean an entry is wrong; it means the metadata should not yet be treated as final.
+</div>
+
+## Queue Summary
+
+<div id="verification-queue"></div>
+
+---
+
+## Verification Status Definitions
+
+| Status | Meaning |
+|---|---|
+| `seed_entry` | Initial registry entry; not fully verified |
+| `source_link_checked` | Source record opens and matches the accession or resource |
+| `metadata_checked` | Disease group, sample type, platform, and access metadata checked against source |
+| `publication_checked` | Primary publication title, year, DOI, and PMID checked where available |
+| `analysis_ready_candidate` | Candidate for downstream analysis after source, metadata, publication, and access checks; still not a guarantee of fitness for every use case |
+| `needs_revision` | Source evidence conflicts with current registry metadata or key fields are obsolete |
+
+---
+
+## Manual Review Rule
+
+Rows should remain in the queue when any of the following are true:
+
+- source URL is missing or does not point directly to the intended record
+- publication title, year, DOI, or PMID is unclear
+- disease groups, sample type, platform, or access status are unclear
+- the resource is a broad portal or multi-accession aggregate
+- individual-level data require controlled access
+- source evidence contradicts the current row
+
+Do not promote a row to `analysis_ready_candidate` without a human review of the evidence and the intended analysis context.

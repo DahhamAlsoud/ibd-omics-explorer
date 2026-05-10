@@ -8,6 +8,8 @@ on:
       - "*.qmd"
       - "_quarto.yml"
       - "styles.css"
+      - "site-tables.js"
+      - "includes/**"
       - "data/**"
       - ".github/workflows/render.yml"
   workflow_dispatch:

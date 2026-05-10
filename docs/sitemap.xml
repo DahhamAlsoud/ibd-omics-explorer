@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/use-cases.html</loc>
-    <lastmod>2026-05-10T12:43:06.607Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/verification-queue.html</loc>
+    <lastmod>2026-05-10T13:20:54.817Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/omics-layers.html</loc>
-    <lastmod>2026-05-10T12:43:06.601Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/repositories.html</loc>
+    <lastmod>2026-05-10T11:54:15.399Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/datasets.html</loc>
-    <lastmod>2026-05-10T12:43:22.780Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/index.html</loc>
+    <lastmod>2026-05-10T13:22:34.163Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/curation-methods.html</loc>
+    <lastmod>2026-05-10T13:22:47.314Z</lastmod>
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/about.html</loc>
     <lastmod>2026-05-10T11:54:15.378Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/curation-methods.html</loc>
-    <lastmod>2026-05-10T12:36:11.481Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/datasets.html</loc>
+    <lastmod>2026-05-10T13:21:01.217Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/index.html</loc>
-    <lastmod>2026-05-10T12:26:47.627Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/omics-layers.html</loc>
+    <lastmod>2026-05-10T12:43:06.601Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/repositories.html</loc>
-    <lastmod>2026-05-10T11:54:15.399Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/use-cases.html</loc>
+    <lastmod>2026-05-10T13:22:24.232Z</lastmod>
   </url>
 </urlset>

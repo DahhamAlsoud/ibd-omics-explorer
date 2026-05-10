@@ -16,7 +16,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">These datasets are tagged as potentially relevant to this use case based on available metadata. Pediatric cohorts are specifically labeled where known; adult designation reflects the majority of unlabeled cohorts but should be verified.</div>
 </div>
 
-<div data-registry-table data-any="pediatric|children" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_pediatric_analysis" data-rows="12"></div>
 
 
 ---
@@ -27,7 +27,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">Datasets with intestinal mucosal biopsies from IBD and non-IBD controls, potentially useful for disease-vs-control transcriptomic analyses. Tissue site (ileum vs. colon vs. rectum) and platform should be verified before pooling studies.</div>
 </div>
 
-<div data-registry-table data-any="mucosal|colon|ileum|intestinal mucosa|disease-vs-control" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_disease_vs_control" data-rows="12"></div>
 
 
 ---
@@ -49,7 +49,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">Datasets including both Crohn's disease and ulcerative colitis samples, potentially relevant for direct CD-vs-UC comparisons. Tissue site matching between CD and UC samples is important for valid comparisons.</div>
 </div>
 
-<div data-registry-table data-any="CD|UC" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_cd_vs_uc" data-rows="12"></div>
 
 
 ---
@@ -60,7 +60,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">Datasets with disease activity information or longitudinal follow-up, potentially relevant for studying dynamic changes, remission, or treatment response over time. Longitudinal datasets are particularly valuable but also more complex to analyze.</div>
 </div>
 
-<div data-registry-table data-any="longitudinal|disease activity|remission" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,longitudinal" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_longitudinal_analysis" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,longitudinal" data-rows="12"></div>
 
 
 ---
@@ -71,7 +71,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">Single-cell and reference datasets potentially useful for building or applying cell-type deconvolution models to bulk transcriptomic data. Cell annotation quality and tissue site matching to the bulk dataset should be considered carefully.</div>
 </div>
 
-<div data-registry-table data-any="deconvolution|cell atlas|cell-type reference|single-cell" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_deconvolution_reference" data-rows="12"></div>
 
 
 ---
@@ -93,7 +93,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">Datasets with treatment metadata or specifically designed to study treatment response. These are potentially relevant for analyzing biological correlates of response or non-response to IBD therapies. Treatment status at biopsy and response definitions vary across studies.</div>
 </div>
 
-<div data-registry-table data-any="treatment|response|anti-TNF" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,treatment_metadata" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_treatment_response" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,treatment_metadata" data-rows="12"></div>
 
 
 ---
@@ -104,7 +104,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">Datasets including microbiome or multi-omics data relevant to host–microbiome research in IBD. Integration of host and microbial data requires careful sample-level matching and statistical methods accounting for compositionality and sparsity.</div>
 </div>
 
-<div data-registry-table data-any="microbiome|metagenomics|metatranscriptomics|host-microbiome|multi-omics" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_host_microbiome" data-rows="12"></div>
 
 
 ---
@@ -148,7 +148,7 @@ This page organizes datasets by potential research use case based on available m
 <div class="uc-note">Genetic resources including GWAS summary statistics and individual-level genotype data. Useful for genetic risk factor mapping, colocalization, Mendelian randomization, and target prioritization. Individual-level data are largely controlled-access.</div>
 </div>
 
-<div data-registry-table data-any="genetics|gwas|target prioritization|mendelian randomization|colocalization" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,controlled_access" data-rows="12"></div>
+<div data-registry-table data-flag="usable_for_genetics_target_prioritization" data-columns="dataset_name,accession,omics_layer,disease,sample_type,data_access_status,controlled_access" data-rows="12"></div>
 
 
 ---

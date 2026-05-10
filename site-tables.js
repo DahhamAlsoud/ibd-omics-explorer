@@ -49,11 +49,20 @@ function uniqueValues(data, column) {
   return Array.from(new Set(data.flatMap((row) => splitValues(row[column])))).sort((a, b) => a.localeCompare(b));
 }
 
+function escapeHtml(value) {
+  return String(value || "Unclear")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
 function cellValue(row, column) {
-  if (column === "dataset_url" && row.dataset_url && row.dataset_url !== "Unclear") {
-    return `<a href="${row.dataset_url}" target="_blank" rel="noopener">source</a>`;
+  if ((column === "dataset_url" || column === "publication_url" || column === "evidence_url") && row[column] && row[column] !== "Unclear") {
+    return `<a href="${escapeHtml(row[column])}" target="_blank" rel="noopener">link</a>`;
   }
-  return String(row[column] || "Unclear");
+  return escapeHtml(row[column] || "Unclear");
 }
 
 function renderTable(container, data, columns, labels, rows = 20) {
@@ -99,9 +108,24 @@ function renderDatasetExplorer(data) {
     tissue_site: "Tissue Site",
     data_access_status: "Access",
     curation_status: "Curation",
+    verification_status: "Verification",
+    manual_review: "Manual Review",
     dataset_url: "Source"
   };
-  const columns = Object.keys(labels);
+  const columns = [
+    "dataset_id",
+    "dataset_name",
+    "accession",
+    "omics_layer",
+    "disease",
+    "population",
+    "sample_type",
+    "data_access_status",
+    "curation_status",
+    "verification_status",
+    "dataset_url"
+  ];
+  labels.dataset_id = "ID";
 
   root.innerHTML = `
     <div class="filter-panel">
@@ -109,21 +133,29 @@ function renderDatasetExplorer(data) {
       <label>Omics <select id="registry-omics"><option>All</option></select></label>
       <label>Access <select id="registry-access"><option>All</option></select></label>
       <label>Sample <select id="registry-sample"><option>All</option></select></label>
+      <label>Verification <select id="registry-verification"><option>All</option></select></label>
     </div>
     <p id="registry-count" class="table-note"></p>
     <div id="registry-table"></div>
+    <details class="dataset-detail-panel">
+      <summary>Detailed fields for current filtered set</summary>
+      <div id="registry-detail-table"></div>
+    </details>
   `;
 
   const search = root.querySelector("#registry-search");
   const omics = root.querySelector("#registry-omics");
   const access = root.querySelector("#registry-access");
   const sample = root.querySelector("#registry-sample");
+  const verification = root.querySelector("#registry-verification");
   const count = root.querySelector("#registry-count");
   const table = root.querySelector("#registry-table");
+  const detailTable = root.querySelector("#registry-detail-table");
 
   uniqueValues(data, "omics_layer").forEach((value) => omics.append(new Option(value, value)));
   uniqueValues(data, "data_access_status").forEach((value) => access.append(new Option(value, value)));
   uniqueValues(data, "sample_type").forEach((value) => sample.append(new Option(value, value)));
+  uniqueValues(data, "verification_status").forEach((value) => verification.append(new Option(value, value)));
 
   function update() {
     const term = search.value.trim().toLowerCase();
@@ -132,13 +164,51 @@ function renderDatasetExplorer(data) {
       const omicsMatch = omics.value === "All" || textIncludes(row.omics_layer, omics.value);
       const accessMatch = access.value === "All" || textIncludes(row.data_access_status, access.value);
       const sampleMatch = sample.value === "All" || textIncludes(row.sample_type, sample.value);
-      return termMatch && omicsMatch && accessMatch && sampleMatch;
+      const verificationMatch = verification.value === "All" || row.verification_status === verification.value;
+      return termMatch && omicsMatch && accessMatch && sampleMatch && verificationMatch;
     });
     count.textContent = `Showing ${filtered.length} of ${data.length} entries`;
     renderTable(table, filtered, columns, labels, 37);
+    renderTable(
+      detailTable,
+      filtered,
+      [
+        "dataset_id",
+        "dataset_name",
+        "publication_title",
+        "publication_year",
+        "doi",
+        "pmid",
+        "platform",
+        "study_design",
+        "sample_size_subjects",
+        "raw_data_available",
+        "processed_data_available",
+        "controlled_access",
+        "verification_notes",
+        "evidence_url"
+      ],
+      {
+        dataset_id: "ID",
+        dataset_name: "Dataset",
+        publication_title: "Publication",
+        publication_year: "Year",
+        doi: "DOI",
+        pmid: "PMID",
+        platform: "Platform",
+        study_design: "Design",
+        sample_size_subjects: "N Subjects",
+        raw_data_available: "Raw",
+        processed_data_available: "Processed",
+        controlled_access: "Controlled",
+        verification_notes: "Verification Notes",
+        evidence_url: "Evidence"
+      },
+      37
+    );
   }
 
-  [search, omics, access, sample].forEach((control) => control.addEventListener("input", update));
+  [search, omics, access, sample, verification].forEach((control) => control.addEventListener("input", update));
   update();
 }
 
@@ -155,18 +225,22 @@ function renderSimpleTables(data) {
     data_access_status: "Access",
     curation_status: "Curation",
     longitudinal: "Longitudinal",
-    treatment_metadata: "Treatment Data"
+    treatment_metadata: "Treatment Data",
+    verification_status: "Verification",
+    controlled_access: "Controlled Access"
   };
 
   document.querySelectorAll("[data-registry-table]").forEach((node) => {
     const layer = node.dataset.layer;
     const any = node.dataset.any ? node.dataset.any.split("|") : [];
+    const flag = node.dataset.flag;
     const columns = (node.dataset.columns || "dataset_name,accession,omics_layer,disease,sample_type,data_access_status")
       .split(",")
       .map((item) => item.trim());
     const rows = Number(node.dataset.rows || 12);
     const filtered = data.filter((row) => {
       if (layer && !textIncludes(row.omics_layer, layer)) return false;
+      if (flag && row[flag] !== "TRUE") return false;
       if (any.length > 0) {
         const haystack = `${row.potential_use_cases} ${row.omics_layer} ${row.disease} ${row.sample_type} ${row.tissue_site} ${row.population}`.toLowerCase();
         return any.some((keyword) => haystack.includes(keyword.toLowerCase()));
@@ -177,11 +251,85 @@ function renderSimpleTables(data) {
   });
 }
 
+function verificationRisk(row) {
+  if (!row.dataset_url || row.dataset_url === "Unclear") return "Missing source URL";
+  if (row.publication_title === "Unclear" || row.publication_year === "Unclear") return "Publication metadata incomplete";
+  if (row.controlled_access === "Yes" || textIncludes(row.data_access_status, "Controlled access")) return "Controlled-access resource";
+  if (textIncludes(row.repository_type, "portal") || textIncludes(row.accession, "multiple")) return "Broad portal or multi-accession resource";
+  if (["disease", "sample_type", "platform", "data_access_status"].some((column) => row[column] === "Unclear")) return "Key metadata unclear";
+  return "General verification needed";
+}
+
+function renderVerificationQueue(data) {
+  const root = document.querySelector("#verification-queue");
+  if (!root) return;
+
+  const queued = data
+    .filter((row) => row.verification_status !== "analysis_ready_candidate")
+    .map((row) => ({ ...row, verification_risk: verificationRisk(row) }))
+    .sort((a, b) => a.verification_risk.localeCompare(b.verification_risk) || a.dataset_id.localeCompare(b.dataset_id));
+
+  const counts = queued.reduce((acc, row) => {
+    acc[row.verification_risk] = (acc[row.verification_risk] || 0) + 1;
+    return acc;
+  }, {});
+
+  root.innerHTML = `
+    <div class="metrics-grid compact-metrics">
+      <div class="metric-card"><div class="metric-value">${data.length}</div><div class="metric-label">Total Entries</div></div>
+      <div class="metric-card"><div class="metric-value">${queued.length}</div><div class="metric-label">In Queue</div></div>
+      <div class="metric-card"><div class="metric-value">${data.filter((row) => row.source_record_checked === "TRUE").length}</div><div class="metric-label">Source Checked</div></div>
+      <div class="metric-card"><div class="metric-value">${data.filter((row) => row.publication_checked === "TRUE").length}</div><div class="metric-label">Publication Checked</div></div>
+    </div>
+    <div id="verification-risk-summary"></div>
+    <div id="verification-queue-table"></div>
+  `;
+
+  renderTable(
+    root.querySelector("#verification-risk-summary"),
+    Object.entries(counts).map(([risk, count]) => ({ risk, count })),
+    ["risk", "count"],
+    { risk: "Queue Reason", count: "Entries" },
+    20
+  );
+
+  renderTable(
+    root.querySelector("#verification-queue-table"),
+    queued,
+    [
+      "dataset_id",
+      "dataset_name",
+      "accession",
+      "repository",
+      "verification_risk",
+      "verification_status",
+      "publication_title",
+      "publication_year",
+      "dataset_url",
+      "verification_notes"
+    ],
+    {
+      dataset_id: "ID",
+      dataset_name: "Dataset",
+      accession: "Accession",
+      repository: "Repository",
+      verification_risk: "Queue Reason",
+      verification_status: "Status",
+      publication_title: "Publication",
+      publication_year: "Year",
+      dataset_url: "Source",
+      verification_notes: "Notes"
+    },
+    100
+  );
+}
+
 async function initRegistryTables() {
   const response = await fetch("data/ibd_omics_datasets.csv");
   const data = parseCsv(await response.text());
   renderDatasetExplorer(data);
   renderSimpleTables(data);
+  renderVerificationQueue(data);
 }
 
 document.addEventListener("DOMContentLoaded", initRegistryTables);

@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
   resources:
     - site-tables.js
     - data/ibd_omics_datasets.csv
@@ -28,6 +30,8 @@ website:
         href: repositories.qmd
       - text: "Use Cases"
         href: use-cases.qmd
+      - text: "Verification"
+        href: verification-queue.qmd
       - text: "Curation"
         href: curation-methods.qmd
       - text: "About"

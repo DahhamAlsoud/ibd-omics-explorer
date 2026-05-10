@@ -113,6 +113,7 @@ Each entry carries a `curation_status` label indicating the degree of metadata v
 | `publication_title` | Title of the primary associated publication (if known) |
 | `publication_year` | Year of primary publication (if known) |
 | `doi` | DOI of the primary publication (if known) |
+| `pmid` | PubMed identifier for the primary publication (if verified) |
 | `disease` | Disease groups included in the dataset |
 | `population` | Age group or population descriptor (Adult, Pediatric, Mixed, Unclear) |
 | `sample_type` | Type of biological specimen (biopsy, blood, stool, etc.) |
@@ -136,6 +137,32 @@ Each entry carries a `curation_status` label indicating the degree of metadata v
 | `dataset_url` | URL to the dataset record (if known) |
 | `publication_url` | URL to the primary publication (if known) |
 | `notes` | Free-text curation notes |
+| `verification_status` | Current evidence-check status for the row |
+| `source_record_checked` | Whether the source record has been manually checked |
+| `publication_checked` | Whether the publication citation has been manually checked |
+| `data_access_checked` | Whether raw/processed/controlled access status has been manually checked |
+| `sample_metadata_checked` | Whether disease groups, sample type, platform, and sample counts have been manually checked |
+| `verification_date` | Date of most recent verification check |
+| `verified_by` | Person or workflow that performed the verification check |
+| `verification_notes` | Evidence-backed notes on what was checked and what remains uncertain |
+| `evidence_url` | Source URLs used to support the current verification status |
+| `citation_verified` | Whether DOI/PMID/publication metadata have been checked |
+| `usable_for_*` | Conservative use-case flags used by the Use Cases page; values are `TRUE`, `FALSE`, or `Unclear` |
+
+---
+
+## Verification Workflow
+
+The verification workflow is deliberately conservative:
+
+1. New rows start as `seed_entry`.
+2. A row moves to `source_link_checked` only after the source URL opens and matches the intended accession or resource.
+3. A row moves to `metadata_checked` only after key study metadata are checked against a source record.
+4. A row moves to `publication_checked` only after citation fields are checked against a publication, DOI, PubMed, or repository-linked citation.
+5. A row becomes `needs_revision` if source evidence contradicts the current registry row.
+6. A row should only become `analysis_ready_candidate` after human review of source, metadata, publication, access status, and the intended analysis context.
+
+The first verification batch covers selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, and controlled-access genetics resources. Rows not in that batch remain `seed_entry`.
 
 ---
 

@@ -1,5 +1,320 @@
 [
   {
+    "objectID": "verification-queue.html",
+    "href": "verification-queue.html",
+    "title": "Verification Queue",
+    "section": "",
+    "text": "This page tracks which dataset entries still need manual verification against source repository records and primary publications. The queue is conservative: entries remain here unless they have been reviewed and promoted to a higher verification status. Presence in the queue does not mean an entry is wrong; it means the metadata should not yet be treated as final."
+  },
+  {
+    "objectID": "verification-queue.html#queue-summary",
+    "href": "verification-queue.html#queue-summary",
+    "title": "Verification Queue",
+    "section": "Queue Summary",
+    "text": "Queue Summary"
+  },
+  {
+    "objectID": "verification-queue.html#verification-status-definitions",
+    "href": "verification-queue.html#verification-status-definitions",
+    "title": "Verification Queue",
+    "section": "Verification Status Definitions",
+    "text": "Verification Status Definitions\n\n\n\n\n\n\n\nStatus\nMeaning\n\n\n\n\nseed_entry\nInitial registry entry; not fully verified\n\n\nsource_link_checked\nSource record opens and matches the accession or resource\n\n\nmetadata_checked\nDisease group, sample type, platform, and access metadata checked against source\n\n\npublication_checked\nPrimary publication title, year, DOI, and PMID checked where available\n\n\nanalysis_ready_candidate\nCandidate for downstream analysis after source, metadata, publication, and access checks; still not a guarantee of fitness for every use case\n\n\nneeds_revision\nSource evidence conflicts with current registry metadata or key fields are obsolete"
+  },
+  {
+    "objectID": "verification-queue.html#manual-review-rule",
+    "href": "verification-queue.html#manual-review-rule",
+    "title": "Verification Queue",
+    "section": "Manual Review Rule",
+    "text": "Manual Review Rule\nRows should remain in the queue when any of the following are true:\n\nsource URL is missing or does not point directly to the intended record\npublication title, year, DOI, or PMID is unclear\ndisease groups, sample type, platform, or access status are unclear\nthe resource is a broad portal or multi-accession aggregate\nindividual-level data require controlled access\nsource evidence contradicts the current row\n\nDo not promote a row to analysis_ready_candidate without a human review of the evidence and the intended analysis context."
+  },
+  {
+    "objectID": "repositories.html",
+    "href": "repositories.html",
+    "title": "Repositories and Portals",
+    "section": "",
+    "text": "IBD omics datasets are distributed across numerous public repositories, specialized portals, and consortium-specific platforms. This page describes the major repositories represented in the dataset registry, their access models, and relevant caveats. Inclusion here reflects the presence of IBD-relevant data, not an endorsement or ranking of any resource."
+  },
+  {
+    "objectID": "repositories.html#genomics-and-transcriptomics-archives",
+    "href": "repositories.html#genomics-and-transcriptomics-archives",
+    "title": "Repositories and Portals",
+    "section": "Genomics and Transcriptomics Archives",
+    "text": "Genomics and Transcriptomics Archives\n\nGEO — Gene Expression Omnibus\n\n\n\nRepository type\nPublic archive for functional genomics data\n\n\nData types hosted\nMicroarray, RNA-seq, scRNA-seq, methylation arrays, ChIP-seq, ATAC-seq, and related high-throughput data\n\n\nAccess model\nPublicly accessible; some datasets have controlled-access raw data (SRA)\n\n\nIBD data\nLargest collection of IBD transcriptomic and epigenomic datasets; many accessions GSExxxxxx\n\n\nURL\nncbi.nlm.nih.gov/geo\n\n\n\nNotes. GEO hosts the majority of bulk and single-cell transcriptomic IBD datasets. Processed data (expression matrices, metadata) are typically freely accessible. Raw sequencing reads may be deposited in SRA and may require additional steps to access. Metadata completeness and clinical annotation quality vary substantially between submissions.\n\n\n\nSRA — Sequence Read Archive\n\n\n\nRepository type\nPublic archive for raw sequencing data\n\n\nData types hosted\nRaw FASTQ and BAM files from next-generation sequencing experiments\n\n\nAccess model\nPublicly accessible (open access) or controlled access (dbGaP-linked studies)\n\n\nIBD data\nRaw sequencing data from RNA-seq, scRNA-seq, metagenomics, metatranscriptomics, and related IBD studies\n\n\nURL\nncbi.nlm.nih.gov/sra\n\n\n\nNotes. Raw data downloads from SRA can be very large. Access to controlled-access SRA studies requires dbGaP authorization. The SRA toolkit (prefetch, fastq-dump) is typically required for downloads.\n\n\n\nArrayExpress / BioStudies (EMBL-EBI)\n\n\n\nRepository type\nPublic archive for functional genomics and multi-omics data\n\n\nData types hosted\nMicroarray, RNA-seq, and other functional genomics data; expanding to multi-omics\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nEuropean counterpart to GEO; some IBD datasets deposited here rather than or in addition to GEO\n\n\nURL\nebi.ac.uk/biostudies\n\n\n\nNotes. Many European IBD studies deposit data in ArrayExpress/BioStudies rather than GEO. Some datasets are mirrored between both archives."
+  },
+  {
+    "objectID": "repositories.html#single-cell-and-spatial-portals",
+    "href": "repositories.html#single-cell-and-spatial-portals",
+    "title": "Repositories and Portals",
+    "section": "Single-Cell and Spatial Portals",
+    "text": "Single-Cell and Spatial Portals\n\nCELLxGENE (CZI Science)\n\n\n\nRepository type\nPublic portal for single-cell and spatial transcriptomics data\n\n\nData types hosted\nscRNA-seq, spatial transcriptomics; standardized with Cell Ontology annotations\n\n\nAccess model\nPublicly accessible; data downloadable in H5AD format\n\n\nIBD data\nMultiple IBD scRNA-seq datasets with curated cell annotations\n\n\nURL\ncellxgene.cziscience.com\n\n\n\nNotes. CELLxGENE enforces a standardized metadata schema including cell ontology terms, tissue annotations, disease terms (using MONDO), and organism. This makes cross-study comparison more tractable than raw GEO deposits. Interactive exploration is available via the browser, and data can be downloaded for offline analysis.\n\n\n\nHuman Cell Atlas (HCA)\n\n\n\nRepository type\nInternational consortium portal for single-cell reference atlases\n\n\nData types hosted\nscRNA-seq, spatial transcriptomics, multi-omics; reference atlas datasets\n\n\nAccess model\nPublicly accessible; some controlled-access components\n\n\nIBD data\nIBD-related intestinal atlas datasets; normal gut cell type references\n\n\nURL\nhumancellatlas.org\n\n\n\nNotes. HCA datasets can also be accessed via CELLxGENE. The HCA Data Portal provides dataset-level metadata and download links. Some HCA datasets require registration; others are fully open."
+  },
+  {
+    "objectID": "repositories.html#multi-omics-portals",
+    "href": "repositories.html#multi-omics-portals",
+    "title": "Repositories and Portals",
+    "section": "Multi-Omics Portals",
+    "text": "Multi-Omics Portals\n\nIBDMDB — Inflammatory Bowel Disease Multi-omics Database\n\n\n\nRepository type\nIBD-specific multi-omics data portal (iHMP project)\n\n\nData types hosted\nHost transcriptomics, metagenomics, metatranscriptomics, proteomics, metabolomics, virome; longitudinal stool and biopsy data\n\n\nAccess model\nProcessed data publicly accessible via portal; some raw data components via HMP and dbGaP\n\n\nIBD data\nCore HMP2 longitudinal IBD cohort (CD, UC, non-IBD controls)\n\n\nURL\nibdmdb.org\n\n\n\nNotes. IBDMDB is one of the most comprehensive public IBD multi-omics resources. The portal allows interactive browsing and download of processed data. Some raw data require dbGaP authorization. Longitudinal design (multiple timepoints per participant) adds analytical complexity but also unique value for dynamic analyses."
+  },
+  {
+    "objectID": "repositories.html#proteomics-archives",
+    "href": "repositories.html#proteomics-archives",
+    "title": "Repositories and Portals",
+    "section": "Proteomics Archives",
+    "text": "Proteomics Archives\n\nPRIDE / ProteomeXchange\n\n\n\nRepository type\nPublic archive for proteomics mass spectrometry data\n\n\nData types hosted\nRaw MS files (mzML, RAW), processed results (mzIdentML, mzTab), peptide/protein quantification tables\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nFecal proteomics, mucosal proteomics, metaproteomics datasets\n\n\nURL\nebi.ac.uk/pride\n\n\n\nNotes. PRIDE is part of the ProteomeXchange consortium. Accessions are prefixed PXD. Raw MS files are typically large. Re-analysis requires appropriate proteomics software (MaxQuant, Proteome Discoverer, Spectronaut, etc.) and appropriate reference databases.\n\n\n\nMassIVE\n\n\n\nRepository type\nPublic archive for mass spectrometry data (UCSD)\n\n\nData types hosted\nProteomics and metabolomics MS data; cross-referenced with ProteomeXchange\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nFecal proteomics and metabolomics IBD datasets\n\n\nURL\nmassive.ucsd.edu\n\n\n\nNotes. MassIVE accessions are prefixed MSV. Several IBD fecal proteomics/metabolomics datasets are deposited here. Can be cross-referenced with PRIDE via ProteomeXchange identifiers."
+  },
+  {
+    "objectID": "repositories.html#metabolomics",
+    "href": "repositories.html#metabolomics",
+    "title": "Repositories and Portals",
+    "section": "Metabolomics",
+    "text": "Metabolomics\n\nMetabolomics Workbench (NIH)\n\n\n\nRepository type\nPublic repository for metabolomics data (NIH Common Fund)\n\n\nData types hosted\nMetabolomics and lipidomics raw and processed data; experimental metadata\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nIBD metabolomics studies; stool and serum metabolomics\n\n\nURL\nmetabolomicsworkbench.org\n\n\n\nNotes. Accessions are prefixed ST (study) and DS (dataset). The portal includes experimental metadata, sample information, and download options for processed data tables. Raw spectral files are often available for re-analysis."
+  },
+  {
+    "objectID": "repositories.html#controlled-access-archives",
+    "href": "repositories.html#controlled-access-archives",
+    "title": "Repositories and Portals",
+    "section": "Controlled-Access Archives",
+    "text": "Controlled-Access Archives\n\ndbGaP — Database of Genotypes and Phenotypes\n\n\n\nRepository type\nControlled-access archive for human genotype and phenotype data (NIH)\n\n\nData types hosted\nIndividual-level genotype data, GWAS, WGS, clinical phenotypes\n\n\nAccess model\nControlled access; requires institutional data access request and approval\n\n\nIBD data\nIIBDGC individual-level GWAS data; some IBD multi-omics studies with controlled-access components\n\n\nURL\nncbi.nlm.nih.gov/gap\n\n\n\nNotes. Access requires submission of a Data Access Request (DAR) through the dbGaP portal, institutional sign-off, and approval by the data access committee. Processing times vary. Approved data must be accessed in a secure computing environment consistent with the data use agreement."
+  },
+  {
+    "objectID": "repositories.html#genetics-portals-and-resources",
+    "href": "repositories.html#genetics-portals-and-resources",
+    "title": "Repositories and Portals",
+    "section": "Genetics Portals and Resources",
+    "text": "Genetics Portals and Resources\n\nGWAS Catalog (EMBL-EBI)\n\n\n\nRepository type\nCurated catalog of published GWAS results and summary statistics\n\n\nData types hosted\nGWAS summary statistics, variant-trait associations, study metadata\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nIBD, CD, and UC GWAS results from numerous published studies\n\n\nURL\nebi.ac.uk/gwas\n\n\n\nNotes. The GWAS Catalog aggregates published GWAS results with standardized trait ontology annotations (EFO terms). Summary statistics files are available for many studies. Useful for locus lookup, phenotype comparison, and identifying published IBD GWAS signals.\n\n\n\nIIBDGC — International IBD Genetics Consortium\n\n\n\nRepository type\nIBD genetics consortium; summary statistics and controlled-access data\n\n\nData types hosted\nGWAS summary statistics, fine-mapping results, individual-level data (via dbGaP)\n\n\nAccess model\nSummary statistics publicly accessible; individual-level data controlled-access via dbGaP\n\n\nIBD data\nLarge-scale IBD, CD, and UC GWAS meta-analyses\n\n\nURL\nibdgenetics.org\n\n\n\nNotes. IIBDGC has produced some of the largest IBD GWAS to date. Summary statistics from published analyses are often available via the IIBDGC website or the GWAS Catalog. Individual participant data require dbGaP authorization.\n\n\n\nOpen Targets Genetics / Platform\n\n\n\nRepository type\nIntegrated genomics and drug target platform\n\n\nData types hosted\nIntegrated GWAS, QTL, fine-mapping, and target evidence; not a primary data archive\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nIBD/CD/UC target evidence integrated from GWAS and functional genomics\n\n\nURL\ngenetics.opentargets.org\n\n\n\nNotes. Open Targets is not a primary data archive but an integrative platform derived from public GWAS and functional genomics data. Useful for target prioritization and locus-to-gene mapping. The underlying data sources should be verified for any specific analysis.\n\n\n\nFinnGen and UK Biobank\n\n\n\nRepository type\nPopulation biobank GWAS resources\n\n\nData types hosted\nGWAS summary statistics (public); individual-level data (controlled access)\n\n\nAccess model\nSummary statistics publicly accessible (FinnGen results browser, Open GWAS/MRC IEU); individual data require access application\n\n\nIBD data\nIBD, CD, and UC phenotypes available in both biobanks\n\n\nURL\nFinnGen: finngen.fi  \n\n\n\nNotes. FinnGen provides GWAS summary statistics publicly via its results browser. UK Biobank individual-level data require application through the UK Biobank Access Management System. IBD phenotype definitions in biobanks rely on ICD codes and may differ from clinically adjudicated cohorts.\n\nRepository details reflect publicly available information at the time of curation. Access policies, URLs, and available data may change. Always consult the repository directly for current access requirements."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "IBD Omics Explorer",
+    "section": "",
+    "text": "Dataset Registry\n\n\n\nA curated, searchable inventory of publicly available omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Explore by Omics Layer Browse by Use Case Verification Queue Curation Methods\nCounts are derived from the current seed CSV. Layer tags are not mutually exclusive because multi-omics datasets can contribute to more than one layer."
+  },
+  {
+    "objectID": "index.html#ibd-omics-explorer",
+    "href": "index.html#ibd-omics-explorer",
+    "title": "IBD Omics Explorer",
+    "section": "",
+    "text": "A curated, searchable inventory of publicly available omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Explore by Omics Layer Browse by Use Case Verification Queue Curation Methods"
+  },
+  {
+    "objectID": "index.html#scope",
+    "href": "index.html#scope",
+    "title": "IBD Omics Explorer",
+    "section": "Scope",
+    "text": "Scope\nThis explorer aims to map publicly indexed IBD omics datasets across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn’s disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include tissue biopsies, blood, stool, organoids, or other relevant specimen types.\nInclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis. The registry documents what is publicly accessible, along with known caveats and limitations.\nSee the Curation Methods page for detailed inclusion criteria, data access definitions, and metadata caveats."
+  },
+  {
+    "objectID": "index.html#data-layers-covered",
+    "href": "index.html#data-layers-covered",
+    "title": "IBD Omics Explorer",
+    "section": "Data Layers Covered",
+    "text": "Data Layers Covered\n\n 🧬\n\nBulk Transcriptomics\n\n\nTissue- and blood-level gene expression from microarray and RNA-seq platforms\n\n  🔬\n\nSingle-Cell Transcriptomics\n\n\nCell-type and cell-state resolution expression in IBD tissues\n\n  🗺️\n\nSpatial Transcriptomics\n\n\nSpatially resolved gene expression preserving tissue architecture\n\n  🦠\n\nMicrobiome / Metagenomics\n\n\nGut microbial community profiling via shotgun metagenomics and metatranscriptomics\n\n  🧪\n\nProteomics / Metaproteomics\n\n\nMucosal and fecal proteomics, including host and microbial proteins\n\n  ⚗️\n\nMetabolomics / Lipidomics\n\n\nSmall-molecule profiling in stool, blood, and tissue\n\n  🔖\n\nMethylation / Epigenomics\n\n\nDNA methylation arrays and chromatin accessibility in blood and mucosa\n\n  🧩\n\nGenetics / GWAS\n\n\nIBD GWAS summary statistics and individual-level genotype resources"
+  },
+  {
+    "objectID": "index.html#navigating-the-registry",
+    "href": "index.html#navigating-the-registry",
+    "title": "IBD Omics Explorer",
+    "section": "Navigating the Registry",
+    "text": "Navigating the Registry\n\n\n\nPage\nPurpose\n\n\n\n\nDatasets\nSearchable and filterable table of all indexed datasets\n\n\nOmics Layers\nInventory grouped by omics type with layer-level notes\n\n\nRepositories\nOverview of archives and portals hosting IBD omics data\n\n\nUse Cases\nBrowse datasets tagged as potentially relevant to specific research questions\n\n\nVerification Queue\nReview source-check status, citation evidence, and metadata gaps\n\n\nCuration Methods\nInclusion criteria, access definitions, metadata caveats\n\n\nAbout\nProject context and contact information\n\n\n\n\n\nDisclaimer. This website is a curated research tool. It is intended to support dataset discovery, not to serve as a complete or authoritative registry. Dataset availability, metadata accuracy, and access status should be verified independently before analysis. This site does not rank datasets or endorse any particular resource over another."
+  },
+  {
+    "objectID": "curation-methods.html",
+    "href": "curation-methods.html",
+    "title": "Curation Methods",
+    "section": "",
+    "text": "This page documents the curation rules used to build and maintain the IBD Omics Explorer dataset registry. Understanding these rules is essential for interpreting the annotations and deciding whether a listed dataset is appropriate for a specific analysis."
+  },
+  {
+    "objectID": "curation-methods.html#purpose-and-scope",
+    "href": "curation-methods.html#purpose-and-scope",
+    "title": "Curation Methods",
+    "section": "Purpose and Scope",
+    "text": "Purpose and Scope\nThe IBD Omics Explorer is designed to map and organize publicly available IBD omics datasets across all major omics layers, with the goal of supporting dataset discovery. It is not a systematic review, meta-analysis, or quality-assessment resource. Inclusion in this registry does not imply that a dataset is high quality, fully reusable, or suitable for any particular analysis.\nThe registry aims to be inclusive and expandable. The initial seed dataset is a starting point, not a comprehensive catalog. Many datasets that qualify for inclusion may not yet be listed."
+  },
+  {
+    "objectID": "curation-methods.html#current-registry-state",
+    "href": "curation-methods.html#current-registry-state",
+    "title": "Curation Methods",
+    "section": "Current Registry State",
+    "text": "Current Registry State\nThe current seed registry contains 37 entries. Of these, 31 entries are marked Seed entry; Needs verification and 6 entries are marked Seed entry. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.\nBefore using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with Unclear fields should be treated as leads for manual curation rather than confirmed facts."
+  },
+  {
+    "objectID": "curation-methods.html#priority-verification-queue",
+    "href": "curation-methods.html#priority-verification-queue",
+    "title": "Curation Methods",
+    "section": "Priority Verification Queue",
+    "text": "Priority Verification Queue\nThe following entry types should be checked first because they carry the highest risk of misleading users:\n\n\n\n\n\n\n\n\nPriority\nEntry pattern\nWhy it matters\n\n\n\n\n1\nEntries with dataset_url = Unclear\nUsers cannot verify the source record directly from the site\n\n\n2\nEntries with publication_title = Unclear and publication_year = Unclear\nStudy provenance is incomplete\n\n\n3\nAggregated portals or multi-accession resources\nThese can mix studies with different assays, cohorts, and access rules\n\n\n4\nEntries where sample type, platform, or disease groups are partly inferred\nThese fields determine whether datasets can be pooled or compared\n\n\n5\nControlled-access genetics or multi-omics resources\nPublic indexing does not mean the underlying individual-level files are downloadable\n\n\n\nConcrete current examples include IBDTransDB, GSE accessions with unknown publication metadata, Martin et al. 2019 Cell / GIMATS, and the broad genetics/platform entries. These should remain marked Needs verification until source records have been checked one by one."
+  },
+  {
+    "objectID": "curation-methods.html#inclusion-criteria",
+    "href": "curation-methods.html#inclusion-criteria",
+    "title": "Curation Methods",
+    "section": "Inclusion Criteria",
+    "text": "Inclusion Criteria\nA dataset is eligible for inclusion if it meets at least one of the following criteria:\n\nHuman subjects with inflammatory bowel disease (IBD), Crohn’s disease (CD), ulcerative colitis (UC), or IBD-unclassified (IBD-U)\nNon-IBD control samples collected in the context of an IBD study\nHuman intestinal, colonic, ileal, blood, stool, organoid, or microbiome samples analyzed with omics methods in an IBD research context\nA publicly registered accession, portal entry, or publicly accessible summary statistics\nA curated database specifically aggregating IBD omics studies (e.g., IBDTransDB)\nA controlled-access resource that is publicly indexed (e.g., dbGaP) and thus searchable and describable"
+  },
+  {
+    "objectID": "curation-methods.html#exclusion-or-deferred-categories",
+    "href": "curation-methods.html#exclusion-or-deferred-categories",
+    "title": "Curation Methods",
+    "section": "Exclusion or Deferred Categories",
+    "text": "Exclusion or Deferred Categories\nThe following categories are excluded or deferred pending additional review:\n\n\n\n\n\n\n\nCategory\nHandling\n\n\n\n\nAnimal-only datasets (mouse, rat models)\nExcluded unless they directly describe human companion datasets\n\n\nPurely mechanistic cell-line datasets\nExcluded unless they include primary patient-derived material\n\n\nDatasets without any accessible metadata\nDeferred until metadata can be located\n\n\nDuplicate submissions\nRetained only if they add useful metadata, processed files, or additional accession cross-links\n\n\nPublication-only datasets\nIncluded with Publication only or Unclear access status and a note\n\n\nUnpublished preprint-only datasets\nMay be included with explicit annotation; treat with caution"
+  },
+  {
+    "objectID": "curation-methods.html#public-data-access-labels",
+    "href": "curation-methods.html#public-data-access-labels",
+    "title": "Curation Methods",
+    "section": "Public Data Access Labels",
+    "text": "Public Data Access Labels\nThe registry uses the following standardized labels for the data_access_status field:\n\n\n\n\n\n\n\nLabel\nMeaning\n\n\n\n\nPublic raw data\nRaw data files (FASTQ, CEL, IDAT, mzML, mzIdentML, mzTab, count matrices, BAM, or equivalent) are publicly downloadable without application\n\n\nPublic processed data\nProcessed expression matrix, abundance table, or summary statistics are publicly available, but raw data may not be\n\n\nPublic portal\nData are accessible and explorable through a public portal or database interface, with or without direct file download\n\n\nControlled access\nDataset is publicly indexed and described, but access to data files requires an application, institutional approval, or data use agreement\n\n\nPublication only\nDataset is described in a publication, but reusable data files are not clearly available in a repository\n\n\nUnclear\nA repository record exists but data availability, metadata, or access conditions could not be confidently determined from public information\n\n\n\nMultiple labels may apply to a single dataset (e.g., Public processed data; Controlled access (some components))."
+  },
+  {
+    "objectID": "curation-methods.html#curation-status-labels",
+    "href": "curation-methods.html#curation-status-labels",
+    "title": "Curation Methods",
+    "section": "Curation Status Labels",
+    "text": "Curation Status Labels\nEach entry carries a curation_status label indicating the degree of metadata verification:\n\n\n\n\n\n\n\nLabel\nMeaning\n\n\n\n\nSeed entry\nInitial dataset added to launch the explorer; metadata derived from public sources but not manually verified against the repository record\n\n\nNeeds verification\nMetadata or access status should be manually checked before relying on the annotation\n\n\nVerified\nMetadata and access links have been manually checked against the source repository record\n\n\nDeprecated/limited\nDataset exists but has limited reuse value, incomplete public access, or substantial data quality issues\n\n\n\nMost entries in the initial release carry Seed entry or Needs verification status. Users are encouraged to verify directly against source repositories before initiating analysis."
+  },
+  {
+    "objectID": "curation-methods.html#metadata-field-definitions",
+    "href": "curation-methods.html#metadata-field-definitions",
+    "title": "Curation Methods",
+    "section": "Metadata Field Definitions",
+    "text": "Metadata Field Definitions\n\n\n\n\n\n\n\nField\nDefinition\n\n\n\n\ndataset_id\nInternal registry identifier (DSxxx)\n\n\ndataset_name\nHuman-readable dataset name or accession-based label\n\n\naccession\nPrimary accession number(s) at the source repository\n\n\nrepository\nRepository or portal where data are hosted\n\n\nrepository_type\nType of repository (public archive, portal, consortium, etc.)\n\n\npublication_title\nTitle of the primary associated publication (if known)\n\n\npublication_year\nYear of primary publication (if known)\n\n\ndoi\nDOI of the primary publication (if known)\n\n\npmid\nPubMed identifier for the primary publication (if verified)\n\n\ndisease\nDisease groups included in the dataset\n\n\npopulation\nAge group or population descriptor (Adult, Pediatric, Mixed, Unclear)\n\n\nsample_type\nType of biological specimen (biopsy, blood, stool, etc.)\n\n\ntissue_site\nAnatomical site of the specimen\n\n\nomics_layer\nOmics data type(s) included\n\n\nplatform\nAssay platform(s) used\n\n\nstudy_design\nStudy design descriptor\n\n\nsample_size_subjects\nApproximate number of subjects (may refer to participants, samples, or sequencing libraries depending on study)\n\n\nsample_size_samples\nApproximate number of samples (may differ from subjects in paired or longitudinal designs)\n\n\nraw_data_available\nWhether raw data files are publicly accessible (Yes / No / Partial / Unclear)\n\n\nprocessed_data_available\nWhether processed data files are publicly accessible\n\n\ncontrolled_access\nWhether any component requires controlled access\n\n\nclinical_metadata\nWhether clinical metadata (diagnosis, disease activity, demographics) are available\n\n\nendoscopy_available\nWhether endoscopy data are available alongside omics data\n\n\ntreatment_metadata\nWhether treatment exposure information is available\n\n\nlongitudinal\nWhether the dataset includes longitudinal follow-up\n\n\npotential_use_cases\nMetadata tags describing possible research applications\n\n\nlimitations\nKnown limitations of the dataset relevant to reuse\n\n\ndata_access_status\nStandardized access label (see above)\n\n\ncuration_status\nCuration status label (see above)\n\n\ndataset_url\nURL to the dataset record (if known)\n\n\npublication_url\nURL to the primary publication (if known)\n\n\nnotes\nFree-text curation notes\n\n\nverification_status\nCurrent evidence-check status for the row\n\n\nsource_record_checked\nWhether the source record has been manually checked\n\n\npublication_checked\nWhether the publication citation has been manually checked\n\n\ndata_access_checked\nWhether raw/processed/controlled access status has been manually checked\n\n\nsample_metadata_checked\nWhether disease groups, sample type, platform, and sample counts have been manually checked\n\n\nverification_date\nDate of most recent verification check\n\n\nverified_by\nPerson or workflow that performed the verification check\n\n\nverification_notes\nEvidence-backed notes on what was checked and what remains uncertain\n\n\nevidence_url\nSource URLs used to support the current verification status\n\n\ncitation_verified\nWhether DOI/PMID/publication metadata have been checked\n\n\nusable_for_*\nConservative use-case flags used by the Use Cases page; values are TRUE, FALSE, or Unclear"
+  },
+  {
+    "objectID": "curation-methods.html#verification-workflow",
+    "href": "curation-methods.html#verification-workflow",
+    "title": "Curation Methods",
+    "section": "Verification Workflow",
+    "text": "Verification Workflow\nThe verification workflow is deliberately conservative:\n\nNew rows start as seed_entry.\nA row moves to source_link_checked only after the source URL opens and matches the intended accession or resource.\nA row moves to metadata_checked only after key study metadata are checked against a source record.\nA row moves to publication_checked only after citation fields are checked against a publication, DOI, PubMed, or repository-linked citation.\nA row becomes needs_revision if source evidence contradicts the current registry row.\nA row should only become analysis_ready_candidate after human review of source, metadata, publication, access status, and the intended analysis context.\n\nThe first verification batch covers selected high-value/high-risk entries across multi-omics, curated database, single-cell, proteomics, and controlled-access genetics resources. Rows not in that batch remain seed_entry."
+  },
+  {
+    "objectID": "curation-methods.html#metadata-caveats",
+    "href": "curation-methods.html#metadata-caveats",
+    "title": "Curation Methods",
+    "section": "Metadata Caveats",
+    "text": "Metadata Caveats\nUsers of this registry should be aware of the following general caveats:\nSample size. Sample size fields may refer to subjects, unique samples, biopsies, cells, sequencing libraries, or files, depending on the study. These are not always interchangeable. Actual analyzable sample sizes per disease group should be verified from the publication or repository metadata.\nDisease definitions. IBD, CD, UC, and IBD-U definitions vary across studies. Some studies use clinician-assigned diagnoses; others use ICD codes or self-report. Disease activity definitions (active vs. remission) and scoring systems differ. Cross-study comparisons of disease groups require attention to diagnostic criteria.\nTreatment exposure. Treatment status at the time of sample collection is often incompletely annotated in public deposits. Even where annotated, the specific agents, dosing, duration, and response status may not be consistently available.\nPediatric vs. adult. Age group classification may not always be explicitly labeled. Unlabeled entries should not be assumed to be adult. Biological differences between pediatric and adult IBD are well established; pooling across age groups is generally not recommended without justification.\nTissue site. Tissue site annotation may be incomplete, inconsistent across studies, or ambiguous (e.g., “colon” without specifying anatomical segment). Cross-study comparisons should account for tissue site differences.\nPlatform effects. Different omics platforms (microarray vs. RNA-seq; different sequencing depths; different array generations) introduce systematic differences that must be accounted for in cross-study analyses.\nBatch effects. Omics data are subject to batch effects from sample processing, sequencing run, laboratory, and reagent lot variation. Batch correction is typically required for cross-study comparisons.\nControlled-access data. Controlled-access resources are described for completeness but require institutional approval before any data can be downloaded or analyzed. Approval processes vary and can take weeks to months.\nUnclear fields. Fields marked “Unclear” indicate that the information could not be confidently determined from publicly available records at the time of curation. These should be verified before use."
+  },
+  {
+    "objectID": "curation-methods.html#how-to-contribute-or-correct",
+    "href": "curation-methods.html#how-to-contribute-or-correct",
+    "title": "Curation Methods",
+    "section": "How to Contribute or Correct",
+    "text": "How to Contribute or Correct\nThis registry is designed to expand continuously. If you identify:\n\nA dataset that should be included\nA metadata error or outdated access status\nA deprecated or moved accession\nA verified entry that should be updated from Needs verification to Verified\n\nPlease open an issue or pull request on the source repository."
+  },
+  {
+    "objectID": "curation-methods.html#data-sources-for-curation",
+    "href": "curation-methods.html#data-sources-for-curation",
+    "title": "Curation Methods",
+    "section": "Data Sources for Curation",
+    "text": "Data Sources for Curation\nMetadata in this seed registry should be checked against:\n\nPublic repository records, including GEO, SRA, PRIDE, MassIVE, Metabolomics Workbench, dbGaP, GWAS Catalog, CELLxGENE, and Human Cell Atlas\nConsortium and project portals, including IBDMDB, IIBDGC, Open Targets, FinnGen, and UK Biobank\nPrimary publications and supplementary tables linked from repository records\nDataset-specific README files, sample metadata tables, and controlled-access study descriptions\n\nThe initial entries should not be promoted to Verified until a human curator has checked the repository record and primary publication.\n\nThis registry is a curated research resource and is provided for dataset discovery purposes only. It does not constitute clinical guidance, a systematic review, or a quality certification of any dataset. All metadata should be independently verified before use in any analysis."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "The IBD Omics Explorer is a curated academic tool designed to support the discovery and navigation of publicly available omics datasets in inflammatory bowel disease (IBD) research. It is maintained as part of ongoing research at Stanford University School of Medicine.\n\n\nIBD omics data are distributed across many repositories, portals, and publications, making comprehensive dataset discovery time-consuming. This explorer aims to aggregate metadata from publicly accessible resources into a single searchable and filterable registry, helping researchers:\n\nIdentify datasets relevant to a given research question\nUnderstand the availability and access conditions of public IBD data\nCompare available datasets across omics layers, tissue types, and disease groups\nPlan analyses that leverage multiple complementary datasets\n\nThis is a dataset discovery tool. It does not rank, recommend, or certify datasets. All metadata should be verified before analysis.\n\n\n\n\n\nIt is not a systematic review or meta-analysis of IBD omics data.\nIt does not assess dataset quality or analytical suitability.\nIt does not rank or recommend any dataset as better or worse for any purpose.\nIt is not a complete or authoritative registry of all IBD omics data.\nIt does not provide access to data files directly; it links to source repositories.\n\n\n\n\n\nThe registry currently covers:\n\nBulk transcriptomics (microarray and RNA-seq)\nSingle-cell transcriptomics\nSpatial transcriptomics\nMicrobiome (metagenomics, metatranscriptomics)\nProteomics and metaproteomics\nMetabolomics and lipidomics\nMethylation and epigenomics\nGenetics and GWAS\nMulti-omics resources\n\nSee the Omics Layers page for a layer-by-layer inventory, and the Curation Methods page for detailed inclusion criteria and metadata definitions.\n\n\n\n\nThe dataset registry is maintained in data/ibd_omics_datasets.csv. Entries carry a curation_status label indicating their verification level. Most initial entries are annotated as Seed entry or Needs verification, meaning metadata should be confirmed against source repositories before use.\nThe registry is designed to grow. If you identify datasets that should be included, metadata errors, or outdated access information, contributions are welcome.\n\n\n\n\nDahham Alsoud Postdoctoral Researcher Stanford University School of Medicine GitHub | Google Scholar\n\n\nThis website is a curated research tool provided for academic dataset discovery. It is not a clinical resource. Dataset availability, access conditions, and metadata should be verified independently before any analysis. The registry does not constitute an endorsement of any dataset, repository, or research group."
+  },
+  {
+    "objectID": "about.html#about-this-resource",
+    "href": "about.html#about-this-resource",
+    "title": "About",
+    "section": "",
+    "text": "The IBD Omics Explorer is a curated academic tool designed to support the discovery and navigation of publicly available omics datasets in inflammatory bowel disease (IBD) research. It is maintained as part of ongoing research at Stanford University School of Medicine.\n\n\nIBD omics data are distributed across many repositories, portals, and publications, making comprehensive dataset discovery time-consuming. This explorer aims to aggregate metadata from publicly accessible resources into a single searchable and filterable registry, helping researchers:\n\nIdentify datasets relevant to a given research question\nUnderstand the availability and access conditions of public IBD data\nCompare available datasets across omics layers, tissue types, and disease groups\nPlan analyses that leverage multiple complementary datasets\n\nThis is a dataset discovery tool. It does not rank, recommend, or certify datasets. All metadata should be verified before analysis.\n\n\n\n\n\nIt is not a systematic review or meta-analysis of IBD omics data.\nIt does not assess dataset quality or analytical suitability.\nIt does not rank or recommend any dataset as better or worse for any purpose.\nIt is not a complete or authoritative registry of all IBD omics data.\nIt does not provide access to data files directly; it links to source repositories.\n\n\n\n\n\nThe registry currently covers:\n\nBulk transcriptomics (microarray and RNA-seq)\nSingle-cell transcriptomics\nSpatial transcriptomics\nMicrobiome (metagenomics, metatranscriptomics)\nProteomics and metaproteomics\nMetabolomics and lipidomics\nMethylation and epigenomics\nGenetics and GWAS\nMulti-omics resources\n\nSee the Omics Layers page for a layer-by-layer inventory, and the Curation Methods page for detailed inclusion criteria and metadata definitions.\n\n\n\n\nThe dataset registry is maintained in data/ibd_omics_datasets.csv. Entries carry a curation_status label indicating their verification level. Most initial entries are annotated as Seed entry or Needs verification, meaning metadata should be confirmed against source repositories before use.\nThe registry is designed to grow. If you identify datasets that should be included, metadata errors, or outdated access information, contributions are welcome.\n\n\n\n\nDahham Alsoud Postdoctoral Researcher Stanford University School of Medicine GitHub | Google Scholar\n\n\nThis website is a curated research tool provided for academic dataset discovery. It is not a clinical resource. Dataset availability, access conditions, and metadata should be verified independently before any analysis. The registry does not constitute an endorsement of any dataset, repository, or research group."
+  },
+  {
+    "objectID": "datasets.html",
+    "href": "datasets.html",
+    "title": "Dataset Explorer",
+    "section": "",
+    "text": "This table lists all datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All metadata are conservative annotations derived from public records; fields marked Unclear require manual verification. The verification filter distinguishes seed entries from rows where source records or publication metadata have been checked."
+  },
+  {
+    "objectID": "datasets.html#filters-and-search",
+    "href": "datasets.html#filters-and-search",
+    "title": "Dataset Explorer",
+    "section": "Filters and Search",
+    "text": "Filters and Search"
+  },
+  {
+    "objectID": "datasets.html#data-access-status-legend",
+    "href": "datasets.html#data-access-status-legend",
+    "title": "Dataset Explorer",
+    "section": "Data Access Status Legend",
+    "text": "Data Access Status Legend\n\n\n\n\n\n\n\nLabel\nMeaning\n\n\n\n\nPublic raw data\nRaw data files (FASTQ, CEL, IDAT, mzML, count matrices, etc.) are publicly downloadable\n\n\nPublic processed data\nProcessed expression/abundance matrix is available; raw data may not be public\n\n\nPublic portal\nData are accessible via a public portal or database\n\n\nControlled access\nIndexed publicly but requires application or institutional approval\n\n\nPublication only\nDescribed in a publication; reusable data files are not clearly available\n\n\nUnclear\nRepository record exists but data availability or metadata are incomplete\n\n\n\n\nNote. Data access status and metadata were assigned conservatively based on public records available at the time of curation. Availability may change. Always verify directly with the source repository before initiating analysis."
+  },
+  {
+    "objectID": "omics-layers.html",
+    "href": "omics-layers.html",
+    "title": "Omics Layers",
+    "section": "",
+    "text": "This page organizes the dataset inventory by omics layer. Each section describes the layer, typical specimen types, common analytical caveats, and the datasets currently indexed for that layer. Counts are derived dynamically from the dataset registry."
+  },
+  {
+    "objectID": "omics-layers.html#bulk-transcriptomics",
+    "href": "omics-layers.html#bulk-transcriptomics",
+    "title": "Omics Layers",
+    "section": "Bulk Transcriptomics",
+    "text": "Bulk Transcriptomics\n\n\nSpecimens: intestinal biopsies, blood, peripheral blood mononuclear cells  |  Platforms: microarray (Affymetrix, Illumina), RNA-seq\n\nCount in registry: 16 datasets\nBulk transcriptomic datasets measure the average gene expression across all cells in a tissue or biological sample. In IBD research, these datasets typically derive from colonic or ileal mucosal biopsies, peripheral blood, or whole blood. They have been widely used to identify gene expression differences between disease states (active vs. remission, CD vs. UC, disease vs. control) and to discover transcriptomic biomarkers.\nTypical uses. Mucosal or blood gene expression profiling; disease-vs-control comparison; CD-vs-UC-vs-control comparisons; biomarker discovery; pathway analysis; deconvolution input.\nCommon caveats. Bulk measurements average across heterogeneous cell populations, masking cell-type-specific signals. Cross-study comparisons require attention to tissue site (ileum vs. colon vs. blood), disease activity, treatment status at biopsy, platform (microarray vs. RNA-seq), batch effects, and normalization. Age groups (pediatric vs. adult) differ in biology and should not be pooled without justification. Many older microarray datasets lack detailed clinical metadata."
+  },
+  {
+    "objectID": "omics-layers.html#single-cell-transcriptomics",
+    "href": "omics-layers.html#single-cell-transcriptomics",
+    "title": "Omics Layers",
+    "section": "Single-Cell Transcriptomics",
+    "text": "Single-Cell Transcriptomics\n\n\nSpecimens: intestinal biopsies (dissociated), lamina propria isolates  |  Platforms: 10x Genomics Chromium, other droplet-based scRNA-seq\n\nCount in registry: 5 datasets\nSingle-cell RNA sequencing resolves gene expression at the level of individual cells, enabling cell-type and cell-state characterization. In IBD, scRNA-seq has been applied to characterize immune, epithelial, stromal, and endothelial cell populations in the intestinal mucosa, enabling discovery of disease-associated cell states and pathways.\nTypical uses. Cell-type and cell-state atlases; identification of disease-associated cell states; deconvolution reference panels; single-cell disease-vs-control comparisons; treatment response at cellular resolution.\nCommon caveats. scRNA-seq datasets are large and computationally demanding. Cell annotation requires reference databases and expert review. Batch effects arise from sample processing, dissociation protocols, and sequencing runs. Cross-study integration requires harmonization of cell annotations and normalization strategies. Dropout (zero-inflation) and ambient RNA are dataset-specific issues. Sample sizes per group are often smaller than bulk studies."
+  },
+  {
+    "objectID": "omics-layers.html#spatial-transcriptomics",
+    "href": "omics-layers.html#spatial-transcriptomics",
+    "title": "Omics Layers",
+    "section": "Spatial Transcriptomics",
+    "text": "Spatial Transcriptomics\n\n\nSpecimens: formalin-fixed paraffin-embedded (FFPE) or fresh-frozen tissue sections  |  Platforms: 10x Visium, CosMx SMI, Xenium, Slide-seq\n\nCount in registry: 1 dataset\nSpatial transcriptomics maps gene expression while preserving the spatial location of cells within tissue sections. This enables characterization of cellular neighborhoods, tissue architectural changes in inflammation, and spatially restricted gene expression patterns not detectable in dissociated single-cell or bulk assays.\nTypical uses. Spatial mapping of inflammatory cell states; tissue architecture analysis; niche and co-localization analysis; spatial characterization of ulcerated vs. inflamed vs. uninflamed regions.\nCommon caveats. Resolution and sensitivity vary substantially across platforms. Spot-based platforms (Visium) capture multiple cells per spot; single-cell resolution platforms (CosMx, Xenium) measure a limited gene panel. Data volumes are large. Normalization and cell-type deconvolution are non-trivial. Cross-study comparisons are difficult due to platform heterogeneity and panel differences."
+  },
+  {
+    "objectID": "omics-layers.html#microbiome",
+    "href": "omics-layers.html#microbiome",
+    "title": "Omics Layers",
+    "section": "Microbiome / Metagenomics / Metatranscriptomics",
+    "text": "Microbiome / Metagenomics / Metatranscriptomics\n\n\nSpecimens: stool, mucosal biopsies  |  Platforms: shotgun metagenomics, 16S rRNA, metatranscriptomics, viromics\n\nCount in registry: 1 dataset\nGut microbiome datasets characterize the microbial community composition and functional activity in stool or mucosal specimens. These datasets include shotgun metagenomics (microbial DNA sequencing), metatranscriptomics (microbial RNA expression), and virome profiling. The gut microbiome is substantially altered in IBD, and multi-omics studies combine microbial and host data.\nTypical uses. Microbial community profiling; host–microbiome integration; functional pathway analysis; longitudinal microbiome dynamics; stool biomarker discovery.\nCommon caveats. Substantial inter-individual variability. Stool microbiome is affected by diet, antibiotics, and sample handling. Reference databases for annotation are incomplete. Species- and strain-level resolution requires deep sequencing. Cross-study comparisons are complicated by extraction protocols, sequencing depth, and bioinformatic pipelines."
+  },
+  {
+    "objectID": "omics-layers.html#proteomics",
+    "href": "omics-layers.html#proteomics",
+    "title": "Omics Layers",
+    "section": "Proteomics / Metaproteomics",
+    "text": "Proteomics / Metaproteomics\n\n\nSpecimens: colon biopsies, stool  |  Platforms: LC-MS/MS, DIA-MS, shotgun proteomics\n\nCount in registry: 5 datasets\nProteomic datasets measure protein abundance in biological samples. In IBD, proteomics has been applied to intestinal mucosal tissue and stool (fecal proteomics). Fecal proteomics and metaproteomics capture both host-derived and microbial proteins and offer non-invasive sampling. Mucosal proteomics complements transcriptomic data by capturing post-translational changes.\nTypical uses. Mucosal protein biomarker discovery; non-invasive fecal protein biomarkers; host–microbiome protein profiling; proteomics–transcriptomics integration.\nCommon caveats. Fecal proteomics is susceptible to dietary variation, microbial variability, and sample processing differences. Mucosal proteomics is limited by tissue availability. Database coverage for microbial proteins (metaproteomics) remains incomplete. Quantitative methods (DDA vs. DIA) differ in sensitivity and reproducibility."
+  },
+  {
+    "objectID": "omics-layers.html#metabolomics",
+    "href": "omics-layers.html#metabolomics",
+    "title": "Omics Layers",
+    "section": "Metabolomics / Lipidomics",
+    "text": "Metabolomics / Lipidomics\n\n\nSpecimens: stool, serum, plasma, urine, tissue  |  Platforms: LC-MS, GC-MS, NMR\n\nCount in registry: 3 datasets\nMetabolomic datasets measure small-molecule metabolites in biological samples. In IBD, metabolomics has been applied to stool, serum, and tissue, capturing changes in host and microbial metabolic activity. Lipidomics focuses specifically on lipid species. These datasets are often combined with microbiome or proteomics data in multi-omics studies.\nTypical uses. Metabolic biomarker discovery; disease severity correlates; treatment response metabolomics; microbiome–metabolome integration.\nCommon caveats. Metabolomics is sensitive to sample handling, storage, and analytical variation. Platform differences (LC-MS, GC-MS, NMR) affect coverage and quantitation. Annotation of spectral features to specific metabolites remains incomplete. Fecal metabolomics reflects both host and microbial metabolism."
+  },
+  {
+    "objectID": "omics-layers.html#methylation",
+    "href": "omics-layers.html#methylation",
+    "title": "Omics Layers",
+    "section": "Methylation / Epigenomics",
+    "text": "Methylation / Epigenomics\n\n\nSpecimens: peripheral blood, colon mucosa, intestinal epithelial cells  |  Platforms: Illumina 450K/EPIC methylation arrays, ATAC-seq, ChIP-seq\n\nCount in registry: 5 datasets\nMethylation and epigenomic datasets characterize DNA methylation or chromatin accessibility patterns in IBD-relevant tissues. Blood methylation datasets have been used for EWAS (epigenome-wide association studies). Mucosal methylation datasets link epigenetic changes to the inflammatory environment of the intestine.\nTypical uses. Epigenetic biomarker discovery; EWAS; mucosal epigenetic changes in IBD; blood methylation CD vs. UC comparisons; epigenetic–transcriptomic integration.\nCommon caveats. Blood methylation is substantially confounded by cell-type composition; cell-type deconvolution (e.g., Houseman method) is necessary. Methylation arrays have fixed probe sets and cannot capture all genomic regions. Mucosal methylation is influenced by inflammatory cell infiltration. Older 450K datasets have lower genomic coverage than EPIC arrays."
+  },
+  {
+    "objectID": "omics-layers.html#genetics",
+    "href": "omics-layers.html#genetics",
+    "title": "Omics Layers",
+    "section": "Genetics / GWAS",
+    "text": "Genetics / GWAS\n\n\nSpecimens: DNA from blood or saliva  |  Platforms: SNP arrays (Illumina, Affymetrix), imputed genotypes, whole-genome sequencing\n\nCount in registry: 5 datasets\nGenetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn’s disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.\nTypical uses. Genetic risk factor identification; target prioritization; Mendelian randomization; colocalization with QTL data; polygenic risk scores; trans-ancestral analyses.\nCommon caveats. Individual-level genotype data are typically controlled-access. Summary statistics are often publicly available but differ in imputation panels, ancestry composition, and case/control definitions. IBD phenotype ascertainment varies across studies (clinical diagnosis vs. ICD codes). Multi-ancestry analyses require specialized methods."
+  },
+  {
+    "objectID": "omics-layers.html#multi-omics",
+    "href": "omics-layers.html#multi-omics",
+    "title": "Omics Layers",
+    "section": "Multi-Omics",
+    "text": "Multi-Omics\n\n\nSpecimens: multiple per subject  |  Platforms: multiple integrated platforms\n\nCount in registry: 1 dataset\nMulti-omics datasets integrate two or more omics layers collected from the same subjects or same biobank. These resources support integrative analyses linking, for example, host transcriptomics with microbiome, proteomics, and metabolomics data.\nTypical uses. Host–microbiome integration; cross-omics correlation; multi-omics biomarker discovery; longitudinal multi-omics dynamics.\nCommon caveats. Not all samples in a multi-omics study have complete data across all layers. Data integration requires careful harmonization of metadata, sample identifiers, and normalization. Batch effects may differ across omics layers. Access conditions may vary by omics component.\n\n\n\n\n\nAll counts and tables on this page are derived from data/ibd_omics_datasets.csv and update automatically as the registry expands. Many entries carry Needs verification status — metadata should be confirmed against source repositories before use in analysis."
+  },
+  {
     "objectID": "use-cases.html",
     "href": "use-cases.html",
     "title": "Use Cases",
@@ -96,285 +411,5 @@
     "title": "Use Cases",
     "section": "Genetics and Target Prioritization",
     "text": "Genetics and Target Prioritization\n\n\nGenetic resources including GWAS summary statistics and individual-level genotype data. Useful for genetic risk factor mapping, colocalization, Mendelian randomization, and target prioritization. Individual-level data are largely controlled-access.\n\n\n\n\n\n\n\nNote. Use-case groupings are based on metadata tags in the registry CSV and are designed to assist in dataset discovery only. They do not constitute a recommendation that any listed dataset is suitable for the stated use case. Researchers should independently verify data quality, study design, sample characteristics, and access conditions before initiating any analysis."
-  },
-  {
-    "objectID": "omics-layers.html",
-    "href": "omics-layers.html",
-    "title": "Omics Layers",
-    "section": "",
-    "text": "This page organizes the dataset inventory by omics layer. Each section describes the layer, typical specimen types, common analytical caveats, and the datasets currently indexed for that layer. Counts are derived dynamically from the dataset registry."
-  },
-  {
-    "objectID": "omics-layers.html#bulk-transcriptomics",
-    "href": "omics-layers.html#bulk-transcriptomics",
-    "title": "Omics Layers",
-    "section": "Bulk Transcriptomics",
-    "text": "Bulk Transcriptomics\n\n\nSpecimens: intestinal biopsies, blood, peripheral blood mononuclear cells  |  Platforms: microarray (Affymetrix, Illumina), RNA-seq\n\nCount in registry: 16 datasets\nBulk transcriptomic datasets measure the average gene expression across all cells in a tissue or biological sample. In IBD research, these datasets typically derive from colonic or ileal mucosal biopsies, peripheral blood, or whole blood. They have been widely used to identify gene expression differences between disease states (active vs. remission, CD vs. UC, disease vs. control) and to discover transcriptomic biomarkers.\nTypical uses. Mucosal or blood gene expression profiling; disease-vs-control comparison; CD-vs-UC-vs-control comparisons; biomarker discovery; pathway analysis; deconvolution input.\nCommon caveats. Bulk measurements average across heterogeneous cell populations, masking cell-type-specific signals. Cross-study comparisons require attention to tissue site (ileum vs. colon vs. blood), disease activity, treatment status at biopsy, platform (microarray vs. RNA-seq), batch effects, and normalization. Age groups (pediatric vs. adult) differ in biology and should not be pooled without justification. Many older microarray datasets lack detailed clinical metadata."
-  },
-  {
-    "objectID": "omics-layers.html#single-cell-transcriptomics",
-    "href": "omics-layers.html#single-cell-transcriptomics",
-    "title": "Omics Layers",
-    "section": "Single-Cell Transcriptomics",
-    "text": "Single-Cell Transcriptomics\n\n\nSpecimens: intestinal biopsies (dissociated), lamina propria isolates  |  Platforms: 10x Genomics Chromium, other droplet-based scRNA-seq\n\nCount in registry: 5 datasets\nSingle-cell RNA sequencing resolves gene expression at the level of individual cells, enabling cell-type and cell-state characterization. In IBD, scRNA-seq has been applied to characterize immune, epithelial, stromal, and endothelial cell populations in the intestinal mucosa, enabling discovery of disease-associated cell states and pathways.\nTypical uses. Cell-type and cell-state atlases; identification of disease-associated cell states; deconvolution reference panels; single-cell disease-vs-control comparisons; treatment response at cellular resolution.\nCommon caveats. scRNA-seq datasets are large and computationally demanding. Cell annotation requires reference databases and expert review. Batch effects arise from sample processing, dissociation protocols, and sequencing runs. Cross-study integration requires harmonization of cell annotations and normalization strategies. Dropout (zero-inflation) and ambient RNA are dataset-specific issues. Sample sizes per group are often smaller than bulk studies."
-  },
-  {
-    "objectID": "omics-layers.html#spatial-transcriptomics",
-    "href": "omics-layers.html#spatial-transcriptomics",
-    "title": "Omics Layers",
-    "section": "Spatial Transcriptomics",
-    "text": "Spatial Transcriptomics\n\n\nSpecimens: formalin-fixed paraffin-embedded (FFPE) or fresh-frozen tissue sections  |  Platforms: 10x Visium, CosMx SMI, Xenium, Slide-seq\n\nCount in registry: 1 dataset\nSpatial transcriptomics maps gene expression while preserving the spatial location of cells within tissue sections. This enables characterization of cellular neighborhoods, tissue architectural changes in inflammation, and spatially restricted gene expression patterns not detectable in dissociated single-cell or bulk assays.\nTypical uses. Spatial mapping of inflammatory cell states; tissue architecture analysis; niche and co-localization analysis; spatial characterization of ulcerated vs. inflamed vs. uninflamed regions.\nCommon caveats. Resolution and sensitivity vary substantially across platforms. Spot-based platforms (Visium) capture multiple cells per spot; single-cell resolution platforms (CosMx, Xenium) measure a limited gene panel. Data volumes are large. Normalization and cell-type deconvolution are non-trivial. Cross-study comparisons are difficult due to platform heterogeneity and panel differences."
-  },
-  {
-    "objectID": "omics-layers.html#microbiome",
-    "href": "omics-layers.html#microbiome",
-    "title": "Omics Layers",
-    "section": "Microbiome / Metagenomics / Metatranscriptomics",
-    "text": "Microbiome / Metagenomics / Metatranscriptomics\n\n\nSpecimens: stool, mucosal biopsies  |  Platforms: shotgun metagenomics, 16S rRNA, metatranscriptomics, viromics\n\nCount in registry: 1 dataset\nGut microbiome datasets characterize the microbial community composition and functional activity in stool or mucosal specimens. These datasets include shotgun metagenomics (microbial DNA sequencing), metatranscriptomics (microbial RNA expression), and virome profiling. The gut microbiome is substantially altered in IBD, and multi-omics studies combine microbial and host data.\nTypical uses. Microbial community profiling; host–microbiome integration; functional pathway analysis; longitudinal microbiome dynamics; stool biomarker discovery.\nCommon caveats. Substantial inter-individual variability. Stool microbiome is affected by diet, antibiotics, and sample handling. Reference databases for annotation are incomplete. Species- and strain-level resolution requires deep sequencing. Cross-study comparisons are complicated by extraction protocols, sequencing depth, and bioinformatic pipelines."
-  },
-  {
-    "objectID": "omics-layers.html#proteomics",
-    "href": "omics-layers.html#proteomics",
-    "title": "Omics Layers",
-    "section": "Proteomics / Metaproteomics",
-    "text": "Proteomics / Metaproteomics\n\n\nSpecimens: colon biopsies, stool  |  Platforms: LC-MS/MS, DIA-MS, shotgun proteomics\n\nCount in registry: 5 datasets\nProteomic datasets measure protein abundance in biological samples. In IBD, proteomics has been applied to intestinal mucosal tissue and stool (fecal proteomics). Fecal proteomics and metaproteomics capture both host-derived and microbial proteins and offer non-invasive sampling. Mucosal proteomics complements transcriptomic data by capturing post-translational changes.\nTypical uses. Mucosal protein biomarker discovery; non-invasive fecal protein biomarkers; host–microbiome protein profiling; proteomics–transcriptomics integration.\nCommon caveats. Fecal proteomics is susceptible to dietary variation, microbial variability, and sample processing differences. Mucosal proteomics is limited by tissue availability. Database coverage for microbial proteins (metaproteomics) remains incomplete. Quantitative methods (DDA vs. DIA) differ in sensitivity and reproducibility."
-  },
-  {
-    "objectID": "omics-layers.html#metabolomics",
-    "href": "omics-layers.html#metabolomics",
-    "title": "Omics Layers",
-    "section": "Metabolomics / Lipidomics",
-    "text": "Metabolomics / Lipidomics\n\n\nSpecimens: stool, serum, plasma, urine, tissue  |  Platforms: LC-MS, GC-MS, NMR\n\nCount in registry: 3 datasets\nMetabolomic datasets measure small-molecule metabolites in biological samples. In IBD, metabolomics has been applied to stool, serum, and tissue, capturing changes in host and microbial metabolic activity. Lipidomics focuses specifically on lipid species. These datasets are often combined with microbiome or proteomics data in multi-omics studies.\nTypical uses. Metabolic biomarker discovery; disease severity correlates; treatment response metabolomics; microbiome–metabolome integration.\nCommon caveats. Metabolomics is sensitive to sample handling, storage, and analytical variation. Platform differences (LC-MS, GC-MS, NMR) affect coverage and quantitation. Annotation of spectral features to specific metabolites remains incomplete. Fecal metabolomics reflects both host and microbial metabolism."
-  },
-  {
-    "objectID": "omics-layers.html#methylation",
-    "href": "omics-layers.html#methylation",
-    "title": "Omics Layers",
-    "section": "Methylation / Epigenomics",
-    "text": "Methylation / Epigenomics\n\n\nSpecimens: peripheral blood, colon mucosa, intestinal epithelial cells  |  Platforms: Illumina 450K/EPIC methylation arrays, ATAC-seq, ChIP-seq\n\nCount in registry: 5 datasets\nMethylation and epigenomic datasets characterize DNA methylation or chromatin accessibility patterns in IBD-relevant tissues. Blood methylation datasets have been used for EWAS (epigenome-wide association studies). Mucosal methylation datasets link epigenetic changes to the inflammatory environment of the intestine.\nTypical uses. Epigenetic biomarker discovery; EWAS; mucosal epigenetic changes in IBD; blood methylation CD vs. UC comparisons; epigenetic–transcriptomic integration.\nCommon caveats. Blood methylation is substantially confounded by cell-type composition; cell-type deconvolution (e.g., Houseman method) is necessary. Methylation arrays have fixed probe sets and cannot capture all genomic regions. Mucosal methylation is influenced by inflammatory cell infiltration. Older 450K datasets have lower genomic coverage than EPIC arrays."
-  },
-  {
-    "objectID": "omics-layers.html#genetics",
-    "href": "omics-layers.html#genetics",
-    "title": "Omics Layers",
-    "section": "Genetics / GWAS",
-    "text": "Genetics / GWAS\n\n\nSpecimens: DNA from blood or saliva  |  Platforms: SNP arrays (Illumina, Affymetrix), imputed genotypes, whole-genome sequencing\n\nCount in registry: 5 datasets\nGenetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn’s disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.\nTypical uses. Genetic risk factor identification; target prioritization; Mendelian randomization; colocalization with QTL data; polygenic risk scores; trans-ancestral analyses.\nCommon caveats. Individual-level genotype data are typically controlled-access. Summary statistics are often publicly available but differ in imputation panels, ancestry composition, and case/control definitions. IBD phenotype ascertainment varies across studies (clinical diagnosis vs. ICD codes). Multi-ancestry analyses require specialized methods."
-  },
-  {
-    "objectID": "omics-layers.html#multi-omics",
-    "href": "omics-layers.html#multi-omics",
-    "title": "Omics Layers",
-    "section": "Multi-Omics",
-    "text": "Multi-Omics\n\n\nSpecimens: multiple per subject  |  Platforms: multiple integrated platforms\n\nCount in registry: 1 dataset\nMulti-omics datasets integrate two or more omics layers collected from the same subjects or same biobank. These resources support integrative analyses linking, for example, host transcriptomics with microbiome, proteomics, and metabolomics data.\nTypical uses. Host–microbiome integration; cross-omics correlation; multi-omics biomarker discovery; longitudinal multi-omics dynamics.\nCommon caveats. Not all samples in a multi-omics study have complete data across all layers. Data integration requires careful harmonization of metadata, sample identifiers, and normalization. Batch effects may differ across omics layers. Access conditions may vary by omics component.\n\n\n\n\n\nAll counts and tables on this page are derived from data/ibd_omics_datasets.csv and update automatically as the registry expands. Many entries carry Needs verification status — metadata should be confirmed against source repositories before use in analysis."
-  },
-  {
-    "objectID": "datasets.html",
-    "href": "datasets.html",
-    "title": "Dataset Explorer",
-    "section": "",
-    "text": "This table lists all datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All metadata are conservative annotations derived from public records; fields marked Unclear require manual verification. Dataset availability and access status should be confirmed before analysis."
-  },
-  {
-    "objectID": "datasets.html#filters-and-search",
-    "href": "datasets.html#filters-and-search",
-    "title": "Dataset Explorer",
-    "section": "Filters and Search",
-    "text": "Filters and Search"
-  },
-  {
-    "objectID": "datasets.html#data-access-status-legend",
-    "href": "datasets.html#data-access-status-legend",
-    "title": "Dataset Explorer",
-    "section": "Data Access Status Legend",
-    "text": "Data Access Status Legend\n\n\n\n\n\n\n\nLabel\nMeaning\n\n\n\n\nPublic raw data\nRaw data files (FASTQ, CEL, IDAT, mzML, count matrices, etc.) are publicly downloadable\n\n\nPublic processed data\nProcessed expression/abundance matrix is available; raw data may not be public\n\n\nPublic portal\nData are accessible via a public portal or database\n\n\nControlled access\nIndexed publicly but requires application or institutional approval\n\n\nPublication only\nDescribed in a publication; reusable data files are not clearly available\n\n\nUnclear\nRepository record exists but data availability or metadata are incomplete\n\n\n\n\nNote. Data access status and metadata were assigned conservatively based on public records available at the time of curation. Availability may change. Always verify directly with the source repository before initiating analysis."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "The IBD Omics Explorer is a curated academic tool designed to support the discovery and navigation of publicly available omics datasets in inflammatory bowel disease (IBD) research. It is maintained as part of ongoing research at Stanford University School of Medicine.\n\n\nIBD omics data are distributed across many repositories, portals, and publications, making comprehensive dataset discovery time-consuming. This explorer aims to aggregate metadata from publicly accessible resources into a single searchable and filterable registry, helping researchers:\n\nIdentify datasets relevant to a given research question\nUnderstand the availability and access conditions of public IBD data\nCompare available datasets across omics layers, tissue types, and disease groups\nPlan analyses that leverage multiple complementary datasets\n\nThis is a dataset discovery tool. It does not rank, recommend, or certify datasets. All metadata should be verified before analysis.\n\n\n\n\n\nIt is not a systematic review or meta-analysis of IBD omics data.\nIt does not assess dataset quality or analytical suitability.\nIt does not rank or recommend any dataset as better or worse for any purpose.\nIt is not a complete or authoritative registry of all IBD omics data.\nIt does not provide access to data files directly; it links to source repositories.\n\n\n\n\n\nThe registry currently covers:\n\nBulk transcriptomics (microarray and RNA-seq)\nSingle-cell transcriptomics\nSpatial transcriptomics\nMicrobiome (metagenomics, metatranscriptomics)\nProteomics and metaproteomics\nMetabolomics and lipidomics\nMethylation and epigenomics\nGenetics and GWAS\nMulti-omics resources\n\nSee the Omics Layers page for a layer-by-layer inventory, and the Curation Methods page for detailed inclusion criteria and metadata definitions.\n\n\n\n\nThe dataset registry is maintained in data/ibd_omics_datasets.csv. Entries carry a curation_status label indicating their verification level. Most initial entries are annotated as Seed entry or Needs verification, meaning metadata should be confirmed against source repositories before use.\nThe registry is designed to grow. If you identify datasets that should be included, metadata errors, or outdated access information, contributions are welcome.\n\n\n\n\nDahham Alsoud Postdoctoral Researcher Stanford University School of Medicine GitHub | Google Scholar\n\n\nThis website is a curated research tool provided for academic dataset discovery. It is not a clinical resource. Dataset availability, access conditions, and metadata should be verified independently before any analysis. The registry does not constitute an endorsement of any dataset, repository, or research group."
-  },
-  {
-    "objectID": "about.html#about-this-resource",
-    "href": "about.html#about-this-resource",
-    "title": "About",
-    "section": "",
-    "text": "The IBD Omics Explorer is a curated academic tool designed to support the discovery and navigation of publicly available omics datasets in inflammatory bowel disease (IBD) research. It is maintained as part of ongoing research at Stanford University School of Medicine.\n\n\nIBD omics data are distributed across many repositories, portals, and publications, making comprehensive dataset discovery time-consuming. This explorer aims to aggregate metadata from publicly accessible resources into a single searchable and filterable registry, helping researchers:\n\nIdentify datasets relevant to a given research question\nUnderstand the availability and access conditions of public IBD data\nCompare available datasets across omics layers, tissue types, and disease groups\nPlan analyses that leverage multiple complementary datasets\n\nThis is a dataset discovery tool. It does not rank, recommend, or certify datasets. All metadata should be verified before analysis.\n\n\n\n\n\nIt is not a systematic review or meta-analysis of IBD omics data.\nIt does not assess dataset quality or analytical suitability.\nIt does not rank or recommend any dataset as better or worse for any purpose.\nIt is not a complete or authoritative registry of all IBD omics data.\nIt does not provide access to data files directly; it links to source repositories.\n\n\n\n\n\nThe registry currently covers:\n\nBulk transcriptomics (microarray and RNA-seq)\nSingle-cell transcriptomics\nSpatial transcriptomics\nMicrobiome (metagenomics, metatranscriptomics)\nProteomics and metaproteomics\nMetabolomics and lipidomics\nMethylation and epigenomics\nGenetics and GWAS\nMulti-omics resources\n\nSee the Omics Layers page for a layer-by-layer inventory, and the Curation Methods page for detailed inclusion criteria and metadata definitions.\n\n\n\n\nThe dataset registry is maintained in data/ibd_omics_datasets.csv. Entries carry a curation_status label indicating their verification level. Most initial entries are annotated as Seed entry or Needs verification, meaning metadata should be confirmed against source repositories before use.\nThe registry is designed to grow. If you identify datasets that should be included, metadata errors, or outdated access information, contributions are welcome.\n\n\n\n\nDahham Alsoud Postdoctoral Researcher Stanford University School of Medicine GitHub | Google Scholar\n\n\nThis website is a curated research tool provided for academic dataset discovery. It is not a clinical resource. Dataset availability, access conditions, and metadata should be verified independently before any analysis. The registry does not constitute an endorsement of any dataset, repository, or research group."
-  },
-  {
-    "objectID": "curation-methods.html",
-    "href": "curation-methods.html",
-    "title": "Curation Methods",
-    "section": "",
-    "text": "This page documents the curation rules used to build and maintain the IBD Omics Explorer dataset registry. Understanding these rules is essential for interpreting the annotations and deciding whether a listed dataset is appropriate for a specific analysis."
-  },
-  {
-    "objectID": "curation-methods.html#purpose-and-scope",
-    "href": "curation-methods.html#purpose-and-scope",
-    "title": "Curation Methods",
-    "section": "Purpose and Scope",
-    "text": "Purpose and Scope\nThe IBD Omics Explorer is designed to map and organize publicly available IBD omics datasets across all major omics layers, with the goal of supporting dataset discovery. It is not a systematic review, meta-analysis, or quality-assessment resource. Inclusion in this registry does not imply that a dataset is high quality, fully reusable, or suitable for any particular analysis.\nThe registry aims to be inclusive and expandable. The initial seed dataset is a starting point, not a comprehensive catalog. Many datasets that qualify for inclusion may not yet be listed."
-  },
-  {
-    "objectID": "curation-methods.html#current-registry-state",
-    "href": "curation-methods.html#current-registry-state",
-    "title": "Curation Methods",
-    "section": "Current Registry State",
-    "text": "Current Registry State\nThe current seed registry contains 37 entries. Of these, 31 entries are marked Seed entry; Needs verification and 6 entries are marked Seed entry. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.\nBefore using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with Unclear fields should be treated as leads for manual curation rather than confirmed facts."
-  },
-  {
-    "objectID": "curation-methods.html#priority-verification-queue",
-    "href": "curation-methods.html#priority-verification-queue",
-    "title": "Curation Methods",
-    "section": "Priority Verification Queue",
-    "text": "Priority Verification Queue\nThe following entry types should be checked first because they carry the highest risk of misleading users:\n\n\n\n\n\n\n\n\nPriority\nEntry pattern\nWhy it matters\n\n\n\n\n1\nEntries with dataset_url = Unclear\nUsers cannot verify the source record directly from the site\n\n\n2\nEntries with publication_title = Unclear and publication_year = Unclear\nStudy provenance is incomplete\n\n\n3\nAggregated portals or multi-accession resources\nThese can mix studies with different assays, cohorts, and access rules\n\n\n4\nEntries where sample type, platform, or disease groups are partly inferred\nThese fields determine whether datasets can be pooled or compared\n\n\n5\nControlled-access genetics or multi-omics resources\nPublic indexing does not mean the underlying individual-level files are downloadable\n\n\n\nConcrete current examples include IBDTransDB, GSE accessions with unknown publication metadata, Martin et al. 2019 Cell / GIMATS, and the broad genetics/platform entries. These should remain marked Needs verification until source records have been checked one by one."
-  },
-  {
-    "objectID": "curation-methods.html#inclusion-criteria",
-    "href": "curation-methods.html#inclusion-criteria",
-    "title": "Curation Methods",
-    "section": "Inclusion Criteria",
-    "text": "Inclusion Criteria\nA dataset is eligible for inclusion if it meets at least one of the following criteria:\n\nHuman subjects with inflammatory bowel disease (IBD), Crohn’s disease (CD), ulcerative colitis (UC), or IBD-unclassified (IBD-U)\nNon-IBD control samples collected in the context of an IBD study\nHuman intestinal, colonic, ileal, blood, stool, organoid, or microbiome samples analyzed with omics methods in an IBD research context\nA publicly registered accession, portal entry, or publicly accessible summary statistics\nA curated database specifically aggregating IBD omics studies (e.g., IBDTransDB)\nA controlled-access resource that is publicly indexed (e.g., dbGaP) and thus searchable and describable"
-  },
-  {
-    "objectID": "curation-methods.html#exclusion-or-deferred-categories",
-    "href": "curation-methods.html#exclusion-or-deferred-categories",
-    "title": "Curation Methods",
-    "section": "Exclusion or Deferred Categories",
-    "text": "Exclusion or Deferred Categories\nThe following categories are excluded or deferred pending additional review:\n\n\n\n\n\n\n\nCategory\nHandling\n\n\n\n\nAnimal-only datasets (mouse, rat models)\nExcluded unless they directly describe human companion datasets\n\n\nPurely mechanistic cell-line datasets\nExcluded unless they include primary patient-derived material\n\n\nDatasets without any accessible metadata\nDeferred until metadata can be located\n\n\nDuplicate submissions\nRetained only if they add useful metadata, processed files, or additional accession cross-links\n\n\nPublication-only datasets\nIncluded with Publication only or Unclear access status and a note\n\n\nUnpublished preprint-only datasets\nMay be included with explicit annotation; treat with caution"
-  },
-  {
-    "objectID": "curation-methods.html#public-data-access-labels",
-    "href": "curation-methods.html#public-data-access-labels",
-    "title": "Curation Methods",
-    "section": "Public Data Access Labels",
-    "text": "Public Data Access Labels\nThe registry uses the following standardized labels for the data_access_status field:\n\n\n\n\n\n\n\nLabel\nMeaning\n\n\n\n\nPublic raw data\nRaw data files (FASTQ, CEL, IDAT, mzML, mzIdentML, mzTab, count matrices, BAM, or equivalent) are publicly downloadable without application\n\n\nPublic processed data\nProcessed expression matrix, abundance table, or summary statistics are publicly available, but raw data may not be\n\n\nPublic portal\nData are accessible and explorable through a public portal or database interface, with or without direct file download\n\n\nControlled access\nDataset is publicly indexed and described, but access to data files requires an application, institutional approval, or data use agreement\n\n\nPublication only\nDataset is described in a publication, but reusable data files are not clearly available in a repository\n\n\nUnclear\nA repository record exists but data availability, metadata, or access conditions could not be confidently determined from public information\n\n\n\nMultiple labels may apply to a single dataset (e.g., Public processed data; Controlled access (some components))."
-  },
-  {
-    "objectID": "curation-methods.html#curation-status-labels",
-    "href": "curation-methods.html#curation-status-labels",
-    "title": "Curation Methods",
-    "section": "Curation Status Labels",
-    "text": "Curation Status Labels\nEach entry carries a curation_status label indicating the degree of metadata verification:\n\n\n\n\n\n\n\nLabel\nMeaning\n\n\n\n\nSeed entry\nInitial dataset added to launch the explorer; metadata derived from public sources but not manually verified against the repository record\n\n\nNeeds verification\nMetadata or access status should be manually checked before relying on the annotation\n\n\nVerified\nMetadata and access links have been manually checked against the source repository record\n\n\nDeprecated/limited\nDataset exists but has limited reuse value, incomplete public access, or substantial data quality issues\n\n\n\nMost entries in the initial release carry Seed entry or Needs verification status. Users are encouraged to verify directly against source repositories before initiating analysis."
-  },
-  {
-    "objectID": "curation-methods.html#metadata-field-definitions",
-    "href": "curation-methods.html#metadata-field-definitions",
-    "title": "Curation Methods",
-    "section": "Metadata Field Definitions",
-    "text": "Metadata Field Definitions\n\n\n\n\n\n\n\nField\nDefinition\n\n\n\n\ndataset_id\nInternal registry identifier (DSxxx)\n\n\ndataset_name\nHuman-readable dataset name or accession-based label\n\n\naccession\nPrimary accession number(s) at the source repository\n\n\nrepository\nRepository or portal where data are hosted\n\n\nrepository_type\nType of repository (public archive, portal, consortium, etc.)\n\n\npublication_title\nTitle of the primary associated publication (if known)\n\n\npublication_year\nYear of primary publication (if known)\n\n\ndoi\nDOI of the primary publication (if known)\n\n\ndisease\nDisease groups included in the dataset\n\n\npopulation\nAge group or population descriptor (Adult, Pediatric, Mixed, Unclear)\n\n\nsample_type\nType of biological specimen (biopsy, blood, stool, etc.)\n\n\ntissue_site\nAnatomical site of the specimen\n\n\nomics_layer\nOmics data type(s) included\n\n\nplatform\nAssay platform(s) used\n\n\nstudy_design\nStudy design descriptor\n\n\nsample_size_subjects\nApproximate number of subjects (may refer to participants, samples, or sequencing libraries depending on study)\n\n\nsample_size_samples\nApproximate number of samples (may differ from subjects in paired or longitudinal designs)\n\n\nraw_data_available\nWhether raw data files are publicly accessible (Yes / No / Partial / Unclear)\n\n\nprocessed_data_available\nWhether processed data files are publicly accessible\n\n\ncontrolled_access\nWhether any component requires controlled access\n\n\nclinical_metadata\nWhether clinical metadata (diagnosis, disease activity, demographics) are available\n\n\nendoscopy_available\nWhether endoscopy data are available alongside omics data\n\n\ntreatment_metadata\nWhether treatment exposure information is available\n\n\nlongitudinal\nWhether the dataset includes longitudinal follow-up\n\n\npotential_use_cases\nMetadata tags describing possible research applications\n\n\nlimitations\nKnown limitations of the dataset relevant to reuse\n\n\ndata_access_status\nStandardized access label (see above)\n\n\ncuration_status\nCuration status label (see above)\n\n\ndataset_url\nURL to the dataset record (if known)\n\n\npublication_url\nURL to the primary publication (if known)\n\n\nnotes\nFree-text curation notes"
-  },
-  {
-    "objectID": "curation-methods.html#metadata-caveats",
-    "href": "curation-methods.html#metadata-caveats",
-    "title": "Curation Methods",
-    "section": "Metadata Caveats",
-    "text": "Metadata Caveats\nUsers of this registry should be aware of the following general caveats:\nSample size. Sample size fields may refer to subjects, unique samples, biopsies, cells, sequencing libraries, or files, depending on the study. These are not always interchangeable. Actual analyzable sample sizes per disease group should be verified from the publication or repository metadata.\nDisease definitions. IBD, CD, UC, and IBD-U definitions vary across studies. Some studies use clinician-assigned diagnoses; others use ICD codes or self-report. Disease activity definitions (active vs. remission) and scoring systems differ. Cross-study comparisons of disease groups require attention to diagnostic criteria.\nTreatment exposure. Treatment status at the time of sample collection is often incompletely annotated in public deposits. Even where annotated, the specific agents, dosing, duration, and response status may not be consistently available.\nPediatric vs. adult. Age group classification may not always be explicitly labeled. Unlabeled entries should not be assumed to be adult. Biological differences between pediatric and adult IBD are well established; pooling across age groups is generally not recommended without justification.\nTissue site. Tissue site annotation may be incomplete, inconsistent across studies, or ambiguous (e.g., “colon” without specifying anatomical segment). Cross-study comparisons should account for tissue site differences.\nPlatform effects. Different omics platforms (microarray vs. RNA-seq; different sequencing depths; different array generations) introduce systematic differences that must be accounted for in cross-study analyses.\nBatch effects. Omics data are subject to batch effects from sample processing, sequencing run, laboratory, and reagent lot variation. Batch correction is typically required for cross-study comparisons.\nControlled-access data. Controlled-access resources are described for completeness but require institutional approval before any data can be downloaded or analyzed. Approval processes vary and can take weeks to months.\nUnclear fields. Fields marked “Unclear” indicate that the information could not be confidently determined from publicly available records at the time of curation. These should be verified before use."
-  },
-  {
-    "objectID": "curation-methods.html#how-to-contribute-or-correct",
-    "href": "curation-methods.html#how-to-contribute-or-correct",
-    "title": "Curation Methods",
-    "section": "How to Contribute or Correct",
-    "text": "How to Contribute or Correct\nThis registry is designed to expand continuously. If you identify:\n\nA dataset that should be included\nA metadata error or outdated access status\nA deprecated or moved accession\nA verified entry that should be updated from Needs verification to Verified\n\nPlease open an issue or pull request on the source repository."
-  },
-  {
-    "objectID": "curation-methods.html#data-sources-for-curation",
-    "href": "curation-methods.html#data-sources-for-curation",
-    "title": "Curation Methods",
-    "section": "Data Sources for Curation",
-    "text": "Data Sources for Curation\nMetadata in this seed registry should be checked against:\n\nPublic repository records, including GEO, SRA, PRIDE, MassIVE, Metabolomics Workbench, dbGaP, GWAS Catalog, CELLxGENE, and Human Cell Atlas\nConsortium and project portals, including IBDMDB, IIBDGC, Open Targets, FinnGen, and UK Biobank\nPrimary publications and supplementary tables linked from repository records\nDataset-specific README files, sample metadata tables, and controlled-access study descriptions\n\nThe initial entries should not be promoted to Verified until a human curator has checked the repository record and primary publication.\n\nThis registry is a curated research resource and is provided for dataset discovery purposes only. It does not constitute clinical guidance, a systematic review, or a quality certification of any dataset. All metadata should be independently verified before use in any analysis."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "IBD Omics Explorer",
-    "section": "",
-    "text": "Dataset Registry\n\n\n\nA curated, searchable inventory of publicly available omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Explore by Omics Layer Browse by Use Case Curation Methods\nCounts are derived from the current seed CSV. Layer tags are not mutually exclusive because multi-omics datasets can contribute to more than one layer."
-  },
-  {
-    "objectID": "index.html#ibd-omics-explorer",
-    "href": "index.html#ibd-omics-explorer",
-    "title": "IBD Omics Explorer",
-    "section": "",
-    "text": "A curated, searchable inventory of publicly available omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Explore by Omics Layer Browse by Use Case Curation Methods"
-  },
-  {
-    "objectID": "index.html#scope",
-    "href": "index.html#scope",
-    "title": "IBD Omics Explorer",
-    "section": "Scope",
-    "text": "Scope\nThis explorer aims to map publicly indexed IBD omics datasets across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn’s disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include tissue biopsies, blood, stool, organoids, or other relevant specimen types.\nInclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis. The registry documents what is publicly accessible, along with known caveats and limitations.\nSee the Curation Methods page for detailed inclusion criteria, data access definitions, and metadata caveats."
-  },
-  {
-    "objectID": "index.html#data-layers-covered",
-    "href": "index.html#data-layers-covered",
-    "title": "IBD Omics Explorer",
-    "section": "Data Layers Covered",
-    "text": "Data Layers Covered\n\n 🧬\n\nBulk Transcriptomics\n\n\nTissue- and blood-level gene expression from microarray and RNA-seq platforms\n\n  🔬\n\nSingle-Cell Transcriptomics\n\n\nCell-type and cell-state resolution expression in IBD tissues\n\n  🗺️\n\nSpatial Transcriptomics\n\n\nSpatially resolved gene expression preserving tissue architecture\n\n  🦠\n\nMicrobiome / Metagenomics\n\n\nGut microbial community profiling via shotgun metagenomics and metatranscriptomics\n\n  🧪\n\nProteomics / Metaproteomics\n\n\nMucosal and fecal proteomics, including host and microbial proteins\n\n  ⚗️\n\nMetabolomics / Lipidomics\n\n\nSmall-molecule profiling in stool, blood, and tissue\n\n  🔖\n\nMethylation / Epigenomics\n\n\nDNA methylation arrays and chromatin accessibility in blood and mucosa\n\n  🧩\n\nGenetics / GWAS\n\n\nIBD GWAS summary statistics and individual-level genotype resources"
-  },
-  {
-    "objectID": "index.html#navigating-the-registry",
-    "href": "index.html#navigating-the-registry",
-    "title": "IBD Omics Explorer",
-    "section": "Navigating the Registry",
-    "text": "Navigating the Registry\n\n\n\nPage\nPurpose\n\n\n\n\nDatasets\nSearchable and filterable table of all indexed datasets\n\n\nOmics Layers\nInventory grouped by omics type with layer-level notes\n\n\nRepositories\nOverview of archives and portals hosting IBD omics data\n\n\nUse Cases\nBrowse datasets tagged as potentially relevant to specific research questions\n\n\nCuration Methods\nInclusion criteria, access definitions, metadata caveats\n\n\nAbout\nProject context and contact information\n\n\n\n\n\nDisclaimer. This website is a curated research tool. It is intended to support dataset discovery, not to serve as a complete or authoritative registry. Dataset availability, metadata accuracy, and access status should be verified independently before analysis. This site does not rank datasets or endorse any particular resource over another."
-  },
-  {
-    "objectID": "repositories.html",
-    "href": "repositories.html",
-    "title": "Repositories and Portals",
-    "section": "",
-    "text": "IBD omics datasets are distributed across numerous public repositories, specialized portals, and consortium-specific platforms. This page describes the major repositories represented in the dataset registry, their access models, and relevant caveats. Inclusion here reflects the presence of IBD-relevant data, not an endorsement or ranking of any resource."
-  },
-  {
-    "objectID": "repositories.html#genomics-and-transcriptomics-archives",
-    "href": "repositories.html#genomics-and-transcriptomics-archives",
-    "title": "Repositories and Portals",
-    "section": "Genomics and Transcriptomics Archives",
-    "text": "Genomics and Transcriptomics Archives\n\nGEO — Gene Expression Omnibus\n\n\n\nRepository type\nPublic archive for functional genomics data\n\n\nData types hosted\nMicroarray, RNA-seq, scRNA-seq, methylation arrays, ChIP-seq, ATAC-seq, and related high-throughput data\n\n\nAccess model\nPublicly accessible; some datasets have controlled-access raw data (SRA)\n\n\nIBD data\nLargest collection of IBD transcriptomic and epigenomic datasets; many accessions GSExxxxxx\n\n\nURL\nncbi.nlm.nih.gov/geo\n\n\n\nNotes. GEO hosts the majority of bulk and single-cell transcriptomic IBD datasets. Processed data (expression matrices, metadata) are typically freely accessible. Raw sequencing reads may be deposited in SRA and may require additional steps to access. Metadata completeness and clinical annotation quality vary substantially between submissions.\n\n\n\nSRA — Sequence Read Archive\n\n\n\nRepository type\nPublic archive for raw sequencing data\n\n\nData types hosted\nRaw FASTQ and BAM files from next-generation sequencing experiments\n\n\nAccess model\nPublicly accessible (open access) or controlled access (dbGaP-linked studies)\n\n\nIBD data\nRaw sequencing data from RNA-seq, scRNA-seq, metagenomics, metatranscriptomics, and related IBD studies\n\n\nURL\nncbi.nlm.nih.gov/sra\n\n\n\nNotes. Raw data downloads from SRA can be very large. Access to controlled-access SRA studies requires dbGaP authorization. The SRA toolkit (prefetch, fastq-dump) is typically required for downloads.\n\n\n\nArrayExpress / BioStudies (EMBL-EBI)\n\n\n\nRepository type\nPublic archive for functional genomics and multi-omics data\n\n\nData types hosted\nMicroarray, RNA-seq, and other functional genomics data; expanding to multi-omics\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nEuropean counterpart to GEO; some IBD datasets deposited here rather than or in addition to GEO\n\n\nURL\nebi.ac.uk/biostudies\n\n\n\nNotes. Many European IBD studies deposit data in ArrayExpress/BioStudies rather than GEO. Some datasets are mirrored between both archives."
-  },
-  {
-    "objectID": "repositories.html#single-cell-and-spatial-portals",
-    "href": "repositories.html#single-cell-and-spatial-portals",
-    "title": "Repositories and Portals",
-    "section": "Single-Cell and Spatial Portals",
-    "text": "Single-Cell and Spatial Portals\n\nCELLxGENE (CZI Science)\n\n\n\nRepository type\nPublic portal for single-cell and spatial transcriptomics data\n\n\nData types hosted\nscRNA-seq, spatial transcriptomics; standardized with Cell Ontology annotations\n\n\nAccess model\nPublicly accessible; data downloadable in H5AD format\n\n\nIBD data\nMultiple IBD scRNA-seq datasets with curated cell annotations\n\n\nURL\ncellxgene.cziscience.com\n\n\n\nNotes. CELLxGENE enforces a standardized metadata schema including cell ontology terms, tissue annotations, disease terms (using MONDO), and organism. This makes cross-study comparison more tractable than raw GEO deposits. Interactive exploration is available via the browser, and data can be downloaded for offline analysis.\n\n\n\nHuman Cell Atlas (HCA)\n\n\n\nRepository type\nInternational consortium portal for single-cell reference atlases\n\n\nData types hosted\nscRNA-seq, spatial transcriptomics, multi-omics; reference atlas datasets\n\n\nAccess model\nPublicly accessible; some controlled-access components\n\n\nIBD data\nIBD-related intestinal atlas datasets; normal gut cell type references\n\n\nURL\nhumancellatlas.org\n\n\n\nNotes. HCA datasets can also be accessed via CELLxGENE. The HCA Data Portal provides dataset-level metadata and download links. Some HCA datasets require registration; others are fully open."
-  },
-  {
-    "objectID": "repositories.html#multi-omics-portals",
-    "href": "repositories.html#multi-omics-portals",
-    "title": "Repositories and Portals",
-    "section": "Multi-Omics Portals",
-    "text": "Multi-Omics Portals\n\nIBDMDB — Inflammatory Bowel Disease Multi-omics Database\n\n\n\nRepository type\nIBD-specific multi-omics data portal (iHMP project)\n\n\nData types hosted\nHost transcriptomics, metagenomics, metatranscriptomics, proteomics, metabolomics, virome; longitudinal stool and biopsy data\n\n\nAccess model\nProcessed data publicly accessible via portal; some raw data components via HMP and dbGaP\n\n\nIBD data\nCore HMP2 longitudinal IBD cohort (CD, UC, non-IBD controls)\n\n\nURL\nibdmdb.org\n\n\n\nNotes. IBDMDB is one of the most comprehensive public IBD multi-omics resources. The portal allows interactive browsing and download of processed data. Some raw data require dbGaP authorization. Longitudinal design (multiple timepoints per participant) adds analytical complexity but also unique value for dynamic analyses."
-  },
-  {
-    "objectID": "repositories.html#proteomics-archives",
-    "href": "repositories.html#proteomics-archives",
-    "title": "Repositories and Portals",
-    "section": "Proteomics Archives",
-    "text": "Proteomics Archives\n\nPRIDE / ProteomeXchange\n\n\n\nRepository type\nPublic archive for proteomics mass spectrometry data\n\n\nData types hosted\nRaw MS files (mzML, RAW), processed results (mzIdentML, mzTab), peptide/protein quantification tables\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nFecal proteomics, mucosal proteomics, metaproteomics datasets\n\n\nURL\nebi.ac.uk/pride\n\n\n\nNotes. PRIDE is part of the ProteomeXchange consortium. Accessions are prefixed PXD. Raw MS files are typically large. Re-analysis requires appropriate proteomics software (MaxQuant, Proteome Discoverer, Spectronaut, etc.) and appropriate reference databases.\n\n\n\nMassIVE\n\n\n\nRepository type\nPublic archive for mass spectrometry data (UCSD)\n\n\nData types hosted\nProteomics and metabolomics MS data; cross-referenced with ProteomeXchange\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nFecal proteomics and metabolomics IBD datasets\n\n\nURL\nmassive.ucsd.edu\n\n\n\nNotes. MassIVE accessions are prefixed MSV. Several IBD fecal proteomics/metabolomics datasets are deposited here. Can be cross-referenced with PRIDE via ProteomeXchange identifiers."
-  },
-  {
-    "objectID": "repositories.html#metabolomics",
-    "href": "repositories.html#metabolomics",
-    "title": "Repositories and Portals",
-    "section": "Metabolomics",
-    "text": "Metabolomics\n\nMetabolomics Workbench (NIH)\n\n\n\nRepository type\nPublic repository for metabolomics data (NIH Common Fund)\n\n\nData types hosted\nMetabolomics and lipidomics raw and processed data; experimental metadata\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nIBD metabolomics studies; stool and serum metabolomics\n\n\nURL\nmetabolomicsworkbench.org\n\n\n\nNotes. Accessions are prefixed ST (study) and DS (dataset). The portal includes experimental metadata, sample information, and download options for processed data tables. Raw spectral files are often available for re-analysis."
-  },
-  {
-    "objectID": "repositories.html#controlled-access-archives",
-    "href": "repositories.html#controlled-access-archives",
-    "title": "Repositories and Portals",
-    "section": "Controlled-Access Archives",
-    "text": "Controlled-Access Archives\n\ndbGaP — Database of Genotypes and Phenotypes\n\n\n\nRepository type\nControlled-access archive for human genotype and phenotype data (NIH)\n\n\nData types hosted\nIndividual-level genotype data, GWAS, WGS, clinical phenotypes\n\n\nAccess model\nControlled access; requires institutional data access request and approval\n\n\nIBD data\nIIBDGC individual-level GWAS data; some IBD multi-omics studies with controlled-access components\n\n\nURL\nncbi.nlm.nih.gov/gap\n\n\n\nNotes. Access requires submission of a Data Access Request (DAR) through the dbGaP portal, institutional sign-off, and approval by the data access committee. Processing times vary. Approved data must be accessed in a secure computing environment consistent with the data use agreement."
-  },
-  {
-    "objectID": "repositories.html#genetics-portals-and-resources",
-    "href": "repositories.html#genetics-portals-and-resources",
-    "title": "Repositories and Portals",
-    "section": "Genetics Portals and Resources",
-    "text": "Genetics Portals and Resources\n\nGWAS Catalog (EMBL-EBI)\n\n\n\nRepository type\nCurated catalog of published GWAS results and summary statistics\n\n\nData types hosted\nGWAS summary statistics, variant-trait associations, study metadata\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nIBD, CD, and UC GWAS results from numerous published studies\n\n\nURL\nebi.ac.uk/gwas\n\n\n\nNotes. The GWAS Catalog aggregates published GWAS results with standardized trait ontology annotations (EFO terms). Summary statistics files are available for many studies. Useful for locus lookup, phenotype comparison, and identifying published IBD GWAS signals.\n\n\n\nIIBDGC — International IBD Genetics Consortium\n\n\n\nRepository type\nIBD genetics consortium; summary statistics and controlled-access data\n\n\nData types hosted\nGWAS summary statistics, fine-mapping results, individual-level data (via dbGaP)\n\n\nAccess model\nSummary statistics publicly accessible; individual-level data controlled-access via dbGaP\n\n\nIBD data\nLarge-scale IBD, CD, and UC GWAS meta-analyses\n\n\nURL\nibdgenetics.org\n\n\n\nNotes. IIBDGC has produced some of the largest IBD GWAS to date. Summary statistics from published analyses are often available via the IIBDGC website or the GWAS Catalog. Individual participant data require dbGaP authorization.\n\n\n\nOpen Targets Genetics / Platform\n\n\n\nRepository type\nIntegrated genomics and drug target platform\n\n\nData types hosted\nIntegrated GWAS, QTL, fine-mapping, and target evidence; not a primary data archive\n\n\nAccess model\nPublicly accessible\n\n\nIBD data\nIBD/CD/UC target evidence integrated from GWAS and functional genomics\n\n\nURL\ngenetics.opentargets.org\n\n\n\nNotes. Open Targets is not a primary data archive but an integrative platform derived from public GWAS and functional genomics data. Useful for target prioritization and locus-to-gene mapping. The underlying data sources should be verified for any specific analysis.\n\n\n\nFinnGen and UK Biobank\n\n\n\nRepository type\nPopulation biobank GWAS resources\n\n\nData types hosted\nGWAS summary statistics (public); individual-level data (controlled access)\n\n\nAccess model\nSummary statistics publicly accessible (FinnGen results browser, Open GWAS/MRC IEU); individual data require access application\n\n\nIBD data\nIBD, CD, and UC phenotypes available in both biobanks\n\n\nURL\nFinnGen: finngen.fi  \n\n\n\nNotes. FinnGen provides GWAS summary statistics publicly via its results browser. UK Biobank individual-level data require application through the UK Biobank Access Management System. IBD phenotype definitions in biobanks rely on ICD codes and may differ from clinically adjudicated cohorts.\n\nRepository details reflect publicly available information at the time of curation. Access policies, URLs, and available data may change. Always consult the repository directly for current access requirements."
   }
 ]

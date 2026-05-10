@@ -8,6 +8,7 @@ project:
     - data/ibd_omics_datasets.csv
     - data/integrated_resources.csv
     - data/resource_coverage.csv
+    - data/orchestrator_queue.csv
 
 author: "Dahham Alsoud"
 
@@ -36,6 +37,8 @@ website:
         href: use-cases.qmd
       - text: "Verification"
         href: verification-queue.qmd
+      - text: "Orchestrator"
+        href: orchestrator.qmd
       - text: "Curation"
         href: curation-methods.qmd
       - text: "About"

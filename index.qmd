@@ -20,13 +20,14 @@ format:
 <a href="omics-layers.qmd" class="btn-hero btn-outline">Explore by Omics Layer</a>
 <a href="use-cases.qmd" class="btn-hero btn-outline">Browse by Use Case</a>
 <a href="verification-queue.qmd" class="btn-hero btn-outline">Verification Queue</a>
+<a href="orchestrator.qmd" class="btn-hero btn-outline">Orchestrator</a>
 <a href="curation-methods.qmd" class="btn-hero btn-outline">Curation Methods</a>
 </div>
 </div>
 
 <div class="metrics-grid">
 <div class="metric-card">
-<div class="metric-value">63</div>
+<div class="metric-value">70</div>
 <div class="metric-label">Primary Datasets</div>
 </div>
 <div class="metric-card">
@@ -111,6 +112,7 @@ See the [Curation Methods](curation-methods.qmd) page for detailed inclusion cri
 | [Repositories](repositories.qmd) | Overview of archives and portals hosting IBD omics data |
 | [Use Cases](use-cases.qmd) | Browse datasets tagged as potentially relevant to specific research questions |
 | [Verification Queue](verification-queue.qmd) | Review source-check status, citation evidence, and metadata gaps |
+| [Orchestrator](orchestrator.qmd) | Track active improvement tasks, missing-resource audits, and next curation priorities |
 | [Curation Methods](curation-methods.qmd) | Inclusion criteria, access definitions, metadata caveats |
 | [About](about.qmd) | Project context and contact information |
 

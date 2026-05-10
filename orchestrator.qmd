@@ -1,0 +1,27 @@
+---
+title: "Orchestrator"
+subtitle: "Living improvement queue for dataset discovery, verification, and field coverage"
+---
+
+<div class="page-intro">
+The orchestrator page turns the explorer into an active curation system. It tracks missing datasets, ambiguous resource components, verification gaps, and the next concrete tasks needed to make the registry more complete and useful.
+</div>
+
+## Improvement Queue
+
+<div id="orchestrator-queue"></div>
+
+---
+
+## Operating Method
+
+The orchestrator uses a conservative loop:
+
+1. Search for missing resources and component accessions.
+2. Separate primary datasets from integrated portals, atlases, and consortium resources.
+3. Verify source metadata before adding a row to the primary Dataset Explorer.
+4. Keep uncertain components visible with manual-review status instead of forcing a category.
+5. Promote only source-backed rows into the primary table.
+6. Re-render the explorer and check that users can find the new information.
+
+This method is designed to move the field forward by making hidden dataset provenance visible, while avoiding inflated counts or unsupported clinical assumptions.

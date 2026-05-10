@@ -516,6 +516,78 @@ function renderResourceCoverage(coverage) {
   update();
 }
 
+function renderOrchestratorQueue(queue) {
+  const root = document.querySelector("#orchestrator-queue");
+  if (!root) return;
+
+  const labels = {
+    task_id: "ID",
+    task_area: "Area",
+    priority: "Priority",
+    status: "Status",
+    owner: "Owner",
+    task: "Task",
+    rationale: "Rationale",
+    success_criteria: "Success Criteria",
+    source_file: "Source",
+    target_output: "Target Output"
+  };
+
+  root.innerHTML = `
+    <div class="filter-panel coverage-filters">
+      <label>Search <input id="orchestrator-search" type="search" placeholder="IBDTransDB, verification, single-cell"></label>
+      <label>Priority <select id="orchestrator-priority"><option>All</option></select></label>
+      <label>Status <select id="orchestrator-status"><option>All</option></select></label>
+      <label>Area <select id="orchestrator-area"><option>All</option></select></label>
+    </div>
+    <div class="metrics-grid compact-metrics" id="orchestrator-metrics"></div>
+    <p id="orchestrator-count" class="table-note"></p>
+    <div id="orchestrator-table"></div>
+  `;
+
+  const search = root.querySelector("#orchestrator-search");
+  const priority = root.querySelector("#orchestrator-priority");
+  const status = root.querySelector("#orchestrator-status");
+  const area = root.querySelector("#orchestrator-area");
+  const metrics = root.querySelector("#orchestrator-metrics");
+  const count = root.querySelector("#orchestrator-count");
+  const table = root.querySelector("#orchestrator-table");
+
+  uniqueValues(queue, "priority").forEach((value) => priority.append(new Option(value, value)));
+  uniqueValues(queue, "status").forEach((value) => status.append(new Option(value, value)));
+  uniqueValues(queue, "task_area").forEach((value) => area.append(new Option(value, value)));
+
+  function update() {
+    const term = search.value.trim().toLowerCase();
+    const filtered = queue.filter((row) => {
+      const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+      const priorityMatch = priority.value === "All" || row.priority === priority.value;
+      const statusMatch = status.value === "All" || row.status === status.value;
+      const areaMatch = area.value === "All" || row.task_area === area.value;
+      return termMatch && priorityMatch && statusMatch && areaMatch;
+    });
+
+    metrics.innerHTML = `
+      <div class="metric-card"><div class="metric-value">${queue.length}</div><div class="metric-label">Open Tasks</div></div>
+      <div class="metric-card"><div class="metric-value">${queue.filter((row) => row.priority === "High").length}</div><div class="metric-label">High Priority</div></div>
+      <div class="metric-card"><div class="metric-value">${queue.filter((row) => row.status === "in_progress").length}</div><div class="metric-label">In Progress</div></div>
+      <div class="metric-card"><div class="metric-value">${queue.filter((row) => row.status === "assigned").length}</div><div class="metric-label">Assigned</div></div>
+    `;
+
+    count.textContent = `Showing ${filtered.length} of ${queue.length} orchestrator tasks`;
+    renderTable(
+      table,
+      filtered,
+      ["task_id", "task_area", "priority", "status", "owner", "task", "success_criteria", "target_output"],
+      labels,
+      filtered.length
+    );
+  }
+
+  [search, priority, status, area].forEach((control) => control.addEventListener("input", update));
+  update();
+}
+
 async function initRegistryTables() {
   const response = await fetch("data/ibd_omics_datasets.csv");
   const data = parseCsv(await response.text());
@@ -535,6 +607,13 @@ async function initRegistryTables() {
     const coverageResponse = await fetch("data/resource_coverage.csv");
     const coverage = parseCsv(await coverageResponse.text());
     renderResourceCoverage(coverage);
+  }
+
+  const orchestratorRoot = document.querySelector("#orchestrator-queue");
+  if (orchestratorRoot) {
+    const queueResponse = await fetch("data/orchestrator_queue.csv");
+    const queue = parseCsv(await queueResponse.text());
+    renderOrchestratorQueue(queue);
   }
 }
 

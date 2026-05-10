@@ -1,0 +1,222 @@
+---
+title: "Repositories and Portals"
+subtitle: "Overview of archives hosting IBD omics datasets"
+---
+
+<div class="page-intro">
+IBD omics datasets are distributed across numerous public repositories, specialized portals, and consortium-specific platforms. This page describes the major repositories represented in the dataset registry, their access models, and relevant caveats. Inclusion here reflects the presence of IBD-relevant data, not an endorsement or ranking of any resource.
+</div>
+
+---
+
+## Genomics and Transcriptomics Archives
+
+### GEO — Gene Expression Omnibus
+
+| | |
+|---|---|
+| **Repository type** | Public archive for functional genomics data |
+| **Data types hosted** | Microarray, RNA-seq, scRNA-seq, methylation arrays, ChIP-seq, ATAC-seq, and related high-throughput data |
+| **Access model** | Publicly accessible; some datasets have controlled-access raw data (SRA) |
+| **IBD data** | Largest collection of IBD transcriptomic and epigenomic datasets; many accessions GSExxxxxx |
+| **URL** | [ncbi.nlm.nih.gov/geo](https://www.ncbi.nlm.nih.gov/geo/) |
+
+**Notes.** GEO hosts the majority of bulk and single-cell transcriptomic IBD datasets. Processed data (expression matrices, metadata) are typically freely accessible. Raw sequencing reads may be deposited in SRA and may require additional steps to access. Metadata completeness and clinical annotation quality vary substantially between submissions.
+
+---
+
+### SRA — Sequence Read Archive
+
+| | |
+|---|---|
+| **Repository type** | Public archive for raw sequencing data |
+| **Data types hosted** | Raw FASTQ and BAM files from next-generation sequencing experiments |
+| **Access model** | Publicly accessible (open access) or controlled access (dbGaP-linked studies) |
+| **IBD data** | Raw sequencing data from RNA-seq, scRNA-seq, metagenomics, metatranscriptomics, and related IBD studies |
+| **URL** | [ncbi.nlm.nih.gov/sra](https://www.ncbi.nlm.nih.gov/sra/) |
+
+**Notes.** Raw data downloads from SRA can be very large. Access to controlled-access SRA studies requires dbGaP authorization. The SRA toolkit (prefetch, fastq-dump) is typically required for downloads.
+
+---
+
+### ArrayExpress / BioStudies (EMBL-EBI)
+
+| | |
+|---|---|
+| **Repository type** | Public archive for functional genomics and multi-omics data |
+| **Data types hosted** | Microarray, RNA-seq, and other functional genomics data; expanding to multi-omics |
+| **Access model** | Publicly accessible |
+| **IBD data** | European counterpart to GEO; some IBD datasets deposited here rather than or in addition to GEO |
+| **URL** | [ebi.ac.uk/biostudies](https://www.ebi.ac.uk/biostudies/) |
+
+**Notes.** Many European IBD studies deposit data in ArrayExpress/BioStudies rather than GEO. Some datasets are mirrored between both archives.
+
+---
+
+## Single-Cell and Spatial Portals
+
+### CELLxGENE (CZI Science)
+
+| | |
+|---|---|
+| **Repository type** | Public portal for single-cell and spatial transcriptomics data |
+| **Data types hosted** | scRNA-seq, spatial transcriptomics; standardized with Cell Ontology annotations |
+| **Access model** | Publicly accessible; data downloadable in H5AD format |
+| **IBD data** | Multiple IBD scRNA-seq datasets with curated cell annotations |
+| **URL** | [cellxgene.cziscience.com](https://cellxgene.cziscience.com/) |
+
+**Notes.** CELLxGENE enforces a standardized metadata schema including cell ontology terms, tissue annotations, disease terms (using MONDO), and organism. This makes cross-study comparison more tractable than raw GEO deposits. Interactive exploration is available via the browser, and data can be downloaded for offline analysis.
+
+---
+
+### Human Cell Atlas (HCA)
+
+| | |
+|---|---|
+| **Repository type** | International consortium portal for single-cell reference atlases |
+| **Data types hosted** | scRNA-seq, spatial transcriptomics, multi-omics; reference atlas datasets |
+| **Access model** | Publicly accessible; some controlled-access components |
+| **IBD data** | IBD-related intestinal atlas datasets; normal gut cell type references |
+| **URL** | [humancellatlas.org](https://www.humancellatlas.org/) |
+
+**Notes.** HCA datasets can also be accessed via CELLxGENE. The HCA Data Portal provides dataset-level metadata and download links. Some HCA datasets require registration; others are fully open.
+
+---
+
+## Multi-Omics Portals
+
+### IBDMDB — Inflammatory Bowel Disease Multi-omics Database
+
+| | |
+|---|---|
+| **Repository type** | IBD-specific multi-omics data portal (iHMP project) |
+| **Data types hosted** | Host transcriptomics, metagenomics, metatranscriptomics, proteomics, metabolomics, virome; longitudinal stool and biopsy data |
+| **Access model** | Processed data publicly accessible via portal; some raw data components via HMP and dbGaP |
+| **IBD data** | Core HMP2 longitudinal IBD cohort (CD, UC, non-IBD controls) |
+| **URL** | [ibdmdb.org](https://ibdmdb.org/) |
+
+**Notes.** IBDMDB is one of the most comprehensive public IBD multi-omics resources. The portal allows interactive browsing and download of processed data. Some raw data require dbGaP authorization. Longitudinal design (multiple timepoints per participant) adds analytical complexity but also unique value for dynamic analyses.
+
+---
+
+## Proteomics Archives
+
+### PRIDE / ProteomeXchange
+
+| | |
+|---|---|
+| **Repository type** | Public archive for proteomics mass spectrometry data |
+| **Data types hosted** | Raw MS files (mzML, RAW), processed results (mzIdentML, mzTab), peptide/protein quantification tables |
+| **Access model** | Publicly accessible |
+| **IBD data** | Fecal proteomics, mucosal proteomics, metaproteomics datasets |
+| **URL** | [ebi.ac.uk/pride](https://www.ebi.ac.uk/pride/) |
+
+**Notes.** PRIDE is part of the ProteomeXchange consortium. Accessions are prefixed PXD. Raw MS files are typically large. Re-analysis requires appropriate proteomics software (MaxQuant, Proteome Discoverer, Spectronaut, etc.) and appropriate reference databases.
+
+---
+
+### MassIVE
+
+| | |
+|---|---|
+| **Repository type** | Public archive for mass spectrometry data (UCSD) |
+| **Data types hosted** | Proteomics and metabolomics MS data; cross-referenced with ProteomeXchange |
+| **Access model** | Publicly accessible |
+| **IBD data** | Fecal proteomics and metabolomics IBD datasets |
+| **URL** | [massive.ucsd.edu](https://massive.ucsd.edu/) |
+
+**Notes.** MassIVE accessions are prefixed MSV. Several IBD fecal proteomics/metabolomics datasets are deposited here. Can be cross-referenced with PRIDE via ProteomeXchange identifiers.
+
+---
+
+## Metabolomics
+
+### Metabolomics Workbench (NIH)
+
+| | |
+|---|---|
+| **Repository type** | Public repository for metabolomics data (NIH Common Fund) |
+| **Data types hosted** | Metabolomics and lipidomics raw and processed data; experimental metadata |
+| **Access model** | Publicly accessible |
+| **IBD data** | IBD metabolomics studies; stool and serum metabolomics |
+| **URL** | [metabolomicsworkbench.org](https://www.metabolomicsworkbench.org/) |
+
+**Notes.** Accessions are prefixed ST (study) and DS (dataset). The portal includes experimental metadata, sample information, and download options for processed data tables. Raw spectral files are often available for re-analysis.
+
+---
+
+## Controlled-Access Archives
+
+### dbGaP — Database of Genotypes and Phenotypes
+
+| | |
+|---|---|
+| **Repository type** | Controlled-access archive for human genotype and phenotype data (NIH) |
+| **Data types hosted** | Individual-level genotype data, GWAS, WGS, clinical phenotypes |
+| **Access model** | Controlled access; requires institutional data access request and approval |
+| **IBD data** | IIBDGC individual-level GWAS data; some IBD multi-omics studies with controlled-access components |
+| **URL** | [ncbi.nlm.nih.gov/gap](https://www.ncbi.nlm.nih.gov/gap/) |
+
+**Notes.** Access requires submission of a Data Access Request (DAR) through the dbGaP portal, institutional sign-off, and approval by the data access committee. Processing times vary. Approved data must be accessed in a secure computing environment consistent with the data use agreement.
+
+---
+
+## Genetics Portals and Resources
+
+### GWAS Catalog (EMBL-EBI)
+
+| | |
+|---|---|
+| **Repository type** | Curated catalog of published GWAS results and summary statistics |
+| **Data types hosted** | GWAS summary statistics, variant-trait associations, study metadata |
+| **Access model** | Publicly accessible |
+| **IBD data** | IBD, CD, and UC GWAS results from numerous published studies |
+| **URL** | [ebi.ac.uk/gwas](https://www.ebi.ac.uk/gwas/) |
+
+**Notes.** The GWAS Catalog aggregates published GWAS results with standardized trait ontology annotations (EFO terms). Summary statistics files are available for many studies. Useful for locus lookup, phenotype comparison, and identifying published IBD GWAS signals.
+
+---
+
+### IIBDGC — International IBD Genetics Consortium
+
+| | |
+|---|---|
+| **Repository type** | IBD genetics consortium; summary statistics and controlled-access data |
+| **Data types hosted** | GWAS summary statistics, fine-mapping results, individual-level data (via dbGaP) |
+| **Access model** | Summary statistics publicly accessible; individual-level data controlled-access via dbGaP |
+| **IBD data** | Large-scale IBD, CD, and UC GWAS meta-analyses |
+| **URL** | [ibdgenetics.org](https://www.ibdgenetics.org/) |
+
+**Notes.** IIBDGC has produced some of the largest IBD GWAS to date. Summary statistics from published analyses are often available via the IIBDGC website or the GWAS Catalog. Individual participant data require dbGaP authorization.
+
+---
+
+### Open Targets Genetics / Platform
+
+| | |
+|---|---|
+| **Repository type** | Integrated genomics and drug target platform |
+| **Data types hosted** | Integrated GWAS, QTL, fine-mapping, and target evidence; not a primary data archive |
+| **Access model** | Publicly accessible |
+| **IBD data** | IBD/CD/UC target evidence integrated from GWAS and functional genomics |
+| **URL** | [genetics.opentargets.org](https://genetics.opentargets.org/) |
+
+**Notes.** Open Targets is not a primary data archive but an integrative platform derived from public GWAS and functional genomics data. Useful for target prioritization and locus-to-gene mapping. The underlying data sources should be verified for any specific analysis.
+
+---
+
+### FinnGen and UK Biobank
+
+| | |
+|---|---|
+| **Repository type** | Population biobank GWAS resources |
+| **Data types hosted** | GWAS summary statistics (public); individual-level data (controlled access) |
+| **Access model** | Summary statistics publicly accessible (FinnGen results browser, Open GWAS/MRC IEU); individual data require access application |
+| **IBD data** | IBD, CD, and UC phenotypes available in both biobanks |
+| **URL** | FinnGen: [finngen.fi](https://r10.finngen.fi/) &nbsp;|&nbsp; UK Biobank: [ukbiobank.ac.uk](https://www.ukbiobank.ac.uk/) |
+
+**Notes.** FinnGen provides GWAS summary statistics publicly via its results browser. UK Biobank individual-level data require application through the UK Biobank Access Management System. IBD phenotype definitions in biobanks rely on ICD codes and may differ from clinically adjudicated cohorts.
+
+<div class="disclaimer">
+Repository details reflect publicly available information at the time of curation. Access policies, URLs, and available data may change. Always consult the repository directly for current access requirements.
+</div>

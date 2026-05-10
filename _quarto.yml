@@ -1,0 +1,53 @@
+project:
+  type: website
+  output-dir: docs
+
+author: "Dahham Alsoud"
+
+website:
+  title: "IBD Omics Explorer"
+  site-url: "https://dahhamalsoud.github.io/ibd-omics-explorer"
+  description: "A curated registry of publicly available inflammatory bowel disease omics datasets"
+
+  navbar:
+    background: "#8c1515"
+    foreground: light
+    title: "IBD Omics Explorer"
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Datasets"
+        href: datasets.qmd
+      - text: "Omics Layers"
+        href: omics-layers.qmd
+      - text: "Repositories"
+        href: repositories.qmd
+      - text: "Use Cases"
+        href: use-cases.qmd
+      - text: "Curation"
+        href: curation-methods.qmd
+      - text: "About"
+        href: about.qmd
+
+  page-footer:
+    left: "IBD Omics Explorer - A curated academic dataset registry"
+    right: "Dahham Alsoud | Stanford Medicine"
+
+  page-navigation: false
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    smooth-scroll: true
+    link-external-icon: true
+    link-external-newwindow: true
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  freeze: auto

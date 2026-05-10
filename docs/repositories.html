@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dahham Alsoud">
+
+<title>Repositories and Portals – IBD Omics Explorer</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-12b2063343efa455fa6c31bdd6356f0d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">IBD Omics Explorer</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./omics-layers.html"> 
+<span class="menu-text">Omics Layers</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./repositories.html" aria-current="page"> 
+<span class="menu-text">Repositories</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./use-cases.html"> 
+<span class="menu-text">Use Cases</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./curation-methods.html"> 
+<span class="menu-text">Curation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#genomics-and-transcriptomics-archives" id="toc-genomics-and-transcriptomics-archives" class="nav-link active" data-scroll-target="#genomics-and-transcriptomics-archives">Genomics and Transcriptomics Archives</a>
+  <ul class="collapse">
+  <li><a href="#geo-gene-expression-omnibus" id="toc-geo-gene-expression-omnibus" class="nav-link" data-scroll-target="#geo-gene-expression-omnibus">GEO — Gene Expression Omnibus</a></li>
+  <li><a href="#sra-sequence-read-archive" id="toc-sra-sequence-read-archive" class="nav-link" data-scroll-target="#sra-sequence-read-archive">SRA — Sequence Read Archive</a></li>
+  <li><a href="#arrayexpress-biostudies-embl-ebi" id="toc-arrayexpress-biostudies-embl-ebi" class="nav-link" data-scroll-target="#arrayexpress-biostudies-embl-ebi">ArrayExpress / BioStudies (EMBL-EBI)</a></li>
+  </ul></li>
+  <li><a href="#single-cell-and-spatial-portals" id="toc-single-cell-and-spatial-portals" class="nav-link" data-scroll-target="#single-cell-and-spatial-portals">Single-Cell and Spatial Portals</a>
+  <ul class="collapse">
+  <li><a href="#cellxgene-czi-science" id="toc-cellxgene-czi-science" class="nav-link" data-scroll-target="#cellxgene-czi-science">CELLxGENE (CZI Science)</a></li>
+  <li><a href="#human-cell-atlas-hca" id="toc-human-cell-atlas-hca" class="nav-link" data-scroll-target="#human-cell-atlas-hca">Human Cell Atlas (HCA)</a></li>
+  </ul></li>
+  <li><a href="#multi-omics-portals" id="toc-multi-omics-portals" class="nav-link" data-scroll-target="#multi-omics-portals">Multi-Omics Portals</a>
+  <ul class="collapse">
+  <li><a href="#ibdmdb-inflammatory-bowel-disease-multi-omics-database" id="toc-ibdmdb-inflammatory-bowel-disease-multi-omics-database" class="nav-link" data-scroll-target="#ibdmdb-inflammatory-bowel-disease-multi-omics-database">IBDMDB — Inflammatory Bowel Disease Multi-omics Database</a></li>
+  </ul></li>
+  <li><a href="#proteomics-archives" id="toc-proteomics-archives" class="nav-link" data-scroll-target="#proteomics-archives">Proteomics Archives</a>
+  <ul class="collapse">
+  <li><a href="#pride-proteomexchange" id="toc-pride-proteomexchange" class="nav-link" data-scroll-target="#pride-proteomexchange">PRIDE / ProteomeXchange</a></li>
+  <li><a href="#massive" id="toc-massive" class="nav-link" data-scroll-target="#massive">MassIVE</a></li>
+  </ul></li>
+  <li><a href="#metabolomics" id="toc-metabolomics" class="nav-link" data-scroll-target="#metabolomics">Metabolomics</a>
+  <ul class="collapse">
+  <li><a href="#metabolomics-workbench-nih" id="toc-metabolomics-workbench-nih" class="nav-link" data-scroll-target="#metabolomics-workbench-nih">Metabolomics Workbench (NIH)</a></li>
+  </ul></li>
+  <li><a href="#controlled-access-archives" id="toc-controlled-access-archives" class="nav-link" data-scroll-target="#controlled-access-archives">Controlled-Access Archives</a>
+  <ul class="collapse">
+  <li><a href="#dbgap-database-of-genotypes-and-phenotypes" id="toc-dbgap-database-of-genotypes-and-phenotypes" class="nav-link" data-scroll-target="#dbgap-database-of-genotypes-and-phenotypes">dbGaP — Database of Genotypes and Phenotypes</a></li>
+  </ul></li>
+  <li><a href="#genetics-portals-and-resources" id="toc-genetics-portals-and-resources" class="nav-link" data-scroll-target="#genetics-portals-and-resources">Genetics Portals and Resources</a>
+  <ul class="collapse">
+  <li><a href="#gwas-catalog-embl-ebi" id="toc-gwas-catalog-embl-ebi" class="nav-link" data-scroll-target="#gwas-catalog-embl-ebi">GWAS Catalog (EMBL-EBI)</a></li>
+  <li><a href="#iibdgc-international-ibd-genetics-consortium" id="toc-iibdgc-international-ibd-genetics-consortium" class="nav-link" data-scroll-target="#iibdgc-international-ibd-genetics-consortium">IIBDGC — International IBD Genetics Consortium</a></li>
+  <li><a href="#open-targets-genetics-platform" id="toc-open-targets-genetics-platform" class="nav-link" data-scroll-target="#open-targets-genetics-platform">Open Targets Genetics / Platform</a></li>
+  <li><a href="#finngen-and-uk-biobank" id="toc-finngen-and-uk-biobank" class="nav-link" data-scroll-target="#finngen-and-uk-biobank">FinnGen and UK Biobank</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Repositories and Portals</h1>
+<p class="subtitle lead">Overview of archives hosting IBD omics datasets</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dahham Alsoud </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="page-intro">
+<p>IBD omics datasets are distributed across numerous public repositories, specialized portals, and consortium-specific platforms. This page describes the major repositories represented in the dataset registry, their access models, and relevant caveats. Inclusion here reflects the presence of IBD-relevant data, not an endorsement or ranking of any resource.</p>
+</div>
+<hr>
+<section id="genomics-and-transcriptomics-archives" class="level2">
+<h2 class="anchored" data-anchor-id="genomics-and-transcriptomics-archives">Genomics and Transcriptomics Archives</h2>
+<section id="geo-gene-expression-omnibus" class="level3">
+<h3 class="anchored" data-anchor-id="geo-gene-expression-omnibus">GEO — Gene Expression Omnibus</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Public archive for functional genomics data</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Microarray, RNA-seq, scRNA-seq, methylation arrays, ChIP-seq, ATAC-seq, and related high-throughput data</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible; some datasets have controlled-access raw data (SRA)</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>Largest collection of IBD transcriptomic and epigenomic datasets; many accessions GSExxxxxx</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/geo/">ncbi.nlm.nih.gov/geo</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> GEO hosts the majority of bulk and single-cell transcriptomic IBD datasets. Processed data (expression matrices, metadata) are typically freely accessible. Raw sequencing reads may be deposited in SRA and may require additional steps to access. Metadata completeness and clinical annotation quality vary substantially between submissions.</p>
+<hr>
+</section>
+<section id="sra-sequence-read-archive" class="level3">
+<h3 class="anchored" data-anchor-id="sra-sequence-read-archive">SRA — Sequence Read Archive</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Public archive for raw sequencing data</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Raw FASTQ and BAM files from next-generation sequencing experiments</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible (open access) or controlled access (dbGaP-linked studies)</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>Raw sequencing data from RNA-seq, scRNA-seq, metagenomics, metatranscriptomics, and related IBD studies</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/sra/">ncbi.nlm.nih.gov/sra</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> Raw data downloads from SRA can be very large. Access to controlled-access SRA studies requires dbGaP authorization. The SRA toolkit (prefetch, fastq-dump) is typically required for downloads.</p>
+<hr>
+</section>
+<section id="arrayexpress-biostudies-embl-ebi" class="level3">
+<h3 class="anchored" data-anchor-id="arrayexpress-biostudies-embl-ebi">ArrayExpress / BioStudies (EMBL-EBI)</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Public archive for functional genomics and multi-omics data</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Microarray, RNA-seq, and other functional genomics data; expanding to multi-omics</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>European counterpart to GEO; some IBD datasets deposited here rather than or in addition to GEO</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.ebi.ac.uk/biostudies/">ebi.ac.uk/biostudies</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> Many European IBD studies deposit data in ArrayExpress/BioStudies rather than GEO. Some datasets are mirrored between both archives.</p>
+<hr>
+</section>
+</section>
+<section id="single-cell-and-spatial-portals" class="level2">
+<h2 class="anchored" data-anchor-id="single-cell-and-spatial-portals">Single-Cell and Spatial Portals</h2>
+<section id="cellxgene-czi-science" class="level3">
+<h3 class="anchored" data-anchor-id="cellxgene-czi-science">CELLxGENE (CZI Science)</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Public portal for single-cell and spatial transcriptomics data</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>scRNA-seq, spatial transcriptomics; standardized with Cell Ontology annotations</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible; data downloadable in H5AD format</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>Multiple IBD scRNA-seq datasets with curated cell annotations</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://cellxgene.cziscience.com/">cellxgene.cziscience.com</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> CELLxGENE enforces a standardized metadata schema including cell ontology terms, tissue annotations, disease terms (using MONDO), and organism. This makes cross-study comparison more tractable than raw GEO deposits. Interactive exploration is available via the browser, and data can be downloaded for offline analysis.</p>
+<hr>
+</section>
+<section id="human-cell-atlas-hca" class="level3">
+<h3 class="anchored" data-anchor-id="human-cell-atlas-hca">Human Cell Atlas (HCA)</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>International consortium portal for single-cell reference atlases</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>scRNA-seq, spatial transcriptomics, multi-omics; reference atlas datasets</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible; some controlled-access components</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>IBD-related intestinal atlas datasets; normal gut cell type references</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.humancellatlas.org/">humancellatlas.org</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> HCA datasets can also be accessed via CELLxGENE. The HCA Data Portal provides dataset-level metadata and download links. Some HCA datasets require registration; others are fully open.</p>
+<hr>
+</section>
+</section>
+<section id="multi-omics-portals" class="level2">
+<h2 class="anchored" data-anchor-id="multi-omics-portals">Multi-Omics Portals</h2>
+<section id="ibdmdb-inflammatory-bowel-disease-multi-omics-database" class="level3">
+<h3 class="anchored" data-anchor-id="ibdmdb-inflammatory-bowel-disease-multi-omics-database">IBDMDB — Inflammatory Bowel Disease Multi-omics Database</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>IBD-specific multi-omics data portal (iHMP project)</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Host transcriptomics, metagenomics, metatranscriptomics, proteomics, metabolomics, virome; longitudinal stool and biopsy data</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Processed data publicly accessible via portal; some raw data components via HMP and dbGaP</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>Core HMP2 longitudinal IBD cohort (CD, UC, non-IBD controls)</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://ibdmdb.org/">ibdmdb.org</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> IBDMDB is one of the most comprehensive public IBD multi-omics resources. The portal allows interactive browsing and download of processed data. Some raw data require dbGaP authorization. Longitudinal design (multiple timepoints per participant) adds analytical complexity but also unique value for dynamic analyses.</p>
+<hr>
+</section>
+</section>
+<section id="proteomics-archives" class="level2">
+<h2 class="anchored" data-anchor-id="proteomics-archives">Proteomics Archives</h2>
+<section id="pride-proteomexchange" class="level3">
+<h3 class="anchored" data-anchor-id="pride-proteomexchange">PRIDE / ProteomeXchange</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Public archive for proteomics mass spectrometry data</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Raw MS files (mzML, RAW), processed results (mzIdentML, mzTab), peptide/protein quantification tables</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>Fecal proteomics, mucosal proteomics, metaproteomics datasets</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.ebi.ac.uk/pride/">ebi.ac.uk/pride</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> PRIDE is part of the ProteomeXchange consortium. Accessions are prefixed PXD. Raw MS files are typically large. Re-analysis requires appropriate proteomics software (MaxQuant, Proteome Discoverer, Spectronaut, etc.) and appropriate reference databases.</p>
+<hr>
+</section>
+<section id="massive" class="level3">
+<h3 class="anchored" data-anchor-id="massive">MassIVE</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Public archive for mass spectrometry data (UCSD)</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Proteomics and metabolomics MS data; cross-referenced with ProteomeXchange</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>Fecal proteomics and metabolomics IBD datasets</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://massive.ucsd.edu/">massive.ucsd.edu</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> MassIVE accessions are prefixed MSV. Several IBD fecal proteomics/metabolomics datasets are deposited here. Can be cross-referenced with PRIDE via ProteomeXchange identifiers.</p>
+<hr>
+</section>
+</section>
+<section id="metabolomics" class="level2">
+<h2 class="anchored" data-anchor-id="metabolomics">Metabolomics</h2>
+<section id="metabolomics-workbench-nih" class="level3">
+<h3 class="anchored" data-anchor-id="metabolomics-workbench-nih">Metabolomics Workbench (NIH)</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Public repository for metabolomics data (NIH Common Fund)</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Metabolomics and lipidomics raw and processed data; experimental metadata</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>IBD metabolomics studies; stool and serum metabolomics</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.metabolomicsworkbench.org/">metabolomicsworkbench.org</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> Accessions are prefixed ST (study) and DS (dataset). The portal includes experimental metadata, sample information, and download options for processed data tables. Raw spectral files are often available for re-analysis.</p>
+<hr>
+</section>
+</section>
+<section id="controlled-access-archives" class="level2">
+<h2 class="anchored" data-anchor-id="controlled-access-archives">Controlled-Access Archives</h2>
+<section id="dbgap-database-of-genotypes-and-phenotypes" class="level3">
+<h3 class="anchored" data-anchor-id="dbgap-database-of-genotypes-and-phenotypes">dbGaP — Database of Genotypes and Phenotypes</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Controlled-access archive for human genotype and phenotype data (NIH)</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Individual-level genotype data, GWAS, WGS, clinical phenotypes</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Controlled access; requires institutional data access request and approval</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>IIBDGC individual-level GWAS data; some IBD multi-omics studies with controlled-access components</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.ncbi.nlm.nih.gov/gap/">ncbi.nlm.nih.gov/gap</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> Access requires submission of a Data Access Request (DAR) through the dbGaP portal, institutional sign-off, and approval by the data access committee. Processing times vary. Approved data must be accessed in a secure computing environment consistent with the data use agreement.</p>
+<hr>
+</section>
+</section>
+<section id="genetics-portals-and-resources" class="level2">
+<h2 class="anchored" data-anchor-id="genetics-portals-and-resources">Genetics Portals and Resources</h2>
+<section id="gwas-catalog-embl-ebi" class="level3">
+<h3 class="anchored" data-anchor-id="gwas-catalog-embl-ebi">GWAS Catalog (EMBL-EBI)</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Curated catalog of published GWAS results and summary statistics</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>GWAS summary statistics, variant-trait associations, study metadata</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>IBD, CD, and UC GWAS results from numerous published studies</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.ebi.ac.uk/gwas/">ebi.ac.uk/gwas</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> The GWAS Catalog aggregates published GWAS results with standardized trait ontology annotations (EFO terms). Summary statistics files are available for many studies. Useful for locus lookup, phenotype comparison, and identifying published IBD GWAS signals.</p>
+<hr>
+</section>
+<section id="iibdgc-international-ibd-genetics-consortium" class="level3">
+<h3 class="anchored" data-anchor-id="iibdgc-international-ibd-genetics-consortium">IIBDGC — International IBD Genetics Consortium</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>IBD genetics consortium; summary statistics and controlled-access data</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>GWAS summary statistics, fine-mapping results, individual-level data (via dbGaP)</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Summary statistics publicly accessible; individual-level data controlled-access via dbGaP</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>Large-scale IBD, CD, and UC GWAS meta-analyses</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://www.ibdgenetics.org/">ibdgenetics.org</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> IIBDGC has produced some of the largest IBD GWAS to date. Summary statistics from published analyses are often available via the IIBDGC website or the GWAS Catalog. Individual participant data require dbGaP authorization.</p>
+<hr>
+</section>
+<section id="open-targets-genetics-platform" class="level3">
+<h3 class="anchored" data-anchor-id="open-targets-genetics-platform">Open Targets Genetics / Platform</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Integrated genomics and drug target platform</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>Integrated GWAS, QTL, fine-mapping, and target evidence; not a primary data archive</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Publicly accessible</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>IBD/CD/UC target evidence integrated from GWAS and functional genomics</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td><a href="https://genetics.opentargets.org/">genetics.opentargets.org</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> Open Targets is not a primary data archive but an integrative platform derived from public GWAS and functional genomics data. Useful for target prioritization and locus-to-gene mapping. The underlying data sources should be verified for any specific analysis.</p>
+<hr>
+</section>
+<section id="finngen-and-uk-biobank" class="level3">
+<h3 class="anchored" data-anchor-id="finngen-and-uk-biobank">FinnGen and UK Biobank</h3>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>Repository type</strong></td>
+<td>Population biobank GWAS resources</td>
+</tr>
+<tr class="even">
+<td><strong>Data types hosted</strong></td>
+<td>GWAS summary statistics (public); individual-level data (controlled access)</td>
+</tr>
+<tr class="odd">
+<td><strong>Access model</strong></td>
+<td>Summary statistics publicly accessible (FinnGen results browser, Open GWAS/MRC IEU); individual data require access application</td>
+</tr>
+<tr class="even">
+<td><strong>IBD data</strong></td>
+<td>IBD, CD, and UC phenotypes available in both biobanks</td>
+</tr>
+<tr class="odd">
+<td><strong>URL</strong></td>
+<td>FinnGen: <a href="https://r10.finngen.fi/">finngen.fi</a> &nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes.</strong> FinnGen provides GWAS summary statistics publicly via its results browser. UK Biobank individual-level data require application through the UK Biobank Access Management System. IBD phenotype definitions in biobanks rely on ICD codes and may differ from clinically adjudicated cohorts.</p>
+<div class="disclaimer">
+<p>Repository details reflect publicly available information at the time of curation. Access policies, URLs, and available data may change. Always consult the repository directly for current access requirements.</p>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/dahhamalsoud\.github\.io\/ibd-omics-explorer");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>IBD Omics Explorer - A curated academic dataset registry</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Dahham Alsoud | Stanford Medicine</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

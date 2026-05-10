@@ -1,0 +1,130 @@
+---
+title: "IBD Omics Explorer"
+subtitle: "A curated registry of publicly available inflammatory bowel disease omics datasets"
+format:
+  html:
+    toc: false
+    page-layout: full
+---
+
+<div class="hero-wrap">
+<span class="hero-badge">Dataset Registry</span>
+
+## IBD Omics Explorer
+
+<p class="hero-subtitle">A curated, searchable inventory of publicly available omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, methylation, microbiome, and genetics.</p>
+
+<div class="hero-actions">
+<a href="datasets.qmd" class="btn-hero btn-primary">Browse All Datasets</a>
+<a href="omics-layers.qmd" class="btn-hero btn-outline">Explore by Omics Layer</a>
+<a href="use-cases.qmd" class="btn-hero btn-outline">Browse by Use Case</a>
+<a href="curation-methods.qmd" class="btn-hero btn-outline">Curation Methods</a>
+</div>
+</div>
+
+```{ojs}
+//| echo: false
+data = FileAttachment("data/ibd_omics_datasets.csv").csv({typed: true})
+
+counts = {
+  const total = data.length;
+  const layers = new Set(data.flatMap(d => (d.omics_layer || "").split(";").map(s => s.trim()).filter(Boolean)));
+  const repos  = new Set(data.flatMap(d => (d.repository || "").split(";").map(s => s.trim()).filter(Boolean)));
+  return { total, layers: layers.size, repos: repos.size };
+}
+```
+
+<div class="metrics-grid">
+<div class="metric-card">
+<div class="metric-value">{counts.total}</div>
+<div class="metric-label">Seed Datasets</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">{counts.layers}</div>
+<div class="metric-label">Omics Layers</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">{counts.repos}</div>
+<div class="metric-label">Repositories</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">9</div>
+<div class="metric-label">Data Categories</div>
+</div>
+</div>
+
+<p class="metrics-note">Counts reflect the initial seed inventory. This registry is designed to expand continuously as datasets are identified and curated.</p>
+
+---
+
+## Scope
+
+This explorer aims to map **publicly indexed IBD omics datasets** across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn's disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include tissue biopsies, blood, stool, organoids, or other relevant specimen types.
+
+**Inclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis.** The registry documents what is publicly accessible, along with known caveats and limitations.
+
+See the [Curation Methods](curation-methods.qmd) page for detailed inclusion criteria, data access definitions, and metadata caveats.
+
+## Data Layers Covered
+
+<div class="feature-grid">
+<a href="omics-layers.qmd#bulk-transcriptomics" class="feature-card">
+<span class="feature-icon">🧬</span>
+<h3>Bulk Transcriptomics</h3>
+<p>Tissue- and blood-level gene expression from microarray and RNA-seq platforms</p>
+</a>
+<a href="omics-layers.qmd#single-cell-transcriptomics" class="feature-card">
+<span class="feature-icon">🔬</span>
+<h3>Single-Cell Transcriptomics</h3>
+<p>Cell-type and cell-state resolution expression in IBD tissues</p>
+</a>
+<a href="omics-layers.qmd#spatial-transcriptomics" class="feature-card">
+<span class="feature-icon">🗺️</span>
+<h3>Spatial Transcriptomics</h3>
+<p>Spatially resolved gene expression preserving tissue architecture</p>
+</a>
+<a href="omics-layers.qmd#microbiome" class="feature-card">
+<span class="feature-icon">🦠</span>
+<h3>Microbiome / Metagenomics</h3>
+<p>Gut microbial community profiling via shotgun metagenomics and metatranscriptomics</p>
+</a>
+<a href="omics-layers.qmd#proteomics" class="feature-card">
+<span class="feature-icon">🧪</span>
+<h3>Proteomics / Metaproteomics</h3>
+<p>Mucosal and fecal proteomics, including host and microbial proteins</p>
+</a>
+<a href="omics-layers.qmd#metabolomics" class="feature-card">
+<span class="feature-icon">⚗️</span>
+<h3>Metabolomics / Lipidomics</h3>
+<p>Small-molecule profiling in stool, blood, and tissue</p>
+</a>
+<a href="omics-layers.qmd#methylation" class="feature-card">
+<span class="feature-icon">🔖</span>
+<h3>Methylation / Epigenomics</h3>
+<p>DNA methylation arrays and chromatin accessibility in blood and mucosa</p>
+</a>
+<a href="omics-layers.qmd#genetics" class="feature-card">
+<span class="feature-icon">🧩</span>
+<h3>Genetics / GWAS</h3>
+<p>IBD GWAS summary statistics and individual-level genotype resources</p>
+</a>
+</div>
+
+---
+
+## Navigating the Registry
+
+| Page | Purpose |
+|---|---|
+| [Datasets](datasets.qmd) | Searchable and filterable table of all indexed datasets |
+| [Omics Layers](omics-layers.qmd) | Inventory grouped by omics type with layer-level notes |
+| [Repositories](repositories.qmd) | Overview of archives and portals hosting IBD omics data |
+| [Use Cases](use-cases.qmd) | Browse datasets tagged as potentially relevant to specific research questions |
+| [Curation Methods](curation-methods.qmd) | Inclusion criteria, access definitions, metadata caveats |
+| [About](about.qmd) | Project context and contact information |
+
+---
+
+<div class="disclaimer">
+**Disclaimer.** This website is a curated research tool. It is intended to support dataset discovery, not to serve as a complete or authoritative registry. Dataset availability, metadata accuracy, and access status should be verified independently before analysis. This site does not rank datasets or endorse any particular resource over another.
+</div>

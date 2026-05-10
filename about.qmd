@@ -1,0 +1,73 @@
+---
+title: "About"
+subtitle: "IBD Omics Explorer — project context"
+format:
+  html:
+    toc: false
+---
+
+## About This Resource
+
+The **IBD Omics Explorer** is a curated academic tool designed to support the discovery and navigation of publicly available omics datasets in inflammatory bowel disease (IBD) research. It is maintained as part of ongoing research at Stanford University School of Medicine.
+
+### Purpose
+
+IBD omics data are distributed across many repositories, portals, and publications, making comprehensive dataset discovery time-consuming. This explorer aims to aggregate metadata from publicly accessible resources into a single searchable and filterable registry, helping researchers:
+
+- Identify datasets relevant to a given research question
+- Understand the availability and access conditions of public IBD data
+- Compare available datasets across omics layers, tissue types, and disease groups
+- Plan analyses that leverage multiple complementary datasets
+
+**This is a dataset discovery tool.** It does not rank, recommend, or certify datasets. All metadata should be verified before analysis.
+
+---
+
+### What This Resource Is Not
+
+- It is not a systematic review or meta-analysis of IBD omics data.
+- It does not assess dataset quality or analytical suitability.
+- It does not rank or recommend any dataset as better or worse for any purpose.
+- It is not a complete or authoritative registry of all IBD omics data.
+- It does not provide access to data files directly; it links to source repositories.
+
+---
+
+### Scope and Omics Layers
+
+The registry currently covers:
+
+- Bulk transcriptomics (microarray and RNA-seq)
+- Single-cell transcriptomics
+- Spatial transcriptomics
+- Microbiome (metagenomics, metatranscriptomics)
+- Proteomics and metaproteomics
+- Metabolomics and lipidomics
+- Methylation and epigenomics
+- Genetics and GWAS
+- Multi-omics resources
+
+See the [Omics Layers](omics-layers.qmd) page for a layer-by-layer inventory, and the [Curation Methods](curation-methods.qmd) page for detailed inclusion criteria and metadata definitions.
+
+---
+
+### Maintenance and Updates
+
+The dataset registry is maintained in `data/ibd_omics_datasets.csv`. Entries carry a `curation_status` label indicating their verification level. Most initial entries are annotated as `Seed entry` or `Needs verification`, meaning metadata should be confirmed against source repositories before use.
+
+The registry is designed to grow. If you identify datasets that should be included, metadata errors, or outdated access information, contributions are welcome.
+
+---
+
+### Contact
+
+**Dahham Alsoud**
+Postdoctoral Researcher
+Stanford University School of Medicine
+[GitHub](https://github.com/dahhamalsoud) | [Google Scholar](https://scholar.google.com/citations?user=L_Vs-00AAAAJ&hl=en)
+
+---
+
+<div class="disclaimer">
+This website is a curated research tool provided for academic dataset discovery. It is not a clinical resource. Dataset availability, access conditions, and metadata should be verified independently before any analysis. The registry does not constitute an endorsement of any dataset, repository, or research group.
+</div>

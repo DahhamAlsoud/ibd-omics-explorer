@@ -1,0 +1,27 @@
+---
+title: "Integrated Resources"
+subtitle: "Atlases, portals, databases, and consortium resources that combine or curate IBD omics data"
+---
+
+<div class="page-intro">
+This page separates integrated resources from primary datasets. These resources are useful for discovery, annotation, meta-analysis, and target prioritization, but they are not single source datasets with one accession, one sample count, or one uniform metadata model.
+</div>
+
+## Resource Table
+
+<div id="integrated-resources"></div>
+
+---
+
+## How to Interpret This Page
+
+Integrated resources may combine many source datasets, reprocess data with their own pipelines, or expose only derived summaries. They should not replace the original accession-level records when you need raw data, exact sample metadata, or reproducible cohort definitions.
+
+Use this page to find:
+
+- IBD-specific single-cell atlases such as `scIBD`
+- broader gut atlases that include IBD, such as the Gut Cell Atlas
+- curated databases such as `IBDTransDB`
+- consortium and target-prioritization resources such as IIBDGC, GWAS Catalog, and Open Targets
+
+When a resource points to specific source accessions, those primary datasets should remain in the Dataset Explorer.

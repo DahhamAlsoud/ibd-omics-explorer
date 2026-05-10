@@ -332,12 +332,100 @@ function renderVerificationQueue(data) {
   );
 }
 
+function renderIntegratedResources(resources) {
+  const root = document.querySelector("#integrated-resources");
+  if (!root) return;
+
+  const labels = {
+    resource_id: "ID",
+    resource_name: "Resource",
+    resource_type: "Type",
+    scope: "Scope",
+    omics_layers: "Omics Layers",
+    included_diseases: "Diseases",
+    approx_size: "Approx. Size",
+    source_datasets: "Source Datasets",
+    access_model: "Access",
+    access_url: "Resource",
+    publication_title: "Publication",
+    publication_year: "Year",
+    doi: "DOI",
+    pmid: "PMID",
+    limitations: "Limitations",
+    verification_status: "Status",
+    evidence_url: "Evidence"
+  };
+
+  root.innerHTML = `
+    <div class="filter-panel">
+      <label>Search <input id="resource-search" type="search" placeholder="scIBD, Gut Cell Atlas, GWAS, CELLxGENE"></label>
+      <label>Type <select id="resource-type"><option>All</option></select></label>
+      <label>Omics <select id="resource-omics"><option>All</option></select></label>
+      <label>Status <select id="resource-status"><option>All</option></select></label>
+    </div>
+    <p id="resource-count" class="table-note"></p>
+    <div id="integrated-resource-table"></div>
+    <details class="dataset-detail-panel">
+      <summary>Detailed fields for current filtered set</summary>
+      <div id="resource-detail-table"></div>
+    </details>
+  `;
+
+  const search = root.querySelector("#resource-search");
+  const type = root.querySelector("#resource-type");
+  const omics = root.querySelector("#resource-omics");
+  const status = root.querySelector("#resource-status");
+  const count = root.querySelector("#resource-count");
+  const table = root.querySelector("#integrated-resource-table");
+  const detailTable = root.querySelector("#resource-detail-table");
+
+  uniqueValues(resources, "resource_type").forEach((value) => type.append(new Option(value, value)));
+  uniqueValues(resources, "omics_layers").forEach((value) => omics.append(new Option(value, value)));
+  uniqueValues(resources, "verification_status").forEach((value) => status.append(new Option(value, value)));
+
+  function update() {
+    const term = search.value.trim().toLowerCase();
+    const filtered = resources.filter((row) => {
+      const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+      const typeMatch = type.value === "All" || row.resource_type === type.value;
+      const omicsMatch = omics.value === "All" || textIncludes(row.omics_layers, omics.value);
+      const statusMatch = status.value === "All" || row.verification_status === status.value;
+      return termMatch && typeMatch && omicsMatch && statusMatch;
+    });
+    count.textContent = `Showing ${filtered.length} of ${resources.length} resources`;
+    renderTable(
+      table,
+      filtered,
+      ["resource_id", "resource_name", "resource_type", "omics_layers", "included_diseases", "approx_size", "access_url"],
+      labels,
+      filtered.length
+    );
+    renderTable(
+      detailTable,
+      filtered,
+      ["resource_id", "resource_name", "scope", "source_datasets", "access_model", "publication_title", "publication_year", "doi", "pmid", "limitations", "verification_status", "evidence_url"],
+      labels,
+      filtered.length
+    );
+  }
+
+  [search, type, omics, status].forEach((control) => control.addEventListener("input", update));
+  update();
+}
+
 async function initRegistryTables() {
   const response = await fetch("data/ibd_omics_datasets.csv");
   const data = parseCsv(await response.text());
   renderDatasetExplorer(data);
   renderSimpleTables(data);
   renderVerificationQueue(data);
+
+  const resourcesRoot = document.querySelector("#integrated-resources");
+  if (resourcesRoot) {
+    const resourcesResponse = await fetch("data/integrated_resources.csv");
+    const resources = parseCsv(await resourcesResponse.text());
+    renderIntegratedResources(resources);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initRegistryTables);

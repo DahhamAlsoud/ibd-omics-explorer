@@ -21,7 +21,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
   vertical-align: middle;
 }
 </style>
@@ -95,37 +95,41 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link active" href="./index.html" aria-current="page">
 <span class="menu-text">Home</span></a>
-  </li>  
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./datasets.html"> 
+    <a class="nav-link" href="./datasets.html">
 <span class="menu-text">Datasets</span></a>
-  </li>  
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./omics-layers.html"> 
+    <a class="nav-link" href="./integrated-resources.html">
+<span class="menu-text">Integrated Resources</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./omics-layers.html">
 <span class="menu-text">Omics Layers</span></a>
-  </li>  
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./repositories.html"> 
+    <a class="nav-link" href="./repositories.html">
 <span class="menu-text">Repositories</span></a>
-  </li>  
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./use-cases.html"> 
+    <a class="nav-link" href="./use-cases.html">
 <span class="menu-text">Use Cases</span></a>
-  </li>  
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./verification-queue.html"> 
+    <a class="nav-link" href="./verification-queue.html">
 <span class="menu-text">Verification</span></a>
-  </li>  
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./curation-methods.html"> 
+    <a class="nav-link" href="./curation-methods.html">
 <span class="menu-text">Curation</span></a>
-  </li>  
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="./about.html">
 <span class="menu-text">About</span></a>
-  </li>  
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -137,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+
 <!-- main -->
 <main class="content column-page" id="quarto-document-content">
 
@@ -157,11 +161,11 @@ ul.task-list li input[type="checkbox"] {
              <p>Dahham Alsoud </p>
           </div>
   </div>
-    
-  
-    
+
+
+
   </div>
-  
+
 
 
 </header>
@@ -175,30 +179,30 @@ ul.task-list li input[type="checkbox"] {
 A curated, searchable inventory of publicly available omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, methylation, microbiome, and genetics.
 </p>
 <div class="hero-actions">
-<p><a href="./datasets.html" class="btn-hero btn-primary">Browse All Datasets</a> <a href="./omics-layers.html" class="btn-hero btn-outline">Explore by Omics Layer</a> <a href="./use-cases.html" class="btn-hero btn-outline">Browse by Use Case</a> <a href="./verification-queue.html" class="btn-hero btn-outline">Verification Queue</a> <a href="./curation-methods.html" class="btn-hero btn-outline">Curation Methods</a></p>
+<p><a href="./datasets.html" class="btn-hero btn-primary">Browse All Datasets</a> <a href="./integrated-resources.html" class="btn-hero btn-outline">Integrated Resources</a> <a href="./omics-layers.html" class="btn-hero btn-outline">Explore by Omics Layer</a> <a href="./use-cases.html" class="btn-hero btn-outline">Browse by Use Case</a> <a href="./verification-queue.html" class="btn-hero btn-outline">Verification Queue</a> <a href="./curation-methods.html" class="btn-hero btn-outline">Curation Methods</a></p>
 </div>
 </section>
 </div>
 <div class="metrics-grid">
 <div class="metric-card">
 <div class="metric-value">
-69
+63
 </div>
 <div class="metric-label">
-Registry Entries
+Primary Datasets
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">
+10
+</div>
+<div class="metric-label">
+Integrated Resources
 </div>
 </div>
 <div class="metric-card">
 <div class="metric-value">
 15
-</div>
-<div class="metric-label">
-Layer Tags
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">
-21
 </div>
 <div class="metric-label">
 Repositories
@@ -214,7 +218,7 @@ Primary Sections
 </div>
 </div>
 <p class="metrics-note">
-Counts are derived from the current registry CSV. Layer tags are not mutually exclusive because multi-omics datasets can contribute to more than one layer.
+Primary dataset counts are derived from the current dataset CSV. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets.
 </p>
 <hr>
 <section id="scope" class="level2">
@@ -335,7 +339,7 @@ IBD GWAS summary statistics and individual-level genotype resources
 </section>
 
 </main> <!-- /main -->
-<script src="site-tables.js?v=20260510-2"></script>
+<script src="site-tables.js?v=20260510-4"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -347,7 +351,7 @@ IBD GWAS summary statistics and individual-level genotype resources
     anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
+        if (clz.startsWith('code-annotation-')) {
           return true;
         }
       }
@@ -367,11 +371,11 @@ IBD GWAS summary statistics and individual-level genotype resources
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
+        tooltip = new bootstrap.Tooltip(button,
+          { trigger: "manual",
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();    
+        tooltip.show();
       }
       setTimeout(function() {
         if (tooltip) {
@@ -455,7 +459,7 @@ IBD GWAS summary statistics and individual-level genotype resources
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config); 
+      window.tippy(el, config);
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -530,7 +534,7 @@ IBD GWAS summary statistics and individual-level genotype resources
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined; 
+        let hash = undefined;
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -558,7 +562,7 @@ IBD GWAS summary statistics and individual-level genotype resources
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              } 
+              }
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -582,7 +586,7 @@ IBD GWAS summary statistics and individual-level genotype resources
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            } 
+            }
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -622,7 +626,7 @@ IBD GWAS summary statistics and individual-level genotype resources
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
+              // cook up a div (if necessary) and position it
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -748,7 +752,7 @@ IBD GWAS summary statistics and individual-level genotype resources
   <div class="nav-footer">
     <div class="nav-footer-left">
 <p>IBD Omics Explorer - A curated academic dataset registry</p>
-</div>   
+</div>
     <div class="nav-footer-center">
       &nbsp;
     </div>

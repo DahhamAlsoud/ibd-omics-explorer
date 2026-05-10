@@ -16,6 +16,7 @@ format:
 
 <div class="hero-actions">
 <a href="datasets.qmd" class="btn-hero btn-primary">Browse All Datasets</a>
+<a href="integrated-resources.qmd" class="btn-hero btn-outline">Integrated Resources</a>
 <a href="omics-layers.qmd" class="btn-hero btn-outline">Explore by Omics Layer</a>
 <a href="use-cases.qmd" class="btn-hero btn-outline">Browse by Use Case</a>
 <a href="verification-queue.qmd" class="btn-hero btn-outline">Verification Queue</a>
@@ -25,15 +26,15 @@ format:
 
 <div class="metrics-grid">
 <div class="metric-card">
-<div class="metric-value">69</div>
-<div class="metric-label">Registry Entries</div>
+<div class="metric-value">63</div>
+<div class="metric-label">Primary Datasets</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">10</div>
+<div class="metric-label">Integrated Resources</div>
 </div>
 <div class="metric-card">
 <div class="metric-value">15</div>
-<div class="metric-label">Layer Tags</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">21</div>
 <div class="metric-label">Repositories</div>
 </div>
 <div class="metric-card">
@@ -42,7 +43,7 @@ format:
 </div>
 </div>
 
-<p class="metrics-note">Counts are derived from the current registry CSV. Layer tags are not mutually exclusive because multi-omics datasets can contribute to more than one layer.</p>
+<p class="metrics-note">Primary dataset counts are derived from the current dataset CSV. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets.</p>
 
 ---
 

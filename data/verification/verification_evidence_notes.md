@@ -65,3 +65,27 @@ Conservative decisions for discovery rows:
 - Publication titles, PMIDs, DOIs, sample counts, and cohort labels are filled when strong public-source evidence was found, but they remain flagged for deeper row-level verification.
 - PROTECT now appears as multiple modality-specific rows: transcriptomics (`GSE109142`, `GSE150961`), methylation (`GSE185061`), plasma metabolomics (`ST002470`), and stool metabolomics (`ST002471`).
 - RISK now appears as pediatric rectal transcriptomics (`GSE117993`) and ileal Crohn transcriptomics (`GSE93624`), in addition to the already present pediatric Crohn ileal transcriptome/microbiome row (`GSE57945`).
+
+## Integrated Resources Separation
+
+Rows moved out of the primary Dataset Explorer and into `integrated_resources.csv`:
+
+- IBDTransDB
+- CELLxGENE IBD Collections
+- International IBD Genetics Consortium
+- GWAS Catalog IBD/CD/UC summary statistics
+- Open Targets Genetics / Platform
+- FinnGen / UK Biobank IBD GWAS resources
+
+Rows newly added to the integrated resource table:
+
+- scIBD
+- Gut Cell Atlas / Human Gut Cell Atlas
+- Human Cell Atlas IBD Projects
+- IBD Plexus
+
+Rationale:
+
+- These resources combine, curate, annotate, or reprocess multiple source datasets.
+- They do not have one accession-level sample count or one uniform cohort definition.
+- Primary source datasets remain in the Dataset Explorer when they have accession-level records.

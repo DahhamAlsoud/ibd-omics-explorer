@@ -8,7 +8,7 @@
 
 <meta name="author" content="Dahham Alsoud">
 
-<title>Omics Layers – IBD Omics Explorer</title>
+<title>Integrated Resources – IBD Omics Explorer</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -103,11 +103,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Datasets</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./integrated-resources.html">
+    <a class="nav-link active" href="./integrated-resources.html" aria-current="page">
 <span class="menu-text">Integrated Resources</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./omics-layers.html" aria-current="page">
+    <a class="nav-link" href="./omics-layers.html">
 <span class="menu-text">Omics Layers</span></a>
   </li>
   <li class="nav-item">
@@ -146,15 +146,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
 
   <ul>
-  <li><a href="#bulk-transcriptomics" id="toc-bulk-transcriptomics" class="nav-link active" data-scroll-target="#bulk-transcriptomics">Bulk Transcriptomics</a></li>
-  <li><a href="#single-cell-transcriptomics" id="toc-single-cell-transcriptomics" class="nav-link" data-scroll-target="#single-cell-transcriptomics">Single-Cell Transcriptomics</a></li>
-  <li><a href="#spatial-transcriptomics" id="toc-spatial-transcriptomics" class="nav-link" data-scroll-target="#spatial-transcriptomics">Spatial Transcriptomics</a></li>
-  <li><a href="#microbiome" id="toc-microbiome" class="nav-link" data-scroll-target="#microbiome">Microbiome / Metagenomics / Metatranscriptomics</a></li>
-  <li><a href="#proteomics" id="toc-proteomics" class="nav-link" data-scroll-target="#proteomics">Proteomics / Metaproteomics</a></li>
-  <li><a href="#metabolomics" id="toc-metabolomics" class="nav-link" data-scroll-target="#metabolomics">Metabolomics / Lipidomics</a></li>
-  <li><a href="#methylation" id="toc-methylation" class="nav-link" data-scroll-target="#methylation">Methylation / Epigenomics</a></li>
-  <li><a href="#genetics" id="toc-genetics" class="nav-link" data-scroll-target="#genetics">Genetics / GWAS</a></li>
-  <li><a href="#multi-omics" id="toc-multi-omics" class="nav-link" data-scroll-target="#multi-omics">Multi-Omics</a></li>
+  <li><a href="#resource-table" id="toc-resource-table" class="nav-link active" data-scroll-target="#resource-table">Resource Table</a></li>
+  <li><a href="#how-to-interpret-this-page" id="toc-how-to-interpret-this-page" class="nav-link" data-scroll-target="#how-to-interpret-this-page">How to Interpret This Page</a></li>
   </ul>
 </nav>
     </div>
@@ -163,8 +156,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Omics Layers</h1>
-<p class="subtitle lead">Dataset inventory grouped by omics type</p>
+<h1 class="title">Integrated Resources</h1>
+<p class="subtitle lead">Atlases, portals, databases, and consortium resources that combine or curate IBD omics data</p>
 </div>
 
 
@@ -188,154 +181,26 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div class="page-intro">
-<p>This page organizes the dataset inventory by omics layer. Each section describes the layer, typical specimen types, common analytical caveats, and the datasets currently indexed for that layer. Counts are derived dynamically from the dataset registry.</p>
+<p>This page separates integrated resources from primary datasets. These resources are useful for discovery, annotation, meta-analysis, and target prioritization, but they are not single source datasets with one accession, one sample count, or one uniform metadata model.</p>
 </div>
-<hr>
-<section id="bulk-transcriptomics" class="level2">
-<h2 class="anchored" data-anchor-id="bulk-transcriptomics">Bulk Transcriptomics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: intestinal biopsies, blood, peripheral blood mononuclear cells &nbsp;|&nbsp; Platforms: microarray (Affymetrix, Illumina), RNA-seq
-</div>
-<p><strong>Count in registry: 16 datasets</strong></p>
-<p>Bulk transcriptomic datasets measure the average gene expression across all cells in a tissue or biological sample. In IBD research, these datasets typically derive from colonic or ileal mucosal biopsies, peripheral blood, or whole blood. They have been widely used to identify gene expression differences between disease states (active vs.&nbsp;remission, CD vs.&nbsp;UC, disease vs.&nbsp;control) and to discover transcriptomic biomarkers.</p>
-<p><strong>Typical uses.</strong> Mucosal or blood gene expression profiling; disease-vs-control comparison; CD-vs-UC-vs-control comparisons; biomarker discovery; pathway analysis; deconvolution input.</p>
-<p><strong>Common caveats.</strong> Bulk measurements average across heterogeneous cell populations, masking cell-type-specific signals. Cross-study comparisons require attention to tissue site (ileum vs.&nbsp;colon vs.&nbsp;blood), disease activity, treatment status at biopsy, platform (microarray vs.&nbsp;RNA-seq), batch effects, and normalization. Age groups (pediatric vs.&nbsp;adult) differ in biology and should not be pooled without justification. Many older microarray datasets lack detailed clinical metadata.</p>
-</div>
-<div data-registry-table="" data-layer="Bulk transcriptomics" data-columns="dataset_name,accession,disease,population,sample_type,tissue_site,platform,data_access_status" data-rows="20">
+<section id="resource-table" class="level2">
+<h2 class="anchored" data-anchor-id="resource-table">Resource Table</h2>
+<div id="integrated-resources">
 
 </div>
 <hr>
 </section>
-<section id="single-cell-transcriptomics" class="level2">
-<h2 class="anchored" data-anchor-id="single-cell-transcriptomics">Single-Cell Transcriptomics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: intestinal biopsies (dissociated), lamina propria isolates &nbsp;|&nbsp; Platforms: 10x Genomics Chromium, other droplet-based scRNA-seq
-</div>
-<p><strong>Count in registry: 5 datasets</strong></p>
-<p>Single-cell RNA sequencing resolves gene expression at the level of individual cells, enabling cell-type and cell-state characterization. In IBD, scRNA-seq has been applied to characterize immune, epithelial, stromal, and endothelial cell populations in the intestinal mucosa, enabling discovery of disease-associated cell states and pathways.</p>
-<p><strong>Typical uses.</strong> Cell-type and cell-state atlases; identification of disease-associated cell states; deconvolution reference panels; single-cell disease-vs-control comparisons; treatment response at cellular resolution.</p>
-<p><strong>Common caveats.</strong> scRNA-seq datasets are large and computationally demanding. Cell annotation requires reference databases and expert review. Batch effects arise from sample processing, dissociation protocols, and sequencing runs. Cross-study integration requires harmonization of cell annotations and normalization strategies. Dropout (zero-inflation) and ambient RNA are dataset-specific issues. Sample sizes per group are often smaller than bulk studies.</p>
-</div>
-<div data-registry-table="" data-layer="Single-cell transcriptomics" data-columns="dataset_name,accession,disease,population,sample_type,tissue_site,platform,data_access_status" data-rows="12">
-
-</div>
-<hr>
-</section>
-<section id="spatial-transcriptomics" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-transcriptomics">Spatial Transcriptomics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: formalin-fixed paraffin-embedded (FFPE) or fresh-frozen tissue sections &nbsp;|&nbsp; Platforms: 10x Visium, CosMx SMI, Xenium, Slide-seq
-</div>
-<p><strong>Count in registry: 1 dataset</strong></p>
-<p>Spatial transcriptomics maps gene expression while preserving the spatial location of cells within tissue sections. This enables characterization of cellular neighborhoods, tissue architectural changes in inflammation, and spatially restricted gene expression patterns not detectable in dissociated single-cell or bulk assays.</p>
-<p><strong>Typical uses.</strong> Spatial mapping of inflammatory cell states; tissue architecture analysis; niche and co-localization analysis; spatial characterization of ulcerated vs.&nbsp;inflamed vs.&nbsp;uninflamed regions.</p>
-<p><strong>Common caveats.</strong> Resolution and sensitivity vary substantially across platforms. Spot-based platforms (Visium) capture multiple cells per spot; single-cell resolution platforms (CosMx, Xenium) measure a limited gene panel. Data volumes are large. Normalization and cell-type deconvolution are non-trivial. Cross-study comparisons are difficult due to platform heterogeneity and panel differences.</p>
-</div>
-<div data-registry-table="" data-layer="Spatial transcriptomics" data-columns="dataset_name,accession,disease,sample_type,tissue_site,platform,data_access_status" data-rows="10">
-
-</div>
-<hr>
-</section>
-<section id="microbiome" class="level2">
-<h2 class="anchored" data-anchor-id="microbiome">Microbiome / Metagenomics / Metatranscriptomics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: stool, mucosal biopsies &nbsp;|&nbsp; Platforms: shotgun metagenomics, 16S rRNA, metatranscriptomics, viromics
-</div>
-<p><strong>Count in registry: 1 dataset</strong></p>
-<p>Gut microbiome datasets characterize the microbial community composition and functional activity in stool or mucosal specimens. These datasets include shotgun metagenomics (microbial DNA sequencing), metatranscriptomics (microbial RNA expression), and virome profiling. The gut microbiome is substantially altered in IBD, and multi-omics studies combine microbial and host data.</p>
-<p><strong>Typical uses.</strong> Microbial community profiling; host–microbiome integration; functional pathway analysis; longitudinal microbiome dynamics; stool biomarker discovery.</p>
-<p><strong>Common caveats.</strong> Substantial inter-individual variability. Stool microbiome is affected by diet, antibiotics, and sample handling. Reference databases for annotation are incomplete. Species- and strain-level resolution requires deep sequencing. Cross-study comparisons are complicated by extraction protocols, sequencing depth, and bioinformatic pipelines.</p>
-</div>
-<div data-registry-table="" data-any="Metagenomics|Metatranscriptomics|Virome" data-columns="dataset_name,accession,disease,sample_type,tissue_site,omics_layer,data_access_status" data-rows="10">
-
-</div>
-<hr>
-</section>
-<section id="proteomics" class="level2">
-<h2 class="anchored" data-anchor-id="proteomics">Proteomics / Metaproteomics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: colon biopsies, stool &nbsp;|&nbsp; Platforms: LC-MS/MS, DIA-MS, shotgun proteomics
-</div>
-<p><strong>Count in registry: 5 datasets</strong></p>
-<p>Proteomic datasets measure protein abundance in biological samples. In IBD, proteomics has been applied to intestinal mucosal tissue and stool (fecal proteomics). Fecal proteomics and metaproteomics capture both host-derived and microbial proteins and offer non-invasive sampling. Mucosal proteomics complements transcriptomic data by capturing post-translational changes.</p>
-<p><strong>Typical uses.</strong> Mucosal protein biomarker discovery; non-invasive fecal protein biomarkers; host–microbiome protein profiling; proteomics–transcriptomics integration.</p>
-<p><strong>Common caveats.</strong> Fecal proteomics is susceptible to dietary variation, microbial variability, and sample processing differences. Mucosal proteomics is limited by tissue availability. Database coverage for microbial proteins (metaproteomics) remains incomplete. Quantitative methods (DDA vs.&nbsp;DIA) differ in sensitivity and reproducibility.</p>
-</div>
-<div data-registry-table="" data-any="Proteomics|Metaproteomics" data-columns="dataset_name,accession,disease,sample_type,tissue_site,platform,data_access_status" data-rows="10">
-
-</div>
-<hr>
-</section>
-<section id="metabolomics" class="level2">
-<h2 class="anchored" data-anchor-id="metabolomics">Metabolomics / Lipidomics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: stool, serum, plasma, urine, tissue &nbsp;|&nbsp; Platforms: LC-MS, GC-MS, NMR
-</div>
-<p><strong>Count in registry: 3 datasets</strong></p>
-<p>Metabolomic datasets measure small-molecule metabolites in biological samples. In IBD, metabolomics has been applied to stool, serum, and tissue, capturing changes in host and microbial metabolic activity. Lipidomics focuses specifically on lipid species. These datasets are often combined with microbiome or proteomics data in multi-omics studies.</p>
-<p><strong>Typical uses.</strong> Metabolic biomarker discovery; disease severity correlates; treatment response metabolomics; microbiome–metabolome integration.</p>
-<p><strong>Common caveats.</strong> Metabolomics is sensitive to sample handling, storage, and analytical variation. Platform differences (LC-MS, GC-MS, NMR) affect coverage and quantitation. Annotation of spectral features to specific metabolites remains incomplete. Fecal metabolomics reflects both host and microbial metabolism.</p>
-</div>
-<div data-registry-table="" data-any="Metabolomics|Lipidomics" data-columns="dataset_name,accession,disease,sample_type,omics_layer,platform,data_access_status" data-rows="10">
-
-</div>
-<hr>
-</section>
-<section id="methylation" class="level2">
-<h2 class="anchored" data-anchor-id="methylation">Methylation / Epigenomics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: peripheral blood, colon mucosa, intestinal epithelial cells &nbsp;|&nbsp; Platforms: Illumina 450K/EPIC methylation arrays, ATAC-seq, ChIP-seq
-</div>
-<p><strong>Count in registry: 5 datasets</strong></p>
-<p>Methylation and epigenomic datasets characterize DNA methylation or chromatin accessibility patterns in IBD-relevant tissues. Blood methylation datasets have been used for EWAS (epigenome-wide association studies). Mucosal methylation datasets link epigenetic changes to the inflammatory environment of the intestine.</p>
-<p><strong>Typical uses.</strong> Epigenetic biomarker discovery; EWAS; mucosal epigenetic changes in IBD; blood methylation CD vs.&nbsp;UC comparisons; epigenetic–transcriptomic integration.</p>
-<p><strong>Common caveats.</strong> Blood methylation is substantially confounded by cell-type composition; cell-type deconvolution (e.g., Houseman method) is necessary. Methylation arrays have fixed probe sets and cannot capture all genomic regions. Mucosal methylation is influenced by inflammatory cell infiltration. Older 450K datasets have lower genomic coverage than EPIC arrays.</p>
-</div>
-<div data-registry-table="" data-layer="Methylation" data-columns="dataset_name,accession,disease,population,sample_type,tissue_site,platform,data_access_status" data-rows="10">
-
-</div>
-<hr>
-</section>
-<section id="genetics" class="level2">
-<h2 class="anchored" data-anchor-id="genetics">Genetics / GWAS</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: DNA from blood or saliva &nbsp;|&nbsp; Platforms: SNP arrays (Illumina, Affymetrix), imputed genotypes, whole-genome sequencing
-</div>
-<p><strong>Count in registry: 5 datasets</strong></p>
-<p>Genetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn’s disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.</p>
-<p><strong>Typical uses.</strong> Genetic risk factor identification; target prioritization; Mendelian randomization; colocalization with QTL data; polygenic risk scores; trans-ancestral analyses.</p>
-<p><strong>Common caveats.</strong> Individual-level genotype data are typically controlled-access. Summary statistics are often publicly available but differ in imputation panels, ancestry composition, and case/control definitions. IBD phenotype ascertainment varies across studies (clinical diagnosis vs.&nbsp;ICD codes). Multi-ancestry analyses require specialized methods.</p>
-</div>
-<div data-registry-table="" data-any="Genetics|GWAS|Integrative genomics" data-columns="dataset_name,accession,disease,population,omics_layer,study_design,data_access_status" data-rows="10">
-
-</div>
-<hr>
-</section>
-<section id="multi-omics" class="level2">
-<h2 class="anchored" data-anchor-id="multi-omics">Multi-Omics</h2>
-<div class="omics-card">
-<div class="omics-meta">
-Specimens: multiple per subject &nbsp;|&nbsp; Platforms: multiple integrated platforms
-</div>
-<p><strong>Count in registry: 1 dataset</strong></p>
-<p>Multi-omics datasets integrate two or more omics layers collected from the same subjects or same biobank. These resources support integrative analyses linking, for example, host transcriptomics with microbiome, proteomics, and metabolomics data.</p>
-<p><strong>Typical uses.</strong> Host–microbiome integration; cross-omics correlation; multi-omics biomarker discovery; longitudinal multi-omics dynamics.</p>
-<p><strong>Common caveats.</strong> Not all samples in a multi-omics study have complete data across all layers. Data integration requires careful harmonization of metadata, sample identifiers, and normalization. Batch effects may differ across omics layers. Access conditions may vary by omics component.</p>
-</div>
-<div data-registry-table="" data-layer="Multi-omics" data-columns="dataset_name,accession,disease,sample_type,omics_layer,data_access_status" data-rows="10">
-
-</div>
-<div class="disclaimer">
-<p>All counts and tables on this page are derived from <code>data/ibd_omics_datasets.csv</code> and update automatically as the registry expands. Many entries carry <em>Needs verification</em> status — metadata should be confirmed against source repositories before use in analysis.</p>
-</div>
+<section id="how-to-interpret-this-page" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-interpret-this-page">How to Interpret This Page</h2>
+<p>Integrated resources may combine many source datasets, reprocess data with their own pipelines, or expose only derived summaries. They should not replace the original accession-level records when you need raw data, exact sample metadata, or reproducible cohort definitions.</p>
+<p>Use this page to find:</p>
+<ul>
+<li>IBD-specific single-cell atlases such as <code>scIBD</code></li>
+<li>broader gut atlases that include IBD, such as the Gut Cell Atlas</li>
+<li>curated databases such as <code>IBDTransDB</code></li>
+<li>consortium and target-prioritization resources such as IIBDGC, GWAS Catalog, and Open Targets</li>
+</ul>
+<p>When a resource points to specific source accessions, those primary datasets should remain in the Dataset Explorer.</p>
 
 
 </section>

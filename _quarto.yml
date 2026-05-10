@@ -6,6 +6,7 @@ project:
   resources:
     - site-tables.js
     - data/ibd_omics_datasets.csv
+    - data/integrated_resources.csv
 
 author: "Dahham Alsoud"
 
@@ -24,6 +25,8 @@ website:
         href: index.qmd
       - text: "Datasets"
         href: datasets.qmd
+      - text: "Integrated Resources"
+        href: integrated-resources.qmd
       - text: "Omics Layers"
         href: omics-layers.qmd
       - text: "Repositories"

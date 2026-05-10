@@ -94,6 +94,7 @@ project:
     - data/verification/cohort_counting_qa_report.csv
     - data/verification/risk_transcriptomics_crosswalk.csv
     - data/verification/risk_methylation_overlap_crosswalk.csv
+    - data/verification/risk_cross_omics_counting_policy_proposal.csv
     - data/verification/cohort_counting_qa_validation.csv
     - data/verification/natcomm2023_multimodality_crosswalk.csv
     - data/verification/uniti_countability_policy_review.csv

@@ -13,6 +13,8 @@ project:
     - data/cohort_overlap_audit.csv
     - data/verification/cross_omics_utility_review.csv
     - data/verification/status_taxonomy_review.csv
+    - data/verification/priority_cross_omics_source_review.csv
+    - data/protect_overlap_review.csv
 
 author: "Dahham Alsoud"
 

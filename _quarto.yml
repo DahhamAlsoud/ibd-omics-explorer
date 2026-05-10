@@ -100,6 +100,9 @@ project:
     - data/verification/ds035_gwas_countability_policy_review.csv
     - data/verification/ds061_ds088_infliximab_crosswalk.csv
     - data/verification/risk_countability_policy_review.csv
+    - data/verification/remaining_unclear_consistency_audit.csv
+    - data/verification/evidence_url_enrichment_qa.csv
+    - data/verification/post_countability_site_qa.csv
 
 author: "Dahham Alsoud"
 

@@ -553,7 +553,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><code>count_as_independent_cohort</code></td>
-<td>Conservative overcounting flag indicating whether the row can currently be counted as an independent cohort (<code>TRUE</code>, <code>FALSE</code>, or blank/uncertain)</td>
+<td>Conservative overcounting flag indicating whether the row can currently be counted as an independent cohort (<code>TRUE</code>, <code>FALSE</code>, or <code>Unclear</code>)</td>
 </tr>
 <tr class="even">
 <td><code>overlap_notes</code></td>
@@ -629,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Therapeutic-family reviews are included when available, but rows requiring source-level sample-ID review should be treated as provisional for cohort counting.</p>
 <p>The primary dataset CSV now includes appended cohort-family fields (<code>study_family</code>, <code>component_of_dataset_id</code>, <code>count_as_independent_cohort</code>, and <code>overlap_notes</code>). These fields are intentionally conservative and currently appear in the Dataset Explorer detail view only.</p>
 <p>All 102 primary dataset rows now have a <code>study_family</code> label, representing 85 distinct study or source families. <code>count_as_independent_cohort = FALSE</code> means the row should not be counted as a separate cohort because it is a known component, subset, or overlapping accession for another row. <code>Unclear</code> means the row is related to another study family, but public metadata are not sufficient to reconcile donors or samples confidently. Users should treat <code>Unclear</code> rows conservatively and avoid summing them without source-level review.</p>
-<p>Users can search by study, cohort, or trial names such as <code>PROTECT</code>, <code>RISK</code>, <code>IBD200</code>, <code>ACT1</code>, <code>UNITI</code>, <code>UNIFI</code>, <code>GEMINI</code>, <code>BERGAMOT</code>, <code>scIBD</code>, or <code>SP140</code>. These labels are intended for discoverability and cohort accounting; they do not replace direct verification of the source repository before analysis. Current countability values are 81 <code>TRUE</code>, 5 <code>FALSE</code>, and 16 <code>Unclear</code>.</p>
+<p>Users can search by study, cohort, or trial names such as <code>PROTECT</code>, <code>RISK</code>, <code>IBD200</code>, <code>ACT1</code>, <code>UNITI</code>, <code>UNIFI</code>, <code>GEMINI</code>, <code>BERGAMOT</code>, <code>scIBD</code>, or <code>SP140</code>. These labels are intended for discoverability and cohort accounting; they do not replace direct verification of the source repository before analysis. Current countability values are 85 <code>TRUE</code>, 7 <code>FALSE</code>, and 10 <code>Unclear</code>.</p>
 <p>Detailed review artifacts:</p>
 <ul>
 <li><a href="data/cohort_overlap_audit.csv">Cohort overlap audit</a></li>
@@ -638,6 +638,14 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="data/ibd200_overlap_review.csv">IBD200 overlap review</a></li>
 <li><a href="data/therapeutic_overlap_review.csv">Therapeutic overlap review, provisional</a></li>
 <li><a href="data/verification/unclear_countability_review_pack.csv">Unclear countability review pack</a></li>
+<li><a href="data/verification/study_family_completeness_qa.csv">Study-family completeness QA</a></li>
+<li><a href="data/verification/cohort_counting_qa_report.csv">Cohort-counting QA report</a></li>
+<li><a href="data/verification/remaining_unclear_consistency_audit.csv">Remaining unclear consistency audit</a></li>
+<li><a href="data/verification/protect_methylation_crosswalk.csv">PROTECT methylation crosswalk</a></li>
+<li><a href="data/verification/risk_countability_policy_review.csv">RISK countability policy review</a></li>
+<li><a href="data/verification/sp140_donor_crosswalk.csv">SP140 donor crosswalk</a></li>
+<li><a href="data/verification/ds035_gwas_countability_policy_review.csv">DS035 GWAS countability policy review</a></li>
+<li><a href="data/verification/ds061_ds088_infliximab_crosswalk.csv">DS061/DS088 infliximab crosswalk</a></li>
 </ul>
 <hr>
 </section>

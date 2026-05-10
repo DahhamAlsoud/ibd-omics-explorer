@@ -147,7 +147,7 @@ Each entry carries a `curation_status` label indicating the degree of metadata v
 | `notes` | Free-text curation notes |
 | `study_family` | Conservative cohort, trial, or source-family label used to identify rows that may come from the same study population, clinical trial, or reused source cohort |
 | `component_of_dataset_id` | Parent dataset identifier when a row is explicitly retained as a component of another primary dataset row; blank when no parent row is assigned |
-| `count_as_independent_cohort` | Conservative overcounting flag indicating whether the row can currently be counted as an independent cohort (`TRUE`, `FALSE`, or blank/uncertain) |
+| `count_as_independent_cohort` | Conservative overcounting flag indicating whether the row can currently be counted as an independent cohort (`TRUE`, `FALSE`, or `Unclear`) |
 | `overlap_notes` | Short explanation of known or suspected cohort overlap and how the row should be counted |
 | `verification_status` | Current evidence-check status for the row |
 | `source_record_checked` | Whether the source record has been manually checked |
@@ -192,7 +192,7 @@ The primary dataset CSV now includes appended cohort-family fields (`study_famil
 
 All 102 primary dataset rows now have a `study_family` label, representing 85 distinct study or source families. `count_as_independent_cohort = FALSE` means the row should not be counted as a separate cohort because it is a known component, subset, or overlapping accession for another row. `Unclear` means the row is related to another study family, but public metadata are not sufficient to reconcile donors or samples confidently. Users should treat `Unclear` rows conservatively and avoid summing them without source-level review.
 
-Users can search by study, cohort, or trial names such as `PROTECT`, `RISK`, `IBD200`, `ACT1`, `UNITI`, `UNIFI`, `GEMINI`, `BERGAMOT`, `scIBD`, or `SP140`. These labels are intended for discoverability and cohort accounting; they do not replace direct verification of the source repository before analysis. Current countability values are 81 `TRUE`, 5 `FALSE`, and 16 `Unclear`.
+Users can search by study, cohort, or trial names such as `PROTECT`, `RISK`, `IBD200`, `ACT1`, `UNITI`, `UNIFI`, `GEMINI`, `BERGAMOT`, `scIBD`, or `SP140`. These labels are intended for discoverability and cohort accounting; they do not replace direct verification of the source repository before analysis. Current countability values are 85 `TRUE`, 7 `FALSE`, and 10 `Unclear`.
 
 Detailed review artifacts:
 
@@ -202,6 +202,14 @@ Detailed review artifacts:
 - [IBD200 overlap review](data/ibd200_overlap_review.csv)
 - [Therapeutic overlap review, provisional](data/therapeutic_overlap_review.csv)
 - [Unclear countability review pack](data/verification/unclear_countability_review_pack.csv)
+- [Study-family completeness QA](data/verification/study_family_completeness_qa.csv)
+- [Cohort-counting QA report](data/verification/cohort_counting_qa_report.csv)
+- [Remaining unclear consistency audit](data/verification/remaining_unclear_consistency_audit.csv)
+- [PROTECT methylation crosswalk](data/verification/protect_methylation_crosswalk.csv)
+- [RISK countability policy review](data/verification/risk_countability_policy_review.csv)
+- [SP140 donor crosswalk](data/verification/sp140_donor_crosswalk.csv)
+- [DS035 GWAS countability policy review](data/verification/ds035_gwas_countability_policy_review.csv)
+- [DS061/DS088 infliximab crosswalk](data/verification/ds061_ds088_infliximab_crosswalk.csv)
 
 ---
 

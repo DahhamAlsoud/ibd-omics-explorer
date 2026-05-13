@@ -1,6 +1,6 @@
 ---
 title: "IBD Omics Explorer"
-subtitle: "A curated registry of publicly available inflammatory bowel disease omics datasets"
+subtitle: "A curated registry of publicly indexed inflammatory bowel disease omics datasets"
 format:
   html:
     toc: false
@@ -12,7 +12,7 @@ format:
 
 ## IBD Omics Explorer
 
-<p class="hero-subtitle">A curated, searchable inventory of publicly available omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, methylation, microbiome, and genetics.</p>
+<p class="hero-subtitle">A curated, searchable inventory of publicly indexed omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, DNA methylation, microbiome, and genetics.</p>
 
 <div class="hero-actions">
 <a href="datasets.qmd" class="btn-hero btn-primary">Browse All Datasets</a>
@@ -27,7 +27,7 @@ format:
 
 <div class="metrics-grid">
 <div class="metric-card">
-<div class="metric-value">102</div>
+<div class="metric-value">116</div>
 <div class="metric-label">Primary Datasets</div>
 </div>
 <div class="metric-card">
@@ -52,9 +52,9 @@ format:
 
 This explorer aims to map **publicly indexed IBD omics datasets** across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn's disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include tissue biopsies, blood, stool, organoids, or other relevant specimen types.
 
-**Inclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis.** The registry documents what is publicly accessible, along with known caveats and limitations.
+**Inclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis.** The registry documents what is publicly indexed or accessible, along with known caveats and limitations.
 
-See the [Curation Methods](curation-methods.qmd) page for detailed inclusion criteria, data access definitions, and metadata caveats.
+See the [Curation Methods](curation-methods.qmd) page for detailed inclusion criteria, data access definitions, and registry annotation caveats.
 
 ## Data Layers Covered
 
@@ -91,7 +91,7 @@ See the [Curation Methods](curation-methods.qmd) page for detailed inclusion cri
 </a>
 <a href="omics-layers.qmd#methylation" class="feature-card">
 <span class="feature-icon">🔖</span>
-<h3>Methylation / Epigenomics</h3>
+<h3>DNA Methylation / Epigenomics</h3>
 <p>DNA methylation arrays and chromatin accessibility in blood and mucosa</p>
 </a>
 <a href="omics-layers.qmd#genetics" class="feature-card">
@@ -111,13 +111,13 @@ See the [Curation Methods](curation-methods.qmd) page for detailed inclusion cri
 | [Omics Layers](omics-layers.qmd) | Inventory grouped by omics type with layer-level notes |
 | [Repositories](repositories.qmd) | Overview of archives and portals hosting IBD omics data |
 | [Use Cases](use-cases.qmd) | Browse datasets tagged as potentially relevant to specific research questions |
-| [Verification Queue](verification-queue.qmd) | Review source-check status, citation evidence, and metadata gaps |
+| [Verification Queue](verification-queue.qmd) | Review source-check status, citation evidence, and source metadata gaps |
 | [Orchestrator](orchestrator.qmd) | Track active improvement tasks, missing-resource audits, and next curation priorities |
-| [Curation Methods](curation-methods.qmd) | Inclusion criteria, access definitions, metadata caveats |
+| [Curation Methods](curation-methods.qmd) | Inclusion criteria, access definitions, registry annotation caveats |
 | [About](about.qmd) | Project context and contact information |
 
 ---
 
 <div class="disclaimer">
-**Disclaimer.** This website is a curated research tool. It is intended to support dataset discovery, not to serve as a complete or authoritative registry. Dataset availability, metadata accuracy, and access status should be verified independently before analysis. This site does not rank datasets or endorse any particular resource over another.
+**Disclaimer.** This website is a curated research tool. It is intended to support dataset discovery, not to serve as a complete or authoritative registry. Dataset availability, registry annotation accuracy, and access status should be verified independently before analysis. This site does not rank datasets or endorse any particular resource over another.
 </div>

@@ -1,6 +1,6 @@
 ---
 title: "Curation Methods"
-subtitle: "Inclusion criteria, data access definitions, metadata standards, and limitations"
+subtitle: "Inclusion criteria, data access definitions, registry annotation standards, and limitations"
 ---
 
 <div class="page-intro">
@@ -11,7 +11,7 @@ This page documents the curation rules used to build and maintain the IBD Omics 
 
 ## Purpose and Scope
 
-The IBD Omics Explorer is designed to **map and organize publicly available IBD omics datasets** across all major omics layers, with the goal of supporting dataset discovery. It is not a systematic review, meta-analysis, or quality-assessment resource. Inclusion in this registry does not imply that a dataset is high quality, fully reusable, or suitable for any particular analysis.
+The IBD Omics Explorer is designed to **map and organize publicly indexed IBD omics datasets** across all major omics layers, with the goal of supporting dataset discovery. It is not a systematic review, meta-analysis, or quality-assessment resource. Inclusion in this registry does not imply that a dataset is high quality, fully reusable, or suitable for any particular analysis.
 
 The registry aims to be **inclusive and expandable**. The current dataset is a starting point, not a comprehensive catalog. Many datasets that qualify for inclusion may not yet be listed.
 
@@ -19,7 +19,7 @@ The registry aims to be **inclusive and expandable**. The current dataset is a s
 
 ## Current Registry State
 
-The current dataset registry contains **116 primary dataset entries** plus **10 integrated resources** tracked separately. The newer systematic-discovery rows are intentionally marked as `source_checked` rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.
+The current dataset registry contains **116 primary dataset entries** plus **10 integrated resources** tracked separately. The newer systematic-discovery rows are intentionally marked as `source_checked` rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of analysis-ready source metadata.
 
 Before using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with `Unclear` fields should be treated as leads for manual curation rather than confirmed facts.
 
@@ -70,8 +70,8 @@ The following categories are excluded or deferred pending additional review:
 |---|---|
 | Animal-only datasets (mouse, rat models) | Excluded unless they directly describe human companion datasets |
 | Purely mechanistic cell-line datasets | Excluded unless they include primary patient-derived material |
-| Datasets without any accessible metadata | Deferred until metadata can be located |
-| Duplicate submissions | Retained only if they add useful metadata, processed files, or additional accession cross-links |
+| Datasets without any accessible source metadata | Deferred until source metadata can be located |
+| Duplicate submissions | Retained only if they add useful source metadata, processed files, or additional accession cross-links |
 | Publication-only datasets | Included with `Publication only` or `Unclear` access status and a note |
 | Unpublished preprint-only datasets | May be included with explicit annotation; treat with caution |
 
@@ -88,20 +88,20 @@ The registry uses the following standardized labels for the `data_access_status`
 | Public portal | Data are accessible and explorable through a public portal or database interface, with or without direct file download |
 | Controlled access | Dataset is publicly indexed and described, but access to data files requires an application, institutional approval, or data use agreement |
 | Publication only | Dataset is described in a publication, but reusable data files are not clearly available in a repository |
-| Unclear | A repository record exists but data availability, metadata, or access conditions could not be confidently determined from public information |
+| Unclear | A repository record exists but data availability, source metadata, or access conditions could not be confidently determined from public information |
 
-Multiple labels may apply to a single dataset (e.g., `Public processed data; Controlled access (some components)`).
+Multiple labels may apply to a single dataset (e.g., `Public processed data; controlled access for some components`).
 
 ---
 
 ## Curation Status Labels
 
-Each entry carries a `curation_status` label indicating the degree of metadata verification:
+Each entry carries a `curation_status` label indicating the degree of registry annotation verification:
 
 | Label | Meaning |
 |---|---|
 | Needs verification | Metadata or access status should be manually checked before relying on the annotation |
-| Partially verified | One or more source, metadata, access, or citation checks have been completed, but the row is not analysis-ready |
+| Partially verified | One or more source, source metadata, access, or citation checks have been completed, but the row is not analysis-ready |
 | Verified | Metadata and access links have been manually checked against the source repository record |
 | Deprecated/limited | Dataset exists but has limited reuse value, incomplete public access, or substantial data quality issues |
 
@@ -124,8 +124,8 @@ Each entry carries a `curation_status` label indicating the degree of metadata v
 | `pmid` | PubMed identifier for the primary publication (if verified) |
 | `disease` | Disease groups included in the dataset |
 | `population` | Age group or population descriptor (Adult, Pediatric, Mixed, Unclear) |
-| `sample_type` | Type of biological specimen (biopsy, blood, stool, etc.) |
-| `tissue_site` | Anatomical site of the specimen |
+| `sample_type` | Specimen type (for example, intestinal mucosal biopsy, blood, stool, organoid, or cell preparation) |
+| `tissue_site` | Anatomical site or sample matrix of the specimen |
 | `omics_layer` | Omics data type(s) included |
 | `platform` | Assay platform(s) used |
 | `study_design` | Study design descriptor |
@@ -169,10 +169,10 @@ The verification workflow is deliberately conservative:
 
 1. New rows start as `pending_review`.
 2. A row moves to `source_checked` only after the source URL opens and matches the intended accession or resource.
-3. A row moves to `metadata_checked` only after key study metadata are checked against a source record.
+3. A row moves to `metadata_checked` only after key source metadata are checked against a source record.
 4. A row moves to `publication_checked` only after citation fields are checked against a publication, DOI, PubMed, or repository-linked citation.
 5. A row becomes `needs_revision` if source evidence contradicts the current registry row.
-6. A row should only become `analysis_ready_candidate` after human review of source, metadata, publication, access status, and the intended analysis context.
+6. A row should only become `analysis_ready_candidate` after human review of source records, source metadata, publication, access status, and the intended analysis context.
 
 Verification batches cover selected high-value/high-risk entries across multi-omics, single-cell, proteomics, metabolomics, methylation, transcriptomics, and controlled-access genetics resources. Atlases, portals, curated databases, and consortium resources are tracked on the Integrated Resources page because they are not single accession-level datasets. Systematic-discovery additions are retained as `source_checked` until they receive deeper row-level verification.
 
@@ -217,7 +217,7 @@ Detailed review artifacts:
 
 Users of this registry should be aware of the following general caveats:
 
-**Sample size.** Sample size fields may refer to subjects, unique samples, biopsies, cells, sequencing libraries, or files, depending on the study. These are not always interchangeable. Actual analyzable sample sizes per disease group should be verified from the publication or repository metadata.
+**Sample size.** Sample size fields may refer to subjects, unique samples, biopsies, cells, sequencing libraries, or files, depending on the study. These are not always interchangeable. Actual analyzable sample sizes per disease group should be verified from the publication or source metadata.
 
 **Disease definitions.** IBD, CD, UC, and IBD-U definitions vary across studies. Some studies use clinician-assigned diagnoses; others use ICD codes or self-report. Disease activity definitions (active vs. remission) and scoring systems differ. Cross-study comparisons of disease groups require attention to diagnostic criteria.
 
@@ -233,7 +233,7 @@ Users of this registry should be aware of the following general caveats:
 
 **Controlled-access data.** Controlled-access resources are described for completeness but require institutional approval before any data can be downloaded or analyzed. Approval processes vary and can take weeks to months.
 
-**Unclear fields.** Fields marked "Unclear" indicate that the information could not be confidently determined from publicly available records at the time of curation. These should be verified before use.
+**Unclear fields.** Fields marked "Unclear" indicate that the information could not be confidently determined from publicly indexed records at the time of curation. These should be verified before use.
 
 ---
 
@@ -242,7 +242,7 @@ Users of this registry should be aware of the following general caveats:
 This registry is designed to expand continuously. If you identify:
 
 - A dataset that should be included
-- A metadata error or outdated access status
+- A registry annotation error or outdated access status
 - A deprecated or moved accession
 - A verified entry that should be updated from `Needs verification` to `Verified`
 
@@ -262,5 +262,5 @@ Metadata in this registry should be checked against:
 The initial entries should not be promoted to `Verified` until a human curator has checked the repository record and primary publication.
 
 <div class="disclaimer">
-This registry is a curated research resource and is provided for dataset discovery purposes only. It does not constitute clinical guidance, a systematic review, or a quality certification of any dataset. All metadata should be independently verified before use in any analysis.
+This registry is a curated research resource and is provided for dataset discovery purposes only. It does not constitute clinical guidance, a systematic review, or a quality certification of any dataset. All registry annotations should be independently verified against source records before use in any analysis.
 </div>

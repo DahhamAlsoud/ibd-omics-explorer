@@ -4,7 +4,7 @@ subtitle: "Dataset inventory grouped by omics type"
 ---
 
 <div class="page-intro">
-This page organizes the dataset inventory by omics layer. Each section describes the layer, typical specimen types, common analytical caveats, and the datasets currently indexed for that layer. Counts are derived dynamically from the dataset registry.
+This page organizes the dataset inventory by omics layer. Each section describes the layer, typical specimen types, common analytical caveats, and the datasets currently indexed for that layer. Counts reflect the current registry scan and may include rows tagged with multiple omics layers.
 </div>
 
 
@@ -15,7 +15,7 @@ This page organizes the dataset inventory by omics layer. Each section describes
 <div class="omics-card">
 <div class="omics-meta">Specimens: intestinal biopsies, blood, peripheral blood mononuclear cells &nbsp;|&nbsp; Platforms: microarray (Affymetrix, Illumina), RNA-seq</div>
 
-**Count in registry: 16 datasets**
+**Count in registry: 62 datasets**
 
 Bulk transcriptomic datasets measure the average gene expression across all cells in a tissue or biological sample. In IBD research, these datasets typically derive from colonic or ileal mucosal biopsies, peripheral blood, or whole blood. They have been widely used to identify gene expression differences between disease states (active vs. remission, CD vs. UC, disease vs. control) and to discover transcriptomic biomarkers.
 
@@ -34,7 +34,7 @@ Bulk transcriptomic datasets measure the average gene expression across all cell
 <div class="omics-card">
 <div class="omics-meta">Specimens: intestinal biopsies (dissociated), lamina propria isolates &nbsp;|&nbsp; Platforms: 10x Genomics Chromium, other droplet-based scRNA-seq</div>
 
-**Count in registry: 5 datasets**
+**Count in registry: 20 datasets**
 
 Single-cell RNA sequencing resolves gene expression at the level of individual cells, enabling cell-type and cell-state characterization. In IBD, scRNA-seq has been applied to characterize immune, epithelial, stromal, and endothelial cell populations in the intestinal mucosa, enabling discovery of disease-associated cell states and pathways.
 
@@ -53,7 +53,7 @@ Single-cell RNA sequencing resolves gene expression at the level of individual c
 <div class="omics-card">
 <div class="omics-meta">Specimens: formalin-fixed paraffin-embedded (FFPE) or fresh-frozen tissue sections &nbsp;|&nbsp; Platforms: 10x Visium, CosMx SMI, Xenium, Slide-seq</div>
 
-**Count in registry: 1 dataset**
+**Count in registry: 3 datasets**
 
 Spatial transcriptomics maps gene expression while preserving the spatial location of cells within tissue sections. This enables characterization of cellular neighborhoods, tissue architectural changes in inflammation, and spatially restricted gene expression patterns not detectable in dissociated single-cell or bulk assays.
 
@@ -72,7 +72,7 @@ Spatial transcriptomics maps gene expression while preserving the spatial locati
 <div class="omics-card">
 <div class="omics-meta">Specimens: stool, mucosal biopsies &nbsp;|&nbsp; Platforms: shotgun metagenomics, 16S rRNA, metatranscriptomics, viromics</div>
 
-**Count in registry: 1 dataset**
+**Count in registry: 4 datasets**
 
 Gut microbiome datasets characterize the microbial community composition and functional activity in stool or mucosal specimens. These datasets include shotgun metagenomics (microbial DNA sequencing), metatranscriptomics (microbial RNA expression), and virome profiling. The gut microbiome is substantially altered in IBD, and multi-omics studies combine microbial and host data.
 
@@ -89,9 +89,9 @@ Gut microbiome datasets characterize the microbial community composition and fun
 ## Proteomics / Metaproteomics {#proteomics}
 
 <div class="omics-card">
-<div class="omics-meta">Specimens: colon biopsies, stool &nbsp;|&nbsp; Platforms: LC-MS/MS, DIA-MS, shotgun proteomics</div>
+<div class="omics-meta">Specimens: colonic biopsies, stool &nbsp;|&nbsp; Platforms: LC-MS/MS, DIA-MS, shotgun proteomics</div>
 
-**Count in registry: 5 datasets**
+**Count in registry: 15 datasets**
 
 Proteomic datasets measure protein abundance in biological samples. In IBD, proteomics has been applied to intestinal mucosal tissue and stool (fecal proteomics). Fecal proteomics and metaproteomics capture both host-derived and microbial proteins and offer non-invasive sampling. Mucosal proteomics complements transcriptomic data by capturing post-translational changes.
 
@@ -110,7 +110,7 @@ Proteomic datasets measure protein abundance in biological samples. In IBD, prot
 <div class="omics-card">
 <div class="omics-meta">Specimens: stool, serum, plasma, urine, tissue &nbsp;|&nbsp; Platforms: LC-MS, GC-MS, NMR</div>
 
-**Count in registry: 3 datasets**
+**Count in registry: 9 datasets**
 
 Metabolomic datasets measure small-molecule metabolites in biological samples. In IBD, metabolomics has been applied to stool, serum, and tissue, capturing changes in host and microbial metabolic activity. Lipidomics focuses specifically on lipid species. These datasets are often combined with microbiome or proteomics data in multi-omics studies.
 
@@ -124,12 +124,12 @@ Metabolomic datasets measure small-molecule metabolites in biological samples. I
 
 ---
 
-## Methylation / Epigenomics {#methylation}
+## DNA Methylation / Epigenomics {#methylation}
 
 <div class="omics-card">
 <div class="omics-meta">Specimens: peripheral blood, colon mucosa, intestinal epithelial cells &nbsp;|&nbsp; Platforms: Illumina 450K/EPIC methylation arrays, ATAC-seq, ChIP-seq</div>
 
-**Count in registry: 5 datasets**
+**Count in registry: 8 datasets**
 
 Methylation and epigenomic datasets characterize DNA methylation or chromatin accessibility patterns in IBD-relevant tissues. Blood methylation datasets have been used for EWAS (epigenome-wide association studies). Mucosal methylation datasets link epigenetic changes to the inflammatory environment of the intestine.
 
@@ -148,7 +148,7 @@ Methylation and epigenomic datasets characterize DNA methylation or chromatin ac
 <div class="omics-card">
 <div class="omics-meta">Specimens: DNA from blood or saliva &nbsp;|&nbsp; Platforms: SNP arrays (Illumina, Affymetrix), imputed genotypes, whole-genome sequencing</div>
 
-**Count in registry: 5 datasets**
+**Count in registry: 1 dataset**
 
 Genetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn's disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.
 
@@ -167,7 +167,7 @@ Genetic and GWAS datasets provide genome-wide association study summary statisti
 <div class="omics-card">
 <div class="omics-meta">Specimens: multiple per subject &nbsp;|&nbsp; Platforms: multiple integrated platforms</div>
 
-**Count in registry: 1 dataset**
+**Count in registry: 3 datasets**
 
 Multi-omics datasets integrate two or more omics layers collected from the same subjects or same biobank. These resources support integrative analyses linking, for example, host transcriptomics with microbiome, proteomics, and metabolomics data.
 
@@ -180,5 +180,5 @@ Multi-omics datasets integrate two or more omics layers collected from the same 
 
 
 <div class="disclaimer">
-All counts and tables on this page are derived from <code>data/ibd_omics_datasets.csv</code> and update automatically as the registry expands. Many entries carry <em>Needs verification</em> status — metadata should be confirmed against source repositories before use in analysis.
+All counts and tables on this page are derived from <code>data/ibd_omics_datasets.csv</code> and update automatically as the registry expands. Many entries carry <em>Needs verification</em> status — registry annotations should be confirmed against source repositories before use in analysis.
 </div>

@@ -133,13 +133,20 @@ project:
     - data/verification/non_transcriptomic_top3_full_row_patch_plan.csv
     - data/verification/anti_integrin_single_cell_sample_count_check.csv
     - data/verification/non_transcriptomic_top3_full_row_patch_schema_qa.csv
+    - data/verification/link_inventory_initial.csv
+    - data/verification/link_inventory_extracted.csv
+    - data/verification/link_check_status.csv
+    - data/verification/link_check_summary.csv
+    - data/verification/link_check_review_targets.csv
+    - data/verification/terminology_inventory_initial.csv
+    - data/verification/terminology_harmonization_changes.csv
 
 author: "Dahham Alsoud"
 
 website:
   title: "IBD Omics Explorer"
   site-url: "https://dahhamalsoud.github.io/ibd-omics-explorer"
-  description: "A curated registry of publicly available inflammatory bowel disease omics datasets"
+  description: "A curated registry of publicly indexed inflammatory bowel disease omics datasets"
 
   navbar:
     background: "#8c1515"

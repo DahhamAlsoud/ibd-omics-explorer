@@ -47,7 +47,7 @@ IBD omics datasets are distributed across numerous public repositories, speciali
 | **Data types hosted** | Microarray, RNA-seq, and other functional genomics data; expanding to multi-omics |
 | **Access model** | Publicly accessible |
 | **IBD data** | European counterpart to GEO; some IBD datasets deposited here rather than or in addition to GEO |
-| **URL** | [ebi.ac.uk/biostudies](https://www.ebi.ac.uk/biostudies/) |
+| **URL** | [ebi.ac.uk/biostudies/submissions](https://www.ebi.ac.uk/biostudies/submissions/) |
 
 **Notes.** Many European IBD studies deposit data in ArrayExpress/BioStudies rather than GEO. Some datasets are mirrored between both archives.
 

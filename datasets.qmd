@@ -8,7 +8,7 @@ format:
 ---
 
 <div class="page-intro">
-This table lists primary accession-level datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All metadata are conservative annotations derived from public records; fields marked <em>Unclear</em> require manual verification. Integrated atlases, portals, databases, and consortium resources are tracked on the Integrated Resources page.
+This table lists primary accession-level datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All registry annotations are conservative annotations derived from public records; fields marked <em>Unclear</em> require manual verification. Integrated atlases, portals, databases, and consortium resources are tracked on the Integrated Resources page.
 </div>
 
 ## Filters and Search
@@ -26,8 +26,8 @@ This table lists primary accession-level datasets currently indexed in the IBD O
 | Public portal | Data are accessible via a public portal or database |
 | Controlled access | Indexed publicly but requires application or institutional approval |
 | Publication only | Described in a publication; reusable data files are not clearly available |
-| Unclear | Repository record exists but data availability or metadata are incomplete |
+| Unclear | Repository record exists but data availability or source metadata are incomplete |
 
 <div class="disclaimer">
-<strong>Note.</strong> Data access status and metadata were assigned conservatively based on public records available at the time of curation. Availability may change. Always verify directly with the source repository before initiating analysis.
+<strong>Note.</strong> Data access status and registry annotations were assigned conservatively based on public records available at the time of curation. Availability may change. Always verify directly with the source repository before initiating analysis.
 </div>

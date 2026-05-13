@@ -60,7 +60,18 @@ function escapeHtml(value) {
 
 function cellValue(row, column) {
   if ((column === "dataset_url" || column === "publication_url" || column === "evidence_url") && row[column] && row[column] !== "Unclear") {
-    return `<a href="${escapeHtml(row[column])}" target="_blank" rel="noopener">link</a>`;
+    const urls = String(row[column])
+      .split(";")
+      .map((item) => item.trim())
+      .filter((item) => /^https?:\/\//i.test(item));
+    if (urls.length > 0) {
+      return urls.map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">link${urls.length > 1 ? ` ${index + 1}` : ""}</a>`).join("<br>");
+    }
+  }
+  if (column === "count_as_independent_cohort") {
+    const value = row[column];
+    if (value === "TRUE") return "Count";
+    if (value === "FALSE") return "Do not count";
   }
   return escapeHtml(row[column] || "Unclear");
 }
@@ -89,7 +100,7 @@ function renderTable(container, data, columns, labels, rows = 20) {
   if (data.length > limited.length) {
     const note = document.createElement("p");
     note.className = "table-note";
-    note.textContent = `Showing ${limited.length} of ${data.length} matching entries. Use the full Datasets page for complete metadata.`;
+    note.textContent = `Showing ${limited.length} of ${data.length} matching entries. Use the full Datasets page for complete registry annotations.`;
     container.appendChild(note);
   }
 }
@@ -105,14 +116,14 @@ function renderDatasetExplorer(data) {
     omics_layer: "Omics Layer",
     disease: "Disease",
     population: "Population",
-    sample_type: "Sample Type",
-    tissue_site: "Tissue Site",
-    data_access_status: "Access",
-    verification_status: "Verification",
+    sample_type: "Specimen Type",
+    tissue_site: "Anatomical Site",
+    data_access_status: "Data Access",
+    verification_status: "Verification Status",
     manual_review: "Manual Review",
     study_family: "Study Family",
-    component_of_dataset_id: "Component Of",
-    count_as_independent_cohort: "Independent Cohort",
+    component_of_dataset_id: "Parent Dataset",
+    count_as_independent_cohort: "Cohort Count Status",
     overlap_notes: "Overlap Notes",
     dataset_url: "Source"
   };
@@ -134,9 +145,9 @@ function renderDatasetExplorer(data) {
     <div class="filter-panel">
       <label>Search <input id="registry-search" type="search" placeholder="PROTECT, RISK, IBDMDB, scIBD, PURSUIT, pediatric, colon"></label>
       <label>Omics <select id="registry-omics"><option>All</option></select></label>
-      <label>Access <select id="registry-access"><option>All</option></select></label>
-      <label>Sample <select id="registry-sample"><option>All</option></select></label>
-      <label>Verification <select id="registry-verification"><option>All</option></select></label>
+      <label>Data Access <select id="registry-access"><option>All</option></select></label>
+      <label>Specimen <select id="registry-sample"><option>All</option></select></label>
+      <label>Verification Status <select id="registry-verification"><option>All</option></select></label>
     </div>
     <p id="registry-count" class="table-note"></p>
     <div id="registry-table"></div>
@@ -209,15 +220,15 @@ function renderDatasetExplorer(data) {
         platform: "Platform",
         study_design: "Design",
         study_family: "Study Family",
-        component_of_dataset_id: "Component Of",
-        count_as_independent_cohort: "Independent Cohort",
+        component_of_dataset_id: "Parent Dataset",
+        count_as_independent_cohort: "Cohort Count Status",
         overlap_notes: "Overlap Notes",
         sample_size_subjects: "N Subjects",
         raw_data_available: "Raw",
         processed_data_available: "Processed",
         controlled_access: "Controlled",
-        curation_status: "Curation",
-        verification_status: "Verification",
+        curation_status: "Curation Status",
+        verification_status: "Verification Status",
         verification_notes: "Verification Notes",
         evidence_url: "Evidence"
       },
@@ -237,14 +248,14 @@ function renderSimpleTables(data) {
     omics_layer: "Omics Layer",
     disease: "Disease",
     population: "Population",
-    sample_type: "Sample Type",
-    tissue_site: "Tissue Site",
+    sample_type: "Specimen Type",
+    tissue_site: "Anatomical Site",
     platform: "Platform",
-    data_access_status: "Access",
-    curation_status: "Curation",
+    data_access_status: "Data Access",
+    curation_status: "Curation Status",
     longitudinal: "Longitudinal",
-    treatment_metadata: "Treatment Data",
-    verification_status: "Verification",
+    treatment_metadata: "Treatment Metadata",
+    verification_status: "Verification Status",
     controlled_access: "Controlled Access"
   };
 
@@ -274,7 +285,7 @@ function verificationRisk(row) {
   if (row.publication_title === "Unclear" || row.publication_year === "Unclear") return "Publication metadata incomplete";
   if (row.controlled_access === "Yes" || textIncludes(row.data_access_status, "Controlled access")) return "Controlled-access resource";
   if (textIncludes(row.repository_type, "portal") || textIncludes(row.accession, "multiple")) return "Broad portal or multi-accession resource";
-  if (["disease", "sample_type", "platform", "data_access_status"].some((column) => row[column] === "Unclear")) return "Key metadata unclear";
+  if (["disease", "sample_type", "platform", "data_access_status"].some((column) => row[column] === "Unclear")) return "Key registry annotations unclear";
   return "General verification needed";
 }
 

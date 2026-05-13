@@ -173,7 +173,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Curation Methods</h1>
-<p class="subtitle lead">Inclusion criteria, data access definitions, metadata standards, and limitations</p>
+<p class="subtitle lead">Inclusion criteria, data access definitions, registry annotation standards, and limitations</p>
 </div>
 
 
@@ -202,13 +202,13 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <section id="purpose-and-scope" class="level2">
 <h2 class="anchored" data-anchor-id="purpose-and-scope">Purpose and Scope</h2>
-<p>The IBD Omics Explorer is designed to <strong>map and organize publicly available IBD omics datasets</strong> across all major omics layers, with the goal of supporting dataset discovery. It is not a systematic review, meta-analysis, or quality-assessment resource. Inclusion in this registry does not imply that a dataset is high quality, fully reusable, or suitable for any particular analysis.</p>
+<p>The IBD Omics Explorer is designed to <strong>map and organize publicly indexed IBD omics datasets</strong> across all major omics layers, with the goal of supporting dataset discovery. It is not a systematic review, meta-analysis, or quality-assessment resource. Inclusion in this registry does not imply that a dataset is high quality, fully reusable, or suitable for any particular analysis.</p>
 <p>The registry aims to be <strong>inclusive and expandable</strong>. The current dataset is a starting point, not a comprehensive catalog. Many datasets that qualify for inclusion may not yet be listed.</p>
 <hr>
 </section>
 <section id="current-registry-state" class="level2">
 <h2 class="anchored" data-anchor-id="current-registry-state">Current Registry State</h2>
-<p>The current dataset registry contains <strong>116 primary dataset entries</strong> plus <strong>10 integrated resources</strong> tracked separately. The newer systematic-discovery rows are intentionally marked as <code>source_checked</code> rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of study-level metadata.</p>
+<p>The current dataset registry contains <strong>116 primary dataset entries</strong> plus <strong>10 integrated resources</strong> tracked separately. The newer systematic-discovery rows are intentionally marked as <code>source_checked</code> rather than fully verified until their publication links, sample counts, and cohort labels are reviewed row by row. This means the website is most reliable as a discovery map and triage tool, not as a final source of analysis-ready source metadata.</p>
 <p>Before using an entry for analysis, verify the source repository record directly, including disease groups, sample counts, specimen type, assay platform, access conditions, and publication links. Entries with <code>Unclear</code> fields should be treated as leads for manual curation rather than confirmed facts.</p>
 <hr>
 </section>
@@ -302,12 +302,12 @@ ul.task-list li input[type="checkbox"] {
 <td>Excluded unless they include primary patient-derived material</td>
 </tr>
 <tr class="odd">
-<td>Datasets without any accessible metadata</td>
-<td>Deferred until metadata can be located</td>
+<td>Datasets without any accessible source metadata</td>
+<td>Deferred until source metadata can be located</td>
 </tr>
 <tr class="even">
 <td>Duplicate submissions</td>
-<td>Retained only if they add useful metadata, processed files, or additional accession cross-links</td>
+<td>Retained only if they add useful source metadata, processed files, or additional accession cross-links</td>
 </tr>
 <tr class="odd">
 <td>Publication-only datasets</td>
@@ -358,16 +358,16 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Unclear</td>
-<td>A repository record exists but data availability, metadata, or access conditions could not be confidently determined from public information</td>
+<td>A repository record exists but data availability, source metadata, or access conditions could not be confidently determined from public information</td>
 </tr>
 </tbody>
 </table>
-<p>Multiple labels may apply to a single dataset (e.g., <code>Public processed data; Controlled access (some components)</code>).</p>
+<p>Multiple labels may apply to a single dataset (e.g., <code>Public processed data; controlled access for some components</code>).</p>
 <hr>
 </section>
 <section id="curation-status-labels" class="level2">
 <h2 class="anchored" data-anchor-id="curation-status-labels">Curation Status Labels</h2>
-<p>Each entry carries a <code>curation_status</code> label indicating the degree of metadata verification:</p>
+<p>Each entry carries a <code>curation_status</code> label indicating the degree of registry annotation verification:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -386,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td>Partially verified</td>
-<td>One or more source, metadata, access, or citation checks have been completed, but the row is not analysis-ready</td>
+<td>One or more source, source metadata, access, or citation checks have been completed, but the row is not analysis-ready</td>
 </tr>
 <tr class="odd">
 <td>Verified</td>
@@ -461,11 +461,11 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td><code>sample_type</code></td>
-<td>Type of biological specimen (biopsy, blood, stool, etc.)</td>
+<td>Specimen type (for example, intestinal mucosal biopsy, blood, stool, organoid, or cell preparation)</td>
 </tr>
 <tr class="odd">
 <td><code>tissue_site</code></td>
-<td>Anatomical site of the specimen</td>
+<td>Anatomical site or sample matrix of the specimen</td>
 </tr>
 <tr class="even">
 <td><code>omics_layer</code></td>
@@ -613,10 +613,10 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>New rows start as <code>pending_review</code>.</li>
 <li>A row moves to <code>source_checked</code> only after the source URL opens and matches the intended accession or resource.</li>
-<li>A row moves to <code>metadata_checked</code> only after key study metadata are checked against a source record.</li>
+<li>A row moves to <code>metadata_checked</code> only after key source metadata are checked against a source record.</li>
 <li>A row moves to <code>publication_checked</code> only after citation fields are checked against a publication, DOI, PubMed, or repository-linked citation.</li>
 <li>A row becomes <code>needs_revision</code> if source evidence contradicts the current registry row.</li>
-<li>A row should only become <code>analysis_ready_candidate</code> after human review of source, metadata, publication, access status, and the intended analysis context.</li>
+<li>A row should only become <code>analysis_ready_candidate</code> after human review of source records, source metadata, publication, access status, and the intended analysis context.</li>
 </ol>
 <p>Verification batches cover selected high-value/high-risk entries across multi-omics, single-cell, proteomics, metabolomics, methylation, transcriptomics, and controlled-access genetics resources. Atlases, portals, curated databases, and consortium resources are tracked on the Integrated Resources page because they are not single accession-level datasets. Systematic-discovery additions are retained as <code>source_checked</code> until they receive deeper row-level verification.</p>
 <hr>
@@ -652,7 +652,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="metadata-caveats" class="level2">
 <h2 class="anchored" data-anchor-id="metadata-caveats">Metadata Caveats</h2>
 <p>Users of this registry should be aware of the following general caveats:</p>
-<p><strong>Sample size.</strong> Sample size fields may refer to subjects, unique samples, biopsies, cells, sequencing libraries, or files, depending on the study. These are not always interchangeable. Actual analyzable sample sizes per disease group should be verified from the publication or repository metadata.</p>
+<p><strong>Sample size.</strong> Sample size fields may refer to subjects, unique samples, biopsies, cells, sequencing libraries, or files, depending on the study. These are not always interchangeable. Actual analyzable sample sizes per disease group should be verified from the publication or source metadata.</p>
 <p><strong>Disease definitions.</strong> IBD, CD, UC, and IBD-U definitions vary across studies. Some studies use clinician-assigned diagnoses; others use ICD codes or self-report. Disease activity definitions (active vs.&nbsp;remission) and scoring systems differ. Cross-study comparisons of disease groups require attention to diagnostic criteria.</p>
 <p><strong>Treatment exposure.</strong> Treatment status at the time of sample collection is often incompletely annotated in public deposits. Even where annotated, the specific agents, dosing, duration, and response status may not be consistently available.</p>
 <p><strong>Pediatric vs.&nbsp;adult.</strong> Age group classification may not always be explicitly labeled. Unlabeled entries should not be assumed to be adult. Biological differences between pediatric and adult IBD are well established; pooling across age groups is generally not recommended without justification.</p>
@@ -660,7 +660,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Platform effects.</strong> Different omics platforms (microarray vs.&nbsp;RNA-seq; different sequencing depths; different array generations) introduce systematic differences that must be accounted for in cross-study analyses.</p>
 <p><strong>Batch effects.</strong> Omics data are subject to batch effects from sample processing, sequencing run, laboratory, and reagent lot variation. Batch correction is typically required for cross-study comparisons.</p>
 <p><strong>Controlled-access data.</strong> Controlled-access resources are described for completeness but require institutional approval before any data can be downloaded or analyzed. Approval processes vary and can take weeks to months.</p>
-<p><strong>Unclear fields.</strong> Fields marked “Unclear” indicate that the information could not be confidently determined from publicly available records at the time of curation. These should be verified before use.</p>
+<p><strong>Unclear fields.</strong> Fields marked “Unclear” indicate that the information could not be confidently determined from publicly indexed records at the time of curation. These should be verified before use.</p>
 <hr>
 </section>
 <section id="how-to-contribute-or-correct" class="level2">
@@ -668,7 +668,7 @@ ul.task-list li input[type="checkbox"] {
 <p>This registry is designed to expand continuously. If you identify:</p>
 <ul>
 <li>A dataset that should be included</li>
-<li>A metadata error or outdated access status</li>
+<li>A registry annotation error or outdated access status</li>
 <li>A deprecated or moved accession</li>
 <li>A verified entry that should be updated from <code>Needs verification</code> to <code>Verified</code></li>
 </ul>
@@ -686,7 +686,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>The initial entries should not be promoted to <code>Verified</code> until a human curator has checked the repository record and primary publication.</p>
 <div class="disclaimer">
-<p>This registry is a curated research resource and is provided for dataset discovery purposes only. It does not constitute clinical guidance, a systematic review, or a quality certification of any dataset. All metadata should be independently verified before use in any analysis.</p>
+<p>This registry is a curated research resource and is provided for dataset discovery purposes only. It does not constitute clinical guidance, a systematic review, or a quality certification of any dataset. All registry annotations should be independently verified against source records before use in any analysis.</p>
 </div>
 
 

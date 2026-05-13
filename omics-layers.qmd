@@ -150,7 +150,7 @@ Methylation and epigenomic datasets characterize DNA methylation or chromatin ac
 
 **Count in registry: 1 dataset**
 
-Genetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn's disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.
+Genetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.
 
 **Typical uses.** Genetic risk factor identification; target prioritization; Mendelian randomization; colocalization with QTL data; polygenic risk scores; trans-ancestral analyses.
 

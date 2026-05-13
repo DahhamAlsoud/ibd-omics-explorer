@@ -1,0 +1,28 @@
+---
+title: "Clinical Trial Omics"
+subtitle: "Treatment cohorts and trial-linked omics datasets"
+format:
+  html:
+    page-layout: full
+    toc: true
+---
+
+<div class="page-intro">
+This page separates treatment-response and clinical-trial-linked omics from observational cohorts and broad consortia. Trial names, interventions, longitudinal status, and response-readiness are registry-level annotations and should be checked against the source before formal analysis.
+</div>
+
+## Trial and Treatment Cohorts
+
+<div id="clinical-trial-omics"></div>
+
+---
+
+## Interpretation Notes
+
+- Trial-linked omics are often the most valuable datasets for translational work, but response definitions, sampling windows, placebo/comparator structure, and post-treatment timepoints vary by study.
+- A dataset can be useful for treatment-response biology even if it is not a randomized trial.
+- Rows with unclear treatment metadata are retained for review rather than excluded.
+
+<div class="disclaimer">
+<strong>Use carefully.</strong> Do not pool trial cohorts until treatment class, timepoint, endpoint definition, specimen type, and cohort overlap are checked.
+</div>

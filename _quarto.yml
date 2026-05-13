@@ -8,6 +8,12 @@ project:
     - data/ibd_omics_datasets.csv
     - data/integrated_resources.csv
     - data/resource_coverage.csv
+    - data/study_family_summary.csv
+    - data/study_family_modality_matrix.csv
+    - data/clinical_trial_omics_slice.csv
+    - data/meta_analysis_eligibility.csv
+    - data/exportable_analysis_cohorts.csv
+    - data/terminology_controlled_vocabulary.csv
     - data/orchestrator_queue.csv
     - data/retired_dataset_ids.csv
     - data/cohort_overlap_audit.csv
@@ -158,6 +164,12 @@ website:
         href: index.qmd
       - text: "Datasets"
         href: datasets.qmd
+      - text: "Study Families"
+        href: study-families.qmd
+      - text: "Analysis Cohorts"
+        href: analysis-cohorts.qmd
+      - text: "Clinical Trials"
+        href: clinical-trials.qmd
       - text: "Integrated Resources"
         href: integrated-resources.qmd
       - text: "Omics Layers"
@@ -172,6 +184,8 @@ website:
         href: orchestrator.qmd
       - text: "Curation"
         href: curation-methods.qmd
+      - text: "Terminology"
+        href: terminology.qmd
       - text: "About"
         href: about.qmd
 

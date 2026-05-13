@@ -1,0 +1,37 @@
+---
+title: "Analysis Cohorts"
+subtitle: "Meta-analysis eligibility and export-ready cohort subsets"
+format:
+  html:
+    page-layout: full
+    toc: true
+---
+
+<div class="page-intro">
+This page translates the registry into reusable analysis cohorts. It does not claim that a dataset is publication-ready for a specific analysis; it flags where registry-level evidence suggests the row may be usable for common IBD omics comparisons.
+</div>
+
+## Meta-Analysis Eligibility
+
+<div id="meta-analysis-eligibility"></div>
+
+---
+
+## Exportable Analysis Cohorts
+
+<div class="page-intro">
+The export table contains rows that match at least one analysis scenario such as CD-vs-control, UC-vs-control, CD-vs-UC, mucosal biopsy, ileum, colon, single-cell, bulk transcriptomics, treatment response, or pediatric analysis.
+</div>
+
+<p>
+<a class="btn-hero btn-primary" href="data/exportable_analysis_cohorts.csv" download>Download exportable cohort CSV</a>
+<a class="btn-hero btn-outline" href="data/meta_analysis_eligibility.csv" download>Download eligibility CSV</a>
+</p>
+
+<div id="exportable-analysis-cohorts"></div>
+
+---
+
+<div class="disclaimer">
+<strong>Registry-level screening only.</strong> Exportable means the row passes coarse registry filters. Final inclusion still requires source-level checks for sample metadata, exact phenotype labels, platform compatibility, batch structure, and cohort overlap.
+</div>

@@ -16,6 +16,9 @@ format:
 
 <div class="hero-actions">
 <a href="datasets.qmd" class="btn-hero btn-primary">Browse All Datasets</a>
+<a href="study-families.qmd" class="btn-hero btn-outline">Study Families</a>
+<a href="analysis-cohorts.qmd" class="btn-hero btn-outline">Analysis Cohorts</a>
+<a href="clinical-trials.qmd" class="btn-hero btn-outline">Clinical Trial Omics</a>
 <a href="integrated-resources.qmd" class="btn-hero btn-outline">Integrated Resources</a>
 <a href="omics-layers.qmd" class="btn-hero btn-outline">Explore by Omics Layer</a>
 <a href="use-cases.qmd" class="btn-hero btn-outline">Browse by Use Case</a>
@@ -31,26 +34,26 @@ format:
 <div class="metric-label">Primary Datasets</div>
 </div>
 <div class="metric-card">
+<div class="metric-value">95</div>
+<div class="metric-label">Study Families</div>
+</div>
+<div class="metric-card">
 <div class="metric-value">10</div>
 <div class="metric-label">Integrated Resources</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">15</div>
-<div class="metric-label">Repositories</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">8</div>
-<div class="metric-label">Primary Sections</div>
+<div class="metric-value">82</div>
+<div class="metric-label">Exportable Cohort Rows</div>
 </div>
 </div>
 
-<p class="metrics-note">Primary dataset counts are derived from the current dataset CSV. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets.</p>
+<p class="metrics-note">Primary dataset, study-family, and exportable-cohort counts are derived from the current registry CSVs. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets.</p>
 
 ---
 
 ## Scope
 
-This explorer aims to map **publicly indexed IBD omics datasets** across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn's disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include tissue biopsies, blood, stool, organoids, or other relevant specimen types.
+This explorer aims to map **publicly indexed IBD omics datasets** across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include mucosal biopsies, blood, stool samples, organoids, or other relevant specimen types.
 
 **Inclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis.** The registry documents what is publicly indexed or accessible, along with known caveats and limitations.
 
@@ -108,9 +111,13 @@ See the [Curation Methods](curation-methods.qmd) page for detailed inclusion cri
 | Page | Purpose |
 |---|---|
 | [Datasets](datasets.qmd) | Searchable and filterable table of all indexed datasets |
+| [Study Families](study-families.qmd) | Cohort-level view of accessions, modality siblings, and counting status |
+| [Analysis Cohorts](analysis-cohorts.qmd) | Meta-analysis eligibility flags and exportable cohort subsets |
+| [Clinical Trial Omics](clinical-trials.qmd) | Treatment cohorts, trial-linked omics, intervention classes, and response-analysis candidates |
 | [Omics Layers](omics-layers.qmd) | Inventory grouped by omics type with layer-level notes |
 | [Repositories](repositories.qmd) | Overview of archives and portals hosting IBD omics data |
 | [Use Cases](use-cases.qmd) | Browse datasets tagged as potentially relevant to specific research questions |
+| [Terminology](terminology.qmd) | Controlled vocabulary for specimen, anatomical site, disease, access, and reuse labels |
 | [Verification Queue](verification-queue.qmd) | Review source-check status, citation evidence, and source metadata gaps |
 | [Orchestrator](orchestrator.qmd) | Track active improvement tasks, missing-resource audits, and next curation priorities |
 | [Curation Methods](curation-methods.qmd) | Inclusion criteria, access definitions, registry annotation caveats |

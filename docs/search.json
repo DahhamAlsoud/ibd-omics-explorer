@@ -28,6 +28,27 @@
     "text": "Manual Review Rule\nRows should remain in the queue when any of the following are true:\n\nsource URL is missing or does not point directly to the intended record\npublication title, year, DOI, or PMID is unclear\ndisease groups, sample type, platform, or access status are unclear\nthe resource is a broad portal or multi-accession aggregate\nindividual-level data require controlled access\nsource evidence contradicts the current row\n\nDo not promote a row to analysis_ready_candidate without a human review of the evidence and the intended analysis context."
   },
   {
+    "objectID": "terminology.html",
+    "href": "terminology.html",
+    "title": "Terminology",
+    "section": "",
+    "text": "This page documents the controlled terminology used for specimen type, anatomical site, disease labels, omics layers, access labels, and reuse-readiness labels. The goal is to make filtering predictable while preserving uncertainty when source metadata are incomplete."
+  },
+  {
+    "objectID": "terminology.html#controlled-vocabulary",
+    "href": "terminology.html#controlled-vocabulary",
+    "title": "Terminology",
+    "section": "Controlled Vocabulary",
+    "text": "Controlled Vocabulary"
+  },
+  {
+    "objectID": "terminology.html#core-conventions",
+    "href": "terminology.html#core-conventions",
+    "title": "Terminology",
+    "section": "Core Conventions",
+    "text": "Core Conventions\n\nUse Specimen Type for the physical biospecimen, such as colonic biopsies, stool samples, PBMC, serum, or resection tissue.\nUse Anatomical Site for location, such as terminal ileum, colon, rectum, blood, or stool.\nUse Crohn disease and ulcerative colitis rather than abbreviations in curated fields.\nUse stool samples for specimen type and stool for anatomical site.\nPreserve Unclear when the source does not support a confident label.\n\n\nConservative annotation. Terminology harmonization should not introduce new clinical claims. Ambiguous source labels remain manual-review targets."
+  },
+  {
     "objectID": "repositories.html",
     "href": "repositories.html",
     "title": "Repositories and Portals",
@@ -144,7 +165,7 @@
     "href": "omics-layers.html#genetics",
     "title": "Omics Layers",
     "section": "Genetics / GWAS",
-    "text": "Genetics / GWAS\n\n\nSpecimens: DNA from blood or saliva  |  Platforms: SNP arrays (Illumina, Affymetrix), imputed genotypes, whole-genome sequencing\n\nCount in registry: 1 dataset\nGenetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn’s disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.\nTypical uses. Genetic risk factor identification; target prioritization; Mendelian randomization; colocalization with QTL data; polygenic risk scores; trans-ancestral analyses.\nCommon caveats. Individual-level genotype data are typically controlled-access. Summary statistics are often publicly available but differ in imputation panels, ancestry composition, and case/control definitions. IBD phenotype ascertainment varies across studies (clinical diagnosis vs. ICD codes). Multi-ancestry analyses require specialized methods."
+    "text": "Genetics / GWAS\n\n\nSpecimens: DNA from blood or saliva  |  Platforms: SNP arrays (Illumina, Affymetrix), imputed genotypes, whole-genome sequencing\n\nCount in registry: 1 dataset\nGenetic and GWAS datasets provide genome-wide association study summary statistics or individual-level genotype data for IBD, Crohn disease, and ulcerative colitis. These resources underpin genetic risk factor identification, fine-mapping, target prioritization, Mendelian randomization, and polygenic risk score development.\nTypical uses. Genetic risk factor identification; target prioritization; Mendelian randomization; colocalization with QTL data; polygenic risk scores; trans-ancestral analyses.\nCommon caveats. Individual-level genotype data are typically controlled-access. Summary statistics are often publicly available but differ in imputation panels, ancestry composition, and case/control definitions. IBD phenotype ascertainment varies across studies (clinical diagnosis vs. ICD codes). Multi-ancestry analyses require specialized methods."
   },
   {
     "objectID": "omics-layers.html#multi-omics",
@@ -158,21 +179,21 @@
     "href": "index.html",
     "title": "IBD Omics Explorer",
     "section": "",
-    "text": "Dataset Registry\n\n\n\nA curated, searchable inventory of publicly indexed omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, DNA methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Integrated Resources Explore by Omics Layer Browse by Use Case Verification Queue Orchestrator Curation Methods\nPrimary dataset counts are derived from the current dataset CSV. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets."
+    "text": "Dataset Registry\n\n\n\nA curated, searchable inventory of publicly indexed omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, DNA methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Study Families Analysis Cohorts Clinical Trial Omics Integrated Resources Explore by Omics Layer Browse by Use Case Verification Queue Orchestrator Curation Methods\nPrimary dataset, study-family, and exportable-cohort counts are derived from the current registry CSVs. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets."
   },
   {
     "objectID": "index.html#ibd-omics-explorer",
     "href": "index.html#ibd-omics-explorer",
     "title": "IBD Omics Explorer",
     "section": "",
-    "text": "A curated, searchable inventory of publicly indexed omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, DNA methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Integrated Resources Explore by Omics Layer Browse by Use Case Verification Queue Orchestrator Curation Methods"
+    "text": "A curated, searchable inventory of publicly indexed omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, DNA methylation, microbiome, and genetics.\n\n\nBrowse All Datasets Study Families Analysis Cohorts Clinical Trial Omics Integrated Resources Explore by Omics Layer Browse by Use Case Verification Queue Orchestrator Curation Methods"
   },
   {
     "objectID": "index.html#scope",
     "href": "index.html#scope",
     "title": "IBD Omics Explorer",
     "section": "Scope",
-    "text": "Scope\nThis explorer aims to map publicly indexed IBD omics datasets across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn’s disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include tissue biopsies, blood, stool, organoids, or other relevant specimen types.\nInclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis. The registry documents what is publicly indexed or accessible, along with known caveats and limitations.\nSee the Curation Methods page for detailed inclusion criteria, data access definitions, and registry annotation caveats."
+    "text": "Scope\nThis explorer aims to map publicly indexed IBD omics datasets across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include mucosal biopsies, blood, stool samples, organoids, or other relevant specimen types.\nInclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis. The registry documents what is publicly indexed or accessible, along with known caveats and limitations.\nSee the Curation Methods page for detailed inclusion criteria, data access definitions, and registry annotation caveats."
   },
   {
     "objectID": "index.html#data-layers-covered",
@@ -186,7 +207,7 @@
     "href": "index.html#navigating-the-registry",
     "title": "IBD Omics Explorer",
     "section": "Navigating the Registry",
-    "text": "Navigating the Registry\n\n\n\nPage\nPurpose\n\n\n\n\nDatasets\nSearchable and filterable table of all indexed datasets\n\n\nOmics Layers\nInventory grouped by omics type with layer-level notes\n\n\nRepositories\nOverview of archives and portals hosting IBD omics data\n\n\nUse Cases\nBrowse datasets tagged as potentially relevant to specific research questions\n\n\nVerification Queue\nReview source-check status, citation evidence, and source metadata gaps\n\n\nOrchestrator\nTrack active improvement tasks, missing-resource audits, and next curation priorities\n\n\nCuration Methods\nInclusion criteria, access definitions, registry annotation caveats\n\n\nAbout\nProject context and contact information\n\n\n\n\n\nDisclaimer. This website is a curated research tool. It is intended to support dataset discovery, not to serve as a complete or authoritative registry. Dataset availability, registry annotation accuracy, and access status should be verified independently before analysis. This site does not rank datasets or endorse any particular resource over another."
+    "text": "Navigating the Registry\n\n\n\nPage\nPurpose\n\n\n\n\nDatasets\nSearchable and filterable table of all indexed datasets\n\n\nStudy Families\nCohort-level view of accessions, modality siblings, and counting status\n\n\nAnalysis Cohorts\nMeta-analysis eligibility flags and exportable cohort subsets\n\n\nClinical Trial Omics\nTreatment cohorts, trial-linked omics, intervention classes, and response-analysis candidates\n\n\nOmics Layers\nInventory grouped by omics type with layer-level notes\n\n\nRepositories\nOverview of archives and portals hosting IBD omics data\n\n\nUse Cases\nBrowse datasets tagged as potentially relevant to specific research questions\n\n\nTerminology\nControlled vocabulary for specimen, anatomical site, disease, access, and reuse labels\n\n\nVerification Queue\nReview source-check status, citation evidence, and source metadata gaps\n\n\nOrchestrator\nTrack active improvement tasks, missing-resource audits, and next curation priorities\n\n\nCuration Methods\nInclusion criteria, access definitions, registry annotation caveats\n\n\nAbout\nProject context and contact information\n\n\n\n\n\nDisclaimer. This website is a curated research tool. It is intended to support dataset discovery, not to serve as a complete or authoritative registry. Dataset availability, registry annotation accuracy, and access status should be verified independently before analysis. This site does not rank datasets or endorse any particular resource over another."
   },
   {
     "objectID": "curation-methods.html",
@@ -228,7 +249,7 @@
     "href": "curation-methods.html#inclusion-criteria",
     "title": "Curation Methods",
     "section": "Inclusion Criteria",
-    "text": "Inclusion Criteria\nA dataset is eligible for inclusion if it meets at least one of the following criteria:\n\nHuman subjects with inflammatory bowel disease (IBD), Crohn’s disease (CD), ulcerative colitis (UC), or IBD-unclassified (IBD-U)\nNon-IBD control samples collected in the context of an IBD study\nHuman intestinal, colonic, ileal, blood, stool, organoid, or microbiome samples analyzed with omics methods in an IBD research context\nA publicly registered accession, portal entry, or publicly accessible summary statistics\nA curated database specifically aggregating IBD omics studies (e.g., IBDTransDB)\nA controlled-access resource that is publicly indexed (e.g., dbGaP) and thus searchable and describable"
+    "text": "Inclusion Criteria\nA dataset is eligible for inclusion if it meets at least one of the following criteria:\n\nHuman subjects with inflammatory bowel disease (IBD), Crohn disease (CD), ulcerative colitis (UC), or IBD-unclassified (IBD-U)\nNon-IBD control samples collected in the context of an IBD study\nHuman intestinal, colonic, ileal, blood, stool, organoid, or microbiome samples analyzed with omics methods in an IBD research context\nA publicly registered accession, portal entry, or publicly accessible summary statistics\nA curated database specifically aggregating IBD omics studies (e.g., IBDTransDB)\nA controlled-access resource that is publicly indexed (e.g., dbGaP) and thus searchable and describable"
   },
   {
     "objectID": "curation-methods.html#exclusion-or-deferred-categories",
@@ -294,6 +315,27 @@
     "text": "Data Sources for Curation\nMetadata in this registry should be checked against:\n\nPublic repository records, including GEO, SRA, PRIDE, MassIVE, Metabolomics Workbench, dbGaP, GWAS Catalog, CELLxGENE, and Human Cell Atlas\nConsortium and project portals, including IBDMDB, IIBDGC, Open Targets, FinnGen, and UK Biobank\nPrimary publications and supplementary tables linked from repository records\nDataset-specific README files, sample metadata tables, and controlled-access study descriptions\n\nThe initial entries should not be promoted to Verified until a human curator has checked the repository record and primary publication.\n\nThis registry is a curated research resource and is provided for dataset discovery purposes only. It does not constitute clinical guidance, a systematic review, or a quality certification of any dataset. All registry annotations should be independently verified against source records before use in any analysis."
   },
   {
+    "objectID": "analysis-cohorts.html",
+    "href": "analysis-cohorts.html",
+    "title": "Analysis Cohorts",
+    "section": "",
+    "text": "This page translates the registry into reusable analysis cohorts. It does not claim that a dataset is publication-ready for a specific analysis; it flags where registry-level evidence suggests the row may be usable for common IBD omics comparisons."
+  },
+  {
+    "objectID": "analysis-cohorts.html#meta-analysis-eligibility",
+    "href": "analysis-cohorts.html#meta-analysis-eligibility",
+    "title": "Analysis Cohorts",
+    "section": "Meta-Analysis Eligibility",
+    "text": "Meta-Analysis Eligibility"
+  },
+  {
+    "objectID": "analysis-cohorts.html#exportable-analysis-cohorts",
+    "href": "analysis-cohorts.html#exportable-analysis-cohorts",
+    "title": "Analysis Cohorts",
+    "section": "Exportable Analysis Cohorts",
+    "text": "Exportable Analysis Cohorts\n\nThe export table contains rows that match at least one analysis scenario such as CD-vs-control, UC-vs-control, CD-vs-UC, mucosal biopsy, ileum, colon, single-cell, bulk transcriptomics, treatment response, or pediatric analysis.\n\n\nDownload exportable cohort CSV Download eligibility CSV\n\n\n\n\n\n\nRegistry-level screening only. Exportable means the row passes coarse registry filters. Final inclusion still requires source-level checks for sample metadata, exact phenotype labels, platform compatibility, batch structure, and cohort overlap."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -308,11 +350,32 @@
     "text": "The IBD Omics Explorer is a curated academic tool designed to support the discovery and navigation of publicly indexed omics datasets in inflammatory bowel disease (IBD) research. It is maintained as part of ongoing research at Stanford University School of Medicine.\n\n\nIBD omics data are distributed across many repositories, portals, and publications, making comprehensive dataset discovery time-consuming. This explorer aims to aggregate registry annotations from publicly indexed resources into a single searchable and filterable registry, helping researchers:\n\nIdentify datasets relevant to a given research question\nUnderstand the availability and access conditions of indexed IBD data\nCompare available datasets across omics layers, tissue types, and disease groups\nPlan analyses that leverage multiple complementary datasets\n\nThis is a dataset discovery tool. It does not rank, recommend, or certify datasets. All registry annotations should be verified against source records before analysis.\n\n\n\n\n\nIt is not a systematic review or meta-analysis of IBD omics data.\nIt does not assess dataset quality or analytical suitability.\nIt does not rank or recommend any dataset as better or worse for any purpose.\nIt is not a complete or authoritative registry of all IBD omics data.\nIt does not provide access to data files directly; it links to source repositories.\n\n\n\n\n\nThe registry currently covers:\n\nBulk transcriptomics (microarray and RNA-seq)\nSingle-cell transcriptomics\nSpatial transcriptomics\nMicrobiome (metagenomics, metatranscriptomics)\nProteomics and metaproteomics\nMetabolomics and lipidomics\nMethylation and epigenomics\nGenetics and GWAS\nMulti-omics resources\n\nSee the Omics Layers page for a layer-by-layer inventory, and the Curation Methods page for detailed inclusion criteria and registry field definitions.\n\n\n\n\nThe dataset registry is maintained in data/ibd_omics_datasets.csv. Entries carry verification fields indicating whether source records, publication metadata, access status, and source sample metadata have been checked. Entries marked pending_review should be confirmed against source repositories before use.\nThe registry is designed to grow. If you identify datasets that should be included, registry annotation errors, or outdated access information, contributions are welcome.\n\n\n\n\nDahham Alsoud Postdoctoral Researcher Stanford University School of Medicine GitHub | Google Scholar\n\n\nThis website is a curated research tool provided for academic dataset discovery. It is not a clinical resource. Dataset availability, access conditions, and registry annotations should be verified independently before any analysis. The registry does not constitute an endorsement of any dataset, repository, or research group."
   },
   {
+    "objectID": "clinical-trials.html",
+    "href": "clinical-trials.html",
+    "title": "Clinical Trial Omics",
+    "section": "",
+    "text": "This page separates treatment-response and clinical-trial-linked omics from observational cohorts and broad consortia. Trial names, interventions, longitudinal status, and response-readiness are registry-level annotations and should be checked against the source before formal analysis."
+  },
+  {
+    "objectID": "clinical-trials.html#trial-and-treatment-cohorts",
+    "href": "clinical-trials.html#trial-and-treatment-cohorts",
+    "title": "Clinical Trial Omics",
+    "section": "Trial and Treatment Cohorts",
+    "text": "Trial and Treatment Cohorts"
+  },
+  {
+    "objectID": "clinical-trials.html#interpretation-notes",
+    "href": "clinical-trials.html#interpretation-notes",
+    "title": "Clinical Trial Omics",
+    "section": "Interpretation Notes",
+    "text": "Interpretation Notes\n\nTrial-linked omics are often the most valuable datasets for translational work, but response definitions, sampling windows, placebo/comparator structure, and post-treatment timepoints vary by study.\nA dataset can be useful for treatment-response biology even if it is not a randomized trial.\nRows with unclear treatment metadata are retained for review rather than excluded.\n\n\nUse carefully. Do not pool trial cohorts until treatment class, timepoint, endpoint definition, specimen type, and cohort overlap are checked."
+  },
+  {
     "objectID": "datasets.html",
     "href": "datasets.html",
     "title": "Dataset Explorer",
     "section": "",
-    "text": "This table lists primary accession-level datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All registry annotations are conservative annotations derived from public records; fields marked Unclear require manual verification. Integrated atlases, portals, databases, and consortium resources are tracked on the Integrated Resources page."
+    "text": "This table lists primary accession-level datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All registry annotations are conservative annotations derived from public records; fields marked Unclear require manual verification. Use the Study Families page before counting cohorts, and the Analysis Cohorts page when screening rows for meta-analysis or export."
   },
   {
     "objectID": "datasets.html#filters-and-search",
@@ -378,6 +441,27 @@
     "text": "Operating Method\nThe orchestrator uses a conservative loop:\n\nSearch for missing resources and component accessions.\nSeparate primary datasets from integrated portals, atlases, and consortium resources.\nVerify source metadata before adding a row to the primary Dataset Explorer.\nKeep uncertain components visible with manual-review status instead of forcing a category.\nPromote only source-backed rows into the primary table.\nRe-render the explorer and check that users can find the new information.\n\nThis method is designed to move the field forward by making hidden dataset provenance visible, while avoiding inflated counts or unsupported clinical assumptions."
   },
   {
+    "objectID": "study-families.html",
+    "href": "study-families.html",
+    "title": "Study Families",
+    "section": "",
+    "text": "This view treats the study family as the primary unit. A family may contain one accession, multiple modality-specific accessions, a public archive row, a portal mirror, or an integrated-resource component. Use this page before counting cohorts, comparing modalities, or deciding whether two rows are independent."
+  },
+  {
+    "objectID": "study-families.html#study-family-explorer",
+    "href": "study-families.html#study-family-explorer",
+    "title": "Study Families",
+    "section": "Study-Family Explorer",
+    "text": "Study-Family Explorer"
+  },
+  {
+    "objectID": "study-families.html#modality-matrix",
+    "href": "study-families.html#modality-matrix",
+    "title": "Study Families",
+    "section": "Modality Matrix",
+    "text": "Modality Matrix\n\nThe matrix marks whether a study family currently has evidence for each omics layer in the registry. A checked modality means the family has at least one row or row annotation for that layer; it does not mean every modality is analysis-ready or sample-matched.\n\n\n\n\n\n\nCounting rule. Families with sibling accessions should be counted once at the cohort level unless row-level evidence proves that the accessions represent independent participant sets. Rows marked Unclear remain visible for manual review."
+  },
+  {
     "objectID": "use-cases.html",
     "href": "use-cases.html",
     "title": "Use Cases",
@@ -410,7 +494,7 @@
     "href": "use-cases.html#cd-vs.-uc-comparison",
     "title": "Use Cases",
     "section": "CD vs. UC Comparison",
-    "text": "CD vs. UC Comparison\n\n\nDatasets including both Crohn’s disease and ulcerative colitis samples, potentially relevant for direct CD-vs-UC comparisons. Tissue site matching between CD and UC samples is important for valid comparisons."
+    "text": "CD vs. UC Comparison\n\n\nDatasets including both Crohn disease and ulcerative colitis samples, potentially relevant for direct CD-vs-UC comparisons. Tissue site matching between CD and UC samples is important for valid comparisons."
   },
   {
     "objectID": "use-cases.html#disease-activity-and-longitudinal-analysis",

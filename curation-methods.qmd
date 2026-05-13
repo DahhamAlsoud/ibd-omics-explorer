@@ -53,7 +53,7 @@ Concrete current examples include `GSE` accessions with unknown publication meta
 
 A dataset is eligible for inclusion if it meets **at least one** of the following criteria:
 
-1. Human subjects with inflammatory bowel disease (IBD), Crohn's disease (CD), ulcerative colitis (UC), or IBD-unclassified (IBD-U)
+1. Human subjects with inflammatory bowel disease (IBD), Crohn disease (CD), ulcerative colitis (UC), or IBD-unclassified (IBD-U)
 2. Non-IBD control samples collected in the context of an IBD study
 3. Human intestinal, colonic, ileal, blood, stool, organoid, or microbiome samples analyzed with omics methods in an IBD research context
 4. A publicly registered accession, portal entry, or publicly accessible summary statistics

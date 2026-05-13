@@ -1,0 +1,32 @@
+---
+title: "Study Families"
+subtitle: "Cohort-level view of accessions, modality siblings, and counting status"
+format:
+  html:
+    page-layout: full
+    toc: true
+---
+
+<div class="page-intro">
+This view treats the study family as the primary unit. A family may contain one accession, multiple modality-specific accessions, a public archive row, a portal mirror, or an integrated-resource component. Use this page before counting cohorts, comparing modalities, or deciding whether two rows are independent.
+</div>
+
+## Study-Family Explorer
+
+<div id="study-family-explorer"></div>
+
+---
+
+## Modality Matrix
+
+<div class="page-intro">
+The matrix marks whether a study family currently has evidence for each omics layer in the registry. A checked modality means the family has at least one row or row annotation for that layer; it does not mean every modality is analysis-ready or sample-matched.
+</div>
+
+<div id="study-modality-matrix"></div>
+
+---
+
+<div class="disclaimer">
+<strong>Counting rule.</strong> Families with sibling accessions should be counted once at the cohort level unless row-level evidence proves that the accessions represent independent participant sets. Rows marked <em>Unclear</em> remain visible for manual review.
+</div>

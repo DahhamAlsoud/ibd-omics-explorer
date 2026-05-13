@@ -512,6 +512,32 @@ body {
   margin: 0.35rem 0 0.7rem 0;
 }
 
+.coverage-filters {
+  grid-template-columns: minmax(14rem, 2fr) repeat(4, minmax(9rem, 1fr));
+}
+
+.compact-metrics .metric-card {
+  padding: 0.75rem;
+}
+
+.compact-metrics .metric-value {
+  font-size: 1.55rem;
+}
+
+.dataset-detail-panel {
+  background: #ffffff;
+  border: 1px solid #e4dfdc;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin: 0.85rem 0 1.2rem 0;
+}
+
+.dataset-detail-panel summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--brand-primary);
+}
+
 @media (max-width: 900px) {
   .filter-panel {
     grid-template-columns: 1fr 1fr;

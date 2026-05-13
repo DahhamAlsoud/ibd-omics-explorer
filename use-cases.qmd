@@ -46,7 +46,7 @@ This page organizes datasets by potential research use case based on available r
 ## CD vs. UC Comparison
 
 <div class="use-case-section">
-<div class="uc-note">Datasets including both Crohn's disease and ulcerative colitis samples, potentially relevant for direct CD-vs-UC comparisons. Tissue site matching between CD and UC samples is important for valid comparisons.</div>
+<div class="uc-note">Datasets including both Crohn disease and ulcerative colitis samples, potentially relevant for direct CD-vs-UC comparisons. Tissue site matching between CD and UC samples is important for valid comparisons.</div>
 </div>
 
 <div data-registry-table data-flag="usable_for_cd_vs_uc" data-rows="12"></div>

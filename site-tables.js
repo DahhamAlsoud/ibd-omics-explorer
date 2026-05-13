@@ -59,7 +59,7 @@ function escapeHtml(value) {
 }
 
 function cellValue(row, column) {
-  if ((column === "dataset_url" || column === "publication_url" || column === "evidence_url") && row[column] && row[column] !== "Unclear") {
+  if ((column.endsWith("_url") || column === "access_url" || column === "representative_source_url") && row[column] && row[column] !== "Unclear") {
     const urls = String(row[column])
       .split(";")
       .map((item) => item.trim())
@@ -72,6 +72,9 @@ function cellValue(row, column) {
     const value = row[column];
     if (value === "TRUE") return "Count";
     if (value === "FALSE") return "Do not count";
+  }
+  if (row[column] === "TRUE" || row[column] === "FALSE") {
+    return booleanText(row[column]);
   }
   return escapeHtml(row[column] || "Unclear");
 }
@@ -237,6 +240,392 @@ function renderDatasetExplorer(data) {
   }
 
   [search, omics, access, sample, verification].forEach((control) => control.addEventListener("input", update));
+  update();
+}
+
+function booleanText(value) {
+  if (value === "TRUE") return "Yes";
+  if (value === "FALSE") return "No";
+  return value || "Unclear";
+}
+
+function renderStudyFamilies(families, matrix) {
+  const root = document.querySelector("#study-family-explorer");
+  const matrixRoot = document.querySelector("#study-modality-matrix");
+  if (!root && !matrixRoot) return;
+
+  const familyLabels = {
+    study_family: "Study Family",
+    dataset_count: "Rows",
+    counted_cohort_rows: "Counted Cohorts",
+    not_counted_rows: "Not Counted",
+    unclear_countability_rows: "Unclear",
+    primary_dataset_ids: "Primary Dataset IDs",
+    all_dataset_ids: "All Dataset IDs",
+    origin_types: "Origin",
+    omics_layers: "Omics Layers",
+    diseases: "Diseases",
+    specimen_types: "Specimen Types",
+    anatomical_sites: "Anatomical Sites",
+    clinical_trial_or_treatment: "Trial/Treatment",
+    reuse_readiness_best: "Best Reuse Readiness",
+    manual_review_needed: "Manual Review",
+    representative_source_url: "Source",
+    notes: "Notes"
+  };
+
+  if (root) {
+    root.innerHTML = `
+      <div class="filter-panel coverage-filters">
+        <label>Search <input id="family-search" type="search" placeholder="PROTECT, RISK, IBDMDB, trial, ileum"></label>
+        <label>Origin <select id="family-origin"><option>All</option></select></label>
+        <label>Readiness <select id="family-readiness"><option>All</option></select></label>
+        <label>Manual Review <select id="family-review"><option>All</option></select></label>
+      </div>
+      <div class="metrics-grid compact-metrics" id="family-metrics"></div>
+      <p id="family-count" class="table-note"></p>
+      <div id="family-table"></div>
+      <details class="dataset-detail-panel">
+        <summary>Detailed family fields</summary>
+        <div id="family-detail-table"></div>
+      </details>
+    `;
+
+    const search = root.querySelector("#family-search");
+    const origin = root.querySelector("#family-origin");
+    const readiness = root.querySelector("#family-readiness");
+    const review = root.querySelector("#family-review");
+    const metrics = root.querySelector("#family-metrics");
+    const count = root.querySelector("#family-count");
+    const table = root.querySelector("#family-table");
+    const detailTable = root.querySelector("#family-detail-table");
+
+    uniqueValues(families, "origin_types").forEach((value) => origin.append(new Option(value, value)));
+    uniqueValues(families, "reuse_readiness_best").forEach((value) => readiness.append(new Option(value, value)));
+    uniqueValues(families, "manual_review_needed").forEach((value) => review.append(new Option(booleanText(value), value)));
+
+    function update() {
+      const term = search.value.trim().toLowerCase();
+      const filtered = families.filter((row) => {
+        const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+        const originMatch = origin.value === "All" || textIncludes(row.origin_types, origin.value);
+        const readinessMatch = readiness.value === "All" || row.reuse_readiness_best === readiness.value;
+        const reviewMatch = review.value === "All" || row.manual_review_needed === review.value;
+        return termMatch && originMatch && readinessMatch && reviewMatch;
+      });
+
+      metrics.innerHTML = `
+        <div class="metric-card"><div class="metric-value">${families.length}</div><div class="metric-label">Study Families</div></div>
+        <div class="metric-card"><div class="metric-value">${families.reduce((sum, row) => sum + Number(row.dataset_count || 0), 0)}</div><div class="metric-label">Dataset Rows</div></div>
+        <div class="metric-card"><div class="metric-value">${families.filter((row) => row.clinical_trial_or_treatment === "TRUE").length}</div><div class="metric-label">Trial/Treatment Families</div></div>
+        <div class="metric-card"><div class="metric-value">${families.filter((row) => row.manual_review_needed === "TRUE").length}</div><div class="metric-label">Manual Review</div></div>
+      `;
+      count.textContent = `Showing ${filtered.length} of ${families.length} study families`;
+      renderTable(table, filtered, ["study_family", "dataset_count", "counted_cohort_rows", "origin_types", "omics_layers", "reuse_readiness_best", "manual_review_needed", "primary_dataset_ids"], familyLabels, filtered.length);
+      renderTable(detailTable, filtered, ["study_family", "all_dataset_ids", "diseases", "specimen_types", "anatomical_sites", "not_counted_rows", "unclear_countability_rows", "representative_source_url", "notes"], familyLabels, filtered.length);
+    }
+
+    [search, origin, readiness, review].forEach((control) => control.addEventListener("input", update));
+    update();
+  }
+
+  if (matrixRoot) {
+    const labels = {
+      study_family: "Study Family",
+      dataset_count: "Rows",
+      counted_cohort_rows: "Counted",
+      origin_types: "Origin",
+      reuse_readiness_best: "Readiness",
+      dataset_ids: "Dataset IDs"
+    };
+    const modalityColumns = [
+      "Bulk transcriptomics",
+      "Single-cell transcriptomics",
+      "Spatial transcriptomics",
+      "Microbiome",
+      "Metagenomics",
+      "Metatranscriptomics",
+      "Proteomics",
+      "Metaproteomics",
+      "Metabolomics",
+      "DNA methylation / epigenomics",
+      "Genetics / GWAS",
+      "Multi-omics"
+    ];
+    modalityColumns.forEach((column) => { labels[column] = column; });
+    matrixRoot.innerHTML = `
+      <div class="filter-panel coverage-filters">
+        <label>Search <input id="matrix-search" type="search" placeholder="PROTECT, RISK, metabolomics, single-cell"></label>
+        <label>Modality <select id="matrix-modality"><option>All</option></select></label>
+        <label>Readiness <select id="matrix-readiness"><option>All</option></select></label>
+      </div>
+      <p id="matrix-count" class="table-note"></p>
+      <div id="matrix-table"></div>
+    `;
+
+    const search = matrixRoot.querySelector("#matrix-search");
+    const modality = matrixRoot.querySelector("#matrix-modality");
+    const readiness = matrixRoot.querySelector("#matrix-readiness");
+    const count = matrixRoot.querySelector("#matrix-count");
+    const table = matrixRoot.querySelector("#matrix-table");
+    modalityColumns.forEach((value) => modality.append(new Option(value, value)));
+    uniqueValues(matrix, "reuse_readiness_best").forEach((value) => readiness.append(new Option(value, value)));
+
+    function update() {
+      const term = search.value.trim().toLowerCase();
+      const filtered = matrix.filter((row) => {
+        const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+        const modalityMatch = modality.value === "All" || row[modality.value] === "TRUE";
+        const readinessMatch = readiness.value === "All" || row.reuse_readiness_best === readiness.value;
+        return termMatch && modalityMatch && readinessMatch;
+      });
+      count.textContent = `Showing ${filtered.length} of ${matrix.length} study families`;
+      renderTable(table, filtered, ["study_family", "dataset_count", "counted_cohort_rows", ...modalityColumns, "dataset_ids"], labels, filtered.length);
+    }
+
+    [search, modality, readiness].forEach((control) => control.addEventListener("input", update));
+    update();
+  }
+}
+
+function renderClinicalTrialOmics(data) {
+  const root = document.querySelector("#clinical-trial-omics");
+  if (!root) return;
+
+  const labels = {
+    dataset_id: "ID",
+    dataset_name: "Dataset",
+    trial_or_study_name: "Trial / Study",
+    study_family: "Study Family",
+    intervention_or_treatment_class: "Treatment Class",
+    omics_layer: "Omics Layer",
+    disease: "Disease",
+    specimen_type: "Specimen Type",
+    anatomical_site: "Anatomical Site",
+    study_design: "Design",
+    longitudinal: "Longitudinal",
+    treatment_metadata: "Treatment Metadata",
+    usable_for_treatment_response: "Response Analysis",
+    sample_size_subjects: "N Subjects",
+    data_access_status: "Data Access",
+    reuse_readiness: "Reuse Readiness",
+    count_as_independent_cohort: "Cohort Count Status",
+    manual_review_needed: "Manual Review",
+    dataset_url: "Source",
+    publication_url: "Publication",
+    notes: "Notes"
+  };
+
+  root.innerHTML = `
+    <div class="filter-panel coverage-filters">
+      <label>Search <input id="trial-search" type="search" placeholder="UNITI, anti-TNF, vedolizumab, response"></label>
+      <label>Treatment <select id="trial-treatment"><option>All</option></select></label>
+      <label>Omics <select id="trial-omics"><option>All</option></select></label>
+      <label>Readiness <select id="trial-readiness"><option>All</option></select></label>
+    </div>
+    <div class="metrics-grid compact-metrics" id="trial-metrics"></div>
+    <p id="trial-count" class="table-note"></p>
+    <div id="trial-table"></div>
+  `;
+
+  const search = root.querySelector("#trial-search");
+  const treatment = root.querySelector("#trial-treatment");
+  const omics = root.querySelector("#trial-omics");
+  const readiness = root.querySelector("#trial-readiness");
+  const metrics = root.querySelector("#trial-metrics");
+  const count = root.querySelector("#trial-count");
+  const table = root.querySelector("#trial-table");
+  uniqueValues(data, "intervention_or_treatment_class").forEach((value) => treatment.append(new Option(value, value)));
+  uniqueValues(data, "omics_layer").forEach((value) => omics.append(new Option(value, value)));
+  uniqueValues(data, "reuse_readiness").forEach((value) => readiness.append(new Option(value, value)));
+
+  function update() {
+    const term = search.value.trim().toLowerCase();
+    const filtered = data.filter((row) => {
+      const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+      const treatmentMatch = treatment.value === "All" || textIncludes(row.intervention_or_treatment_class, treatment.value);
+      const omicsMatch = omics.value === "All" || textIncludes(row.omics_layer, omics.value);
+      const readinessMatch = readiness.value === "All" || row.reuse_readiness === readiness.value;
+      return termMatch && treatmentMatch && omicsMatch && readinessMatch;
+    });
+    metrics.innerHTML = `
+      <div class="metric-card"><div class="metric-value">${data.length}</div><div class="metric-label">Trial/Treatment Rows</div></div>
+      <div class="metric-card"><div class="metric-value">${new Set(data.map((row) => row.study_family)).size}</div><div class="metric-label">Study Families</div></div>
+      <div class="metric-card"><div class="metric-value">${data.filter((row) => row.usable_for_treatment_response === "TRUE").length}</div><div class="metric-label">Response Candidates</div></div>
+      <div class="metric-card"><div class="metric-value">${data.filter((row) => row.manual_review_needed === "TRUE").length}</div><div class="metric-label">Manual Review</div></div>
+    `;
+    count.textContent = `Showing ${filtered.length} of ${data.length} trial/treatment rows`;
+    renderTable(table, filtered, ["dataset_id", "trial_or_study_name", "dataset_name", "intervention_or_treatment_class", "omics_layer", "disease", "specimen_type", "longitudinal", "usable_for_treatment_response", "reuse_readiness", "dataset_url"], labels, filtered.length);
+  }
+
+  [search, treatment, omics, readiness].forEach((control) => control.addEventListener("input", update));
+  update();
+}
+
+function renderAnalysisCohorts(meta, exports) {
+  const metaRoot = document.querySelector("#meta-analysis-eligibility");
+  const exportRoot = document.querySelector("#exportable-analysis-cohorts");
+
+  if (metaRoot) {
+    const labels = {
+      dataset_id: "ID",
+      dataset_name: "Dataset",
+      study_family: "Study Family",
+      omics_layer: "Omics Layer",
+      disease: "Disease",
+      specimen_type: "Specimen Type",
+      anatomical_site: "Anatomical Site",
+      reuse_readiness: "Reuse Readiness",
+      data_access_status: "Data Access",
+      count_as_independent_cohort: "Cohort Count Status",
+      cd_vs_control_candidate: "CD vs Control",
+      uc_vs_control_candidate: "UC vs Control",
+      cd_vs_uc_candidate: "CD vs UC",
+      mucosal_biopsy_candidate: "Mucosal",
+      ileum_candidate: "Ileum",
+      colon_candidate: "Colon",
+      bulk_transcriptomics_candidate: "Bulk RNA",
+      single_cell_candidate: "Single Cell",
+      treatment_response_candidate: "Treatment",
+      pediatric_candidate: "Pediatric",
+      blocking_caveats: "Caveats",
+      dataset_url: "Source"
+    };
+    metaRoot.innerHTML = `
+      <div class="filter-panel coverage-filters">
+        <label>Search <input id="meta-search" type="search" placeholder="Crohn, colon, bulk, pediatric, PROTECT"></label>
+        <label>Scenario <select id="meta-scenario"><option>All</option></select></label>
+        <label>Readiness <select id="meta-readiness"><option>All</option></select></label>
+        <label>Count Status <select id="meta-count-status"><option>All</option></select></label>
+      </div>
+      <div class="metrics-grid compact-metrics" id="meta-metrics"></div>
+      <p id="meta-count" class="table-note"></p>
+      <div id="meta-table"></div>
+    `;
+    const scenarioColumns = ["cd_vs_control_candidate", "uc_vs_control_candidate", "cd_vs_uc_candidate", "mucosal_biopsy_candidate", "ileum_candidate", "colon_candidate", "bulk_transcriptomics_candidate", "single_cell_candidate", "treatment_response_candidate", "pediatric_candidate"];
+    const search = metaRoot.querySelector("#meta-search");
+    const scenario = metaRoot.querySelector("#meta-scenario");
+    const readiness = metaRoot.querySelector("#meta-readiness");
+    const countStatus = metaRoot.querySelector("#meta-count-status");
+    const metrics = metaRoot.querySelector("#meta-metrics");
+    const count = metaRoot.querySelector("#meta-count");
+    const table = metaRoot.querySelector("#meta-table");
+    scenarioColumns.forEach((column) => scenario.append(new Option(labels[column], column)));
+    uniqueValues(meta, "reuse_readiness").forEach((value) => readiness.append(new Option(value, value)));
+    uniqueValues(meta, "count_as_independent_cohort").forEach((value) => countStatus.append(new Option(value, value)));
+
+    function update() {
+      const term = search.value.trim().toLowerCase();
+      const filtered = meta.filter((row) => {
+        const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+        const scenarioMatch = scenario.value === "All" || row[scenario.value] === "TRUE";
+        const readinessMatch = readiness.value === "All" || row.reuse_readiness === readiness.value;
+        const countMatch = countStatus.value === "All" || row.count_as_independent_cohort === countStatus.value;
+        return termMatch && scenarioMatch && readinessMatch && countMatch;
+      });
+      metrics.innerHTML = `
+        <div class="metric-card"><div class="metric-value">${meta.length}</div><div class="metric-label">Screened Rows</div></div>
+        <div class="metric-card"><div class="metric-value">${meta.filter((row) => scenarioColumns.some((column) => row[column] === "TRUE")).length}</div><div class="metric-label">Any Scenario</div></div>
+        <div class="metric-card"><div class="metric-value">${meta.filter((row) => row.reuse_readiness === "Analysis-ready candidate").length}</div><div class="metric-label">Analysis-Ready Candidates</div></div>
+        <div class="metric-card"><div class="metric-value">${meta.filter((row) => row.count_as_independent_cohort === "Unclear").length}</div><div class="metric-label">Countability Unclear</div></div>
+      `;
+      count.textContent = `Showing ${filtered.length} of ${meta.length} screened rows`;
+      renderTable(table, filtered, ["dataset_id", "dataset_name", "study_family", "omics_layer", "disease", "specimen_type", "reuse_readiness", ...scenarioColumns, "blocking_caveats", "dataset_url"], labels, filtered.length);
+    }
+    [search, scenario, readiness, countStatus].forEach((control) => control.addEventListener("input", update));
+    update();
+  }
+
+  if (exportRoot) {
+    const labels = {
+      dataset_id: "ID",
+      dataset_name: "Dataset",
+      study_family: "Study Family",
+      analysis_scenarios: "Analysis Scenarios",
+      omics_layer: "Omics Layer",
+      disease: "Disease",
+      specimen_type: "Specimen Type",
+      anatomical_site: "Anatomical Site",
+      sample_size_subjects: "N Subjects",
+      sample_size_samples: "N Samples",
+      data_access_status: "Data Access",
+      reuse_readiness: "Reuse Readiness",
+      accession: "Accession",
+      repository: "Repository",
+      dataset_url: "Source",
+      publication_url: "Publication",
+      caveats: "Caveats"
+    };
+    exportRoot.innerHTML = `
+      <div class="filter-panel coverage-filters">
+        <label>Search <input id="export-search" type="search" placeholder="CD vs control, ileum, treatment, single cell"></label>
+        <label>Scenario <select id="export-scenario"><option>All</option></select></label>
+        <label>Omics <select id="export-omics"><option>All</option></select></label>
+        <label>Readiness <select id="export-readiness"><option>All</option></select></label>
+      </div>
+      <p id="export-count" class="table-note"></p>
+      <div id="export-table"></div>
+    `;
+    const search = exportRoot.querySelector("#export-search");
+    const scenario = exportRoot.querySelector("#export-scenario");
+    const omics = exportRoot.querySelector("#export-omics");
+    const readiness = exportRoot.querySelector("#export-readiness");
+    const count = exportRoot.querySelector("#export-count");
+    const table = exportRoot.querySelector("#export-table");
+    uniqueValues(exports, "analysis_scenarios").forEach((value) => scenario.append(new Option(value, value)));
+    uniqueValues(exports, "omics_layer").forEach((value) => omics.append(new Option(value, value)));
+    uniqueValues(exports, "reuse_readiness").forEach((value) => readiness.append(new Option(value, value)));
+
+    function update() {
+      const term = search.value.trim().toLowerCase();
+      const filtered = exports.filter((row) => {
+        const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+        const scenarioMatch = scenario.value === "All" || textIncludes(row.analysis_scenarios, scenario.value);
+        const omicsMatch = omics.value === "All" || textIncludes(row.omics_layer, omics.value);
+        const readinessMatch = readiness.value === "All" || row.reuse_readiness === readiness.value;
+        return termMatch && scenarioMatch && omicsMatch && readinessMatch;
+      });
+      count.textContent = `Showing ${filtered.length} of ${exports.length} exportable rows`;
+      renderTable(table, filtered, ["dataset_id", "dataset_name", "study_family", "analysis_scenarios", "omics_layer", "disease", "specimen_type", "sample_size_subjects", "data_access_status", "reuse_readiness", "dataset_url"], labels, filtered.length);
+    }
+    [search, scenario, omics, readiness].forEach((control) => control.addEventListener("input", update));
+    update();
+  }
+}
+
+function renderTerminologyVocabulary(vocab) {
+  const root = document.querySelector("#terminology-vocabulary");
+  if (!root) return;
+  const labels = {
+    field: "Field",
+    canonical_term: "Canonical Term",
+    definition: "Definition",
+    examples_or_mapping_notes: "Mapping Notes"
+  };
+  root.innerHTML = `
+    <div class="filter-panel coverage-filters">
+      <label>Search <input id="vocab-search" type="search" placeholder="rectal biopsy, stool, Crohn disease"></label>
+      <label>Field <select id="vocab-field"><option>All</option></select></label>
+    </div>
+    <p id="vocab-count" class="table-note"></p>
+    <div id="vocab-table"></div>
+  `;
+  const search = root.querySelector("#vocab-search");
+  const field = root.querySelector("#vocab-field");
+  const count = root.querySelector("#vocab-count");
+  const table = root.querySelector("#vocab-table");
+  uniqueValues(vocab, "field").forEach((value) => field.append(new Option(value, value)));
+  function update() {
+    const term = search.value.trim().toLowerCase();
+    const filtered = vocab.filter((row) => {
+      const termMatch = !term || Object.values(row).some((value) => textIncludes(value, term));
+      const fieldMatch = field.value === "All" || row.field === field.value;
+      return termMatch && fieldMatch;
+    });
+    count.textContent = `Showing ${filtered.length} of ${vocab.length} controlled terms`;
+    renderTable(table, filtered, ["field", "canonical_term", "definition", "examples_or_mapping_notes"], labels, filtered.length);
+  }
+  [search, field].forEach((control) => control.addEventListener("input", update));
   update();
 }
 
@@ -617,6 +1006,28 @@ async function initRegistryTables() {
   renderDatasetExplorer(data);
   renderSimpleTables(data);
   renderVerificationQueue(data);
+
+  if (document.querySelector("#study-family-explorer") || document.querySelector("#study-modality-matrix")) {
+    const familyResponse = await fetch("data/study_family_summary.csv");
+    const matrixResponse = await fetch("data/study_family_modality_matrix.csv");
+    renderStudyFamilies(parseCsv(await familyResponse.text()), parseCsv(await matrixResponse.text()));
+  }
+
+  if (document.querySelector("#clinical-trial-omics")) {
+    const trialResponse = await fetch("data/clinical_trial_omics_slice.csv");
+    renderClinicalTrialOmics(parseCsv(await trialResponse.text()));
+  }
+
+  if (document.querySelector("#meta-analysis-eligibility") || document.querySelector("#exportable-analysis-cohorts")) {
+    const metaResponse = await fetch("data/meta_analysis_eligibility.csv");
+    const exportResponse = await fetch("data/exportable_analysis_cohorts.csv");
+    renderAnalysisCohorts(parseCsv(await metaResponse.text()), parseCsv(await exportResponse.text()));
+  }
+
+  if (document.querySelector("#terminology-vocabulary")) {
+    const vocabResponse = await fetch("data/terminology_controlled_vocabulary.csv");
+    renderTerminologyVocabulary(parseCsv(await vocabResponse.text()));
+  }
 
   const resourcesRoot = document.querySelector("#integrated-resources");
   if (resourcesRoot) {

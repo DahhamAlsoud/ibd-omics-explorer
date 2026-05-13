@@ -103,6 +103,18 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Datasets</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./study-families.html"> 
+<span class="menu-text">Study Families</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./analysis-cohorts.html"> 
+<span class="menu-text">Analysis Cohorts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./clinical-trials.html"> 
+<span class="menu-text">Clinical Trials</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./integrated-resources.html"> 
 <span class="menu-text">Integrated Resources</span></a>
   </li>  
@@ -129,6 +141,10 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./curation-methods.html"> 
 <span class="menu-text">Curation</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./terminology.html"> 
+<span class="menu-text">Terminology</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -183,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 A curated, searchable inventory of publicly indexed omics datasets from inflammatory bowel disease research — across bulk transcriptomics, single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, DNA methylation, microbiome, and genetics.
 </p>
 <div class="hero-actions">
-<p><a href="./datasets.html" class="btn-hero btn-primary">Browse All Datasets</a> <a href="./integrated-resources.html" class="btn-hero btn-outline">Integrated Resources</a> <a href="./omics-layers.html" class="btn-hero btn-outline">Explore by Omics Layer</a> <a href="./use-cases.html" class="btn-hero btn-outline">Browse by Use Case</a> <a href="./verification-queue.html" class="btn-hero btn-outline">Verification Queue</a> <a href="./orchestrator.html" class="btn-hero btn-outline">Orchestrator</a> <a href="./curation-methods.html" class="btn-hero btn-outline">Curation Methods</a></p>
+<p><a href="./datasets.html" class="btn-hero btn-primary">Browse All Datasets</a> <a href="./study-families.html" class="btn-hero btn-outline">Study Families</a> <a href="./analysis-cohorts.html" class="btn-hero btn-outline">Analysis Cohorts</a> <a href="./clinical-trials.html" class="btn-hero btn-outline">Clinical Trial Omics</a> <a href="./integrated-resources.html" class="btn-hero btn-outline">Integrated Resources</a> <a href="./omics-layers.html" class="btn-hero btn-outline">Explore by Omics Layer</a> <a href="./use-cases.html" class="btn-hero btn-outline">Browse by Use Case</a> <a href="./verification-queue.html" class="btn-hero btn-outline">Verification Queue</a> <a href="./orchestrator.html" class="btn-hero btn-outline">Orchestrator</a> <a href="./curation-methods.html" class="btn-hero btn-outline">Curation Methods</a></p>
 </div>
 </section>
 </div>
@@ -198,6 +214,14 @@ Primary Datasets
 </div>
 <div class="metric-card">
 <div class="metric-value">
+95
+</div>
+<div class="metric-label">
+Study Families
+</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">
 10
 </div>
 <div class="metric-label">
@@ -206,28 +230,20 @@ Integrated Resources
 </div>
 <div class="metric-card">
 <div class="metric-value">
-15
+82
 </div>
 <div class="metric-label">
-Repositories
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">
-8
-</div>
-<div class="metric-label">
-Primary Sections
+Exportable Cohort Rows
 </div>
 </div>
 </div>
 <p class="metrics-note">
-Primary dataset counts are derived from the current dataset CSV. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets.
+Primary dataset, study-family, and exportable-cohort counts are derived from the current registry CSVs. Integrated resources are tracked separately because they combine, curate, or reprocess multiple source datasets.
 </p>
 <hr>
 <section id="scope" class="level2">
 <h2 class="anchored" data-anchor-id="scope">Scope</h2>
-<p>This explorer aims to map <strong>publicly indexed IBD omics datasets</strong> across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn’s disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include tissue biopsies, blood, stool, organoids, or other relevant specimen types.</p>
+<p>This explorer aims to map <strong>publicly indexed IBD omics datasets</strong> across all major omics layers. The focus is on datasets derived from human subjects with inflammatory bowel disease (Crohn disease, ulcerative colitis, or IBD-unclassified), or from non-IBD controls used in IBD research contexts. Datasets may include mucosal biopsies, blood, stool samples, organoids, or other relevant specimen types.</p>
 <p><strong>Inclusion does not imply that a dataset is fully reusable, high quality, or suitable for any particular analysis.</strong> The registry documents what is publicly indexed or accessible, along with known caveats and limitations.</p>
 <p>See the <a href="./curation-methods.html">Curation Methods</a> page for detailed inclusion criteria, data access definitions, and registry annotation caveats.</p>
 </section>
@@ -309,16 +325,32 @@ IBD GWAS summary statistics and individual-level genotype resources
 <td>Searchable and filterable table of all indexed datasets</td>
 </tr>
 <tr class="even">
+<td><a href="./study-families.html">Study Families</a></td>
+<td>Cohort-level view of accessions, modality siblings, and counting status</td>
+</tr>
+<tr class="odd">
+<td><a href="./analysis-cohorts.html">Analysis Cohorts</a></td>
+<td>Meta-analysis eligibility flags and exportable cohort subsets</td>
+</tr>
+<tr class="even">
+<td><a href="./clinical-trials.html">Clinical Trial Omics</a></td>
+<td>Treatment cohorts, trial-linked omics, intervention classes, and response-analysis candidates</td>
+</tr>
+<tr class="odd">
 <td><a href="./omics-layers.html">Omics Layers</a></td>
 <td>Inventory grouped by omics type with layer-level notes</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><a href="./repositories.html">Repositories</a></td>
 <td>Overview of archives and portals hosting IBD omics data</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><a href="./use-cases.html">Use Cases</a></td>
 <td>Browse datasets tagged as potentially relevant to specific research questions</td>
+</tr>
+<tr class="even">
+<td><a href="./terminology.html">Terminology</a></td>
+<td>Controlled vocabulary for specimen, anatomical site, disease, access, and reuse labels</td>
 </tr>
 <tr class="odd">
 <td><a href="./verification-queue.html">Verification Queue</a></td>

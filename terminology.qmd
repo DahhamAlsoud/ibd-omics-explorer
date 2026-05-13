@@ -1,0 +1,30 @@
+---
+title: "Terminology"
+subtitle: "Controlled language used across the explorer"
+format:
+  html:
+    page-layout: full
+    toc: true
+---
+
+<div class="page-intro">
+This page documents the controlled terminology used for specimen type, anatomical site, disease labels, omics layers, access labels, and reuse-readiness labels. The goal is to make filtering predictable while preserving uncertainty when source metadata are incomplete.
+</div>
+
+## Controlled Vocabulary
+
+<div id="terminology-vocabulary"></div>
+
+---
+
+## Core Conventions
+
+- Use <strong>Specimen Type</strong> for the physical biospecimen, such as colonic biopsies, stool samples, PBMC, serum, or resection tissue.
+- Use <strong>Anatomical Site</strong> for location, such as terminal ileum, colon, rectum, blood, or stool.
+- Use <strong>Crohn disease</strong> and <strong>ulcerative colitis</strong> rather than abbreviations in curated fields.
+- Use <strong>stool samples</strong> for specimen type and <strong>stool</strong> for anatomical site.
+- Preserve <strong>Unclear</strong> when the source does not support a confident label.
+
+<div class="disclaimer">
+<strong>Conservative annotation.</strong> Terminology harmonization should not introduce new clinical claims. Ambiguous source labels remain manual-review targets.
+</div>

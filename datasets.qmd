@@ -8,7 +8,7 @@ format:
 ---
 
 <div class="page-intro">
-This table lists primary accession-level datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All registry annotations are conservative annotations derived from public records; fields marked <em>Unclear</em> require manual verification. Integrated atlases, portals, databases, and consortium resources are tracked on the Integrated Resources page.
+This table lists primary accession-level datasets currently indexed in the IBD Omics Explorer. Use the search box and filters to narrow results. All registry annotations are conservative annotations derived from public records; fields marked <em>Unclear</em> require manual verification. Use the Study Families page before counting cohorts, and the Analysis Cohorts page when screening rows for meta-analysis or export.
 </div>
 
 ## Filters and Search

@@ -68,6 +68,34 @@ function cellValue(row, column) {
       return urls.map((url, index) => `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">link${urls.length > 1 ? ` ${index + 1}` : ""}</a>`).join("<br>");
     }
   }
+  if (column === "doi" && row[column] && row[column] !== "Unclear") {
+    return String(row[column])
+      .split(";")
+      .map((item) => item.trim())
+      .filter(Boolean)
+      .map((doi) => {
+        const url = doi.startsWith("http") ? doi : `https://doi.org/${doi}`;
+        return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(doi.replace(/^https?:\/\/doi\.org\//i, ""))}</a>`;
+      })
+      .join("<br>");
+  }
+  if (column === "pmid" && row[column] && row[column] !== "Unclear") {
+    return String(row[column])
+      .split(";")
+      .map((item) => item.trim())
+      .filter(Boolean)
+      .map((pmid) => `<a href="https://pubmed.ncbi.nlm.nih.gov/${escapeHtml(pmid)}/" target="_blank" rel="noopener">${escapeHtml(pmid)}</a>`)
+      .join("<br>");
+  }
+  if (column === "publication_title" && row.publication_url && row.publication_url !== "Unclear" && row[column] && row[column] !== "Unclear") {
+    const firstUrl = String(row.publication_url)
+      .split(";")
+      .map((item) => item.trim())
+      .find((item) => /^https?:\/\//i.test(item));
+    if (firstUrl) {
+      return `<a href="${escapeHtml(firstUrl)}" target="_blank" rel="noopener">${escapeHtml(row[column])}</a>`;
+    }
+  }
   if (column === "count_as_independent_cohort") {
     const value = row[column];
     if (value === "TRUE") return "Count";

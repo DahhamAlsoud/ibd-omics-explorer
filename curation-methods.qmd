@@ -33,7 +33,7 @@ Retired identifiers are tracked in `data/retired_dataset_ids.csv`.
 
 ---
 
-## Priority Verification Queue
+## Priority Curation Checks
 
 The following entry types should be checked first because they carry the highest risk of misleading users:
 
@@ -159,7 +159,7 @@ Each entry carries a `curation_status` label indicating the degree of registry a
 | `verification_notes` | Evidence-backed notes on what was checked and what remains uncertain |
 | `evidence_url` | Source URLs used to support the current verification status |
 | `citation_verified` | Whether DOI/PMID/publication metadata have been checked |
-| `usable_for_*` | Conservative use-case flags used by the Use Cases page; values are `TRUE`, `FALSE`, or `Unclear` |
+| `usable_for_*` | Conservative analysis-scenario flags retained in the registry CSV; values are `TRUE`, `FALSE`, or `Unclear` |
 
 ---
 

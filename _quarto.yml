@@ -2,7 +2,16 @@ project:
   type: website
   output-dir: docs
   render:
-    - "*.qmd"
+    - index.qmd
+    - datasets.qmd
+    - study-families.qmd
+    - analysis-cohorts.qmd
+    - clinical-trials.qmd
+    - integrated-resources.qmd
+    - omics-layers.qmd
+    - repositories.qmd
+    - curation-methods.qmd
+    - about.qmd
   resources:
     - site-tables.js
     - data/ibd_omics_datasets.csv
@@ -13,8 +22,6 @@ project:
     - data/clinical_trial_omics_slice.csv
     - data/meta_analysis_eligibility.csv
     - data/exportable_analysis_cohorts.csv
-    - data/terminology_controlled_vocabulary.csv
-    - data/orchestrator_queue.csv
     - data/retired_dataset_ids.csv
     - data/cohort_overlap_audit.csv
     - data/verification/cross_omics_utility_review.csv
@@ -176,16 +183,8 @@ website:
         href: omics-layers.qmd
       - text: "Repositories"
         href: repositories.qmd
-      - text: "Use Cases"
-        href: use-cases.qmd
-      - text: "Verification"
-        href: verification-queue.qmd
-      - text: "Orchestrator"
-        href: orchestrator.qmd
       - text: "Curation"
         href: curation-methods.qmd
-      - text: "Terminology"
-        href: terminology.qmd
       - text: "About"
         href: about.qmd
 

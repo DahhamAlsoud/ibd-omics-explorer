@@ -127,24 +127,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Repositories</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./use-cases.html"> 
-<span class="menu-text">Use Cases</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./verification-queue.html"> 
-<span class="menu-text">Verification</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./orchestrator.html"> 
-<span class="menu-text">Orchestrator</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link active" href="./curation-methods.html" aria-current="page"> 
 <span class="menu-text">Curation</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./terminology.html"> 
-<span class="menu-text">Terminology</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -169,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#purpose-and-scope" id="toc-purpose-and-scope" class="nav-link active" data-scroll-target="#purpose-and-scope">Purpose and Scope</a></li>
   <li><a href="#current-registry-state" id="toc-current-registry-state" class="nav-link" data-scroll-target="#current-registry-state">Current Registry State</a></li>
   <li><a href="#retired-primary-dataset-ids" id="toc-retired-primary-dataset-ids" class="nav-link" data-scroll-target="#retired-primary-dataset-ids">Retired Primary Dataset IDs</a></li>
-  <li><a href="#priority-verification-queue" id="toc-priority-verification-queue" class="nav-link" data-scroll-target="#priority-verification-queue">Priority Verification Queue</a></li>
+  <li><a href="#priority-curation-checks" id="toc-priority-curation-checks" class="nav-link" data-scroll-target="#priority-curation-checks">Priority Curation Checks</a></li>
   <li><a href="#inclusion-criteria" id="toc-inclusion-criteria" class="nav-link" data-scroll-target="#inclusion-criteria">Inclusion Criteria</a></li>
   <li><a href="#exclusion-or-deferred-categories" id="toc-exclusion-or-deferred-categories" class="nav-link" data-scroll-target="#exclusion-or-deferred-categories">Exclusion or Deferred Categories</a></li>
   <li><a href="#public-data-access-labels" id="toc-public-data-access-labels" class="nav-link" data-scroll-target="#public-data-access-labels">Public Data Access Labels</a></li>
@@ -234,8 +218,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Retired identifiers are tracked in <code>data/retired_dataset_ids.csv</code>.</p>
 <hr>
 </section>
-<section id="priority-verification-queue" class="level2">
-<h2 class="anchored" data-anchor-id="priority-verification-queue">Priority Verification Queue</h2>
+<section id="priority-curation-checks" class="level2">
+<h2 class="anchored" data-anchor-id="priority-curation-checks">Priority Curation Checks</h2>
 <p>The following entry types should be checked first because they carry the highest risk of misleading users:</p>
 <table class="caption-top table">
 <colgroup>
@@ -617,7 +601,7 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="odd">
 <td><code>usable_for_*</code></td>
-<td>Conservative use-case flags used by the Use Cases page; values are <code>TRUE</code>, <code>FALSE</code>, or <code>Unclear</code></td>
+<td>Conservative analysis-scenario flags retained in the registry CSV; values are <code>TRUE</code>, <code>FALSE</code>, or <code>Unclear</code></td>
 </tr>
 </tbody>
 </table>

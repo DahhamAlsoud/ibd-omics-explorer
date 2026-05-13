@@ -21,9 +21,6 @@ format:
 <a href="clinical-trials.qmd" class="btn-hero btn-outline">Clinical Trial Omics</a>
 <a href="integrated-resources.qmd" class="btn-hero btn-outline">Integrated Resources</a>
 <a href="omics-layers.qmd" class="btn-hero btn-outline">Explore by Omics Layer</a>
-<a href="use-cases.qmd" class="btn-hero btn-outline">Browse by Use Case</a>
-<a href="verification-queue.qmd" class="btn-hero btn-outline">Verification Queue</a>
-<a href="orchestrator.qmd" class="btn-hero btn-outline">Orchestrator</a>
 <a href="curation-methods.qmd" class="btn-hero btn-outline">Curation Methods</a>
 </div>
 </div>
@@ -116,10 +113,6 @@ See the [Curation Methods](curation-methods.qmd) page for detailed inclusion cri
 | [Clinical Trial Omics](clinical-trials.qmd) | Treatment cohorts, trial-linked omics, intervention classes, and response-analysis candidates |
 | [Omics Layers](omics-layers.qmd) | Inventory grouped by omics type with layer-level notes |
 | [Repositories](repositories.qmd) | Overview of archives and portals hosting IBD omics data |
-| [Use Cases](use-cases.qmd) | Browse datasets tagged as potentially relevant to specific research questions |
-| [Terminology](terminology.qmd) | Controlled vocabulary for specimen, anatomical site, disease, access, and reuse labels |
-| [Verification Queue](verification-queue.qmd) | Review source-check status, citation evidence, and source metadata gaps |
-| [Orchestrator](orchestrator.qmd) | Track active improvement tasks, missing-resource audits, and next curation priorities |
 | [Curation Methods](curation-methods.qmd) | Inclusion criteria, access definitions, registry annotation caveats |
 | [About](about.qmd) | Project context and contact information |
 

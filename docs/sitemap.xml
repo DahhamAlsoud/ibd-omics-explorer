@@ -1,59 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/verification-queue.html</loc>
-    <lastmod>2026-05-10T13:37:43.668Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/terminology.html</loc>
-    <lastmod>2026-05-13T03:26:00.982Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/about.html</loc>
+    <lastmod>2026-05-13T00:37:02.413Z</lastmod>
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/repositories.html</loc>
     <lastmod>2026-05-13T01:19:55.158Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/omics-layers.html</loc>
-    <lastmod>2026-05-13T03:31:30.793Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/index.html</loc>
-    <lastmod>2026-05-13T03:28:26.493Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/curation-methods.html</loc>
-    <lastmod>2026-05-13T03:31:30.789Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/integrated-resources.html</loc>
+    <lastmod>2026-05-10T16:23:16.695Z</lastmod>
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/analysis-cohorts.html</loc>
     <lastmod>2026-05-13T03:26:00.982Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/about.html</loc>
-    <lastmod>2026-05-13T00:37:02.413Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/clinical-trials.html</loc>
-    <lastmod>2026-05-13T03:26:00.980Z</lastmod>
-  </url>
-  <url>
     <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/datasets.html</loc>
     <lastmod>2026-05-13T03:28:55.653Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/integrated-resources.html</loc>
-    <lastmod>2026-05-10T16:23:16.695Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/orchestrator.html</loc>
-    <lastmod>2026-05-10T16:58:21.014Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/index.html</loc>
+    <lastmod>2026-05-13T10:28:11.853Z</lastmod>
   </url>
   <url>
     <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/study-families.html</loc>
     <lastmod>2026-05-13T03:26:00.979Z</lastmod>
   </url>
   <url>
-    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/use-cases.html</loc>
-    <lastmod>2026-05-13T03:31:30.796Z</lastmod>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/clinical-trials.html</loc>
+    <lastmod>2026-05-13T03:26:00.980Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/omics-layers.html</loc>
+    <lastmod>2026-05-13T03:31:30.793Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dahhamalsoud.github.io/ibd-omics-explorer/curation-methods.html</loc>
+    <lastmod>2026-05-13T10:29:31.534Z</lastmod>
   </url>
 </urlset>

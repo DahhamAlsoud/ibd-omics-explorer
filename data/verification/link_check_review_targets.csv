@@ -1,0 +1,3 @@
+url,status,detail,final_url,source_count,sources
+https://www.crohnscolitisfoundation.org/research/signature-foundation-programs/ibd-plexus,access_restricted,HTTP 403,https://www.crohnscolitisfoundation.org/research/signature-foundation-programs/ibd-plexus,2,data\integrated_resources.csv:7; docs\data\integrated_resources.csv:7
+https://www.ibdgenetics.org/,access_restricted,HTTP 403,https://www.ibdgenetics.org/,4,curation-methods.qmd:258; docs\curation-methods.html:683; docs\repositories.html:585; repositories.qmd:188

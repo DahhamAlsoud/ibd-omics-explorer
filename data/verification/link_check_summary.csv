@@ -1,7 +1,4 @@
-"check","category","count","note"
-"unique_url_status","ok","333","Unique URL check after final link harmonization and slow dbGaP retry"
-"unique_url_status","local_ok","51","Unique URL check after final link harmonization and slow dbGaP retry"
-"unique_url_status","access_restricted","13","Unique URL check after final link harmonization and slow dbGaP retry"
-"rendered_internal_links","local_ok","51","Rendered internal links/assets resolved locally"
-"hard_fail","remaining","0","No hard failures remain after replacements and retries"
-"access_restricted","expected","13","403/406 responses are DOI/publisher/API bot restrictions, not missing links"
+status,count
+access_restricted,2
+ok,309
+redirected_ok,48

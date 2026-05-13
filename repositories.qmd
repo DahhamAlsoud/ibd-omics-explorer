@@ -47,7 +47,7 @@ IBD omics datasets are distributed across numerous public repositories, speciali
 | **Data types hosted** | Microarray, RNA-seq, and other functional genomics data; expanding to multi-omics |
 | **Access model** | Publicly accessible |
 | **IBD data** | European counterpart to GEO; some IBD datasets deposited here rather than or in addition to GEO |
-| **URL** | [ebi.ac.uk/biostudies/submissions](https://www.ebi.ac.uk/biostudies/submissions/) |
+| **URL** | [re3data BioStudies record](https://www.re3data.org/repository/r3d100012627) |
 
 **Notes.** Many European IBD studies deposit data in ArrayExpress/BioStudies rather than GEO. Some datasets are mirrored between both archives.
 
@@ -213,7 +213,7 @@ IBD omics datasets are distributed across numerous public repositories, speciali
 | **Data types hosted** | GWAS summary statistics (public); individual-level data (controlled access) |
 | **Access model** | Summary statistics publicly accessible (FinnGen results browser, Open GWAS/MRC IEU); individual data require access application |
 | **IBD data** | IBD, CD, and UC phenotypes available in both biobanks |
-| **URL** | FinnGen: [finngen.fi](https://r10.finngen.fi/) &nbsp;|&nbsp; UK Biobank: [ukbiobank.ac.uk](https://www.ukbiobank.ac.uk/) |
+| **URL** | FinnGen: [finngen.fi](https://r10.finngen.fi/) &nbsp;|&nbsp; UK Biobank: [biobank.ndph.ox.ac.uk/ukb](https://biobank.ndph.ox.ac.uk/ukb/) |
 
 **Notes.** FinnGen provides GWAS summary statistics publicly via its results browser. UK Biobank individual-level data require application through the UK Biobank Access Management System. IBD phenotype definitions in biobanks rely on ICD codes and may differ from clinically adjudicated cohorts.
 
